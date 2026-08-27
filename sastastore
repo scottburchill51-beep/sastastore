@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SastaStore | Premium Tools • Sasta Prices</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 6 Pro Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Syne', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              green: '#10B981',
+              blue: '#2563EB',
+              purple: '#8B5CF6',
+              dark: '#06080F',
+              card: '#0D1322',
+              cardHover: '#131B30'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #06080f; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+    .glass-box {
+      background: rgba(13, 19, 34, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-box:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .neon-border-glow {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
+    }
+
+    .banner-gradient-1 {
+      background: linear-gradient(135deg, #07171e 0%, #06080f 50%, #0d281e 100%);
+    }
+    .banner-gradient-2 {
+      background: linear-gradient(135deg, #1b0e29 0%, #06080f 50%, #2a0845 100%);
+    }
+    .banner-gradient-3 {
+      background: linear-gradient(135deg, #0b1c2e 0%, #06080f 50%, #051937 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-[#06080F] text-gray-100 font-sans antialiased selection:bg-brand-yellow selection:text-black overflow-x-hidden">
+
+  <!-- TOP PROMO TICKER -->
+  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1120] to-emerald-950 border-b border-emerald-500/20 py-2.5 px-4 text-xs font-semibold text-emerald-300 flex items-center justify-between max-w-7xl mx-auto">
+    <div class="flex items-center gap-2">
+      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-yellow text-black uppercase tracking-wider animate-pulse">Hot Offer</span>
+      <span>⚡ Instant Delivery within 5 Minutes on WhatsApp!</span>
+    </div>
+    <div class="hidden sm:flex items-center gap-4 text-gray-400">
+      <a href="mailto:scottburchill51@gmail.com" class="hover:text-emerald-400 text-xs flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> scottburchill51@gmail.com</a>
+      <span>|</span>
+      <a href="https://wa.me/923136093501" class="text-emerald-400 hover:underline font-bold">+92 313 6093501</a>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 bg-[#06080F]/90 backdrop-blur-xl border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- LOGO (Matches Banner Bag Logo) -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 via-emerald-500 to-teal-400 flex items-center justify-center text-black font-black text-2xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+        </div>
+        <div>
+          <div class="font-heading font-black text-2xl tracking-tight text-white flex items-center gap-1">
+            Sasta<span class="text-brand-yellow">Store</span>
+          </div>
+          <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 block">— PREMIUM TOOLS • SASTA PRICES</span>
+        </div>
+      </a>
+
+      <!-- NAVIGATION LINKS -->
+      <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-gray-300">
+        <a href="#products" class="hover:text-emerald-400 transition-colors">All Subscriptions</a>
+        <a href="#custom-order" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5"><i class="fa-solid fa-bolt"></i> Custom Order Service</a>
+        <a href="#reviews" class="hover:text-emerald-400 transition-colors">Customer Reviews (4.9★)</a>
+        <a href="#payments" class="hover:text-emerald-400 transition-colors">Payment Methods</a>
+      </div>
+
+      <!-- HEADER ACTIONS -->
+      <div class="flex items-center gap-3">
+        <!-- Currency Converter -->
+        <button id="currencyToggle" class="px-3.5 py-2 rounded-xl bg-gray-900 border border-gray-700 text-xs font-extrabold text-emerald-400 flex items-center gap-2 hover:border-emerald-500 transition">
+          <i class="fa-solid fa-coins"></i>
+          <span id="currencyLabel">PKR (₨)</span>
+        </button>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="w-10 h-10 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 border border-pink-500/30 flex items-center justify-center transition">
+          <i class="fa-brands fa-instagram text-lg"></i>
+        </a>
+
+        <!-- WhatsApp CTA -->
+        <a href="https://wa.me/923136093501" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-lg shadow-yellow-500/20 transition hover:scale-105">
+          <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SHOWCASE HERO (RECREATED FROM BANNER) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a0f1d] via-[#0d1527] to-[#080d19] border border-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl neon-border-glow">
+      
+      <!-- Background Ambient Glow -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Left Banner Headline -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs uppercase font-extrabold tracking-widest text-emerald-400">100% Verified Accounts & Direct Access</span>
+          </div>
+
+          <h1 class="font-heading text-4xl sm:text-6xl font-black text-white leading-tight">
+            PREMIUM TOOLS <br>
+            <span class="text-brand-yellow drop-shadow-md">SASTA PRICES</span>
+          </h1>
+
+          <p class="text-gray-300 text-sm sm:text-base max-w-xl font-medium leading-relaxed">
+            Get instant activation for CapCut Pro, Canva Pro, ChatGPT, Grok, Gemini, Notion, Netflix, and VPNs with warranty and 24/7 dedicated support.
+          </p>
+
+          <!-- 3 Feature Badges -->
+          <div class="flex flex-wrap items-center gap-6 pt-2 text-xs font-bold text-gray-300">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-bolt text-brand-yellow text-base"></i> INSTANT DELIVERY
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-shield-check text-blue-400 text-base"></i> 100% TRUSTED
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-headset text-emerald-400 text-base"></i> 24/7 SUPPORT
+            </div>
+          </div>
+
+          <!-- Big WhatsApp Button -->
+          <div class="pt-4">
+            <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20order%20a%20tool" target="_blank" class="inline-flex items-center gap-3 bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-sm uppercase tracking-wider px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition-transform">
+              <i class="fa-brands fa-whatsapp text-2xl"></i>
+              <div>
+                <span class="block text-[10px] tracking-widest text-black/70 font-sans font-bold leading-none">WHATSAPP US</span>
+                <span class="text-base font-black">+92 313 6093501</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Mini Reviews Cards (As in Graphic) -->
+        <div class="lg:col-span-5 space-y-3">
+          <div class="text-xs font-extrabold tracking-wider text-gray-400 uppercase mb-2">WHAT OUR <span class="text-brand-yellow">CUSTOMERS</span> SAY</div>
+          
+          <!-- Testimonial 1 -->
+          <div class="glass-box p-3.5 rounded-2xl flex items-center justify-between gap-3 border border-gray-800 hover:border-emerald-500/40 transition">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">AK</div>
+              <div>
+                <p class="text-xs font-bold text-white">Ahmad Khan</p>
+                <div class="text-brand-yellow text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-[11px] text-gray-300">Super fast delivery! 🔥 100% recommended.</p>
+              </div>
+            </div>
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="glass-box p-3.5 rounded-2xl flex items-center justify-between gap-3 border border-gray-800 hover:border-emerald-500/40 transition">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">UA</div>
+              <div>
+                <p class="text-xs font-bold text-white">Usman Ali</p>
+                <div class="text-brand-yellow text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-[11px] text-gray-300">Best prices and genuine accounts. Keep it up! 👍</p>
+              </div>
+            </div>
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="glass-box p-3.5 rounded-2xl flex items-center justify-between gap-3 border border-gray-800 hover:border-emerald-500/40 transition">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs">FN</div>
+              <div>
+                <p class="text-xs font-bold text-white">Fatima Noor</p>
+                <div class="text-brand-yellow text-[10px]"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-[11px] text-gray-300">Amazing service and prompt support 💯</p>
+              </div>
+            </div>
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 PILLAR TRUST RIBBON -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="glass-box rounded-2xl p-4 grid grid-cols-2 md:grid-cols-5 gap-4 text-center items-center divide-y md:divide-y-0 md:divide-x divide-gray-800">
+      <div class="flex items-center justify-center gap-2.5 p-2">
+        <i class="fa-solid fa-certificate text-purple-400 text-lg"></i>
+        <span class="text-xs font-extrabold text-gray-300 tracking-wide uppercase">100% Genuine Products</span>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 p-2">
+        <i class="fa-solid fa-bolt text-brand-yellow text-lg"></i>
+        <span class="text-xs font-extrabold text-gray-300 tracking-wide uppercase">Instant Delivery</span>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 p-2">
+        <i class="fa-solid fa-shield-check text-blue-400 text-lg"></i>
+        <span class="text-xs font-extrabold text-gray-300 tracking-wide uppercase">Safe & Secure Payments</span>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 p-2">
+        <i class="fa-solid fa-headset text-teal-400 text-lg"></i>
+        <span class="text-xs font-extrabold text-gray-300 tracking-wide uppercase">24/7 Support</span>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 p-2 col-span-2 md:col-span-1">
+        <i class="fa-solid fa-users text-blue-500 text-lg"></i>
+        <span class="text-xs font-extrabold text-gray-300 tracking-wide uppercase">1000+ Happy Customers</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 VISUAL CATEGORY CARDS (FROM BANNER DESIGN) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- AI Tools Banner -->
+      <div class="banner-gradient-1 border border-teal-500/30 rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between group hover:border-teal-400 transition">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-teal-400 block mb-1">Boost Your Productivity</span>
+          <h3 class="font-heading text-2xl font-black text-teal-400 mb-4">AI TOOLS</h3>
+          <ul class="text-xs space-y-2 text-gray-300 font-semibold mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Grok Monthly Trial</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Gemini Pro (18 Months)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> Veo 3 & Leonardo AI</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-400"></i> And More...</li>
+          </ul>
+        </div>
+        <button onclick="filterCategory('ai')" class="w-full bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2">
+          Explore AI Tools <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- Creative Tools Banner -->
+      <div class="banner-gradient-2 border border-purple-500/30 rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between group hover:border-purple-400 transition">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-purple-400 block mb-1">Design Like A Pro</span>
+          <h3 class="font-heading text-2xl font-black text-purple-400 mb-4">CREATIVE TOOLS</h3>
+          <ul class="text-xs space-y-2 text-gray-300 font-semibold mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Canva Pro & Canva Business</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> CapCut Pro (30 Days / 6 Months)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Canva Admin Panel (500 Mems)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> And More...</li>
+          </ul>
+        </div>
+        <button onclick="filterCategory('productivity')" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-heading font-black text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2">
+          Explore Creative Tools <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- Entertainment Banner -->
+      <div class="banner-gradient-3 border border-blue-500/30 rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between group hover:border-blue-400 transition">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest text-blue-400 block mb-1">Enjoy Your Favorites</span>
+          <h3 class="font-heading text-2xl font-black text-blue-400 mb-4">ENTERTAINMENT</h3>
+          <ul class="text-xs space-y-2 text-gray-300 font-semibold mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Netflix (Single / Full 4K)</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> YouTube Premium</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Surfshark & NordVPN</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> And More...</li>
+          </ul>
+        </div>
+        <button onclick="filterCategory('streaming')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-heading font-black text-xs uppercase py-3 rounded-xl transition flex items-center justify-center gap-2">
+          Explore Entertainment <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CUSTOM ORDER HERO SECTION -->
+  <section id="custom-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c1f19] via-[#091426] to-[#0d1627] border border-emerald-500/40 p-6 sm:p-10 shadow-xl">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-brand-yellow text-black">
+            <i class="fa-solid fa-cart-plus"></i> Custom Order Service
+          </div>
+          <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white">
+            Need Any Other Tool? Just Tell Us!
+          </h2>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Want to purchase any international subscription, website plan, or tool? <br>
+            <strong class="text-emerald-400">💳 Stripe & Non-Stripe orders are fully accepted!</strong> Just send us the website link + plan on WhatsApp and we’ll buy it for you instantly at the lowest rate.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 pt-1 text-xs font-bold text-gray-300">
+            <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Amazing Prices</span>
+            <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Instant Delivery</span>
+            <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> 100% Reliable</span>
+          </div>
+        </div>
+
+        <div class="lg:text-right">
+          <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan:" target="_blank" class="inline-flex items-cen

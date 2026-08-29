@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -9,24 +10,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Syne', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif'],
           },
           colors: {
             brand: {
-              yellow: '#FACC15',
-              gold: '#F59E0B',
-              green: '#10B981',
-              dark: '#06080F',
-              card: '#0D1322',
-              cardHover: '#131B30'
+              emerald: '#10B981',
+              emeraldDark: '#059669',
+              teal: '#14B8A6',
+              dark: '#06090E',
+              card: '#0D1424',
+              cardHover: '#131D33',
+              border: 'rgba(16, 185, 129, 0.2)'
             }
           }
         }
@@ -36,65 +38,70 @@
 
   <style>
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #06080f; }
+    ::-webkit-scrollbar-track { background: #06090e; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #facc15; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
 
     .glass-box {
-      background: rgba(13, 19, 34, 0.8);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(13, 20, 36, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .glass-box:hover {
-      border-color: rgba(250, 204, 21, 0.35);
+      border-color: rgba(16, 185, 129, 0.4);
     }
-    .neon-gold {
-      box-shadow: 0 0 35px -5px rgba(250, 204, 21, 0.2);
+    .neon-emerald {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
+    }
+    .animated-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #10b981 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
 
-<body class="bg-[#06080F] text-gray-100 font-sans antialiased selection:bg-brand-yellow selection:text-black overflow-x-hidden">
+<body class="bg-[#06090E] text-gray-100 font-sans antialiased selection:bg-brand-emerald selection:text-black overflow-x-hidden">
 
-  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1120] to-yellow-950/70 border-b border-yellow-500/20 py-2.5 px-4 text-xs font-semibold text-yellow-300">
+  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1424] to-emerald-950 border-b border-emerald-500/20 py-2.5 px-4 text-xs font-semibold text-emerald-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-yellow text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Global Prices in PKR & USD ($) • On-Site Checkout & Replacements Guaranteed!</span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
+        <span>⚡ Instant Automated On-Site Orders • Prices in PKR & USD ($)</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
         <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="hover:text-pink-400 text-xs flex items-center gap-1.5 transition">
           <i class="fa-brands fa-instagram text-pink-400"></i> @sastastore0_
         </a>
         <span>|</span>
-        <button onclick="openAdminModal()" class="text-xs bg-gray-900 border border-gray-700 hover:border-yellow-400 px-3 py-1 rounded-lg text-yellow-400 font-bold transition flex items-center gap-1.5">
+        <button onclick="openAdminModal()" class="text-xs bg-gray-900 border border-gray-700 hover:border-emerald-400 px-3 py-1 rounded-lg text-emerald-400 font-bold transition flex items-center gap-1.5">
           <i class="fa-solid fa-lock"></i> Admin Portal
         </button>
       </div>
     </div>
   </div>
 
-  <header class="sticky top-0 z-40 bg-[#06080F]/90 backdrop-blur-xl border-b border-gray-800/80">
+  <header class="sticky top-0 z-40 bg-[#06090E]/90 backdrop-blur-xl border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-yellow-500 via-emerald-500 to-blue-600 flex items-center justify-center text-black font-black text-2xl shadow-lg shadow-yellow-500/20 group-hover:scale-105 transition-transform">
-          <i class="fa-solid fa-bag-shopping text-white text-xl"></i>
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 flex items-center justify-center text-black font-black text-2xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-bag-shopping text-black text-xl"></i>
         </div>
         <div>
           <div class="font-heading font-black text-2xl tracking-tight text-white flex items-center gap-1">
-            Sasta<span class="text-brand-yellow">Store</span>
+            Sasta<span class="text-brand-emerald">Store</span>
           </div>
           <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 block">— PREMIUM TOOLS • SASTA PRICES</span>
         </div>
       </a>
 
       <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-300">
-        <a href="#products" class="hover:text-brand-yellow transition-colors">Browse Inventory</a>
+        <a href="#products" class="hover:text-brand-emerald transition-colors">Browse Tools</a>
         <a href="#custom-order" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5"><i class="fa-solid fa-cart-shopping"></i> Custom Order Service</a>
-        <a href="#reviews" class="hover:text-brand-yellow transition-colors">Reviews (4.9★)</a>
-        <a href="#payments" class="hover:text-brand-yellow transition-colors">Payment Gateways</a>
+        <a href="#reviews" class="hover:text-brand-emerald transition-colors">Reviews (4.9★)</a>
+        <a href="#payments" class="hover:text-brand-emerald transition-colors">Payment Gateways</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -103,7 +110,7 @@
           <span class="hidden sm:inline">Instagram</span>
         </a>
 
-        <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition shadow-lg shadow-yellow-500/20">
+        <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
           <i class="fa-brands fa-whatsapp text-base"></i> Support Help
         </a>
       </div>
@@ -111,7 +118,7 @@
   </header>
 
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a0f1d] via-[#0e1628] to-[#070b14] border border-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl neon-gold">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#091522] via-[#0d1c2d] to-[#070d18] border border-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl neon-emerald">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
         <div class="lg:col-span-8 space-y-6">
@@ -122,7 +129,7 @@
 
           <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
             PREMIUM TOOLS <br>
-            <span class="text-brand-yellow drop-shadow-md">SASTA PRICES</span>
+            <span class="animated-gradient">SASTA PRICES</span>
           </h1>
 
           <p class="text-gray-300 text-sm sm:text-base max-w-xl font-medium leading-relaxed">
@@ -130,14 +137,14 @@
           </p>
 
           <div class="flex flex-wrap items-center gap-6 pt-2 text-xs font-bold text-gray-300">
-            <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-yellow text-base"></i> INSTANT DELIVERY</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-emerald-400 text-base"></i> INSTANT DELIVERY</div>
             <div class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-blue-400 text-base"></i> 100% TRUSTED</div>
-            <div class="flex items-center gap-2"><i class="fa-solid fa-headset text-emerald-400 text-base"></i> 24/7 SUPPORT</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-headset text-teal-400 text-base"></i> 24/7 SUPPORT</div>
           </div>
         </div>
 
         <div class="lg:col-span-4 glass-box p-6 rounded-3xl border border-gray-800 space-y-4 text-center">
-          <div class="w-14 h-14 rounded-2xl bg-brand-yellow/10 text-brand-yellow flex items-center justify-center text-2xl mx-auto">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mx-auto">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
           <h3 class="font-heading text-lg font-black text-white">How To Order?</h3>
@@ -147,7 +154,7 @@
             3. Transfer to JazzCash/SadaPay/Binance and enter Trx ID.<br>
             4. Done! Your order is logged in our system instantly.
           </p>
-          <a href="#products" class="block w-full bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition">
+          <a href="#products" class="block w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
             Explore All Products
           </a>
         </div>
@@ -159,7 +166,7 @@
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c1f19] via-[#091426] to-[#0d1627] border border-emerald-500/40 p-6 sm:p-10 shadow-xl">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
         <div class="lg:col-span-2 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-brand-yellow text-black">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-emerald-500 text-black">
             <i class="fa-solid fa-cart-plus"></i> Custom Order Service
           </div>
           <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white">
@@ -177,7 +184,7 @@
         </div>
 
         <div class="lg:text-right flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
-          <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan:" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-sm px-7 py-3.5 rounded-2xl shadow-xl hover:scale-105 transition">
+          <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan:" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-sm px-7 py-3.5 rounded-2xl shadow-xl hover:scale-105 transition">
             <i class="fa-brands fa-whatsapp text-2xl"></i> Send Link on WhatsApp
           </a>
           <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/40 text-xs font-bold px-5 py-2.5 rounded-xl transition">
@@ -199,11 +206,11 @@
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search CapCut, Gemini, Freepik, Veo 3, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow">
+          <input type="text" id="searchInput" placeholder="Search CapCut, Gemini, Freepik, Veo 3, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
-          <button onclick="filterCategory('all', this)" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-brand-yellow text-black transition">All</button>
+          <button onclick="filterCategory('all', this)" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-black transition">All</button>
           <button onclick="filterCategory('ai', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">AI & Video</button>
           <button onclick="filterCategory('design', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Design & Panels</button>
           <button onclick="filterCategory('streaming', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Streaming</button>
@@ -216,10 +223,10 @@
       </div>
   </section>
 
-  <section id="reviews" class="bg-[#0a0f1d]/80 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
+  <section id="reviews" class="bg-[#09111e]/80 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-brand-yellow text-xs font-black uppercase tracking-widest block mb-2">Real Feedback</span>
+        <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Real Feedback</span>
         <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mb-3">Customer Reviews (4.9 / 5.0)</h2>
         <p class="text-gray-400 text-xs sm:text-sm">Verified buyers who ordered directly from SastaStore.</p>
       </div>
@@ -232,7 +239,7 @@
   <section id="payments" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="text-center max-w-xl mx-auto mb-10">
-        <span class="text-brand-yellow text-xs font-extrabold uppercase tracking-widest block mb-2">Checkout Details</span>
+        <span class="text-emerald-400 text-xs font-extrabold uppercase tracking-widest block mb-2">Checkout Details</span>
         <h2 class="font-heading text-3xl font-black text-white mb-2">Official Payment Gateways</h2>
         <p class="text-xs text-gray-400">Transfer payment to any of the accounts below before placing your on-site order.</p>
       </div>
@@ -285,46 +292,46 @@
 
       <div class="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
         <div class="flex items-center gap-2">
-          <i class="fa-solid fa-lock text-brand-yellow"></i>
+          <i class="fa-solid fa-lock text-emerald-400"></i>
           <span><strong>GUARANTEED REPLACEMENTS:</strong> All accounts covered under strict replacement warranty.</span>
         </div>
         <div class="flex items-center gap-4">
           <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="text-pink-400 hover:underline font-bold"><i class="fa-brands fa-instagram"></i> Instagram</a>
           <span>|</span>
-          <a href="mailto:scottburchill51@gmail.com" class="text-brand-yellow hover:underline font-bold"><i class="fa-solid fa-envelope"></i> scottburchill51@gmail.com</a>
+          <a href="mailto:scottburchill51@gmail.com" class="text-emerald-400 hover:underline font-bold"><i class="fa-solid fa-envelope"></i> scottburchill51@gmail.com</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="border-t border-gray-800 bg-[#06080F] py-10 px-4 text-center text-gray-500 text-xs">
+  <footer class="border-t border-gray-800 bg-[#06090E] py-10 px-4 text-center text-gray-500 text-xs">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-brand-yellow text-black font-black flex items-center justify-center text-xs">S</div>
+        <div class="w-7 h-7 rounded-lg bg-emerald-500 text-black font-black flex items-center justify-center text-xs">S</div>
         <span class="font-heading font-extrabold text-white text-sm">SastaStore</span>
       </div>
       <p>© 2026 SastaStore. All rights reserved. Instant Activation & 24/7 Support.</p>
       <div class="flex items-center gap-4 text-base">
-        <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-yellow-400 underline">Admin Login</button>
+        <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-emerald-400 underline">Admin Login</button>
         <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="hover:text-pink-400 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="mailto:scottburchill51@gmail.com" class="hover:text-yellow-400 transition" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="mailto:scottburchill51@gmail.com" class="hover:text-emerald-400 transition" title="Email"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/923136093501?text=Hello%20SastaStore%20Support,%20I%20have%20a%20question" target="_blank" class="fixed bottom-6 right-6 z-40 bg-brand-yellow hover:bg-yellow-400 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-yellow-500/30 hover:scale-110 transition" title="WhatsApp Support">
+  <a href="https://wa.me/923136093501?text=Hello%20SastaStore%20Support,%20I%20have%20a%20question" target="_blank" class="fixed bottom-6 right-6 z-40 bg-gradient-to-tr from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition" title="WhatsApp Support">
     <i class="fa-brands fa-whatsapp text-3xl"></i>
   </a>
 
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-[#0b101e] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
       <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <div class="mb-5">
-        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-yellow-400/10 text-brand-yellow px-2.5 py-1 rounded">Direct Checkout</span>
+        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded">Direct Checkout</span>
         <h3 class="font-heading text-xl font-black text-white mt-2" id="modalProductTitle">Product Title</h3>
         <p class="text-xs text-gray-400" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
       </div>
@@ -332,23 +339,23 @@
       <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3.5">
         <div>
           <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
-          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow">
+          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label>
-            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow">
+            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
           </div>
           <div>
             <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label>
-            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow">
+            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
           </div>
         </div>
 
         <div>
           <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Channel Used *</label>
-          <select id="custPaymentMethod" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand-yellow">
+          <select id="custPaymentMethod" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400">
             <option value="JazzCash (03462195461)">JazzCash (03462195461 - Shaloom Victor)</option>
             <option value="SadaPay (03462195461)">SadaPay (03462195461 - Shaloom Victor)</option>
             <option value="Binance UID (1083609522)">Binance UID (1083609522 - Scott burchill)</option>
@@ -357,14 +364,14 @@
 
         <div>
           <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Details *</label>
-          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-yellow">
+          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="p-3 rounded-xl bg-gray-900 border border-gray-800 text-[11px] text-gray-400">
-          <i class="fa-solid fa-circle-info text-brand-yellow mr-1"></i> Make payment to the selected account, enter your Trx ID above, and submit. Credentials will be sent to your WhatsApp/Email.
+          <i class="fa-solid fa-circle-info text-emerald-400 mr-1"></i> Make payment to the selected account, enter your Trx ID above, and submit. Credentials will be sent to your WhatsApp/Email.
         </div>
 
-        <button type="submit" class="w-full bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-yellow-500/20">
+        <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
           Complete & Place Order
         </button>
       </form>
@@ -372,11 +379,11 @@
   </div>
 
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-[#0b101e] border border-gray-800 w-full max-w-5xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col">
       
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-yellow-400 text-black font-black flex items-center justify-center text-sm">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm">
             <i class="fa-solid fa-gauge"></i>
           </div>
           <div>
@@ -390,12 +397,12 @@
       </div>
 
       <div id="adminAuthScreen" class="py-12 text-center max-w-sm mx-auto w-full">
-        <i class="fa-solid fa-lock text-3xl text-brand-yellow mb-3"></i>
+        <i class="fa-solid fa-lock text-3xl text-emerald-400 mb-3"></i>
         <h4 class="font-heading text-base font-bold text-white mb-1">Enter Admin Password</h4>
         <p class="text-xs text-gray-400 mb-4">Access restricted to store administrator</p>
         <form onsubmit="verifyAdminPass(event)" class="space-y-3">
-          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 text-center focus:outline-none focus:border-brand-yellow">
-          <button type="submit" class="w-full bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">
+          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 text-center focus:outline-none focus:border-emerald-400">
+          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">
             Unlock Dashboard
           </button>
         </form>
@@ -404,7 +411,7 @@
       <div id="adminOrdersPanel" class="hidden flex-1 overflow-hidden flex flex-col">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div class="flex items-center gap-2">
-            <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-brand-yellow font-black">0</span></span>
+            <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
           </div>
           <div class="flex items-center gap-2">
             <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
@@ -438,7 +445,7 @@
     </div>
   </div>
 
-  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-brand-yellow text-black font-extrabold px-5 py-2.5 rounded-xl text-xs shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-500 text-black font-extrabold px-5 py-2.5 rounded-xl text-xs shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
     <span id="toastMsg">Notification message</span>
   </div>
 
@@ -447,7 +454,7 @@
     let currentCategory = 'all';
     let selectedProduct = null;
 
-    // 100% UPDATED PRICE CATALOG WITH ALL YOUR TOOLS
+    // INVENTORY WITH GEMINI 12M REMOVED
     const products = [
       // FREEPIK & MAGNIFIC WEB PANEL
       {
@@ -532,7 +539,7 @@
         color: "from-purple-600 to-indigo-700"
       },
 
-      // GEMINI PRO (18 Months)
+      // GEMINI PRO (18 Months ONLY)
       {
         id: 8,
         title: "Gemini Pro (18 Months)",
@@ -545,23 +552,9 @@
         color: "from-teal-400 to-emerald-600"
       },
 
-      // GEMINI PRO (12 Months - CONTACT ON WHATSAPP)
-      {
-        id: 9,
-        title: "Gemini Pro (12 Months)",
-        category: "ai",
-        tag: "12 Months Access",
-        warranty: "10 Months Guaranteed Warranty",
-        pricePKR: null, // Contact on WhatsApp
-        contactWhatsApp: true,
-        badge: "10M Warranty ⭐",
-        icon: "fa-solid fa-brain",
-        color: "from-emerald-500 to-teal-600"
-      },
-
       // VEO 3
       {
-        id: 10,
+        id: 9,
         title: "Veo 3 (Best Performance)",
         category: "ai",
         tag: "Extension Based",
@@ -572,7 +565,7 @@
         color: "from-amber-500 to-orange-600"
       },
       {
-        id: 11,
+        id: 10,
         title: "Veo 3 (Medium)",
         category: "ai",
         tag: "Extension Based",
@@ -585,7 +578,7 @@
 
       // NOTION, GRAMMARLY, OFFICE, LINKEDIN, COURSERA, LEONARDO
       {
-        id: 12,
+        id: 11,
         title: "Notion AI Business",
         category: "ai",
         tag: "3 Months Access",
@@ -596,7 +589,7 @@
         color: "from-zinc-800 to-gray-900"
       },
       {
-        id: 13,
+        id: 12,
         title: "Grammarly Pro",
         category: "design",
         tag: "1 Month Access",
@@ -607,7 +600,7 @@
         color: "from-emerald-500 to-teal-600"
       },
       {
-        id: 14,
+        id: 13,
         title: "Leonardo AI",
         category: "ai",
         tag: "1 Month Access",
@@ -618,7 +611,7 @@
         color: "from-fuchsia-500 to-purple-600"
       },
       {
-        id: 15,
+        id: 14,
         title: "MS Office 365",
         category: "design",
         tag: "1 Year Subscription",
@@ -629,7 +622,7 @@
         color: "from-orange-500 to-red-500"
       },
       {
-        id: 16,
+        id: 15,
         title: "LinkedIn Premium",
         category: "design",
         tag: "3 Months Access",
@@ -640,7 +633,7 @@
         color: "from-blue-700 to-sky-600"
       },
       {
-        id: 17,
+        id: 16,
         title: "Coursera Premium",
         category: "design",
         tag: "1 Year Full Access",
@@ -653,7 +646,7 @@
 
       // NETFLIX & YOUTUBE
       {
-        id: 18,
+        id: 17,
         title: "Netflix Single Screen",
         category: "streaming",
         tag: "1 Profile Screen",
@@ -664,7 +657,7 @@
         color: "from-red-600 to-rose-700"
       },
       {
-        id: 19,
+        id: 18,
         title: "Netflix Full Account",
         category: "streaming",
         tag: "5 Screens UHD 4K",
@@ -675,7 +668,7 @@
         color: "from-rose-600 to-red-800"
       },
       {
-        id: 20,
+        id: 19,
         title: "YouTube Premium (1 Month)",
         category: "streaming",
         tag: "1 Month Invite",
@@ -686,7 +679,7 @@
         color: "from-red-500 to-red-700"
       },
       {
-        id: 21,
+        id: 20,
         title: "YouTube Premium (3 Months)",
         category: "streaming",
         tag: "3 Months Invite",
@@ -699,7 +692,7 @@
 
       // VPNS & EMAILS
       {
-        id: 22,
+        id: 21,
         title: "NordVPN (Private)",
         category: "vpn",
         tag: "3 Months Access",
@@ -710,7 +703,7 @@
         color: "from-blue-600 to-sky-700"
       },
       {
-        id: 23,
+        id: 22,
         title: "Surfshark VPN",
         category: "vpn",
         tag: "2 Months Access",
@@ -721,7 +714,7 @@
         color: "from-teal-600 to-emerald-700"
       },
       {
-        id: 24,
+        id: 23,
         title: "Outlook / Hotmail PVA",
         category: "design",
         tag: "Fresh PVA Email",
@@ -756,41 +749,25 @@
           <div class="col-span-full text-center py-16">
             <i class="fa-solid fa-box-open text-4xl text-gray-600 mb-3"></i>
             <p class="text-gray-400 font-semibold">No tool found matching your search.</p>
-            <a href="#custom-order" class="text-brand-yellow underline text-xs mt-2 inline-block">Use Custom Order Service for any tool!</a>
+            <a href="#custom-order" class="text-emerald-400 underline text-xs mt-2 inline-block">Use Custom Order Service for any tool!</a>
           </div>
         `;
         return;
       }
 
       grid.innerHTML = items.map(p => {
-        let priceHtml = '';
-        let buttonHtml = '';
-
-        if (p.contactWhatsApp) {
-          const waMsg = encodeURIComponent(`Hi SastaStore, I want to inquire about price and details for ${p.title} (${p.tag} with ${p.warranty}).`);
-          priceHtml = `
-            <span class="text-xs uppercase font-bold text-gray-500 block">Price</span>
-            <span class="text-xs sm:text-sm font-extrabold text-emerald-400 font-heading">Contact on WhatsApp</span>
-          `;
-          buttonHtml = `
-            <a href="https://wa.me/923136093501?text=${waMsg}" target="_blank" class="flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs px-3.5 py-2.5 rounded-xl transition shadow">
-              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
-            </a>
-          `;
-        } else {
-          const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
-          priceHtml = `
-            <div class="flex items-baseline gap-1.5">
-              <span class="text-lg font-black text-brand-yellow font-heading">₨ ${p.pricePKR}/-</span>
-              <span class="text-xs font-bold text-gray-400">($${usdPrice})</span>
-            </div>
-          `;
-          buttonHtml = `
-            <button onclick="openCheckoutModal(${p.id})" class="flex items-center gap-1.5 bg-brand-yellow hover:bg-yellow-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition shadow">
-              <i class="fa-solid fa-cart-shopping text-xs"></i> Order Now
-            </button>
-          `;
-        }
+        const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
+        const priceHtml = `
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-lg font-black text-emerald-400 font-heading">₨ ${p.pricePKR}/-</span>
+            <span class="text-xs font-bold text-gray-400">($${usdPrice})</span>
+          </div>
+        `;
+        const buttonHtml = `
+          <button onclick="openCheckoutModal(${p.id})" class="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition shadow">
+            <i class="fa-solid fa-cart-shopping text-xs"></i> Order Now
+          </button>
+        `;
 
         return `
           <div class="glass-box rounded-2xl p-5 flex flex-col justify-between transition hover:-translate-y-1.5 group shadow-lg">
@@ -800,12 +777,12 @@
                   <i class="${p.icon}"></i>
                 </div>
                 <div class="flex flex-col items-end">
-                  <span class="text-[9px] font-black uppercase tracking-wider bg-brand-yellow/10 text-brand-yellow px-2 py-0.5 rounded border border-brand-yellow/30">${p.badge}</span>
+                  <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.badge}</span>
                   <span class="text-[11px] font-semibold text-gray-400 mt-1">${p.tag}</span>
                 </div>
               </div>
 
-              <h3 class="font-heading text-base font-bold text-white group-hover:text-brand-yellow transition mb-1">${p.title}</h3>
+              <h3 class="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition mb-1">${p.title}</h3>
               <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-5">
                 <i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}
               </p>
@@ -828,7 +805,7 @@
       container.innerHTML = reviewsData.map(r => `
         <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800">
           <div>
-            <div class="flex items-center gap-1 text-brand-yellow text-xs mb-3">
+            <div class="flex items-center gap-1 text-emerald-400 text-xs mb-3">
               ${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}
             </div>
             <p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p>
@@ -929,16 +906,16 @@
           <td class="p-3 text-[10px] text-gray-400 whitespace-nowrap">${o.date}</td>
           <td class="p-3 font-bold text-white">${o.name}</td>
           <td class="p-3">
-            <div class="text-brand-yellow font-mono">${o.phone}</div>
+            <div class="text-emerald-400 font-mono">${o.phone}</div>
             <div class="text-[10px] text-gray-400">${o.email}</div>
           </td>
           <td class="p-3 font-semibold text-gray-200">
             <div>${o.product}</div>
-            <div class="text-[10px] text-emerald-400 font-bold">${o.price}</div>
+            <div class="text-[10px] text-teal-400 font-bold">${o.price}</div>
           </td>
           <td class="p-3">
             <div class="text-[10px] text-gray-400">${o.method}</div>
-            <div class="font-mono text-xs text-yellow-300 font-bold">${o.trx}</div>
+            <div class="font-mono text-xs text-emerald-300 font-bold">${o.trx}</div>
           </td>
           <td class="p-3">
             <select onchange="updateOrderStatus(${idx}, this.value)" class="bg-gray-900 border border-gray-700 text-xs rounded px-2 py-1 ${o.status === 'Completed' ? 'text-emerald-400' : 'text-yellow-400'} font-bold">
@@ -1005,11 +982,11 @@
     function filterCategory(cat, btn) {
       currentCategory = cat;
       document.querySelectorAll(".filter-btn").forEach(el => {
-        el.classList.remove("active", "bg-brand-yellow", "text-black");
+        el.classList.remove("active", "bg-emerald-500", "text-black");
         el.classList.add("text-gray-400");
       });
       if(btn) {
-        btn.classList.add("active", "bg-brand-yellow", "text-black");
+        btn.classList.add("active", "bg-emerald-500", "text-black");
         btn.classList.remove("text-gray-400");
       }
       filterAndSearch();

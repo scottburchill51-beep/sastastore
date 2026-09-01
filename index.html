@@ -128,7 +128,7 @@
   <!-- HERO SECTION BANNER -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6">
     <div class="relative overflow-hidden rounded-3xl border border-emerald-500/30 shadow-2xl group hover:border-emerald-500/60 transition neon-emerald">
-      <img src="banner.jpeg" alt="SastaStore Deals Banner" class="w-full h-auto object-cover rounded-3xl group-hover:scale-[1.01] transition-transform duration-300" />
+      <img src="banner.jpg" alt="SastaStore Deals Banner" class="w-full h-auto object-cover rounded-3xl group-hover:scale-[1.01] transition-transform duration-300" />
     </div>
   </section>
 
@@ -588,12 +588,10 @@
         status: 'Pending' 
       };
 
-      // Save order in browser admin database
       let orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
       orders.unshift(newOrder);
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
 
-      // Build WhatsApp message
       const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${selectedProduct.pricePKR} ($${usdPrice})\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
       const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
 

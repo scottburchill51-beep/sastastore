@@ -12,7 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <!-- Google Fonts: Outfit & Inter -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -74,11 +74,11 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Direct WhatsApp Verification & Fast Instant Delivery • Dual PKR (₨) & USD ($) Pricing</span>
+        <span>⚡ Direct WhatsApp Verification & Instant Delivery • Dual PKR (₨) & USD ($)</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
-        <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="hover:text-pink-400 text-xs flex items-center gap-1.5 transition">
-          <i class="fa-brands fa-instagram text-pink-400"></i> @sastastore0_
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
+          <i class="fa-brands fa-facebook text-blue-500"></i> Facebook Page
         </a>
         <span>|</span>
         <button onclick="openAdminModal()" class="text-xs bg-gray-900 border border-gray-700 hover:border-emerald-400 px-3 py-1 rounded-lg text-emerald-400 font-bold transition flex items-center gap-1.5">
@@ -88,34 +88,45 @@
     </div>
   </div>
 
-  <!-- STICKY HEADER -->
+  <!-- STICKY HEADER WITH 3-LINES HAMBURGER -->
   <header class="sticky top-0 z-40 bg-[#06090E]/90 backdrop-blur-xl border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
-      <!-- LOGO -->
-      <a href="#" class="flex items-center gap-3 group">
-        <img src="logo.jpeg" alt="SastaStore Logo" class="w-11 h-11 rounded-2xl object-cover border border-emerald-500/30 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform" />
-        <div>
-          <div class="font-heading font-black text-2xl tracking-tight text-white flex items-center gap-1">
-            Sasta<span class="text-brand-emerald">Store</span>
+      <!-- LEFT: 3-LINES BUTTON & LOGO -->
+      <div class="flex items-center gap-3">
+        <!-- 3-Lines Button -->
+        <button onclick="toggleSidebar()" class="w-11 h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group" title="Menu Navigation">
+          <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
+          <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
+          <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <img src="logo.jpeg" alt="SastaStore Logo" class="w-11 h-11 rounded-2xl object-cover border border-emerald-500/30 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform" />
+          <div>
+            <div class="font-heading font-black text-2xl tracking-tight text-white flex items-center gap-1">
+              Sasta<span class="text-brand-emerald">Store</span>
+            </div>
+            <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 block hidden sm:block">— PREMIUM TOOLS • SASTA PRICES</span>
           </div>
-          <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 block">— PREMIUM TOOLS • SASTA PRICES</span>
-        </div>
-      </a>
+        </a>
+      </div>
 
       <!-- DESKTOP NAV -->
-      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-gray-300">
-        <a href="#products" class="hover:text-brand-emerald transition-colors">Browse Tools</a>
-        <a href="#custom-order" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5"><i class="fa-solid fa-cart-shopping"></i> Custom Order Service</a>
-        <a href="#reviews" class="hover:text-brand-emerald transition-colors">Reviews (4.9★)</a>
-        <a href="#payments" class="hover:text-brand-emerald transition-colors">Payment Gateways</a>
+      <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
+        <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
+        <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
+        <a href="#custom-order" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5"><i class="fa-solid fa-cart-shopping"></i> Custom Order</a>
+        <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
+        <a href="#contact-us" class="hover:text-brand-emerald transition-colors">Contact Us</a>
       </div>
 
       <!-- HEADER ACTIONS -->
       <div class="flex items-center gap-3">
-        <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="px-3 py-2 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 border border-pink-500/30 flex items-center gap-1.5 text-xs font-bold transition hover:scale-105">
-          <i class="fa-brands fa-instagram text-sm"></i>
-          <span class="hidden sm:inline">Instagram</span>
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="px-3 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 text-xs font-bold transition hover:scale-105">
+          <i class="fa-brands fa-facebook text-sm"></i>
+          <span class="hidden sm:inline">Facebook</span>
         </a>
 
         <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
@@ -124,6 +135,61 @@
       </div>
     </div>
   </header>
+
+  <!-- ==================== SLIDE-IN 3-LINES SIDEBAR DRAWER ==================== -->
+  <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-all">
+    <div class="w-80 max-w-[85vw] h-full bg-[#0b1220] border-r border-gray-800 p-6 flex flex-col justify-between shadow-2xl relative">
+      
+      <div>
+        <!-- Close Button & Store Brand -->
+        <div class="flex items-center justify-between pb-5 border-b border-gray-800 mb-6">
+          <div class="flex items-center gap-2.5">
+            <img src="logo.jpeg" alt="SastaStore" class="w-9 h-9 rounded-xl object-cover border border-emerald-500/40" />
+            <span class="font-heading font-black text-white text-lg">Sasta<span class="text-emerald-400">Store</span></span>
+          </div>
+          <button onclick="toggleSidebar()" class="text-gray-400 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Categorized Nav Links -->
+        <nav class="space-y-2">
+          <a href="#top-products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-amber-400 font-bold text-sm transition">
+            <i class="fa-solid fa-fire text-base w-5"></i> Top Products
+          </a>
+          <a href="#products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
+            <i class="fa-solid fa-boxes-stacked text-base w-5 text-emerald-400"></i> All Products
+          </a>
+          <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/10 text-gray-200 hover:text-cyan-400 font-bold text-sm transition">
+            <i class="fa-solid fa-cart-plus text-base w-5 text-cyan-400"></i> Custom Order Service
+          </a>
+          <button onclick="toggleSidebar(); openMyOrdersModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-teal-500/10 text-gray-200 hover:text-teal-400 font-bold text-sm transition">
+            <i class="fa-solid fa-receipt text-base w-5 text-teal-400"></i> My Orders
+          </button>
+          <button onclick="toggleSidebar(); openProfileModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-purple-500/10 text-gray-200 hover:text-purple-400 font-bold text-sm transition">
+            <i class="fa-solid fa-user-gear text-base w-5 text-purple-400"></i> My Profile
+          </button>
+          <a href="#contact-us" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-500/10 text-gray-200 hover:text-blue-400 font-bold text-sm transition">
+            <i class="fa-solid fa-headset text-base w-5 text-blue-400"></i> Contact Us
+          </a>
+          <button onclick="toggleSidebar(); openAdminModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-800 text-gray-400 hover:text-white font-bold text-sm transition">
+            <i class="fa-solid fa-lock text-base w-5 text-gray-400"></i> Admin Dashboard
+          </button>
+        </nav>
+      </div>
+
+      <!-- Social and Quick Contacts in Drawer -->
+      <div class="pt-6 border-t border-gray-800 space-y-3">
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-blue-600/10 text-blue-400 border border-blue-500/30 rounded-xl text-xs font-bold transition">
+          <i class="fa-brands fa-facebook"></i> Official Facebook Page
+        </a>
+        <a href="https://wa.me/923136093501" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-500 text-black font-black rounded-xl text-xs uppercase tracking-wider transition">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Helpline
+        </a>
+      </div>
+
+    </div>
+  </div>
 
   <!-- HERO SECTION BANNER -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6">
@@ -165,6 +231,24 @@
     </div>
   </section>
 
+  <!-- ==================== TOP PRODUCTS SECTION ==================== -->
+  <section id="top-products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-14">
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <div class="inline-flex items-center gap-1.5 text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+          <i class="fa-solid fa-fire"></i> Best Sellers & Trending
+        </div>
+        <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Top Products</h2>
+      </div>
+      <a href="#products" class="text-xs text-emerald-400 hover:underline font-bold">View All &rarr;</a>
+    </div>
+
+    <!-- Top Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="topProductsGrid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </section>
+
   <!-- CUSTOM ORDER SECTION -->
   <section id="custom-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c1f19] via-[#091426] to-[#0d1627] border border-emerald-500/40 p-6 sm:p-10 shadow-xl">
@@ -191,34 +275,35 @@
           <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan:" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-sm px-7 py-3.5 rounded-2xl shadow-xl hover:scale-105 transition">
             <i class="fa-brands fa-whatsapp text-2xl"></i> Send Link on WhatsApp
           </a>
-          <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/40 text-xs font-bold px-5 py-2.5 rounded-xl transition">
-            <i class="fa-brands fa-instagram text-base"></i> DM on Instagram
+          <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/40 text-xs font-bold px-5 py-2.5 rounded-xl transition">
+            <i class="fa-brands fa-facebook text-base"></i> Message on Facebook
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTS INVENTORY & SEARCH -->
+  <!-- ALL PRODUCTS INVENTORY & SEARCH -->
   <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
       <div>
-        <h2 class="font-heading text-3xl font-black text-white">Official Inventory & Pricing</h2>
+        <h2 class="font-heading text-3xl font-black text-white">All Digital Products & Subscriptions</h2>
         <p class="text-xs text-gray-400">All tools shown with live prices in PKR (₨) and USD ($).</p>
       </div>
 
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search CapCut, Gemini, Freepik, Veo 3, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          <input type="text" id="searchInput" placeholder="Search HeyGen, CapCut, Notion, Windows, TikTok..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
           <button onclick="filterCategory('all', this)" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-black transition">All</button>
           <button onclick="filterCategory('ai', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">AI & Video</button>
-          <button onclick="filterCategory('design', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Design & Panels</button>
+          <button onclick="filterCategory('design', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Design & Dev</button>
+          <button onclick="filterCategory('accounts', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Accounts & SMM</button>
           <button onclick="filterCategory('streaming', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Streaming</button>
-          <button onclick="filterCategory('vpn', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">VPNs</button>
+          <button onclick="filterCategory('keys', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Windows Keys</button>
         </div>
       </div>
     </div>
@@ -297,9 +382,47 @@
           <span><strong>GUARANTEED REPLACEMENTS:</strong> All accounts covered under strict replacement warranty.</span>
         </div>
         <div class="flex items-center gap-4">
-          <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="text-pink-400 hover:underline font-bold"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="text-blue-400 hover:underline font-bold"><i class="fa-brands fa-facebook"></i> Facebook Page</a>
           <span>|</span>
           <a href="mailto:scottburchill51@gmail.com" class="text-emerald-400 hover:underline font-bold"><i class="fa-solid fa-envelope"></i> scottburchill51@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT US SECTION ==================== -->
+  <section id="contact-us" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="glass-box rounded-3xl p-8 border border-gray-800">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">24/7 Helpline</span>
+          <h2 class="font-heading text-3xl font-black text-white mb-3">Contact SastaStore Support</h2>
+          <p class="text-xs text-gray-400 leading-relaxed mb-6">
+            Need help with an ongoing subscription, custom order, or replacement? Message us directly on WhatsApp or Facebook for instant assistance!
+          </p>
+          
+          <div class="space-y-3 text-xs">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></div>
+              <span>WhatsApp Helpline: <strong>+92 313 6093501</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center"><i class="fa-brands fa-facebook"></i></div>
+              <span>Facebook: <strong>Official SastaStore Page</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center"><i class="fa-solid fa-envelope"></i></div>
+              <span>Email: <strong>scottburchill51@gmail.com</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-box p-6 rounded-2xl border border-gray-800 text-center space-y-4">
+          <h3 class="font-heading text-lg font-bold text-white">Direct Message Us</h3>
+          <p class="text-xs text-gray-400">Click below to open chat directly on WhatsApp with pre-filled support text.</p>
+          <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20help%20with%20my%20order" target="_blank" class="block w-full py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase rounded-xl transition shadow-lg shadow-emerald-500/20">
+            <i class="fa-brands fa-whatsapp text-sm mr-1.5"></i> Chat on WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -315,7 +438,7 @@
       <p>© 2026 SastaStore. All rights reserved. Instant Activation & 24/7 Support.</p>
       <div class="flex items-center gap-4 text-base">
         <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-emerald-400 underline">Admin Login</button>
-        <a href="https://www.instagram.com/sastastore0_?igsi=MWZrbHg2dmozcHFybQ==" target="_blank" class="hover:text-pink-400 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 transition" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="mailto:scottburchill51@gmail.com" class="hover:text-emerald-400 transition" title="Email"><i class="fa-solid fa-envelope"></i></a>
       </div>
@@ -327,7 +450,69 @@
     <i class="fa-brands fa-whatsapp text-3xl"></i>
   </a>
 
-  <!-- CHECKOUT MODAL -->
+  <!-- ==================== MY ORDERS MODAL ==================== -->
+  <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl">
+      <button onclick="closeMyOrdersModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="mb-4">
+        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Customer Portal</span>
+        <h3 class="font-heading text-xl font-black text-white mt-2">Track My Orders</h3>
+        <p class="text-xs text-gray-400">Enter the WhatsApp number used during checkout:</p>
+      </div>
+
+      <div class="flex gap-2 mb-4">
+        <input type="tel" id="trackPhoneInput" placeholder="e.g. 03462195461" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-400">
+        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition">
+          Find
+        </button>
+      </div>
+
+      <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1">
+        <p class="text-xs text-gray-500 text-center py-4">Enter your number above to view order history.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MY PROFILE MODAL ==================== -->
+  <div id="profileModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
+      <button onclick="closeProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center pb-4 border-b border-gray-800 mb-4">
+        <div class="w-14 h-14 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mx-auto mb-2 border border-purple-500/30">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+        <h3 class="font-heading text-lg font-black text-white" id="profileNameDisplay">SastaStore Customer</h3>
+        <p class="text-xs text-gray-400" id="profileEmailDisplay">Verified Store Member</p>
+      </div>
+
+      <div class="space-y-3 text-xs text-gray-300">
+        <div class="flex justify-between py-2 border-b border-gray-800/80">
+          <span class="text-gray-500">Member Status:</span>
+          <span class="text-emerald-400 font-bold">Active VIP Buyer</span>
+        </div>
+        <div class="flex justify-between py-2 border-b border-gray-800/80">
+          <span class="text-gray-500">Currency Preference:</span>
+          <span class="text-white font-bold">PKR (₨) / USD ($)</span>
+        </div>
+        <div class="flex justify-between py-2">
+          <span class="text-gray-500">Warranty Support:</span>
+          <span class="text-teal-400 font-bold">24/7 Guaranteed</span>
+        </div>
+      </div>
+
+      <button onclick="closeProfileModal()" class="mt-5 w-full bg-gray-900 hover:bg-gray-800 border border-gray-700 text-white font-bold text-xs py-2.5 rounded-xl transition">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== CHECKOUT MODAL ==================== -->
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
       <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
@@ -447,11 +632,12 @@
     </div>
   </div>
 
+  <!-- TOAST NOTIFICATION -->
   <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-500 text-black font-extrabold px-5 py-2.5 rounded-xl text-xs shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
     <span id="toastMsg">Notification message</span>
   </div>
 
-  <!-- SINGLE INLINE SCRIPT -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
@@ -459,8 +645,34 @@
     let currentCategory = 'all';
     let selectedProduct = null;
 
+    // ALL PRODUCTS INVENTORY (Previous + All New Requested Additions)
     const products = [
-      { id: 1, title: "Freepik - Magnific API Panel", category: "design", tag: "30 Days Access", warranty: "30D Full Warranty • Auto Delivery (Email+Pass)", pricePKR: 1650, badge: "Special 📦", icon: "fa-solid fa-download", color: "from-blue-600 to-indigo-700" },
+      // === NEWLY REQUESTED PRODUCTS ===
+      { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "Direct Credits Topup Warranty", pricePKR: 14500, badge: "Top AI Video", icon: "fa-solid fa-video", color: "from-purple-600 to-indigo-700", isTop: true },
+      { id: 102, title: "Notion (1 Year)", category: "design", tag: "12 Months Full Access", warranty: "1 Year Full Replacement Warranty", pricePKR: 1100, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-700 to-zinc-900", isTop: true },
+      { id: 103, title: "TikTok UK / USA Accounts (Fresh)", category: "accounts", tag: "Region Fresh PVA", warranty: "Live PVA Account Delivery", pricePKR: 1000, badge: "Monetization", icon: "fa-brands fa-tiktok", color: "from-pink-600 to-rose-700", isTop: true },
+      { id: 104, title: "Envato Elements", category: "design", tag: "30 Days Access", warranty: "Full Download Warranty", pricePKR: 1200, badge: "Designer Kit", icon: "fa-solid fa-leaf", color: "from-emerald-600 to-teal-700", isTop: true },
+      { id: 105, title: "Envato Core Individual Plan", category: "design", tag: "Personal Plan", warranty: "Private Account Access", pricePKR: 2200, badge: "Pro Asset", icon: "fa-solid fa-layer-group", color: "from-teal-600 to-cyan-700" },
+      { id: 106, title: "Wink VIP (30 Days)", category: "ai", tag: "30 Days VIP", warranty: "Mobile & PC VIP Access", pricePKR: 1680, badge: "$6 Plan", icon: "fa-solid fa-wand-magic", color: "from-yellow-500 to-amber-600" },
+      { id: 107, title: "Wink Pro (90 Days)", category: "ai", tag: "3 Months Pass", warranty: "90 Days VIP Warranty", pricePKR: 3920, badge: "$14 Plan", icon: "fa-solid fa-wand-magic-sparkles", color: "from-amber-600 to-orange-700" },
+      { id: 108, title: "Telegram Account", category: "accounts", tag: "Virtual Number PVA", warranty: "Fresh Login Guarantee", pricePKR: 980, badge: "$3.5 Plan", icon: "fa-brands fa-telegram", color: "from-sky-500 to-blue-600" },
+      { id: 109, title: "iCloud Slot 2TB (Monthly)", category: "accounts", tag: "Family Slot 2TB", warranty: "30 Days Stable Slot", pricePKR: 1680, badge: "$6 Plan", icon: "fa-brands fa-apple", color: "from-gray-500 to-slate-700" },
+      { id: 110, title: "N8N Starter (1 Year)", category: "design", tag: "12 Months Automation", warranty: "1 Year Full Cloud Warranty", pricePKR: 5600, badge: "$20 Plan", icon: "fa-solid fa-diagram-project", color: "from-red-500 to-orange-600" },
+      { id: 111, title: "Duolingo Super Slot (3 Months)", category: "design", tag: "3 Months Super", warranty: "Ad-free Unlimited Hearts", pricePKR: 2200, badge: "Language", icon: "fa-solid fa-feather", color: "from-lime-500 to-emerald-600" },
+      { id: 112, title: "Spotify Premium (3 Months)", category: "streaming", tag: "3 Months Ad-Free", warranty: "Direct Account Access", pricePKR: 2000, badge: "Audio", icon: "fa-brands fa-spotify", color: "from-green-500 to-emerald-700", isTop: true },
+      { id: 113, title: "Amazon Prime Video (1 Month)", category: "streaming", tag: "30 Days HD/4K", warranty: "Stable Profile Warranty", pricePKR: 350, badge: "Movies", icon: "fa-brands fa-amazon", color: "from-blue-500 to-sky-700" },
+      { id: 114, title: "LinkedIn Premium Career (3 Months)", category: "design", tag: "Direct Promo Code", warranty: "Official Career Voucher", pricePKR: 1300, badge: "Hot Seller", icon: "fa-brands fa-linkedin", color: "from-blue-700 to-indigo-800", isTop: true },
+      { id: 115, title: "Figma Pro Edu (2 Years)", category: "design", tag: "24 Months Access", warranty: "2 Years Full Guaranteed", pricePKR: 2200, badge: "Designers", icon: "fa-brands fa-figma", color: "from-pink-500 to-purple-600", isTop: true },
+      { id: 116, title: "CapCut Pro Admin Team (7 Seats)", category: "design", tag: "1 Month (7 Seats)", warranty: "Admin Control Warranty", pricePKR: 3500, badge: "Reseller Team", icon: "fa-solid fa-users-gear", color: "from-blue-600 to-teal-600", isTop: true },
+      { id: 117, title: "Adobe Express 12M Redeem Link", category: "design", tag: "1 Year Voucher Link", warranty: "Direct Activation Link", pricePKR: 840, badge: "$3 Plan", icon: "fa-solid fa-pen-ruler", color: "from-red-600 to-rose-700" },
+      { id: 118, title: "Adobe Express 12M Ready Account", category: "design", tag: "1 Year Pre-Made Mail", warranty: "Full Year Replacement", pricePKR: 1120, badge: "$4 Plan", icon: "fa-solid fa-user-shield", color: "from-rose-600 to-red-800" },
+      { id: 119, title: "Windows 10 Pro Retail Key", category: "keys", tag: "Global Retail License", warranty: "Online Activation Key", pricePKR: 700, badge: "$2.5 Plan", icon: "fa-brands fa-windows", color: "from-sky-500 to-blue-700" },
+      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Original Key", warranty: "Permanent Online Bind", pricePKR: 980, badge: "$3.5 Plan", icon: "fa-brands fa-windows", color: "from-blue-600 to-indigo-700", isTop: true },
+      { id: 121, title: "TikTok Agency Ad (10k Views + 1k Likes)", category: "accounts", tag: "Real Organic Boost", warranty: "Original Ad Account Delivery", pricePKR: 1500, badge: "Viral Boost", icon: "fa-brands fa-tiktok", color: "from-cyan-500 to-blue-600" },
+      { id: 122, title: "SMM Instagram & FB Services", category: "accounts", tag: "Followers & Likes", warranty: "Instant Fast Server Delivery", pricePKR: 500, badge: "Custom Rates", icon: "fa-solid fa-chart-line", color: "from-purple-500 to-pink-600" },
+
+      // === ORIGINAL PREVIOUS PRODUCTS ===
+      { id: 1, title: "Freepik - Magnific API Panel", category: "design", tag: "30 Days Access", warranty: "30D Full Warranty • Auto Delivery", pricePKR: 1650, badge: "Special 📦", icon: "fa-solid fa-download", color: "from-blue-600 to-indigo-700" },
       { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", pricePKR: 700, badge: "Hot Seller", icon: "fa-solid fa-scissors", color: "from-blue-500 to-cyan-600" },
       { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "Long-term Replacement Warranty", pricePKR: 3300, badge: "Best Value", icon: "fa-solid fa-film", color: "from-blue-600 to-indigo-700" },
       { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "Quick Edit Access Pass", pricePKR: 170, badge: "Budget", icon: "fa-solid fa-video", color: "from-sky-500 to-blue-600" },
@@ -470,35 +682,68 @@
       { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty (On Email)", pricePKR: 650, badge: "Top AI", icon: "fa-solid fa-brain", color: "from-teal-400 to-emerald-600" },
       { id: 9, title: "Veo 3 (Best Performance)", category: "ai", tag: "Extension Based", warranty: "Full Speed Best Performance Pass", pricePKR: 2000, badge: "Best AI Video", icon: "fa-solid fa-wand-magic-sparkles", color: "from-amber-500 to-orange-600" },
       { id: 10, title: "Veo 3 (Medium)", category: "ai", tag: "Extension Based", warranty: "Standard Performance Monthly", pricePKR: 1500, badge: "AI Video", icon: "fa-solid fa-wand-magic-sparkles", color: "from-orange-500 to-yellow-600" },
-      { id: 11, title: "Notion AI Business", category: "ai", tag: "3 Months Access", warranty: "3 Months Business Plan", pricePKR: 1000, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-800 to-gray-900" },
-      { id: 12, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "Writing Suite Pro Pass", pricePKR: 850, badge: "Writing AI", icon: "fa-solid fa-pen-nib", color: "from-emerald-500 to-teal-600" },
-      { id: 13, title: "Leonardo AI", category: "ai", tag: "1 Month Access", warranty: "Instant Active Access", pricePKR: 800, badge: "Art AI", icon: "fa-solid fa-image", color: "from-fuchsia-500 to-purple-600" },
-      { id: 14, title: "MS Office 365", category: "design", tag: "1 Year Subscription", warranty: "1 Year Full Guaranteed", pricePKR: 900, badge: "Office", icon: "fa-solid fa-file-lines", color: "from-orange-500 to-red-500" },
-      { id: 15, title: "LinkedIn Premium", category: "design", tag: "3 Months Access", warranty: "Direct Activation Voucher", pricePKR: 900, badge: "Career Boost", icon: "fa-brands fa-linkedin", color: "from-blue-700 to-sky-600" },
-      { id: 16, title: "Coursera Premium", category: "design", tag: "1 Year Full Access", warranty: "Unlimited Free Certificates", pricePKR: 1200, badge: "Learning", icon: "fa-solid fa-graduation-cap", color: "from-blue-500 to-indigo-600" },
-      { id: 17, title: "Netflix Single Screen", category: "streaming", tag: "1 Profile Screen", warranty: "30 Days Stable Warranty", pricePKR: 350, badge: "Streaming", icon: "fa-solid fa-clapperboard", color: "from-red-600 to-rose-700" },
-      { id: 18, title: "Netflix Full Account", category: "streaming", tag: "5 Screens UHD 4K", warranty: "30 Days Full Account Warranty", pricePKR: 1000, badge: "4K UHD Private", icon: "fa-solid fa-tv", color: "from-rose-600 to-red-800" },
-      { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "1 Month Invite", warranty: "Your Own Gmail Invite", pricePKR: 350, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700" },
-      { id: 20, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Invite", warranty: "3 Months Guaranteed", pricePKR: 800, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700" },
-      { id: 21, title: "NordVPN (Private)", category: "vpn", tag: "3 Months Access", warranty: "Private Account Warranty", pricePKR: 1300, badge: "Top VPN", icon: "fa-solid fa-globe", color: "from-blue-600 to-sky-700" },
-      { id: 22, title: "Surfshark VPN", category: "vpn", tag: "2 Months Access", warranty: "60 Days Complete Warranty", pricePKR: 1200, badge: "Ultra Fast", icon: "fa-solid fa-lock", color: "from-teal-600 to-emerald-700" },
-      { id: 23, title: "Outlook / Hotmail PVA", category: "design", tag: "Fresh PVA Email", warranty: "Per Mail Instant Delivery", pricePKR: 45, badge: "Bulk Stock", icon: "fa-solid fa-envelope", color: "from-blue-400 to-sky-600" }
+      { id: 11, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "Writing Suite Pro Pass", pricePKR: 850, badge: "Writing AI", icon: "fa-solid fa-pen-nib", color: "from-emerald-500 to-teal-600" },
+      { id: 12, title: "Leonardo AI", category: "ai", tag: "1 Month Access", warranty: "Instant Active Access", pricePKR: 800, badge: "Art AI", icon: "fa-solid fa-image", color: "from-fuchsia-500 to-purple-600" },
+      { id: 13, title: "MS Office 365", category: "design", tag: "1 Year Subscription", warranty: "1 Year Full Guaranteed", pricePKR: 900, badge: "Office", icon: "fa-solid fa-file-lines", color: "from-orange-500 to-red-500" },
+      { id: 14, title: "Coursera Premium", category: "design", tag: "1 Year Full Access", warranty: "Unlimited Free Certificates", pricePKR: 1200, badge: "Learning", icon: "fa-solid fa-graduation-cap", color: "from-blue-500 to-indigo-600" },
+      { id: 15, title: "Netflix Single Screen", category: "streaming", tag: "1 Profile Screen", warranty: "30 Days Stable Warranty", pricePKR: 350, badge: "Streaming", icon: "fa-solid fa-clapperboard", color: "from-red-600 to-rose-700" },
+      { id: 16, title: "Netflix Full Account", category: "streaming", tag: "5 Screens UHD 4K", warranty: "30 Days Full Account Warranty", pricePKR: 1000, badge: "4K UHD Private", icon: "fa-solid fa-tv", color: "from-rose-600 to-red-800" },
+      { id: 17, title: "YouTube Premium (1 Month)", category: "streaming", tag: "1 Month Invite", warranty: "Your Own Gmail Invite", pricePKR: 350, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700" },
+      { id: 18, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Invite", warranty: "3 Months Guaranteed", pricePKR: 800, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700" },
+      { id: 19, title: "NordVPN (Private)", category: "design", tag: "3 Months Access", warranty: "Private Account Warranty", pricePKR: 1300, badge: "Top VPN", icon: "fa-solid fa-globe", color: "from-blue-600 to-sky-700" },
+      { id: 20, title: "Surfshark VPN", category: "design", tag: "2 Months Access", warranty: "60 Days Complete Warranty", pricePKR: 1200, badge: "Ultra Fast", icon: "fa-solid fa-lock", color: "from-teal-600 to-emerald-700" },
+      { id: 21, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Per Mail Instant Delivery", pricePKR: 45, badge: "Bulk Stock", icon: "fa-solid fa-envelope", color: "from-blue-400 to-sky-600" }
     ];
 
     const reviewsData = [
-      { name: "Ahmad Khan", role: "Video Editor", text: "Ordered CapCut Pro 6 Months plan directly through the site. Payment verified in 2 minutes. Best store in Pakistan!", rating: 5 },
-      { name: "Usman Ali", role: "Digital Marketer", text: "Freepik Magnific panel is working like a charm! Downloaded 50+ vector files in minutes. Highly recommended.", rating: 5 },
-      { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5 },
-      { name: "Bilal Tariq", role: "Software Engineer", text: "Veo 3 Best Performance extension account is super fast. Gemini 18 months activated on my personal email.", rating: 5 },
-      { name: "Zainab Shah", role: "Content Creator", text: "Netflix full account 5 screens working smoothly on 4K TV without screen limit issues. 10/10 service!", rating: 5 },
-      { name: "Hamza Sheikh", role: "Freelancer", text: "Grammarly Pro & LinkedIn 3 months vouchers worked instantly. Safe payment via SadaPay.", rating: 5 },
-      { name: "Saad Rehman", role: "YouTuber", text: "YouTube Premium 3 months added to my own Gmail without changing family group. Awesome!", rating: 5 },
-      { name: "Ali Raza", role: "Agency Owner", text: "Placed custom Stripe orders for foreign SEO tools. SastaStore bought them for me within 10 minutes.", rating: 5 },
-      { name: "Shahid Afridi", role: "Crypto Trader", text: "Paid via Binance USDT to Scott burchill. Seamless automated experience.", rating: 5 },
-      { name: "Maryam Javed", role: "Student", text: "Coursera 1 Year premium gave me unlimited free course certificates. Truly Sasta prices!", rating: 5 },
-      { name: "Waqas Butt", role: "Web Developer", text: "NordVPN 3 months private is ultra fast on Lahore servers. Best warranty support.", rating: 5 }
+      { name: "Ahmad Khan", role: "Video Editor", text: "Ordered HeyGen Credits and CapCut Pro. Super quick activation on WhatsApp. Highly recommended!", rating: 5 },
+      { name: "Usman Ali", role: "Digital Marketer", text: "Freepik panel & TikTok fresh accounts worked seamlessly. Shaloom Victor provides top service.", rating: 5 },
+      { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel & Figma Pro 2 Years activated within minutes. Sasta prices guaranteed.", rating: 5 },
+      { name: "Bilal Tariq", role: "Software Engineer", text: "Windows 11 Pro retail key worked online permanently on first attempt. Best genuine store.", rating: 5 },
+      { name: "Zainab Shah", role: "Content Creator", text: "Wink Pro & Notion 1 Year plans are 100% genuine. Safe checkout via SadaPay!", rating: 5 }
     ];
 
+    // DRAWER TOGGLE
+    function toggleSidebar() {
+      const drawer = document.getElementById("sideDrawer");
+      drawer.classList.toggle("hidden");
+    }
+
+    // RENDER TOP PRODUCTS
+    function renderTopProducts() {
+      const topGrid = document.getElementById("topProductsGrid");
+      if (!topGrid) return;
+      const topItems = products.filter(p => p.isTop);
+      topGrid.innerHTML = topItems.map(p => productCardHtml(p)).join("");
+    }
+
+    // RENDER PRODUCT CARD HTML
+    function productCardHtml(p) {
+      const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
+      return `
+        <div class="glass-box rounded-2xl p-5 flex flex-col justify-between transition hover:-translate-y-1.5 group shadow-lg">
+          <div>
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-md group-hover:scale-110 transition-transform">
+                <i class="${p.icon}"></i>
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.badge}</span>
+                <span class="text-[11px] font-semibold text-gray-400 mt-1">${p.tag}</span>
+              </div>
+            </div>
+            <h3 class="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition mb-1">${p.title}</h3>
+            <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-5"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
+          </div>
+          <div class="pt-4 border-t border-gray-800 flex items-center justify-between gap-2">
+            <div><span class="text-lg font-black text-emerald-400 font-heading">₨ ${p.pricePKR}/-</span> <span class="text-xs font-bold text-gray-400">($${usdPrice})</span></div>
+            <button onclick="openCheckoutModal(${p.id})" class="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition shadow"><i class="fa-solid fa-cart-shopping text-xs"></i> Order</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // RENDER PRODUCTS INVENTORY
     function renderProducts(items) {
       const grid = document.getElementById("productsGrid");
       if (!grid) return;
@@ -506,30 +751,7 @@
         grid.innerHTML = `<div class="col-span-full text-center py-16"><i class="fa-solid fa-box-open text-4xl text-gray-600 mb-3"></i><p class="text-gray-400 font-semibold">No tool found matching your search.</p></div>`;
         return;
       }
-      grid.innerHTML = items.map(p => {
-        const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
-        return `
-          <div class="glass-box rounded-2xl p-5 flex flex-col justify-between transition hover:-translate-y-1.5 group shadow-lg">
-            <div>
-              <div class="flex items-start justify-between gap-3 mb-4">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-md group-hover:scale-110 transition-transform">
-                  <i class="${p.icon}"></i>
-                </div>
-                <div class="flex flex-col items-end">
-                  <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.badge}</span>
-                  <span class="text-[11px] font-semibold text-gray-400 mt-1">${p.tag}</span>
-                </div>
-              </div>
-              <h3 class="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition mb-1">${p.title}</h3>
-              <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-5"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
-            </div>
-            <div class="pt-4 border-t border-gray-800 flex items-center justify-between gap-2">
-              <div><span class="text-lg font-black text-emerald-400 font-heading">₨ ${p.pricePKR}/-</span> <span class="text-xs font-bold text-gray-400">($${usdPrice})</span></div>
-              <button onclick="openCheckoutModal(${p.id})" class="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition shadow"><i class="fa-solid fa-cart-shopping text-xs"></i> Order Now</button>
-            </div>
-          </div>
-        `;
-      }).join("");
+      grid.innerHTML = items.map(p => productCardHtml(p)).join("");
     }
 
     function renderReviews() {
@@ -549,6 +771,7 @@
       `).join("");
     }
 
+    // CHECKOUT LOGIC
     function openCheckoutModal(id) {
       selectedProduct = products.find(p => p.id === id);
       if (!selectedProduct) return;
@@ -588,10 +811,15 @@
         status: 'Pending' 
       };
 
+      // Save locally in customer's & admin database
       let orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
       orders.unshift(newOrder);
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
 
+      // Save user profile state
+      localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone }));
+
+      // WhatsApp slip
       const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${selectedProduct.pricePKR} ($${usdPrice})\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
       const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
 
@@ -603,13 +831,64 @@
       }, 700);
     }
 
-    function openAdminModal() { 
-      document.getElementById("adminModal").classList.remove("hidden"); 
+    // MY ORDERS MODAL
+    function openMyOrdersModal() {
+      document.getElementById("myOrdersModal").classList.remove("hidden");
+      const user = JSON.parse(localStorage.getItem('sasta_user') || '{}');
+      if (user.phone) {
+        document.getElementById("trackPhoneInput").value = user.phone;
+        searchMyOrders();
+      }
     }
 
-    function closeAdminModal() { 
-      document.getElementById("adminModal").classList.add("hidden"); 
+    function closeMyOrdersModal() {
+      document.getElementById("myOrdersModal").classList.add("hidden");
     }
+
+    function searchMyOrders() {
+      const qPhone = document.getElementById("trackPhoneInput").value.replace(/[^0-9]/g, '');
+      const resultsDiv = document.getElementById("myOrdersResults");
+      const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
+
+      if (!qPhone) {
+        resultsDiv.innerHTML = `<p class="text-xs text-red-400 text-center py-3">Please enter a valid phone number.</p>`;
+        return;
+      }
+
+      const matched = orders.filter(o => o.phone.replace(/[^0-9]/g, '').includes(qPhone));
+
+      if (matched.length === 0) {
+        resultsDiv.innerHTML = `<p class="text-xs text-gray-400 text-center py-3">No orders found for this number.</p>`;
+        return;
+      }
+
+      resultsDiv.innerHTML = matched.map(o => `
+        <div class="p-3 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-white">${o.product}</div>
+            <div class="text-[10px] text-gray-500">${o.id} • ${o.date}</div>
+            <div class="text-[11px] text-emerald-400 font-black">${o.price}</div>
+          </div>
+          <span class="text-[10px] px-2.5 py-1 rounded font-bold ${o.status === 'Completed' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-yellow-500/10 text-yellow-400'}">${o.status}</span>
+        </div>
+      `).join("");
+    }
+
+    // MY PROFILE MODAL
+    function openProfileModal() {
+      const user = JSON.parse(localStorage.getItem('sasta_user') || '{}');
+      if (user.name) document.getElementById("profileNameDisplay").textContent = user.name;
+      if (user.email) document.getElementById("profileEmailDisplay").textContent = user.email;
+      document.getElementById("profileModal").classList.remove("hidden");
+    }
+
+    function closeProfileModal() {
+      document.getElementById("profileModal").classList.add("hidden");
+    }
+
+    // ADMIN DASHBOARD
+    function openAdminModal() { document.getElementById("adminModal").classList.remove("hidden"); }
+    function closeAdminModal() { document.getElementById("adminModal").classList.add("hidden"); }
 
     function verifyAdminPass(e) {
       e.preventDefault();
@@ -723,6 +1002,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      renderTopProducts();
       renderProducts(products);
       renderReviews();
     });

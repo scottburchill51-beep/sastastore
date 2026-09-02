@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SastaStore | Premium Digital Subscriptions & Tools</title>
 
+  <!-- OPENGRAPH & SEO META TAGS -->
   <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, HeyGen, Canva Admin, Notion, Windows Keys, Netflix & AI tools at lowest prices." />
   <meta name="keywords" content="SastaStore, CapCut Pro, Canva Pro, HeyGen credits, Windows 11 key, Netflix, digital subscriptions Pakistan" />
   <meta property="og:type" content="website" />
@@ -17,10 +18,14 @@
   <meta name="twitter:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts." />
   <meta name="twitter:image" content="banner.jpg" />
   
+  <!-- Favicon Logo -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -77,11 +82,12 @@
 
 <body class="bg-[#06090E] text-gray-100 font-sans antialiased selection:bg-brand-emerald selection:text-black overflow-x-hidden">
 
+  <!-- TOP PROMO TICKER -->
   <div class="bg-gradient-to-r from-emerald-950 via-[#0a1424] to-emerald-950 border-b border-emerald-500/20 py-2.5 px-4 text-xs font-semibold text-emerald-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Direct WhatsApp Verification & Fast Instant Delivery • Dual PKR (₨) & USD ($) Pricing</span>
+        <span>⚡ Direct WhatsApp Verification & Fast Instant Delivery • Use Coupon <strong>SASTA10</strong> for 10% OFF</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
         <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
@@ -95,9 +101,11 @@
     </div>
   </div>
 
+  <!-- STICKY HEADER -->
   <header class="sticky top-0 z-40 bg-[#06090E]/90 backdrop-blur-xl border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
       
+      <!-- LEFT: 3-LINES BUTTON & LOGO -->
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <button onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0" title="Menu Navigation">
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
@@ -116,14 +124,17 @@
         </a>
       </div>
 
+      <!-- DESKTOP NAV -->
       <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
         <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
         <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
         <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
+        <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty Policy</button>
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
         <a href="#contact-us" class="hover:text-brand-emerald transition-colors">Contact Us</a>
       </div>
 
+      <!-- HEADER ACTIONS: FB + WHATSAPP -->
       <div class="flex items-center gap-2">
         <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="px-2.5 sm:px-3 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 text-xs font-bold transition hover:scale-105">
           <i class="fa-brands fa-facebook text-sm"></i>
@@ -139,6 +150,7 @@
     </div>
   </header>
 
+  <!-- SLIDE-IN 3-LINES SIDEBAR DRAWER -->
   <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-all">
     <div class="w-80 max-w-[85vw] h-full bg-[#0b1220] border-r border-gray-800 p-6 flex flex-col justify-between shadow-2xl relative">
       <div>
@@ -162,6 +174,9 @@
           <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/10 text-gray-200 hover:text-cyan-400 font-bold text-sm transition">
             <i class="fa-solid fa-cart-plus text-base w-5 text-cyan-400"></i> Custom Order Service
           </a>
+          <button onclick="toggleSidebar(); openWarrantyModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
+            <i class="fa-solid fa-shield-halved text-base w-5 text-emerald-400"></i> Warranty & Guarantee
+          </button>
           <a href="#faq" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-500/10 text-gray-200 hover:text-indigo-400 font-bold text-sm transition">
             <i class="fa-solid fa-circle-question text-base w-5 text-indigo-400"></i> FAQ Guide
           </a>
@@ -191,21 +206,23 @@
     </div>
   </div>
 
+  <!-- HERO SECTION BANNER -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6">
     <div class="relative overflow-hidden rounded-3xl border border-emerald-500/30 shadow-2xl group hover:border-emerald-500/60 transition neon-emerald">
       <img src="banner.jpg" alt="SastaStore Deals Banner" class="w-full h-auto object-cover rounded-3xl group-hover:scale-[1.01] transition-transform duration-300" />
     </div>
   </section>
 
+  <!-- HOW IT WORKS BAR -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-list-check"></i>
+          <i class="fa-solid fa-tags"></i>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-white uppercase">1. Select Any Tool</h4>
-          <p class="text-[11px] text-gray-400">Clear PKR (₨) & USD ($) pricing</p>
+          <h4 class="text-xs font-bold text-white uppercase">1. Coupon SASTA10</h4>
+          <p class="text-[11px] text-gray-400">Get 10% instant discount at checkout</p>
         </div>
       </div>
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
@@ -219,16 +236,17 @@
       </div>
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-bolt"></i>
+          <i class="fa-solid fa-shield-check"></i>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-white uppercase">3. Instant Dispatch</h4>
-          <p class="text-[11px] text-gray-400">Direct WhatsApp support & warranty setup</p>
+          <h4 class="text-xs font-bold text-white uppercase">3. Full Warranty</h4>
+          <p class="text-[11px] text-gray-400">100% replacement warranty covered</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- TOP PRODUCTS SECTION -->
   <section id="top-products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-14">
     <div class="flex items-center justify-between mb-6">
       <div>
@@ -243,6 +261,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="topProductsGrid"></div>
   </section>
 
+  <!-- CUSTOM ORDER SECTION -->
   <section id="custom-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c1f19] via-[#091426] to-[#0d1627] border border-emerald-500/40 p-6 sm:p-10 shadow-xl">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
@@ -276,6 +295,7 @@
     </div>
   </section>
 
+  <!-- ALL PRODUCTS INVENTORY & SEARCH -->
   <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
       <div>
@@ -303,6 +323,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid"></div>
   </section>
 
+  <!-- FAQ ACCORDION SECTION -->
   <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
     <div class="text-center mb-10">
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
@@ -361,6 +382,7 @@
     </div>
   </section>
 
+  <!-- REVIEWS SECTION -->
   <section id="reviews" class="bg-[#09111e]/80 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
@@ -372,6 +394,7 @@
     </div>
   </section>
 
+  <!-- PAYMENT METHODS SUMMARY -->
   <section id="payments" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="text-center max-w-xl mx-auto mb-10">
@@ -426,8 +449,9 @@
 
       <div class="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
         <div class="flex items-center gap-2">
-          <i class="fa-solid fa-lock text-emerald-400"></i>
+          <i class="fa-solid fa-shield-halved text-emerald-400"></i>
           <span><strong>GUARANTEED REPLACEMENTS:</strong> All accounts covered under strict replacement warranty.</span>
+          <button onclick="openWarrantyModal()" class="text-emerald-400 hover:underline font-bold ml-1">View Policy</button>
         </div>
         <div class="flex items-center gap-4">
           <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="text-blue-400 hover:underline font-bold"><i class="fa-brands fa-facebook"></i> Facebook Page</a>
@@ -438,6 +462,7 @@
     </div>
   </section>
 
+  <!-- CONTACT US SECTION -->
   <section id="contact-us" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -475,13 +500,14 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="border-t border-gray-800 bg-[#06090E] py-10 px-4 text-center text-gray-500 text-xs">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <img src="logo.jpeg" alt="SastaStore" class="w-8 h-8 rounded-xl object-cover border border-emerald-500/30" />
         <span class="font-heading font-extrabold text-white text-sm">SastaStore</span>
       </div>
-      <p>© 2026 SastaStore. All rights reserved. Instant Activation & 24/7 Support.</p>
+      <p>© 2026 SastaStore. All rights reserved. <button onclick="openWarrantyModal()" class="text-emerald-400 hover:underline">Warranty Policy</button> • Instant Activation & 24/7 Support.</p>
       <div class="flex items-center gap-4 text-base">
         <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-emerald-400 underline">Admin Login</button>
         <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 transition" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -491,10 +517,22 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/923136093501?text=Hello%20SastaStore%20Support,%20I%20have%20a%20question" target="_blank" class="fixed bottom-6 right-6 z-40 bg-gradient-to-tr from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition" title="WhatsApp Support">
-    <i class="fa-brands fa-whatsapp text-3xl"></i>
-  </a>
+  <!-- ==================== INTERACTIVE FLOATING WHATSAPP BUTTON WITH BUBBLE ==================== -->
+  <div class="fixed bottom-6 right-6 z-40 flex items-end gap-3">
+    <!-- Chat Bubble Prompt -->
+    <div id="waBubble" class="hidden sm:flex items-center gap-2 bg-[#0c1424] border border-emerald-500/40 text-gray-200 text-xs py-2.5 px-4 rounded-2xl shadow-2xl backdrop-blur-md max-w-xs transition">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <p>👋 Need quick help or custom tool? <strong class="text-emerald-400 cursor-pointer" onclick="window.open('https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20need%20help', '_blank')">Chat on WhatsApp</strong></p>
+      <button onclick="document.getElementById('waBubble').remove()" class="text-gray-500 hover:text-white text-xs ml-1"><i class="fa-solid fa-xmark"></i></button>
+    </div>
 
+    <!-- Main Button -->
+    <a href="https://wa.me/923136093501?text=Hello%20SastaStore%20Support,%20I%20have%20a%20question" target="_blank" class="bg-gradient-to-tr from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition flex-shrink-0" title="WhatsApp Support">
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+  </div>
+
+  <!-- LIVE SALES POPUP -->
   <div id="liveSalePopup" class="fixed bottom-6 left-6 z-40 bg-[#0c1424]/95 border border-emerald-500/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-md flex items-center gap-3 max-w-xs transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-black flex items-center justify-center text-sm font-black flex-shrink-0 shadow-md">
       <i class="fa-solid fa-bag-shopping" id="liveSaleIcon"></i>
@@ -513,31 +551,40 @@
     </button>
   </div>
 
+  <!-- ==================== CHECKOUT MODAL (WITH COUPON SYSTEM & QR) ==================== -->
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-8">
       <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <div class="mb-4">
+      <div class="mb-3">
         <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded">Direct Checkout</span>
         <h3 class="font-heading text-xl font-black text-white mt-1.5" id="modalProductTitle">Product Title</h3>
         <p class="text-xs text-gray-400 font-bold" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
       </div>
 
-      <div class="mb-4 p-3.5 bg-gray-900/90 rounded-2xl border border-gray-800 flex items-center gap-4">
-        <div class="w-24 h-24 bg-white p-1 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
+      <!-- DYNAMIC QR CODE & PAYMENT DISPLAY BOX -->
+      <div class="mb-3 p-3 bg-gray-900/90 rounded-2xl border border-gray-800 flex items-center gap-4">
+        <div class="w-20 h-20 bg-white p-1 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
           <img id="qrCodeImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461" alt="Payment QR" class="w-full h-full object-contain rounded" />
         </div>
-        <div class="flex-1 text-xs space-y-1">
+        <div class="flex-1 text-xs space-y-0.5">
           <div class="text-[10px] uppercase font-bold text-gray-400" id="qrChannelBadge">JazzCash / SadaPay</div>
           <div class="font-bold text-white text-sm" id="qrAccountTitle">Shaloom Victor</div>
           <div class="font-mono text-emerald-400 font-black text-sm" id="qrAccountNumber">03462195461</div>
-          <button type="button" onclick="copyCurrentQrDetails()" class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-300 hover:text-white mt-1 underline">
+          <button type="button" onclick="copyCurrentQrDetails()" class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-300 hover:text-white underline">
             <i class="fa-regular fa-copy"></i> Copy details
           </button>
         </div>
       </div>
+
+      <!-- COUPON CODE BOX -->
+      <div class="mb-3 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
+        <input type="text" id="couponInput" placeholder="Have a coupon code? (Try SASTA10)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
+        <button type="button" onclick="applyCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3 py-1.5 rounded-lg transition">Apply</button>
+      </div>
+      <p id="couponMsg" class="text-[11px] font-bold text-emerald-400 hidden -mt-2 mb-2"></p>
 
       <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
         <div>
@@ -581,6 +628,45 @@
     </div>
   </div>
 
+  <!-- ==================== WARRANTY & GUARANTEE POLICY MODAL ==================== -->
+  <div id="warrantyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
+      <button onclick="closeWarrantyModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center pb-4 border-b border-gray-800 mb-5">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-2 border border-emerald-500/30">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="font-heading text-xl font-black text-white">Replacement & Warranty Policy</h3>
+        <p class="text-xs text-emerald-400 font-bold">100% Guaranteed Official Service</p>
+      </div>
+
+      <div class="space-y-4 text-xs text-gray-300 leading-relaxed">
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-bolt text-yellow-400"></i> 1. Fast 15-Minute Replacement</h4>
+          <p class="text-gray-400">If any subscription logs out or experiences issues during its active plan period, message our WhatsApp helpline with your Order ID for a replacement within 15 minutes.</p>
+        </div>
+
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-400"></i> 2. Private & Genuine Credentials</h4>
+          <p class="text-gray-400">All Windows licenses, Notion, Canva, and invite links are directly bound to your official credentials. No illegal crack software or sudden terminations.</p>
+        </div>
+
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-rotate-left text-blue-400"></i> 3. 100% Refund If Not Activated</h4>
+          <p class="text-gray-400">In the rare event we are unable to fulfill an order due to API limits or region restrictions, 100% of your payment is refunded immediately to your JazzCash or SadaPay.</p>
+        </div>
+      </div>
+
+      <button onclick="closeWarrantyModal()" class="mt-6 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition">
+        I Understand & Accept
+      </button>
+    </div>
+  </div>
+
+  <!-- MY ORDERS MODAL -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl">
       <button onclick="closeMyOrdersModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
@@ -606,6 +692,7 @@
     </div>
   </div>
 
+  <!-- MY PROFILE MODAL -->
   <div id="profileModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
       <button onclick="closeProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
@@ -641,6 +728,7 @@
     </div>
   </div>
 
+  <!-- SHOPIFY-STYLE ADMIN DASHBOARD MODAL -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
@@ -709,12 +797,14 @@
     <span id="toastMsg">Notification message</span>
   </div>
 
+  <!-- JAVASCRIPT APP LOGIC -->
   <script>
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
 
     let currentCategory = 'all';
     let selectedProduct = null;
+    let appliedDiscountPercent = 0;
 
     const products = [
       { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "Direct Credits Topup Warranty", pricePKR: 14500, badge: "Top AI Video", icon: "fa-solid fa-video", color: "from-purple-600 to-indigo-700", isTop: true },
@@ -772,6 +862,39 @@
       { name: "Zainab Shah", role: "Content Creator", text: "Wink Pro & Notion 1 Year plans are 100% genuine. Safe checkout via SadaPay!", rating: 5 }
     ];
 
+    // COUPON LOGIC
+    function applyCoupon() {
+      const code = document.getElementById("couponInput").value.trim().toUpperCase();
+      const msg = document.getElementById("couponMsg");
+      if (code === "SASTA10") {
+        appliedDiscountPercent = 10;
+        msg.textContent = "✅ Coupon SASTA10 applied! 10% Discount subtracted.";
+        msg.classList.remove("hidden", "text-red-400");
+        msg.classList.add("text-emerald-400");
+        updateModalPriceDisplay();
+        showToast("Coupon Applied! 10% OFF");
+      } else {
+        appliedDiscountPercent = 0;
+        msg.textContent = "❌ Invalid coupon code.";
+        msg.classList.remove("hidden", "text-emerald-400");
+        msg.classList.add("text-red-400");
+        updateModalPriceDisplay();
+      }
+    }
+
+    function updateModalPriceDisplay() {
+      if (!selectedProduct) return;
+      let finalPKR = selectedProduct.pricePKR;
+      if (appliedDiscountPercent > 0) {
+        finalPKR = Math.round(finalPKR * (1 - appliedDiscountPercent / 100));
+      }
+      const usdAlt = (finalPKR / USD_RATE).toFixed(2);
+      document.getElementById("modalProductPrice").innerHTML = `
+        Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${finalPKR}/- ($${usdAlt} USD)</span>
+        ${appliedDiscountPercent > 0 ? `<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-bold ml-1">10% OFF Applied</span>` : ''}
+      `;
+    }
+
     // QR CODE DISPLAY UPDATER
     function updateQrDisplay(method) {
       const qrImg = document.getElementById("qrCodeImg");
@@ -817,6 +940,10 @@
         icon.classList.add("rotate-180");
       }
     }
+
+    // WARRANTY MODAL
+    function openWarrantyModal() { document.getElementById("warrantyModal").classList.remove("hidden"); }
+    function closeWarrantyModal() { document.getElementById("warrantyModal").classList.add("hidden"); }
 
     // LIVE SALES POPUP ROTATOR
     const liveSalesData = [
@@ -935,9 +1062,12 @@
     function openCheckoutModal(id) {
       selectedProduct = products.find(p => p.id === id);
       if (!selectedProduct) return;
-      const usdPrice = (selectedProduct.pricePKR / USD_RATE).toFixed(2);
+      appliedDiscountPercent = 0;
+      document.getElementById("couponInput").value = "";
+      document.getElementById("couponMsg").classList.add("hidden");
+
       document.getElementById("modalProductTitle").textContent = `${selectedProduct.title} (${selectedProduct.tag})`;
-      document.getElementById("modalProductPrice").textContent = `Payable Amount: ₨ ${selectedProduct.pricePKR}/- ($${usdPrice} USD)`;
+      updateModalPriceDisplay();
       
       updateQrDisplay(document.getElementById("custPaymentMethod").value);
       document.getElementById("checkoutModal").classList.remove("hidden");
@@ -956,7 +1086,11 @@
       const method = document.getElementById("custPaymentMethod").value;
       const trx = document.getElementById("custTrx").value.trim();
       
-      const usdPrice = (selectedProduct.pricePKR / USD_RATE).toFixed(2);
+      let finalPKR = selectedProduct.pricePKR;
+      if (appliedDiscountPercent > 0) {
+        finalPKR = Math.round(finalPKR * (1 - appliedDiscountPercent / 100));
+      }
+      const usdPrice = (finalPKR / USD_RATE).toFixed(2);
       const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
       const orderDate = new Date().toLocaleString();
 
@@ -964,7 +1098,7 @@
         id: orderId, 
         date: orderDate, 
         product: `${selectedProduct.title} (${selectedProduct.tag})`, 
-        price: `₨ ${selectedProduct.pricePKR} ($${usdPrice})`, 
+        price: `₨ ${finalPKR} ($${usdPrice})${appliedDiscountPercent > 0 ? ' [10% OFF]' : ''}`, 
         name, 
         phone, 
         email, 
@@ -978,7 +1112,7 @@
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
       localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone }));
 
-      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${selectedProduct.pricePKR} ($${usdPrice})\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
+      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${finalPKR} ($${usdPrice})${appliedDiscountPercent > 0 ? ' [Coupon SASTA10 Applied - 10% OFF]' : ''}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
       const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
 
       closeCheckoutModal();

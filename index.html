@@ -87,7 +87,7 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Direct WhatsApp Verification & Fast Delivery • Use <strong>SASTA10</strong> for 10% OFF on Orders Above ₨ 3,000/-</span>
+        <span>⚡ Multi-Item Basket Active • Combine tools & use <strong>SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
         <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
@@ -129,21 +129,23 @@
         <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
         <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
         <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
-        <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty Policy</button>
+        <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty</button>
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
-        <a href="#contact-us" class="hover:text-brand-emerald transition-colors">Contact Us</a>
       </div>
 
-      <!-- HEADER ACTIONS: FB + WHATSAPP -->
+      <!-- HEADER ACTIONS: BASKET / CART + WHATSAPP -->
       <div class="flex items-center gap-2">
-        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="px-2.5 sm:px-3 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 text-xs font-bold transition hover:scale-105">
-          <i class="fa-brands fa-facebook text-sm"></i>
-          <span class="hidden md:inline">Facebook</span>
-        </a>
+        
+        <!-- SHOPPING BASKET BUTTON WITH LIVE BADGE -->
+        <button onclick="openCartModal()" class="relative px-3 py-2 rounded-xl bg-gray-900 border border-emerald-500/40 hover:border-emerald-400 text-white flex items-center gap-2 text-xs font-bold transition hover:scale-105 shadow-md">
+          <i class="fa-solid fa-bag-shopping text-emerald-400 text-sm"></i>
+          <span class="hidden sm:inline">Basket</span>
+          <span id="cartCountBadge" class="w-5 h-5 rounded-full bg-emerald-500 text-black font-black text-[10px] flex items-center justify-center">0</span>
+        </button>
 
         <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase tracking-wider px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
           <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i> 
-          <span class="hidden sm:inline">Support Help</span>
+          <span class="hidden sm:inline">Support</span>
           <span class="sm:hidden">Help</span>
         </a>
       </div>
@@ -165,6 +167,10 @@
         </div>
 
         <nav class="space-y-2">
+          <button onclick="toggleSidebar(); openCartModal();" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-xl bg-emerald-500/10 text-emerald-400 font-bold text-sm transition">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-bag-shopping text-base w-5"></i> View Cart / Basket</span>
+            <span id="drawerCartBadge" class="px-2 py-0.5 rounded-full bg-emerald-500 text-black text-xs font-black">0</span>
+          </button>
           <a href="#top-products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-amber-400 font-bold text-sm transition">
             <i class="fa-solid fa-fire text-base w-5"></i> Top Products
           </a>
@@ -186,9 +192,6 @@
           <button onclick="toggleSidebar(); openProfileModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-purple-500/10 text-gray-200 hover:text-purple-400 font-bold text-sm transition">
             <i class="fa-solid fa-user-gear text-base w-5 text-purple-400"></i> My Profile
           </button>
-          <a href="#contact-us" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-500/10 text-gray-200 hover:text-blue-400 font-bold text-sm transition">
-            <i class="fa-solid fa-headset text-base w-5 text-blue-400"></i> Contact Us
-          </a>
           <button onclick="toggleSidebar(); openAdminModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-800 text-gray-400 hover:text-white font-bold text-sm transition">
             <i class="fa-solid fa-lock text-base w-5 text-gray-400"></i> Admin Dashboard
           </button>
@@ -218,29 +221,29 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-tags"></i>
+          <i class="fa-solid fa-basket-shopping"></i>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-white uppercase">1. Coupon SASTA10</h4>
-          <p class="text-[11px] text-gray-400">10% OFF on premium packages over ₨ 3,000</p>
+          <h4 class="text-xs font-bold text-white uppercase">1. Add to Basket</h4>
+          <p class="text-[11px] text-gray-400">Combine multiple products in one order</p>
         </div>
       </div>
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-qrcode"></i>
+          <i class="fa-solid fa-tags"></i>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-white uppercase">2. Scan QR or Transfer</h4>
-          <p class="text-[11px] text-gray-400">Instant QR codes for JazzCash, SadaPay, Binance</p>
+          <h4 class="text-xs font-bold text-white uppercase">2. Coupon SASTA10</h4>
+          <p class="text-[11px] text-gray-400">Auto 10% OFF when total bill reaches ₨ 3,000</p>
         </div>
       </div>
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-shield-check"></i>
+          <i class="fa-solid fa-bolt"></i>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-white uppercase">3. Full Warranty</h4>
-          <p class="text-[11px] text-gray-400">100% replacement warranty covered</p>
+          <h4 class="text-xs font-bold text-white uppercase">3. Instant WhatsApp Checkout</h4>
+          <p class="text-[11px] text-gray-400">Single combined slip dispatched on WhatsApp</p>
         </div>
       </div>
     </div>
@@ -359,24 +362,12 @@
       <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
         <button onclick="toggleFaq(3)" class="w-full p-4 text-left flex items-center justify-between gap-4">
           <span class="text-sm font-bold text-white flex items-center gap-2.5">
-            <i class="fa-solid fa-user-lock text-amber-400"></i> Are these accounts private or shared?
+            <i class="fa-solid fa-basket-shopping text-emerald-400"></i> How do I combine items to get 10% OFF?
           </span>
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
         </button>
         <div id="faqAnswer-3" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
-          We clearly specify on each product card: keys and email invites (such as YouTube, Canva, Notion, Windows keys) are <strong>100% private to your own account</strong>. Streaming screens like Netflix are guaranteed private single screens or complete accounts as chosen.
-        </div>
-      </div>
-
-      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
-        <button onclick="toggleFaq(4)" class="w-full p-4 text-left flex items-center justify-between gap-4">
-          <span class="text-sm font-bold text-white flex items-center gap-2.5">
-            <i class="fa-solid fa-qrcode text-teal-400"></i> Can I scan QR codes to pay?
-          </span>
-          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-4"></i>
-        </button>
-        <div id="faqAnswer-4" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
-          Yes! During checkout, selecting JazzCash, SadaPay, or Binance Pay automatically generates an interactive QR code right inside the modal. You can simply scan it via your banking or Binance app without having to type phone numbers.
+          Click <strong>"+ Add to Basket"</strong> on any items you want. When your total cart value reaches <strong>₨ 3,000/-</strong> or more, apply coupon <strong>SASTA10</strong> in your cart to enjoy a flat 10% discount on the entire order!
         </div>
       </div>
     </div>
@@ -517,7 +508,7 @@
     </div>
   </footer>
 
-  <!-- INTERACTIVE FLOATING WHATSAPP BUTTON WITH BUBBLE -->
+  <!-- FLOATING WHATSAPP -->
   <div class="fixed bottom-6 right-6 z-40 flex items-end gap-3">
     <div id="waBubble" class="hidden sm:flex items-center gap-2 bg-[#0c1424] border border-emerald-500/40 text-gray-200 text-xs py-2.5 px-4 rounded-2xl shadow-2xl backdrop-blur-md max-w-xs transition">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -549,7 +540,58 @@
     </button>
   </div>
 
-  <!-- CHECKOUT MODAL (WITH SAFE MINIMUM COUPON SYSTEM & QR) -->
+  <!-- ==================== SHOPPING CART / BASKET DRAWER MODAL ==================== -->
+  <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-8">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bag-shopping"></i></div>
+          <h3 class="font-heading text-lg font-black text-white">Your Shopping Basket</h3>
+        </div>
+        <button onclick="closeCartModal()" class="text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Items List -->
+      <div id="cartItemsList" class="space-y-3 max-h-60 overflow-y-auto pr-1 mb-4"></div>
+
+      <!-- Empty Cart Notice -->
+      <div id="cartEmptyState" class="hidden text-center py-8">
+        <i class="fa-solid fa-basket-shopping text-4xl text-gray-600 mb-2"></i>
+        <p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p>
+      </div>
+
+      <!-- Cart Bill Summary -->
+      <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
+        <div class="flex justify-between text-gray-400">
+          <span>Subtotal:</span>
+          <span class="font-bold text-white" id="cartSubtotalText">₨ 0</span>
+        </div>
+        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 hidden">
+          <span>Coupon Discount (10% OFF):</span>
+          <span class="font-bold" id="cartDiscountText">- ₨ 0</span>
+        </div>
+        <div class="flex justify-between text-sm font-black text-white border-t border-gray-800/80 pt-2">
+          <span>Total Payable:</span>
+          <span class="text-emerald-400 text-base" id="cartFinalTotalText">₨ 0</span>
+        </div>
+
+        <!-- Coupon Input Inside Cart -->
+        <div class="pt-2">
+          <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
+            <input type="text" id="cartCouponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
+            <button type="button" onclick="applyCartCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3 py-1 rounded-lg transition">Apply</button>
+          </div>
+          <p id="cartCouponMsg" class="text-[11px] font-bold mt-1.5 hidden"></p>
+        </div>
+
+        <button onclick="proceedToCheckout()" class="w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
+          Proceed to Complete Checkout ⚡
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-8">
       <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
@@ -557,12 +599,12 @@
       </button>
 
       <div class="mb-3">
-        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded">Direct Checkout</span>
-        <h3 class="font-heading text-xl font-black text-white mt-1.5" id="modalProductTitle">Product Title</h3>
+        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded">Final Order Step</span>
+        <h3 class="font-heading text-xl font-black text-white mt-1.5" id="modalProductTitle">Checkout</h3>
         <p class="text-xs text-gray-400 font-bold" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
       </div>
 
-      <!-- DYNAMIC QR CODE & PAYMENT DISPLAY BOX -->
+      <!-- DYNAMIC QR CODE DISPLAY -->
       <div class="mb-3 p-3 bg-gray-900/90 rounded-2xl border border-gray-800 flex items-center gap-4">
         <div class="w-20 h-20 bg-white p-1 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
           <img id="qrCodeImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461" alt="Payment QR" class="w-full h-full object-contain rounded" />
@@ -576,13 +618,6 @@
           </button>
         </div>
       </div>
-
-      <!-- COUPON CODE BOX (OPTION 2: MINIMUM ₨ 3,000/-) -->
-      <div class="mb-2 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
-        <input type="text" id="couponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
-        <button type="button" onclick="applyCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3 py-1.5 rounded-lg transition">Apply</button>
-      </div>
-      <p id="couponMsg" class="text-[11px] font-bold hidden -mt-1 mb-2"></p>
 
       <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
         <div>
@@ -626,13 +661,10 @@
     </div>
   </div>
 
-  <!-- WARRANTY & GUARANTEE POLICY MODAL -->
+  <!-- WARRANTY MODAL -->
   <div id="warrantyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
-      <button onclick="closeWarrantyModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
+      <button onclick="closeWarrantyModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
       <div class="text-center pb-4 border-b border-gray-800 mb-5">
         <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-2 border border-emerald-500/30">
           <i class="fa-solid fa-shield-halved"></i>
@@ -640,24 +672,20 @@
         <h3 class="font-heading text-xl font-black text-white">Replacement & Warranty Policy</h3>
         <p class="text-xs text-emerald-400 font-bold">100% Guaranteed Official Service</p>
       </div>
-
       <div class="space-y-4 text-xs text-gray-300 leading-relaxed">
         <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
           <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-bolt text-yellow-400"></i> 1. Fast 15-Minute Replacement</h4>
           <p class="text-gray-400">If any subscription logs out or experiences issues during its active plan period, message our WhatsApp helpline with your Order ID for a replacement within 15 minutes.</p>
         </div>
-
         <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
           <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-400"></i> 2. Private & Genuine Credentials</h4>
           <p class="text-gray-400">All Windows licenses, Notion, Canva, and invite links are directly bound to your official credentials. No illegal crack software or sudden terminations.</p>
         </div>
-
         <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
           <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-rotate-left text-blue-400"></i> 3. 100% Refund If Not Activated</h4>
           <p class="text-gray-400">In the rare event we are unable to fulfill an order due to API limits or region restrictions, 100% of your payment is refunded immediately to your JazzCash or SadaPay.</p>
         </div>
       </div>
-
       <button onclick="closeWarrantyModal()" class="mt-6 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition">
         I Understand & Accept
       </button>
@@ -667,23 +695,16 @@
   <!-- MY ORDERS MODAL -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl">
-      <button onclick="closeMyOrdersModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
+      <button onclick="closeMyOrdersModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
       <div class="mb-4">
         <span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Customer Portal</span>
         <h3 class="font-heading text-xl font-black text-white mt-2">Track My Orders</h3>
         <p class="text-xs text-gray-400">Enter the WhatsApp number used during checkout:</p>
       </div>
-
       <div class="flex gap-2 mb-4">
         <input type="tel" id="trackPhoneInput" placeholder="e.g. 03462195461" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-400">
-        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition">
-          Find
-        </button>
+        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition">Find</button>
       </div>
-
       <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1">
         <p class="text-xs text-gray-500 text-center py-4">Enter your number above to view order history.</p>
       </div>
@@ -693,10 +714,7 @@
   <!-- MY PROFILE MODAL -->
   <div id="profileModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
-      <button onclick="closeProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
+      <button onclick="closeProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
       <div class="text-center pb-4 border-b border-gray-800 mb-4">
         <div class="w-14 h-14 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mx-auto mb-2 border border-purple-500/30">
           <i class="fa-solid fa-user-check"></i>
@@ -704,7 +722,6 @@
         <h3 class="font-heading text-lg font-black text-white" id="profileNameDisplay">SastaStore Customer</h3>
         <p class="text-xs text-gray-400" id="profileEmailDisplay">Verified Store Member</p>
       </div>
-
       <div class="space-y-3 text-xs text-gray-300">
         <div class="flex justify-between py-2 border-b border-gray-800/80">
           <span class="text-gray-500">Member Status:</span>
@@ -719,58 +736,40 @@
           <span class="text-teal-400 font-bold">24/7 Guaranteed</span>
         </div>
       </div>
-
-      <button onclick="closeProfileModal()" class="mt-5 w-full bg-gray-900 hover:bg-gray-800 border border-gray-700 text-white font-bold text-xs py-2.5 rounded-xl transition">
-        Close
-      </button>
+      <button onclick="closeProfileModal()" class="mt-5 w-full bg-gray-900 hover:bg-gray-800 border border-gray-700 text-white font-bold text-xs py-2.5 rounded-xl transition">Close</button>
     </div>
   </div>
 
-  <!-- SHOPIFY-STYLE ADMIN DASHBOARD MODAL -->
+  <!-- ADMIN MODAL -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm">
-            <i class="fa-solid fa-gauge"></i>
-          </div>
+          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm"><i class="fa-solid fa-gauge"></i></div>
           <div>
             <h3 class="font-heading text-lg font-black text-white">SastaStore Order Dashboard</h3>
             <p class="text-[11px] text-gray-400">Shopify-style live order management</p>
           </div>
         </div>
-        <button onclick="closeAdminModal()" class="text-gray-400 hover:text-white text-lg">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+        <button onclick="closeAdminModal()" class="text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
       </div>
-
       <div id="adminAuthScreen" class="py-12 text-center max-w-sm mx-auto w-full">
         <i class="fa-solid fa-lock text-3xl text-emerald-400 mb-3"></i>
         <h4 class="font-heading text-base font-bold text-white mb-1">Enter Admin Password</h4>
         <p class="text-xs text-gray-400 mb-4">Access restricted to store administrator</p>
         <form onsubmit="verifyAdminPass(event)" class="space-y-3">
           <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 text-center focus:outline-none focus:border-emerald-400">
-          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">
-            Unlock Dashboard
-          </button>
+          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">Unlock Dashboard</button>
         </form>
       </div>
-
       <div id="adminOrdersPanel" class="hidden flex-1 overflow-hidden flex flex-col">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
-              <i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV
-            </button>
-            <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">
-              Clear All
-            </button>
+            <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
+            <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
           </div>
         </div>
-
         <div class="overflow-x-auto overflow-y-auto flex-1 border border-gray-800 rounded-2xl">
           <table class="w-full text-left text-xs text-gray-300">
             <thead class="bg-gray-900/90 text-gray-400 text-[10px] uppercase font-bold sticky top-0 border-b border-gray-800">
@@ -778,7 +777,7 @@
                 <th class="p-3">Date</th>
                 <th class="p-3">Customer</th>
                 <th class="p-3">Phone / Email</th>
-                <th class="p-3">Product</th>
+                <th class="p-3">Product(s)</th>
                 <th class="p-3">Payment / Trx</th>
                 <th class="p-3">Status</th>
                 <th class="p-3 text-right">Action</th>
@@ -801,10 +800,9 @@
     const STORE_WHATSAPP = "923136093501";
 
     let currentCategory = 'all';
-    let selectedProduct = null;
+    let cart = []; // Multi-item shopping cart
     let appliedDiscountPercent = 0;
 
-    // INVENTORY WITH LIMITED STOCK URGENCY BADGES
     const products = [
       { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "Direct Credits Topup Warranty", pricePKR: 14500, badge: "Top AI Video", icon: "fa-solid fa-video", color: "from-purple-600 to-indigo-700", isTop: true, urgency: "Hurry Up! Only 3 Slots Left" },
       { id: 102, title: "Notion (1 Year)", category: "design", tag: "12 Months Full Access", warranty: "1 Year Full Replacement Warranty", pricePKR: 1100, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-700 to-zinc-900", isTop: true, urgency: "Limited Stock: Only 5 Left" },
@@ -861,49 +859,213 @@
       { name: "Zainab Shah", role: "Content Creator", text: "Wink Pro & Notion 1 Year plans are 100% genuine. Safe checkout via SadaPay!", rating: 5 }
     ];
 
-    // COUPON LOGIC (SAFE MINIMUM ₨ 3,000/-)
-    function applyCoupon() {
-      const code = document.getElementById("couponInput").value.trim().toUpperCase();
-      const msg = document.getElementById("couponMsg");
+    // ==================== MULTI-ITEM CART LOGIC ====================
+    function addToCart(id) {
+      const prod = products.find(p => p.id === id);
+      if (!prod) return;
+      cart.push(prod);
+      updateCartUi();
+      showToast(`Added ${prod.title} to Basket!`);
+    }
 
-      if (!selectedProduct) return;
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUi();
+      renderCartItems();
+    }
+
+    function updateCartUi() {
+      const count = cart.length;
+      document.getElementById("cartCountBadge").textContent = count;
+      document.getElementById("drawerCartBadge").textContent = count;
+    }
+
+    function openCartModal() {
+      renderCartItems();
+      document.getElementById("cartModal").classList.remove("hidden");
+    }
+
+    function closeCartModal() {
+      document.getElementById("cartModal").classList.add("hidden");
+    }
+
+    function calculateCartSubtotal() {
+      return cart.reduce((acc, item) => acc + item.pricePKR, 0);
+    }
+
+    function renderCartItems() {
+      const list = document.getElementById("cartItemsList");
+      const emptyState = document.getElementById("cartEmptyState");
+      const summaryBox = document.getElementById("cartSummaryBox");
+
+      if (cart.length === 0) {
+        list.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        summaryBox.classList.add("hidden");
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      summaryBox.classList.remove("hidden");
+
+      list.innerHTML = cart.map((item, idx) => `
+        <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
+          <div class="flex items-center gap-2.5 flex-1 truncate">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
+              <i class="${item.icon}"></i>
+            </div>
+            <div class="truncate">
+              <div class="font-bold text-white truncate">${item.title}</div>
+              <div class="text-[10px] text-gray-500">${item.tag}</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="font-black text-emerald-400">₨ ${item.pricePKR}</span>
+            <button onclick="removeFromCart(${idx})" class="text-red-400 hover:text-red-300 text-sm p-1" title="Remove item"><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </div>
+      `).join("");
+
+      updateCartTotalsDisplay();
+    }
+
+    function updateCartTotalsDisplay() {
+      const subtotal = calculateCartSubtotal();
+      document.getElementById("cartSubtotalText").textContent = `₨ ${subtotal}/-`;
+
+      let discountAmount = 0;
+      const discountRow = document.getElementById("cartDiscountRow");
+
+      if (appliedDiscountPercent > 0 && subtotal >= 3000) {
+        discountAmount = Math.round(subtotal * (appliedDiscountPercent / 100));
+        discountRow.classList.remove("hidden");
+        document.getElementById("cartDiscountText").textContent = `- ₨ ${discountAmount}/- (${appliedDiscountPercent}% OFF)`;
+      } else {
+        appliedDiscountPercent = 0;
+        discountRow.classList.add("hidden");
+      }
+
+      const finalTotal = subtotal - discountAmount;
+      const usdAlt = (finalTotal / USD_RATE).toFixed(2);
+      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/- ($${usdAlt} USD)`;
+    }
+
+    function applyCartCoupon() {
+      const code = document.getElementById("cartCouponInput").value.trim().toUpperCase();
+      const msg = document.getElementById("cartCouponMsg");
+      const subtotal = calculateCartSubtotal();
 
       if (code === "SASTA10") {
-        if (selectedProduct.pricePKR < 3000) {
+        if (subtotal < 3000) {
           appliedDiscountPercent = 0;
-          msg.textContent = "⚠️ Coupon SASTA10 is valid only on packages above ₨ 3,000/-.";
-          msg.className = "text-[11px] font-bold text-amber-400 block -mt-1 mb-2";
-          updateModalPriceDisplay();
+          msg.textContent = "⚠️ SASTA10 requires a minimum cart total of ₨ 3,000/-.";
+          msg.className = "text-[11px] font-bold text-amber-400 block";
+          updateCartTotalsDisplay();
           return;
         }
 
         appliedDiscountPercent = 10;
-        msg.textContent = "✅ Coupon SASTA10 applied! 10% Discount subtracted.";
-        msg.className = "text-[11px] font-bold text-emerald-400 block -mt-1 mb-2";
-        updateModalPriceDisplay();
-        showToast("Coupon Applied! 10% OFF");
+        msg.textContent = "✅ Coupon SASTA10 applied! 10% Discount deducted.";
+        msg.className = "text-[11px] font-bold text-emerald-400 block";
+        updateCartTotalsDisplay();
+        showToast("10% Discount Applied to Basket!");
       } else {
         appliedDiscountPercent = 0;
         msg.textContent = "❌ Invalid coupon code.";
-        msg.className = "text-[11px] font-bold text-red-400 block -mt-1 mb-2";
-        updateModalPriceDisplay();
+        msg.className = "text-[11px] font-bold text-red-400 block";
+        updateCartTotalsDisplay();
       }
     }
 
-    function updateModalPriceDisplay() {
-      if (!selectedProduct) return;
-      let finalPKR = selectedProduct.pricePKR;
-      if (appliedDiscountPercent > 0) {
-        finalPKR = Math.round(finalPKR * (1 - appliedDiscountPercent / 100));
+    function proceedToCheckout() {
+      if (cart.length === 0) {
+        alert("Please add at least one product to your basket.");
+        return;
       }
-      const usdAlt = (finalPKR / USD_RATE).toFixed(2);
+      closeCartModal();
+
+      const subtotal = calculateCartSubtotal();
+      let discountAmount = appliedDiscountPercent > 0 ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
+      const finalTotal = subtotal - discountAmount;
+      const usdAlt = (finalTotal / USD_RATE).toFixed(2);
+
+      const itemsSummary = cart.map(c => c.title).join(" + ");
+      document.getElementById("modalProductTitle").textContent = `${cart.length} Item(s): ${itemsSummary}`;
       document.getElementById("modalProductPrice").innerHTML = `
-        Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${finalPKR}/- ($${usdAlt} USD)</span>
-        ${appliedDiscountPercent > 0 ? `<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-bold ml-1">10% OFF Applied</span>` : ''}
+        Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${finalTotal}/- ($${usdAlt} USD)</span>
+        ${discountAmount > 0 ? `<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-bold ml-1">10% OFF Applied</span>` : ''}
       `;
+
+      updateQrDisplay(document.getElementById("custPaymentMethod").value);
+      document.getElementById("checkoutModal").classList.remove("hidden");
     }
 
-    // QR CODE DISPLAY UPDATER
+    // DIRECT SINGLE ORDER CHECKOUT
+    function openCheckoutModal(id) {
+      const singleProd = products.find(p => p.id === id);
+      if (!singleProd) return;
+      cart = [singleProd]; // Set single item in active basket
+      updateCartUi();
+      proceedToCheckout();
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById("checkoutModal").classList.add("hidden");
+      document.getElementById("orderForm").reset();
+    }
+
+    function submitOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const email = document.getElementById("custEmail").value.trim();
+      const method = document.getElementById("custPaymentMethod").value;
+      const trx = document.getElementById("custTrx").value.trim();
+
+      const subtotal = calculateCartSubtotal();
+      let discountAmount = appliedDiscountPercent > 0 ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
+      const finalTotal = subtotal - discountAmount;
+      const usdPrice = (finalTotal / USD_RATE).toFixed(2);
+      const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+      const orderDate = new Date().toLocaleString();
+
+      const itemsListText = cart.map((c, i) => `${i+1}. ${c.title} (${c.tag}) - ₨ ${c.pricePKR}`).join("\n");
+
+      const newOrder = { 
+        id: orderId, 
+        date: orderDate, 
+        product: cart.map(c => c.title).join(", "), 
+        price: `₨ ${finalTotal} ($${usdPrice})${discountAmount > 0 ? ' [10% OFF]' : ''}`, 
+        name, 
+        phone, 
+        email, 
+        method, 
+        trx, 
+        status: 'Pending' 
+      };
+
+      let orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
+      orders.unshift(newOrder);
+      localStorage.setItem('sasta_orders', JSON.stringify(orders));
+      localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone }));
+
+      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\n\n*Ordered Items (${cart.length}):*\n${itemsListText}\n\n*Total Payable:* ₨ ${finalTotal} ($${usdPrice})${discountAmount > 0 ? ' [Coupon SASTA10 Applied - 10% OFF]' : ''}\n\n*Customer Details:*\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
+      const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
+
+      // Clear cart
+      cart = [];
+      updateCartUi();
+      appliedDiscountPercent = 0;
+
+      closeCheckoutModal();
+      showToast("Order logged! Opening WhatsApp for instant delivery...");
+
+      setTimeout(() => {
+        window.open(waLink, '_blank');
+      }, 700);
+    }
+
+    // QR DISPLAY
     function updateQrDisplay(method) {
       const qrImg = document.getElementById("qrCodeImg");
       const badge = document.getElementById("qrChannelBadge");
@@ -934,7 +1096,7 @@
       showToast(`${num} copied to clipboard!`);
     }
 
-    // FAQ ACCORDION TOGGLE
+    // FAQ TOGGLE
     function toggleFaq(id) {
       const ans = document.getElementById(`faqAnswer-${id}`);
       const icon = document.getElementById(`faqIcon-${id}`);
@@ -949,7 +1111,6 @@
       }
     }
 
-    // WARRANTY MODAL
     function openWarrantyModal() { document.getElementById("warrantyModal").classList.remove("hidden"); }
     function closeWarrantyModal() { document.getElementById("warrantyModal").classList.add("hidden"); }
 
@@ -1002,7 +1163,6 @@
       }, 4000);
     }
 
-    // DRAWER & RENDERING
     function toggleSidebar() {
       document.getElementById("sideDrawer").classList.toggle("hidden");
     }
@@ -1029,7 +1189,6 @@
               </div>
             </div>
 
-            <!-- URGENCY / LIMITED STOCK BADGE -->
             ${p.urgency ? `
               <div class="mb-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-red-500/15 border border-red-500/30 text-[10px] font-black text-red-400 animate-pulse">
                 <i class="fa-solid fa-fire text-amber-400"></i> ${p.urgency}
@@ -1039,9 +1198,19 @@
             <h3 class="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition mb-1">${p.title}</h3>
             <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-5"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
           </div>
-          <div class="pt-4 border-t border-gray-800 flex items-center justify-between gap-2">
-            <div><span class="text-lg font-black text-emerald-400 font-heading">₨ ${p.pricePKR}/-</span> <span class="text-xs font-bold text-gray-400">($${usdPrice})</span></div>
-            <button onclick="openCheckoutModal(${p.id})" class="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition shadow"><i class="fa-solid fa-cart-shopping text-xs"></i> Order</button>
+          <div class="pt-4 border-t border-gray-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-black text-emerald-400 font-heading">₨ ${p.pricePKR}/-</span>
+              <span class="text-xs font-bold text-gray-400">($${usdPrice})</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="addToCart(${p.id})" class="flex items-center justify-center gap-1.5 bg-gray-900 hover:bg-gray-800 text-emerald-400 border border-emerald-500/40 font-heading font-black text-[11px] py-2 rounded-xl transition">
+                <i class="fa-solid fa-plus text-[10px]"></i> Basket
+              </button>
+              <button onclick="openCheckoutModal(${p.id})" class="flex items-center justify-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-[11px] py-2 rounded-xl transition shadow">
+                Order Now
+              </button>
+            </div>
           </div>
         </div>
       `;
@@ -1072,73 +1241,6 @@
           </div>
         </div>
       `).join("");
-    }
-
-    // CHECKOUT LOGIC
-    function openCheckoutModal(id) {
-      selectedProduct = products.find(p => p.id === id);
-      if (!selectedProduct) return;
-      appliedDiscountPercent = 0;
-      document.getElementById("couponInput").value = "";
-      const msg = document.getElementById("couponMsg");
-      msg.className = "hidden";
-      msg.textContent = "";
-
-      document.getElementById("modalProductTitle").textContent = `${selectedProduct.title} (${selectedProduct.tag})`;
-      updateModalPriceDisplay();
-      
-      updateQrDisplay(document.getElementById("custPaymentMethod").value);
-      document.getElementById("checkoutModal").classList.remove("hidden");
-    }
-
-    function closeCheckoutModal() {
-      document.getElementById("checkoutModal").classList.add("hidden");
-      document.getElementById("orderForm").reset();
-    }
-
-    function submitOrder(e) {
-      e.preventDefault();
-      const name = document.getElementById("custName").value.trim();
-      const phone = document.getElementById("custPhone").value.trim();
-      const email = document.getElementById("custEmail").value.trim();
-      const method = document.getElementById("custPaymentMethod").value;
-      const trx = document.getElementById("custTrx").value.trim();
-      
-      let finalPKR = selectedProduct.pricePKR;
-      if (appliedDiscountPercent > 0) {
-        finalPKR = Math.round(finalPKR * (1 - appliedDiscountPercent / 100));
-      }
-      const usdPrice = (finalPKR / USD_RATE).toFixed(2);
-      const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
-      const orderDate = new Date().toLocaleString();
-
-      const newOrder = { 
-        id: orderId, 
-        date: orderDate, 
-        product: `${selectedProduct.title} (${selectedProduct.tag})`, 
-        price: `₨ ${finalPKR} ($${usdPrice})${appliedDiscountPercent > 0 ? ' [10% OFF]' : ''}`, 
-        name, 
-        phone, 
-        email, 
-        method, 
-        trx, 
-        status: 'Pending' 
-      };
-
-      let orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
-      orders.unshift(newOrder);
-      localStorage.setItem('sasta_orders', JSON.stringify(orders));
-      localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone }));
-
-      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${finalPKR} ($${usdPrice})${appliedDiscountPercent > 0 ? ' [Coupon SASTA10 Applied - 10% OFF]' : ''}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
-      const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
-
-      closeCheckoutModal();
-      showToast("Order logged! Opening WhatsApp for instant delivery...");
-
-      setTimeout(() => {
-        window.open(waLink, '_blank');
-      }, 700);
     }
 
     // MY ORDERS & PROFILE
@@ -1316,6 +1418,7 @@
       renderProducts(products);
       renderReviews();
       initLiveSalesLoop();
+      updateCartUi();
     });
   </script>
 </body>

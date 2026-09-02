@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SastaStore | Premium Digital Subscriptions & Tools</title>
 
-  <!-- OPENGRAPH & SEO META TAGS -->
   <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, HeyGen, Canva Admin, Notion, Windows Keys, Netflix & AI tools at lowest prices." />
   <meta name="keywords" content="SastaStore, CapCut Pro, Canva Pro, HeyGen credits, Windows 11 key, Netflix, digital subscriptions Pakistan" />
   <meta property="og:type" content="website" />
@@ -18,14 +17,10 @@
   <meta name="twitter:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts." />
   <meta name="twitter:image" content="banner.jpg" />
   
-  <!-- Favicon Logo -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -82,7 +77,6 @@
 
 <body class="bg-[#06090E] text-gray-100 font-sans antialiased selection:bg-brand-emerald selection:text-black overflow-x-hidden">
 
-  <!-- TOP PROMO TICKER -->
   <div class="bg-gradient-to-r from-emerald-950 via-[#0a1424] to-emerald-950 border-b border-emerald-500/20 py-2.5 px-4 text-xs font-semibold text-emerald-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -101,11 +95,9 @@
     </div>
   </div>
 
-  <!-- STICKY HEADER -->
-  <header class="sticky top-0 z-40 bg-[#06090E]/90 backdrop-blur-xl border-b border-gray-800/80">
+  <header class="sticky top-0 z-40 bg-[#06090E]/95 backdrop-blur-xl border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
       
-      <!-- LEFT: 3-LINES BUTTON & LOGO -->
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <button onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0" title="Menu Navigation">
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
@@ -113,7 +105,7 @@
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
         </button>
 
-        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+        <a href="#" class="flex items-center gap-2 sm:gap-2.5 group">
           <img src="logo.jpeg" alt="SastaStore Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl object-cover border border-emerald-500/30 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform flex-shrink-0" />
           <div>
             <div class="font-heading font-black text-xl sm:text-2xl tracking-tight text-white flex items-center gap-1">
@@ -124,7 +116,6 @@
         </a>
       </div>
 
-      <!-- DESKTOP NAV -->
       <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
         <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
         <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
@@ -133,26 +124,22 @@
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
       </div>
 
-      <!-- HEADER ACTIONS: BASKET / CART + WHATSAPP -->
       <div class="flex items-center gap-2">
         
-        <!-- SHOPPING BASKET BUTTON WITH LIVE BADGE -->
-        <button onclick="openCartModal()" class="relative px-3 py-2 rounded-xl bg-gray-900 border border-emerald-500/40 hover:border-emerald-400 text-white flex items-center gap-2 text-xs font-bold transition hover:scale-105 shadow-md">
-          <i class="fa-solid fa-bag-shopping text-emerald-400 text-sm"></i>
-          <span class="hidden sm:inline">Basket</span>
-          <span id="cartCountBadge" class="w-5 h-5 rounded-full bg-emerald-500 text-black font-black text-[10px] flex items-center justify-center">0</span>
+        <button onclick="openCartModal()" class="relative px-3 sm:px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black flex items-center gap-2 text-xs font-black transition hover:scale-105 shadow-lg shadow-emerald-500/20 flex-shrink-0">
+          <i class="fa-solid fa-bag-shopping text-sm text-black"></i>
+          <span>Basket</span>
+          <span id="cartCountBadge" class="w-5 h-5 rounded-full bg-black text-emerald-400 font-black text-[10px] flex items-center justify-center">0</span>
         </button>
 
-        <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase tracking-wider px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i> 
-          <span class="hidden sm:inline">Support</span>
-          <span class="sm:hidden">Help</span>
+        <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 bg-gray-900 border border-gray-800 hover:border-emerald-500/50 text-white font-heading font-black text-xs uppercase px-3.5 py-2.5 rounded-xl transition">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> 
+          <span>Support</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- SLIDE-IN 3-LINES SIDEBAR DRAWER -->
   <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-all">
     <div class="w-80 max-w-[85vw] h-full bg-[#0b1220] border-r border-gray-800 p-6 flex flex-col justify-between shadow-2xl relative">
       <div>
@@ -167,9 +154,9 @@
         </div>
 
         <nav class="space-y-2">
-          <button onclick="toggleSidebar(); openCartModal();" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-xl bg-emerald-500/10 text-emerald-400 font-bold text-sm transition">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-bag-shopping text-base w-5"></i> View Cart / Basket</span>
-            <span id="drawerCartBadge" class="px-2 py-0.5 rounded-full bg-emerald-500 text-black text-xs font-black">0</span>
+          <button onclick="toggleSidebar(); openCartModal();" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-xl bg-emerald-500 text-black font-black text-sm transition shadow-lg shadow-emerald-500/20">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-bag-shopping text-base w-5"></i> View Basket / Cart</span>
+            <span id="drawerCartBadge" class="px-2.5 py-0.5 rounded-full bg-black text-emerald-400 text-xs font-black">0</span>
           </button>
           <a href="#top-products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-amber-400 font-bold text-sm transition">
             <i class="fa-solid fa-fire text-base w-5"></i> Top Products
@@ -209,14 +196,12 @@
     </div>
   </div>
 
-  <!-- HERO SECTION BANNER -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6">
     <div class="relative overflow-hidden rounded-3xl border border-emerald-500/30 shadow-2xl group hover:border-emerald-500/60 transition neon-emerald">
       <img src="banner.jpg" alt="SastaStore Deals Banner" class="w-full h-auto object-cover rounded-3xl group-hover:scale-[1.01] transition-transform duration-300" />
     </div>
   </section>
 
-  <!-- HOW IT WORKS BAR -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
@@ -249,7 +234,6 @@
     </div>
   </section>
 
-  <!-- TOP PRODUCTS SECTION -->
   <section id="top-products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-14">
     <div class="flex items-center justify-between mb-6">
       <div>
@@ -264,7 +248,6 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="topProductsGrid"></div>
   </section>
 
-  <!-- CUSTOM ORDER SECTION -->
   <section id="custom-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c1f19] via-[#091426] to-[#0d1627] border border-emerald-500/40 p-6 sm:p-10 shadow-xl">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
@@ -298,7 +281,6 @@
     </div>
   </section>
 
-  <!-- ALL PRODUCTS INVENTORY & SEARCH -->
   <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
       <div>
@@ -326,7 +308,6 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid"></div>
   </section>
 
-  <!-- FAQ ACCORDION SECTION -->
   <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
     <div class="text-center mb-10">
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
@@ -367,13 +348,12 @@
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
         </button>
         <div id="faqAnswer-3" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
-          Click <strong>"+ Add to Basket"</strong> on any items you want. When your total cart value reaches <strong>₨ 3,000/-</strong> or more, apply coupon <strong>SASTA10</strong> in your cart to enjoy a flat 10% discount on the entire order!
+          Click <strong>"+ Basket"</strong> on any items you want. When your total cart value reaches <strong>₨ 3,000/-</strong> or more, apply coupon <strong>SASTA10</strong> in your cart to enjoy a flat 10% discount on the entire order!
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS SECTION -->
   <section id="reviews" class="bg-[#09111e]/80 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
@@ -385,7 +365,6 @@
     </div>
   </section>
 
-  <!-- PAYMENT METHODS SUMMARY -->
   <section id="payments" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="text-center max-w-xl mx-auto mb-10">
@@ -453,7 +432,6 @@
     </div>
   </section>
 
-  <!-- CONTACT US SECTION -->
   <section id="contact-us" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -491,7 +469,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="border-t border-gray-800 bg-[#06090E] py-10 px-4 text-center text-gray-500 text-xs">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
@@ -508,7 +485,6 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP -->
   <div class="fixed bottom-6 right-6 z-40 flex items-end gap-3">
     <div id="waBubble" class="hidden sm:flex items-center gap-2 bg-[#0c1424] border border-emerald-500/40 text-gray-200 text-xs py-2.5 px-4 rounded-2xl shadow-2xl backdrop-blur-md max-w-xs transition">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -521,8 +497,12 @@
     </a>
   </div>
 
-  <!-- LIVE SALES POPUP -->
-  <div id="liveSalePopup" class="fixed bottom-6 left-6 z-40 bg-[#0c1424]/95 border border-emerald-500/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-md flex items-center gap-3 max-w-xs transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
+  <button onclick="openCartModal()" class="fixed bottom-6 left-6 z-40 bg-gradient-to-tr from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition relative" title="Open Basket">
+    <i class="fa-solid fa-basket-shopping text-2xl text-black"></i>
+    <span id="floatingCartBadge" class="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-black text-emerald-400 font-black text-xs flex items-center justify-center border-2 border-emerald-400">0</span>
+  </button>
+
+  <div id="liveSalePopup" class="fixed bottom-24 left-6 z-40 bg-[#0c1424]/95 border border-emerald-500/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-md flex items-center gap-3 max-w-xs transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-black flex items-center justify-center text-sm font-black flex-shrink-0 shadow-md">
       <i class="fa-solid fa-bag-shopping" id="liveSaleIcon"></i>
     </div>
@@ -540,7 +520,6 @@
     </button>
   </div>
 
-  <!-- ==================== SHOPPING CART / BASKET DRAWER MODAL ==================== -->
   <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-8">
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
@@ -551,16 +530,14 @@
         <button onclick="closeCartModal()" class="text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
-      <!-- Items List -->
       <div id="cartItemsList" class="space-y-3 max-h-60 overflow-y-auto pr-1 mb-4"></div>
 
-      <!-- Empty Cart Notice -->
       <div id="cartEmptyState" class="hidden text-center py-8">
         <i class="fa-solid fa-basket-shopping text-4xl text-gray-600 mb-2"></i>
         <p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p>
+        <p class="text-[11px] text-gray-500 mt-1">Click "+ Basket" on any product below to add items.</p>
       </div>
 
-      <!-- Cart Bill Summary -->
       <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
         <div class="flex justify-between text-gray-400">
           <span>Subtotal:</span>
@@ -575,7 +552,6 @@
           <span class="text-emerald-400 text-base" id="cartFinalTotalText">₨ 0</span>
         </div>
 
-        <!-- Coupon Input Inside Cart -->
         <div class="pt-2">
           <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
             <input type="text" id="cartCouponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
@@ -591,7 +567,6 @@
     </div>
   </div>
 
-  <!-- CHECKOUT MODAL -->
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-8">
       <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
@@ -604,7 +579,6 @@
         <p class="text-xs text-gray-400 font-bold" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
       </div>
 
-      <!-- DYNAMIC QR CODE DISPLAY -->
       <div class="mb-3 p-3 bg-gray-900/90 rounded-2xl border border-gray-800 flex items-center gap-4">
         <div class="w-20 h-20 bg-white p-1 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
           <img id="qrCodeImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461" alt="Payment QR" class="w-full h-full object-contain rounded" />
@@ -661,7 +635,6 @@
     </div>
   </div>
 
-  <!-- WARRANTY MODAL -->
   <div id="warrantyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
       <button onclick="closeWarrantyModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
@@ -692,7 +665,6 @@
     </div>
   </div>
 
-  <!-- MY ORDERS MODAL -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl">
       <button onclick="closeMyOrdersModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
@@ -711,7 +683,6 @@
     </div>
   </div>
 
-  <!-- MY PROFILE MODAL -->
   <div id="profileModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
       <button onclick="closeProfileModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
@@ -740,7 +711,6 @@
     </div>
   </div>
 
-  <!-- ADMIN MODAL -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col">
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
@@ -794,7 +764,6 @@
     <span id="toastMsg">Notification message</span>
   </div>
 
-  <!-- JAVASCRIPT APP LOGIC -->
   <script>
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
@@ -878,6 +847,7 @@
       const count = cart.length;
       document.getElementById("cartCountBadge").textContent = count;
       document.getElementById("drawerCartBadge").textContent = count;
+      document.getElementById("floatingCartBadge").textContent = count;
     }
 
     function openCartModal() {
@@ -1004,7 +974,7 @@
     function openCheckoutModal(id) {
       const singleProd = products.find(p => p.id === id);
       if (!singleProd) return;
-      cart = [singleProd]; // Set single item in active basket
+      cart = [singleProd];
       updateCartUi();
       proceedToCheckout();
     }
@@ -1052,7 +1022,6 @@
       const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\n\n*Ordered Items (${cart.length}):*\n${itemsListText}\n\n*Total Payable:* ₨ ${finalTotal} ($${usdPrice})${discountAmount > 0 ? ' [Coupon SASTA10 Applied - 10% OFF]' : ''}\n\n*Customer Details:*\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
       const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
 
-      // Clear cart
       cart = [];
       updateCartUi();
       appliedDiscountPercent = 0;

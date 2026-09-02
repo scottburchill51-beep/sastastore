@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SastaStore | Premium Digital Subscriptions & Tools</title>
+
+  <!-- ==================== OPTION 4: OPENGRAPH & SEO META TAGS ==================== -->
+  <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, HeyGen, Canva Admin, Notion, Windows Keys, Netflix & AI tools at lowest prices." />
+  <meta name="keywords" content="SastaStore, CapCut Pro, Canva Pro, HeyGen credits, Windows 11 key, Netflix, digital subscriptions Pakistan" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
+  <meta property="og:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts with guaranteed replacement warranty." />
+  <meta property="og:image" content="banner.jpg" />
+  <meta property="og:url" content="https://sastastore.store" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SastaStore | Premium Tools • Sasta Prices" />
+  <meta name="twitter:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts." />
+  <meta name="twitter:image" content="banner.jpg" />
   
   <!-- Favicon Logo -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
@@ -74,7 +87,7 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Direct WhatsApp Verification & Instant Delivery • Dual PKR (₨) & USD ($)</span>
+        <span>⚡ Direct WhatsApp Verification & Instant Delivery • Switch PKR (₨) or USD ($) Live</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
         <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
@@ -115,16 +128,23 @@
       <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
         <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
         <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
-        <a href="#custom-order" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5"><i class="fa-solid fa-cart-shopping"></i> Custom Order</a>
+        <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
         <a href="#contact-us" class="hover:text-brand-emerald transition-colors">Contact Us</a>
       </div>
 
-      <!-- HEADER ACTIONS -->
-      <div class="flex items-center gap-3">
-        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="px-3 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 text-xs font-bold transition hover:scale-105">
+      <!-- HEADER ACTIONS: CURRENCY SWITCHER + FB + WHATSAPP -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- OPTION 2: LIVE CURRENCY SWITCHER TOGGLE -->
+        <div class="flex items-center bg-gray-900 border border-gray-800 rounded-xl p-1 text-xs font-black">
+          <button id="currBtnPKR" onclick="setCurrency('PKR')" class="px-2.5 py-1 rounded-lg bg-emerald-500 text-black transition">₨ PKR</button>
+          <button id="currBtnUSD" onclick="setCurrency('USD')" class="px-2.5 py-1 rounded-lg text-gray-400 hover:text-white transition">$ USD</button>
+        </div>
+
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="px-3 py-2 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 text-xs font-bold transition hover:scale-105 hidden sm:flex">
           <i class="fa-brands fa-facebook text-sm"></i>
-          <span class="hidden sm:inline">Facebook</span>
+          <span>Facebook</span>
         </a>
 
         <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
@@ -157,6 +177,9 @@
           </a>
           <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/10 text-gray-200 hover:text-cyan-400 font-bold text-sm transition">
             <i class="fa-solid fa-cart-plus text-base w-5 text-cyan-400"></i> Custom Order Service
+          </a>
+          <a href="#faq" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-500/10 text-gray-200 hover:text-indigo-400 font-bold text-sm transition">
+            <i class="fa-solid fa-circle-question text-base w-5 text-indigo-400"></i> FAQ Guide
           </a>
           <button onclick="toggleSidebar(); openMyOrdersModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-teal-500/10 text-gray-200 hover:text-teal-400 font-bold text-sm transition">
             <i class="fa-solid fa-receipt text-base w-5 text-teal-400"></i> My Orders
@@ -200,16 +223,16 @@
         </div>
         <div>
           <h4 class="text-xs font-bold text-white uppercase">1. Select Any Tool</h4>
-          <p class="text-[11px] text-gray-400">Choose plan with live PKR / USD rates</p>
+          <p class="text-[11px] text-gray-400">Choose plan with live currency pricing</p>
         </div>
       </div>
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-lg">
-          <i class="fa-solid fa-money-bill-transfer"></i>
+          <i class="fa-solid fa-qrcode"></i>
         </div>
         <div>
-          <h4 class="text-xs font-bold text-white uppercase">2. Transfer & Checkout</h4>
-          <p class="text-[11px] text-gray-400">JazzCash, SadaPay or Binance USDT</p>
+          <h4 class="text-xs font-bold text-white uppercase">2. Scan QR or Transfer</h4>
+          <p class="text-[11px] text-gray-400">Instant QR codes for JazzCash, SadaPay, Binance</p>
         </div>
       </div>
       <div class="glass-box p-4 rounded-2xl flex items-center gap-3">
@@ -218,7 +241,7 @@
         </div>
         <div>
           <h4 class="text-xs font-bold text-white uppercase">3. Instant Dispatch</h4>
-          <p class="text-[11px] text-gray-400">Direct WhatsApp support & quick setup</p>
+          <p class="text-[11px] text-gray-400">Direct WhatsApp support & warranty setup</p>
         </div>
       </div>
     </div>
@@ -278,7 +301,7 @@
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
       <div>
         <h2 class="font-heading text-3xl font-black text-white">All Digital Products & Subscriptions</h2>
-        <p class="text-xs text-gray-400">All tools shown with live prices in PKR (₨) and USD ($).</p>
+        <p class="text-xs text-gray-400">All tools with real-time toggle between PKR (₨) and USD ($).</p>
       </div>
 
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
@@ -301,6 +324,69 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid"></div>
   </section>
 
+  <!-- ==================== OPTION 3: INTERACTIVE FAQ ACCORDION ==================== -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="text-center mb-10">
+      <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
+      <h2 class="font-heading text-3xl font-black text-white">Frequently Asked Questions</h2>
+      <p class="text-xs text-gray-400 mt-1">Everything you need to know about delivery, warranty, and payment.</p>
+    </div>
+
+    <div class="space-y-3">
+      <!-- FAQ 1 -->
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
+        <button onclick="toggleFaq(1)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+          <span class="text-sm font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-clock text-emerald-400"></i> How long does delivery take after ordering?
+          </span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-1"></i>
+        </button>
+        <div id="faqAnswer-1" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          Most orders are activated within <strong>5 to 15 minutes</strong>! As soon as you place your order and send the payment screenshot on WhatsApp, our team dispatches your login credentials or activation invite immediately.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
+        <button onclick="toggleFaq(2)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+          <span class="text-sm font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-shield-heart text-blue-400"></i> How does the Replacement Warranty work?
+          </span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-2"></i>
+        </button>
+        <div id="faqAnswer-2" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          All our subscriptions and tools come with a full replacement warranty. If you ever experience any log-out or access issue during your plan duration, simply message us on WhatsApp with your Order ID, and we will replace or reactivate it within minutes.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
+        <button onclick="toggleFaq(3)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+          <span class="text-sm font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-user-lock text-amber-400"></i> Are these accounts private or shared?
+          </span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
+        </button>
+        <div id="faqAnswer-3" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          We clearly specify on each product card: keys and email invites (such as YouTube, Canva, Notion, Windows keys) are <strong>100% private to your own account</strong>. Streaming screens like Netflix are guaranteed private single screens or complete accounts as chosen.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
+        <button onclick="toggleFaq(4)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+          <span class="text-sm font-bold text-white flex items-center gap-2.5">
+            <i class="fa-solid fa-qrcode text-teal-400"></i> Can I scan QR codes to pay?
+          </span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-4"></i>
+        </button>
+        <div id="faqAnswer-4" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          Yes! During checkout, selecting JazzCash, SadaPay, or Binance Pay automatically generates an interactive QR code right inside the modal. You can simply scan it via your banking or Binance app without having to type phone numbers.
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- REVIEWS SECTION -->
   <section id="reviews" class="bg-[#09111e]/80 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
@@ -313,13 +399,13 @@
     </div>
   </section>
 
-  <!-- PAYMENT METHODS -->
+  <!-- PAYMENT METHODS SUMMARY -->
   <section id="payments" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="text-center max-w-xl mx-auto mb-10">
         <span class="text-emerald-400 text-xs font-extrabold uppercase tracking-widest block mb-2">Checkout Details</span>
         <h2 class="font-heading text-3xl font-black text-white mb-2">Official Payment Gateways</h2>
-        <p class="text-xs text-gray-400">Transfer payment to any account below before submitting order.</p>
+        <p class="text-xs text-gray-400">Transfer payment to any verified account below or scan QR codes during checkout.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -440,7 +526,7 @@
     <i class="fa-brands fa-whatsapp text-3xl"></i>
   </a>
 
-  <!-- ==================== LIVE SALES ACTIVITY POPUP (TRUST BOOSTER) ==================== -->
+  <!-- LIVE SALES POPUP -->
   <div id="liveSalePopup" class="fixed bottom-6 left-6 z-40 bg-[#0c1424]/95 border border-emerald-500/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-md flex items-center gap-3 max-w-xs transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-black flex items-center justify-center text-sm font-black flex-shrink-0 shadow-md">
       <i class="fa-solid fa-bag-shopping" id="liveSaleIcon"></i>
@@ -457,6 +543,76 @@
     <button onclick="hideLiveSalePopup()" class="text-gray-500 hover:text-gray-300 text-xs p-1">
       <i class="fa-solid fa-xmark"></i>
     </button>
+  </div>
+
+  <!-- ==================== OPTION 1: CHECKOUT MODAL WITH DYNAMIC QR CODE ==================== -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-8">
+      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="mb-4">
+        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded">Direct Checkout</span>
+        <h3 class="font-heading text-xl font-black text-white mt-1.5" id="modalProductTitle">Product Title</h3>
+        <p class="text-xs text-gray-400 font-bold" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
+      </div>
+
+      <!-- DYNAMIC QR CODE & PAYMENT DISPLAY BOX -->
+      <div class="mb-4 p-3.5 bg-gray-900/90 rounded-2xl border border-gray-800 flex items-center gap-4">
+        <div class="w-24 h-24 bg-white p-1 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
+          <img id="qrCodeImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461" alt="Payment QR" class="w-full h-full object-contain rounded" />
+        </div>
+        <div class="flex-1 text-xs space-y-1">
+          <div class="text-[10px] uppercase font-bold text-gray-400" id="qrChannelBadge">JazzCash / SadaPay</div>
+          <div class="font-bold text-white text-sm" id="qrAccountTitle">Shaloom Victor</div>
+          <div class="font-mono text-emerald-400 font-black text-sm" id="qrAccountNumber">03462195461</div>
+          <button type="button" onclick="copyCurrentQrDetails()" class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-300 hover:text-white mt-1 underline">
+            <i class="fa-regular fa-copy"></i> Copy details
+          </button>
+        </div>
+      </div>
+
+      <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Select Payment Channel *</label>
+          <select id="custPaymentMethod" onchange="updateQrDisplay(this.value)" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+            <option value="JazzCash">JazzCash (03462195461 - Shaloom Victor)</option>
+            <option value="SadaPay">SadaPay (03462195461 - Shaloom Victor)</option>
+            <option value="Binance">Binance Pay USDT (UID: 1083609522 - Scott burchill)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
+          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label>
+            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label>
+            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Account Name *</label>
+          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+        </div>
+
+        <div class="p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-[10px] text-gray-400">
+          <i class="fa-solid fa-circle-info text-emerald-400 mr-1"></i> Scan QR or send payment, then submit to open WhatsApp with your receipt ready!
+        </div>
+
+        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+          Complete & Place Order ⚡
+        </button>
+      </form>
+    </div>
   </div>
 
   <!-- MY ORDERS MODAL -->
@@ -506,8 +662,8 @@
           <span class="text-emerald-400 font-bold">Active VIP Buyer</span>
         </div>
         <div class="flex justify-between py-2 border-b border-gray-800/80">
-          <span class="text-gray-500">Currency Preference:</span>
-          <span class="text-white font-bold">PKR (₨) / USD ($)</span>
+          <span class="text-gray-500">Active Currency:</span>
+          <span class="text-white font-bold" id="profileCurrencyDisplay">PKR (₨)</span>
         </div>
         <div class="flex justify-between py-2">
           <span class="text-gray-500">Warranty Support:</span>
@@ -518,61 +674,6 @@
       <button onclick="closeProfileModal()" class="mt-5 w-full bg-gray-900 hover:bg-gray-800 border border-gray-700 text-white font-bold text-xs py-2.5 rounded-xl transition">
         Close
       </button>
-    </div>
-  </div>
-
-  <!-- CHECKOUT MODAL -->
-  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
-      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="mb-5">
-        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded">Direct Checkout</span>
-        <h3 class="font-heading text-xl font-black text-white mt-2" id="modalProductTitle">Product Title</h3>
-        <p class="text-xs text-gray-400" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
-      </div>
-
-      <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3.5">
-        <div>
-          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
-          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label>
-            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label>
-            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Channel Used *</label>
-          <select id="custPaymentMethod" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400">
-            <option value="JazzCash (03462195461)">JazzCash (03462195461 - Shaloom Victor)</option>
-            <option value="SadaPay (03462195461)">SadaPay (03462195461 - Shaloom Victor)</option>
-            <option value="Binance UID (1083609522)">Binance UID (1083609522 - Scott burchill)</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Account Name *</label>
-          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-        </div>
-
-        <div class="p-3 rounded-xl bg-gray-900 border border-gray-800 text-[11px] text-gray-400">
-          <i class="fa-solid fa-circle-info text-emerald-400 mr-1"></i> Submitting opens WhatsApp with your order slip ready. Just send payment screenshot in chat for fastest activation!
-        </div>
-
-        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          Complete & Place Order ⚡
-        </button>
-      </form>
     </div>
   </div>
 
@@ -645,11 +746,12 @@
     <span id="toastMsg">Notification message</span>
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- ==================== JAVASCRIPT APP LOGIC ==================== -->
   <script>
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
 
+    let activeCurrency = 'PKR'; // 'PKR' or 'USD'
     let currentCategory = 'all';
     let selectedProduct = null;
 
@@ -687,18 +789,17 @@
       { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty (On Email)", pricePKR: 650, badge: "Top AI", icon: "fa-solid fa-brain", color: "from-teal-400 to-emerald-600" },
       { id: 9, title: "Veo 3 (Best Performance)", category: "ai", tag: "Extension Based", warranty: "Full Speed Best Performance Pass", pricePKR: 2000, badge: "Best AI Video", icon: "fa-solid fa-wand-magic-sparkles", color: "from-amber-500 to-orange-600" },
       { id: 10, title: "Veo 3 (Medium)", category: "ai", tag: "Extension Based", warranty: "Standard Performance Monthly", pricePKR: 1500, badge: "AI Video", icon: "fa-solid fa-wand-magic-sparkles", color: "from-orange-500 to-yellow-600" },
-      { id: 11, title: "Notion AI Business", category: "ai", tag: "3 Months Access", warranty: "3 Months Business Plan", pricePKR: 1000, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-800 to-gray-900" },
-      { id: 12, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "Writing Suite Pro Pass", pricePKR: 850, badge: "Writing AI", icon: "fa-solid fa-pen-nib", color: "from-emerald-500 to-teal-600" },
-      { id: 13, title: "Leonardo AI", category: "ai", tag: "1 Month Access", warranty: "Instant Active Access", pricePKR: 800, badge: "Art AI", icon: "fa-solid fa-image", color: "from-fuchsia-500 to-purple-600" },
-      { id: 14, title: "MS Office 365", category: "design", tag: "1 Year Subscription", warranty: "1 Year Full Guaranteed", pricePKR: 900, badge: "Office", icon: "fa-solid fa-file-lines", color: "from-orange-500 to-red-500" },
-      { id: 15, title: "Coursera Premium", category: "design", tag: "1 Year Full Access", warranty: "Unlimited Free Certificates", pricePKR: 1200, badge: "Learning", icon: "fa-solid fa-graduation-cap", color: "from-blue-500 to-indigo-600" },
-      { id: 16, title: "Netflix Single Screen", category: "streaming", tag: "1 Profile Screen", warranty: "30 Days Stable Warranty", pricePKR: 350, badge: "Streaming", icon: "fa-solid fa-clapperboard", color: "from-red-600 to-rose-700" },
-      { id: 17, title: "Netflix Full Account", category: "streaming", tag: "5 Screens UHD 4K", warranty: "30 Days Full Account Warranty", pricePKR: 1000, badge: "4K UHD Private", icon: "fa-solid fa-tv", color: "from-rose-600 to-red-800" },
-      { id: 18, title: "YouTube Premium (1 Month)", category: "streaming", tag: "1 Month Invite", warranty: "Your Own Gmail Invite", pricePKR: 350, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700" },
-      { id: 19, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Invite", warranty: "3 Months Guaranteed", pricePKR: 800, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700" },
-      { id: 20, title: "NordVPN (Private)", category: "design", tag: "3 Months Access", warranty: "Private Account Warranty", pricePKR: 1300, badge: "Top VPN", icon: "fa-solid fa-globe", color: "from-blue-600 to-sky-700" },
-      { id: 21, title: "Surfshark VPN", category: "design", tag: "2 Months Access", warranty: "60 Days Complete Warranty", pricePKR: 1200, badge: "Ultra Fast", icon: "fa-solid fa-lock", color: "from-teal-600 to-emerald-700" },
-      { id: 22, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Per Mail Instant Delivery", pricePKR: 45, badge: "Bulk Stock", icon: "fa-solid fa-envelope", color: "from-blue-400 to-sky-600" }
+      { id: 11, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "Writing Suite Pro Pass", pricePKR: 850, badge: "Writing AI", icon: "fa-solid fa-pen-nib", color: "from-emerald-500 to-teal-600" },
+      { id: 12, title: "Leonardo AI", category: "ai", tag: "1 Month Access", warranty: "Instant Active Access", pricePKR: 800, badge: "Art AI", icon: "fa-solid fa-image", color: "from-fuchsia-500 to-purple-600" },
+      { id: 13, title: "MS Office 365", category: "design", tag: "1 Year Subscription", warranty: "1 Year Full Guaranteed", pricePKR: 900, badge: "Office", icon: "fa-solid fa-file-lines", color: "from-orange-500 to-red-500" },
+      { id: 14, title: "Coursera Premium", category: "design", tag: "1 Year Full Access", warranty: "Unlimited Free Certificates", pricePKR: 1200, badge: "Learning", icon: "fa-solid fa-graduation-cap", color: "from-blue-500 to-indigo-600" },
+      { id: 15, title: "Netflix Single Screen", category: "streaming", tag: "1 Profile Screen", warranty: "30 Days Stable Warranty", pricePKR: 350, badge: "Streaming", icon: "fa-solid fa-clapperboard", color: "from-red-600 to-rose-700" },
+      { id: 16, title: "Netflix Full Account", category: "streaming", tag: "5 Screens UHD 4K", warranty: "30 Days Full Account Warranty", pricePKR: 1000, badge: "4K UHD Private", icon: "fa-solid fa-tv", color: "from-rose-600 to-red-800" },
+      { id: 17, title: "YouTube Premium (1 Month)", category: "streaming", tag: "1 Month Invite", warranty: "Your Own Gmail Invite", pricePKR: 350, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700" },
+      { id: 18, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Invite", warranty: "3 Months Guaranteed", pricePKR: 800, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700" },
+      { id: 19, title: "NordVPN (Private)", category: "design", tag: "3 Months Access", warranty: "Private Account Warranty", pricePKR: 1300, badge: "Top VPN", icon: "fa-solid fa-globe", color: "from-blue-600 to-sky-700" },
+      { id: 20, title: "Surfshark VPN", category: "design", tag: "2 Months Access", warranty: "60 Days Complete Warranty", pricePKR: 1200, badge: "Ultra Fast", icon: "fa-solid fa-lock", color: "from-teal-600 to-emerald-700" },
+      { id: 21, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Per Mail Instant Delivery", pricePKR: 45, badge: "Bulk Stock", icon: "fa-solid fa-envelope", color: "from-blue-400 to-sky-600" }
     ];
 
     const reviewsData = [
@@ -709,7 +810,81 @@
       { name: "Zainab Shah", role: "Content Creator", text: "Wink Pro & Notion 1 Year plans are 100% genuine. Safe checkout via SadaPay!", rating: 5 }
     ];
 
-    // ==================== LIVE SALES POPUP DATA & ROTATOR ====================
+    // ==================== OPTION 2: CURRENCY TOGGLER ====================
+    function setCurrency(curr) {
+      activeCurrency = curr;
+      const btnPKR = document.getElementById("currBtnPKR");
+      const btnUSD = document.getElementById("currBtnUSD");
+
+      if (curr === 'PKR') {
+        btnPKR.className = "px-2.5 py-1 rounded-lg bg-emerald-500 text-black transition font-black";
+        btnUSD.className = "px-2.5 py-1 rounded-lg text-gray-400 hover:text-white transition font-black";
+      } else {
+        btnUSD.className = "px-2.5 py-1 rounded-lg bg-emerald-500 text-black transition font-black";
+        btnPKR.className = "px-2.5 py-1 rounded-lg text-gray-400 hover:text-white transition font-black";
+      }
+
+      document.getElementById("profileCurrencyDisplay").textContent = curr === 'PKR' ? 'PKR (₨)' : 'USD ($)';
+      renderTopProducts();
+      filterAndSearch();
+      showToast(`Switched currency to ${curr}!`);
+    }
+
+    function formatPrice(pricePKR) {
+      if (activeCurrency === 'USD') {
+        const usd = (pricePKR / USD_RATE).toFixed(2);
+        return `$${usd} USD`;
+      }
+      return `₨ ${pricePKR}/-`;
+    }
+
+    // ==================== OPTION 1: QR CODE DISPLAY UPDATER ====================
+    function updateQrDisplay(method) {
+      const qrImg = document.getElementById("qrCodeImg");
+      const badge = document.getElementById("qrChannelBadge");
+      const title = document.getElementById("qrAccountTitle");
+      const num = document.getElementById("qrAccountNumber");
+
+      if (method.includes("JazzCash")) {
+        badge.textContent = "JazzCash Local Transfer";
+        title.textContent = "Shaloom Victor";
+        num.textContent = "03462195461";
+        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461";
+      } else if (method.includes("SadaPay")) {
+        badge.textContent = "SadaPay Zero-Fee Transfer";
+        title.textContent = "Shaloom Victor";
+        num.textContent = "03462195461";
+        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461";
+      } else {
+        badge.textContent = "Binance Pay USDT (Global)";
+        title.textContent = "Scott burchill";
+        num.textContent = "UID: 1083609522";
+        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1083609522";
+      }
+    }
+
+    function copyCurrentQrDetails() {
+      const num = document.getElementById("qrAccountNumber").textContent.replace("UID: ", "").trim();
+      navigator.clipboard.writeText(num);
+      showToast(`${num} copied to clipboard!`);
+    }
+
+    // ==================== OPTION 3: FAQ ACCORDION TOGGLE ====================
+    function toggleFaq(id) {
+      const ans = document.getElementById(`faqAnswer-${id}`);
+      const icon = document.getElementById(`faqIcon-${id}`);
+      const isHidden = ans.classList.contains("hidden");
+
+      document.querySelectorAll("[id^='faqAnswer-']").forEach(el => el.classList.add("hidden"));
+      document.querySelectorAll("[id^='faqIcon-']").forEach(el => el.classList.remove("rotate-180"));
+
+      if (isHidden) {
+        ans.classList.remove("hidden");
+        icon.classList.add("rotate-180");
+      }
+    }
+
+    // ==================== LIVE SALES POPUP ROTATOR ====================
     const liveSalesData = [
       { user: "Hamza from Lahore", item: "CapCut Pro (6 Months)", icon: "fa-solid fa-scissors", time: "2 mins ago" },
       { user: "Zeeshan from Karachi", item: "HeyGen 200 Credits", icon: "fa-solid fa-video", time: "Just now" },
@@ -723,7 +898,6 @@
     ];
 
     let liveSaleIndex = 0;
-    let liveSaleTimer = null;
 
     function showNextLiveSale() {
       const popup = document.getElementById("liveSalePopup");
@@ -755,17 +929,15 @@
     function initLiveSalesLoop() {
       setTimeout(() => {
         showNextLiveSale();
-        setInterval(showNextLiveSale, 16000); // Trigger every 16 seconds
-      }, 4000); // Start 4 seconds after page load
+        setInterval(showNextLiveSale, 16000);
+      }, 4000);
     }
 
-    // DRAWER TOGGLE
+    // ==================== DRAWER & RENDERING ====================
     function toggleSidebar() {
-      const drawer = document.getElementById("sideDrawer");
-      drawer.classList.toggle("hidden");
+      document.getElementById("sideDrawer").classList.toggle("hidden");
     }
 
-    // RENDER TOP PRODUCTS
     function renderTopProducts() {
       const topGrid = document.getElementById("topProductsGrid");
       if (!topGrid) return;
@@ -773,9 +945,8 @@
       topGrid.innerHTML = topItems.map(p => productCardHtml(p)).join("");
     }
 
-    // RENDER PRODUCT CARD HTML
     function productCardHtml(p) {
-      const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
+      const priceText = formatPrice(p.pricePKR);
       return `
         <div class="glass-box rounded-2xl p-5 flex flex-col justify-between transition hover:-translate-y-1.5 group shadow-lg">
           <div>
@@ -792,14 +963,13 @@
             <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-5"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
           </div>
           <div class="pt-4 border-t border-gray-800 flex items-center justify-between gap-2">
-            <div><span class="text-lg font-black text-emerald-400 font-heading">₨ ${p.pricePKR}/-</span> <span class="text-xs font-bold text-gray-400">($${usdPrice})</span></div>
+            <div><span class="text-base sm:text-lg font-black text-emerald-400 font-heading">${priceText}</span></div>
             <button onclick="openCheckoutModal(${p.id})" class="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition shadow"><i class="fa-solid fa-cart-shopping text-xs"></i> Order</button>
           </div>
         </div>
       `;
     }
 
-    // RENDER PRODUCTS INVENTORY
     function renderProducts(items) {
       const grid = document.getElementById("productsGrid");
       if (!grid) return;
@@ -827,13 +997,17 @@
       `).join("");
     }
 
-    // CHECKOUT LOGIC
+    // ==================== CHECKOUT LOGIC ====================
     function openCheckoutModal(id) {
       selectedProduct = products.find(p => p.id === id);
       if (!selectedProduct) return;
-      const usdPrice = (selectedProduct.pricePKR / USD_RATE).toFixed(2);
+      const priceFormatted = formatPrice(selectedProduct.pricePKR);
+      const usdAlt = (selectedProduct.pricePKR / USD_RATE).toFixed(2);
+
       document.getElementById("modalProductTitle").textContent = `${selectedProduct.title} (${selectedProduct.tag})`;
-      document.getElementById("modalProductPrice").textContent = `Payable Amount: ₨ ${selectedProduct.pricePKR}/- ($${usdPrice} USD)`;
+      document.getElementById("modalProductPrice").textContent = `Payable Amount: ${priceFormatted} (≈ $${usdAlt} USD / ₨ ${selectedProduct.pricePKR})`;
+      
+      updateQrDisplay(document.getElementById("custPaymentMethod").value);
       document.getElementById("checkoutModal").classList.remove("hidden");
     }
 
@@ -872,7 +1046,7 @@
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
       localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone }));
 
-      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${selectedProduct.pricePKR} ($${usdPrice})\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
+      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\nProduct: ${selectedProduct.title} (${selectedProduct.tag})\nAmount: ₨ ${selectedProduct.pricePKR} ($${usdPrice})\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n(Sending payment screenshot below for fast dispatch)`;
       const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
 
       closeCheckoutModal();
@@ -883,7 +1057,7 @@
       }, 700);
     }
 
-    // MY ORDERS MODAL
+    // ==================== MY ORDERS & PROFILE ====================
     function openMyOrdersModal() {
       document.getElementById("myOrdersModal").classList.remove("hidden");
       const user = JSON.parse(localStorage.getItem('sasta_user') || '{}');
@@ -926,7 +1100,6 @@
       `).join("");
     }
 
-    // MY PROFILE MODAL
     function openProfileModal() {
       const user = JSON.parse(localStorage.getItem('sasta_user') || '{}');
       if (user.name) document.getElementById("profileNameDisplay").textContent = user.name;
@@ -938,7 +1111,7 @@
       document.getElementById("profileModal").classList.add("hidden");
     }
 
-    // ADMIN DASHBOARD
+    // ==================== ADMIN DASHBOARD ====================
     function openAdminModal() { document.getElementById("adminModal").classList.remove("hidden"); }
     function closeAdminModal() { document.getElementById("adminModal").classList.add("hidden"); }
 
@@ -1022,6 +1195,7 @@
       a.click();
     }
 
+    // ==================== SEARCH & FILTERS ====================
     function filterCategory(cat, btn) {
       currentCategory = cat;
       document.querySelectorAll(".filter-btn").forEach(el => { el.classList.remove("active", "bg-emerald-500", "text-black"); el.classList.add("text-gray-400"); });

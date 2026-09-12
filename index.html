@@ -11,12 +11,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
   <meta property="og:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts with guaranteed replacement warranty." />
-  <meta property="og:image" content="banner.jpg" />
+  <meta property="og:image" content="banner1.jpg" />
   <meta property="og:url" content="https://sastastore.store" />
+  <link rel="canonical" href="https://sastastore.store/" />
+  <meta name="robots" content="index, follow" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SastaStore | Premium Tools • Sasta Prices" />
   <meta name="twitter:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts." />
-  <meta name="twitter:image" content="banner.jpg" />
+  <meta name="twitter:image" content="banner1.jpg" />
   
   <!-- Favicon Logo -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
@@ -72,6 +74,13 @@
     .neon-emerald {
       box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
     }
+    .slide-item {
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .slide-item.active {
+      display: block;
+    }
   </style>
 </head>
 
@@ -82,7 +91,7 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Flash Sale Live: Huge Discounts on All Tools • Use <strong>SASTA10</strong> for Extra 10% OFF on ₨ 3,000+</span>
+        <span>⚡ Multi-Item Basket Active • Combine tools & use <strong>SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
         <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
@@ -130,7 +139,7 @@
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
       </div>
 
-      <!-- HEADER ACTIONS: BASKET ICON ONLY + WHATSAPP -->
+      <!-- HEADER ACTIONS: BASKET ICON + WHATSAPP -->
       <div class="flex items-center gap-2">
         <button onclick="openCartModal()" class="relative w-11 h-11 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center transition hover:scale-105 shadow-lg shadow-emerald-500/20 flex-shrink-0" title="Shopping Basket">
           <i class="fa-solid fa-bag-shopping text-lg text-black"></i>
@@ -205,48 +214,54 @@
     </div>
   </div>
 
-  <!-- HERO SECTION BANNER -->
+  <!-- ==================== 6 BANNERS AUTO-SLIDER (CLICKABLE DIRECT CHECKOUT) ==================== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
-    <div class="relative overflow-hidden rounded-3xl border border-emerald-500/30 shadow-2xl group hover:border-emerald-500/60 transition neon-emerald">
-      <img src="banner.jpg" alt="SastaStore Deals Banner" class="w-full h-auto object-cover rounded-3xl group-hover:scale-[1.01] transition-transform duration-300" />
-    </div>
-  </section>
-
-  <!-- ==================== INTERACTIVE PROMOTIONAL DEAL BANNERS ==================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="relative overflow-hidden rounded-3xl border border-emerald-500/30 shadow-2xl neon-emerald group cursor-pointer">
       
-      <!-- DEAL BANNER 1: AI POWERHOUSE -->
-      <div onclick="filterCategory('ai', document.querySelectorAll('#filterTabs button')[1]); document.getElementById('products').scrollIntoView({behavior: 'smooth'})" class="cursor-pointer relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-950/80 via-[#0d1424] to-indigo-950/80 border border-purple-500/30 p-5 hover:border-purple-400 transition hover:-translate-y-1 group shadow-xl">
-        <div class="flex items-start justify-between mb-3">
-          <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40">⚡ AI Super Pack</span>
-          <i class="fa-solid fa-brain text-2xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+      <!-- Slide Images Wrapper -->
+      <div id="carouselContainer" class="relative w-full">
+        <!-- Banner 1: CapCut Pro Monthly (749/-) -->
+        <div class="slide-item active" onclick="openCheckoutModal(2)" title="Order CapCut Pro Monthly (₨ 749/-)">
+          <img src="banner1.jpg" alt="CapCut Pro Monthly 749" class="w-full h-auto object-cover rounded-3xl" />
         </div>
-        <h3 class="font-heading font-black text-lg text-white mb-1">AI Video & Chat Tools</h3>
-        <p class="text-xs text-gray-300 mb-3">HeyGen, Grok Paid, Claude Pro, ChatGPT & Gemini at mega discounted prices.</p>
-        <span class="text-xs font-bold text-purple-400 group-hover:underline flex items-center gap-1">Explore AI Deals <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+        <!-- Banner 2: CapCut Pro 6 Months (3399/-) -->
+        <div class="slide-item" onclick="openCheckoutModal(3)" title="Order CapCut Pro 6 Months (₨ 3,399/-)">
+          <img src="banner2.jpg" alt="CapCut Pro 6 Months 3399" class="w-full h-auto object-cover rounded-3xl" />
+        </div>
+        <!-- Banner 3: Canva Pro (249/-) -->
+        <div class="slide-item" onclick="openCheckoutModal(5)" title="Order Canva Pro / Edu (₨ 249/-)">
+          <img src="banner3.jpg" alt="Canva Pro 249" class="w-full h-auto object-cover rounded-3xl" />
+        </div>
+        <!-- Banner 4: CapCut Pro Weekly (179/-) -->
+        <div class="slide-item" onclick="openCheckoutModal(4)" title="Order CapCut Pro 6 to 7 Days (₨ 179/-)">
+          <img src="banner4.jpg" alt="CapCut Pro Weekly 179" class="w-full h-auto object-cover rounded-3xl" />
+        </div>
+        <!-- Banner 5: Canva Admin Panel (2499/-) -->
+        <div class="slide-item" onclick="openCheckoutModal(7)" title="Order Canva Admin Panel (₨ 2,499/-)">
+          <img src="banner5.jpg" alt="Canva Admin Panel 2499" class="w-full h-auto object-cover rounded-3xl" />
+        </div>
+        <!-- Banner 6: Gemini Pro 18 Months (649/-) -->
+        <div class="slide-item" onclick="openCheckoutModal(8)" title="Order Gemini Pro 18 Months (₨ 649/-)">
+          <img src="banner6.jpg" alt="Gemini Pro 18 Months 649" class="w-full h-auto object-cover rounded-3xl" />
+        </div>
       </div>
 
-      <!-- DEAL BANNER 2: DESIGNER & CREATOR SUITE -->
-      <div onclick="filterCategory('design', document.querySelectorAll('#filterTabs button')[2]); document.getElementById('products').scrollIntoView({behavior: 'smooth'})" class="cursor-pointer relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-950/80 via-[#0d1424] to-cyan-950/80 border border-cyan-500/30 p-5 hover:border-cyan-400 transition hover:-translate-y-1 group shadow-xl">
-        <div class="flex items-start justify-between mb-3">
-          <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">🎨 Creator Essentials</span>
-          <i class="fa-solid fa-palette text-2xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
-        </div>
-        <h3 class="font-heading font-black text-lg text-white mb-1">CapCut, Canva & Design</h3>
-        <p class="text-xs text-gray-300 mb-3">Canva Edu/Pro now at just <strong class="text-emerald-400">₨ 299/-</strong>, CapCut Pro monthly & 6-month plans.</p>
-        <span class="text-xs font-bold text-cyan-400 group-hover:underline flex items-center gap-1">Browse Design Suites <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
-      </div>
+      <!-- Navigation Arrows -->
+      <button onclick="event.stopPropagation(); prevSlide();" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10" title="Previous Banner">
+        <i class="fa-solid fa-chevron-left text-sm"></i>
+      </button>
+      <button onclick="event.stopPropagation(); nextSlide();" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10" title="Next Banner">
+        <i class="fa-solid fa-chevron-right text-sm"></i>
+      </button>
 
-      <!-- DEAL BANNER 3: FLASH COMBO DEAL -->
-      <div onclick="document.getElementById('top-products').scrollIntoView({behavior: 'smooth'})" class="cursor-pointer relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-950/80 via-[#0d1424] to-orange-950/80 border border-amber-500/30 p-5 hover:border-amber-400 transition hover:-translate-y-1 group shadow-xl">
-        <div class="flex items-start justify-between mb-3">
-          <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 animate-pulse">🔥 Multi-Buy Offer</span>
-          <i class="fa-solid fa-tags text-2xl text-amber-400 group-hover:scale-110 transition-transform"></i>
-        </div>
-        <h3 class="font-heading font-black text-lg text-white mb-1">Bundle & Save 10% Extra</h3>
-        <p class="text-xs text-gray-300 mb-3">Add any tools to your basket! Orders reaching ₨ 3,000+ get extra 10% discount with code <strong class="text-white">SASTA10</strong>.</p>
-        <span class="text-xs font-bold text-amber-400 group-hover:underline flex items-center gap-1">Check Top Sellers <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+      <!-- Dots Indicators -->
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10 bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/10" id="carouselDots">
+        <button onclick="event.stopPropagation(); goToSlide(0);" class="w-2.5 h-2.5 rounded-full bg-emerald-400 transition-all"></button>
+        <button onclick="event.stopPropagation(); goToSlide(1);" class="w-2.5 h-2.5 rounded-full bg-gray-500 transition-all"></button>
+        <button onclick="event.stopPropagation(); goToSlide(2);" class="w-2.5 h-2.5 rounded-full bg-gray-500 transition-all"></button>
+        <button onclick="event.stopPropagation(); goToSlide(3);" class="w-2.5 h-2.5 rounded-full bg-gray-500 transition-all"></button>
+        <button onclick="event.stopPropagation(); goToSlide(4);" class="w-2.5 h-2.5 rounded-full bg-gray-500 transition-all"></button>
+        <button onclick="event.stopPropagation(); goToSlide(5);" class="w-2.5 h-2.5 rounded-full bg-gray-500 transition-all"></button>
       </div>
 
     </div>
@@ -605,7 +620,7 @@
       <div id="cartEmptyState" class="hidden text-center py-8">
         <i class="fa-solid fa-bag-shopping text-4xl text-gray-600 mb-2"></i>
         <p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p>
-        <p class="text-[11px] text-gray-500 mt-1">Click "+ Basket" on any product to add items.</p>
+        <p class="text-[11px] text-gray-500 mt-1">Click "+ Basket" on any product below to add items.</p>
       </div>
 
       <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
@@ -919,11 +934,45 @@
     let appliedDiscountPercent = 0;
     let uploadedScreenshotBase64 = "";
 
-    // ALL PRODUCTS WITH ORIGINAL CUT-PRICE & NEW PROFESSIONAL 299/- / 749/- FORMAT
+    // CAROUSEL SLIDER LOGIC (6 BANNERS)
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide-item");
+    const dots = document.querySelectorAll("#carouselDots button");
+    let slideInterval = null;
+
+    function showSlide(index) {
+      if (index >= slides.length) currentSlide = 0;
+      else if (index < 0) currentSlide = slides.length - 1;
+      else currentSlide = index;
+
+      slides.forEach((s, idx) => {
+        s.classList.toggle("active", idx === currentSlide);
+      });
+
+      dots.forEach((d, idx) => {
+        d.className = idx === currentSlide 
+          ? "w-2.5 h-2.5 rounded-full bg-emerald-400 transition-all scale-125" 
+          : "w-2.5 h-2.5 rounded-full bg-gray-500 transition-all";
+      });
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); resetSlideTimer(); }
+    function prevSlide() { showSlide(currentSlide - 1); resetSlideTimer(); }
+    function goToSlide(idx) { showSlide(idx); resetSlideTimer(); }
+
+    function startSlideTimer() {
+      slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 3800);
+    }
+    function resetSlideTimer() {
+      clearInterval(slideInterval);
+      startSlideTimer();
+    }
+
+    // ALL PRODUCTS WITH ORIGINAL CUT-PRICE & NEW 249/- CANVA FORMAT
     const products = [
       // Top Best Sellers
       { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", origPricePKR: 999, pricePKR: 749, badge: "Hot Seller", icon: "fa-solid fa-scissors", color: "from-blue-500 to-cyan-600", isTop: true, urgency: "Hurry! Only 5 Left" },
-      { id: 5, title: "Canva Edu / Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Warranty (Invite Access)", origPricePKR: 449, pricePKR: 299, badge: "Popular", icon: "fa-solid fa-palette", color: "from-cyan-500 to-blue-500", isTop: true },
+      { id: 5, title: "Canva Edu / Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Warranty (Invite Access)", origPricePKR: 349, pricePKR: 249, badge: "Popular", icon: "fa-solid fa-palette", color: "from-cyan-500 to-blue-500", isTop: true },
       { id: 7, title: "Canva Admin Panel", category: "design", tag: "Add 500 Members", warranty: "6 Months Full Warranty", origPricePKR: 3499, pricePKR: 2499, badge: "Reseller Kit", icon: "fa-solid fa-user-shield", color: "from-purple-600 to-indigo-700", isTop: true, urgency: "Only 2 Panels Left" },
       { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "1 Month Invite", warranty: "25 Days Warranty (Own Gmail)", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700", isTop: true },
       { id: 24, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Invite", warranty: "1 Month Replacement Warranty", origPricePKR: 1199, pricePKR: 899, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700", isTop: true },
@@ -981,7 +1030,7 @@
       { name: "Zainab Shah", role: "Content Creator", text: "Windows 11 Pro key was genuine retail key. Online activation successful in seconds!", rating: 5, date: "5 days ago" }
     ];
 
-    // LIVE REVIEWS
+    // LIVE REVIEWS LOGIC
     function getStoredReviews() {
       const stored = localStorage.getItem('sasta_live_reviews');
       if (!stored) {
@@ -1366,10 +1415,9 @@
       topGrid.innerHTML = topItems.map(p => productCardHtml(p)).join("");
     }
 
-    // PRODUCT CARD HTML WITH CUT PRICE (~349/-~ 299/-) AND SAVE BADGE
     function productCardHtml(p) {
       const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
-      const cutPrice = p.origPricePKR || Math.round(p.pricePKR * 1.35); // Cut strike price
+      const cutPrice = p.origPricePKR || Math.round(p.pricePKR * 1.35);
       return `
         <div class="glass-box rounded-2xl p-5 flex flex-col justify-between transition hover:-translate-y-1.5 group shadow-lg relative">
           <div>
@@ -1394,7 +1442,6 @@
           </div>
 
           <div class="pt-3 border-t border-gray-800 space-y-2">
-            <!-- CUT PRICE + CURRENT PRICE DISPLAY -->
             <div class="flex items-baseline justify-between gap-1">
               <div class="flex items-baseline gap-2">
                 <span class="text-xs text-gray-500 line-through font-semibold">₨ ${cutPrice}/-</span>
@@ -1616,6 +1663,7 @@
       renderReviews();
       initLiveSalesLoop();
       updateCartUi();
+      startSlideTimer();
     });
   </script>
 </body>

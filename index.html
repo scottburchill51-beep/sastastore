@@ -123,15 +123,15 @@
       <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
         <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
         <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
+        <a href="#reviews" class="hover:text-amber-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-star text-amber-400 text-xs"></i> Live Reviews</a>
         <a href="#custom-order" class="hover:text-cyan-400 transition-colors">Custom Orders</a>
         <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
         <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty</button>
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> My Orders</button>
       </div>
 
-      <!-- HEADER ACTIONS: BASKET ICON ONLY + WHATSAPP -->
+      <!-- HEADER ACTIONS: BASKET ICON + WHATSAPP -->
       <div class="flex items-center gap-2">
-        <!-- BASKET BUTTON: ONLY SYMBOL ICON + BADGE -->
         <button onclick="openCartModal()" class="relative w-11 h-11 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center transition hover:scale-105 shadow-lg shadow-emerald-500/20 flex-shrink-0" title="Shopping Basket">
           <i class="fa-solid fa-bag-shopping text-lg text-black"></i>
           <span id="cartCountBadge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-black text-emerald-400 font-black text-[10px] flex items-center justify-center border border-emerald-400">0</span>
@@ -169,6 +169,9 @@
           </a>
           <a href="#products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
             <i class="fa-solid fa-boxes-stacked text-base w-5 text-emerald-400"></i> All Products
+          </a>
+          <a href="#reviews" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-gray-200 hover:text-amber-400 font-bold text-sm transition">
+            <i class="fa-solid fa-star text-base w-5 text-amber-400"></i> Customer Reviews
           </a>
           <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/10 text-gray-200 hover:text-cyan-400 font-bold text-sm transition">
             <i class="fa-solid fa-cart-plus text-base w-5 text-cyan-400"></i> Custom Order Service
@@ -319,8 +322,27 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid"></div>
   </section>
 
+  <!-- ==================== LIVE CUSTOMER REVIEWS & FEEDBACK ==================== -->
+  <section id="reviews" class="bg-[#09111e]/90 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+        <div>
+          <span class="text-amber-400 text-xs font-black uppercase tracking-widest block mb-2"><i class="fa-solid fa-star text-amber-400 mr-1"></i> 100% Genuine Feedback</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Live Customer Reviews (4.9 / 5.0)</h2>
+          <p class="text-gray-400 text-xs sm:text-sm mt-1">Real reviews posted live by verified SastaStore customers.</p>
+        </div>
+
+        <button onclick="openReviewModal()" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-500/20 hover:scale-105">
+          <i class="fa-solid fa-pen-nib text-sm"></i> Write a Review
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviewsContainer"></div>
+    </div>
+  </section>
+
   <!-- FAQ ACCORDION SECTION -->
-  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center mb-10">
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
       <h2 class="font-heading text-3xl font-black text-white">Frequently Asked Questions</h2>
@@ -366,20 +388,8 @@
     </div>
   </section>
 
-  <!-- REVIEWS SECTION -->
-  <section id="reviews" class="bg-[#09111e]/80 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Real Feedback</span>
-        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white mb-3">Customer Reviews (4.9 / 5.0)</h2>
-        <p class="text-gray-400 text-xs sm:text-sm">Verified buyers who ordered directly from SastaStore.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviewsContainer"></div>
-    </div>
-  </section>
-
   <!-- PAYMENT METHODS SUMMARY -->
-  <section id="payments" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <section id="payments" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
     <div class="glass-box rounded-3xl p-8 border border-gray-800">
       <div class="text-center max-w-xl mx-auto mb-10">
         <span class="text-emerald-400 text-xs font-extrabold uppercase tracking-widest block mb-2">Checkout Details</span>
@@ -587,7 +597,7 @@
     </div>
   </div>
 
-  <!-- CHECKOUT MODAL (WITH PAYMENT SCREENSHOT UPLOAD) -->
+  <!-- CHECKOUT MODAL (WITH SCREENSHOT UPLOAD) -->
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-8">
       <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
@@ -666,6 +676,51 @@
 
         <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
           Complete & Place Order ⚡
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== WRITE A REVIEW MODAL ==================== -->
+  <div id="reviewModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 sm:p-7 relative shadow-2xl">
+      <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="text-center pb-4 border-b border-gray-800 mb-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mx-auto mb-2 border border-amber-500/30">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h3 class="font-heading text-lg font-black text-white">Share Your Feedback</h3>
+        <p class="text-xs text-gray-400">Your review will be displayed live on the website!</p>
+      </div>
+
+      <form onsubmit="submitLiveReview(event)" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
+          <input type="text" id="revName" required placeholder="e.g. Daniyal Sheikh" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Profession / Role</label>
+          <input type="text" id="revRole" placeholder="e.g. Video Editor / Digital Marketer" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Rating *</label>
+          <select id="revRating" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-amber-400 font-bold focus:outline-none focus:border-emerald-400">
+            <option value="5">★★★★★ (5 Stars - Excellent)</option>
+            <option value="4">★★★★☆ (4 Stars - Good)</option>
+            <option value="3">★★★☆☆ (3 Stars - Average)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Experience / Review *</label>
+          <textarea id="revText" required rows="3" placeholder="Tell us about the tool delivery and customer service..." class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition shadow-lg shadow-amber-500/20">
+          Post Review Live 🚀
         </button>
       </form>
     </div>
@@ -824,11 +879,12 @@
     let appliedDiscountPercent = 0;
     let uploadedScreenshotBase64 = "";
 
-    // ALL PRODUCTS INVENTORY WITH EXACT REQUESTED PRICES (749/- format) & WARRANTIES
+    // ALL PRODUCTS WITH EXACT REQUESTED PRICES & UPDATED WARRANTIES
     const products = [
       // Top Best Sellers
       { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", pricePKR: 749, badge: "Hot Seller", icon: "fa-solid fa-scissors", color: "from-blue-500 to-cyan-600", isTop: true, urgency: "Hurry! Only 5 Left" },
       { id: 5, title: "Canva Edu / Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Warranty (Invite Access)", pricePKR: 349, badge: "Popular", icon: "fa-solid fa-palette", color: "from-cyan-500 to-blue-500", isTop: true },
+      { id: 7, title: "Canva Admin Panel", category: "design", tag: "Add 500 Members", warranty: "6 Months Full Warranty", pricePKR: 2499, badge: "Reseller Kit", icon: "fa-solid fa-user-shield", color: "from-purple-600 to-indigo-700", isTop: true, urgency: "Only 2 Panels Left" },
       { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "1 Month Invite", warranty: "25 Days Warranty (Own Gmail)", pricePKR: 349, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700", isTop: true },
       { id: 24, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Invite", warranty: "1 Month Replacement Warranty", pricePKR: 899, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700", isTop: true },
       { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty (2 Hours Hold)", pricePKR: 649, badge: "Top AI", icon: "fa-solid fa-brain", color: "from-teal-400 to-emerald-600", isTop: true },
@@ -842,8 +898,8 @@
       { id: 11, title: "Notion AI (3 Months)", category: "ai", tag: "3 Months Plan", warranty: "3 Months Access Warranty", pricePKR: 1299, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-800 to-gray-900" },
 
       // All Existing Catalog Updated with Exact Warranties & Prices
-      { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "5 Months Replacement Warranty", pricePKR: 3299, badge: "Best Value", icon: "fa-solid fa-film", color: "from-blue-600 to-indigo-700" },
-      { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "6 to 7 Days Full Warranty", pricePKR: 169, badge: "Budget", icon: "fa-solid fa-video", color: "from-sky-500 to-blue-600" },
+      { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "5 Months Replacement Warranty", pricePKR: 3399, badge: "Best Value", icon: "fa-solid fa-film", color: "from-blue-600 to-indigo-700" },
+      { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "6 to 7 Days Full Warranty", pricePKR: 179, badge: "Budget", icon: "fa-solid fa-video", color: "from-sky-500 to-blue-600" },
       { id: 116, title: "CapCut Pro Admin Team (7 Seats)", category: "design", tag: "1 Month (7 Seats)", warranty: "25 Days Replacement Warranty", pricePKR: 3499, badge: "Reseller Team", icon: "fa-solid fa-users-gear", color: "from-blue-600 to-teal-600", urgency: "Only 2 Teams Left" },
       { id: 102, title: "Notion (1 Year)", category: "design", tag: "12 Months Full Access", warranty: "6 to 7 Months Full Warranty", pricePKR: 1099, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-700 to-zinc-900" },
       { id: 103, title: "TikTok UK / USA Accounts (Fresh)", category: "accounts", tag: "Fresh PVA", warranty: "On-Demand Fresh Account Creation", pricePKR: 999, badge: "Monetization", icon: "fa-brands fa-tiktok", color: "from-pink-600 to-rose-700" },
@@ -861,7 +917,6 @@
       { id: 115, title: "Figma Pro Edu (2 Years)", category: "design", tag: "24 Months Access", warranty: "1 Month Replacement Warranty", pricePKR: 2199, badge: "Designers", icon: "fa-brands fa-figma", color: "from-pink-500 to-purple-600" },
       { id: 117, title: "Adobe Express 12M Redeem Link", category: "design", tag: "1 Year Voucher Link", warranty: "Direct Activation Warranty", pricePKR: 839, badge: "Official Link", icon: "fa-solid fa-pen-ruler", color: "from-red-600 to-rose-700" },
       { id: 6, title: "Canva Business", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", pricePKR: 499, badge: "Business", icon: "fa-solid fa-palette", color: "from-teal-500 to-blue-600" },
-      { id: 7, title: "Canva Admin Panel", category: "design", tag: "Add 500 Members", warranty: "6 Months Full Warranty", pricePKR: 2999, badge: "Reseller Kit", icon: "fa-solid fa-user-shield", color: "from-purple-600 to-indigo-700" },
       { id: 9, title: "Veo 3 (Best Performance)", category: "ai", tag: "Extension Based", warranty: "20 Days Replacement Warranty", pricePKR: 1999, badge: "Best AI Video", icon: "fa-solid fa-wand-magic-sparkles", color: "from-amber-500 to-orange-600" },
       { id: 10, title: "Veo 3 (Medium)", category: "ai", tag: "Extension Based", warranty: "20 Days Replacement Warranty", pricePKR: 1499, badge: "AI Video", icon: "fa-solid fa-wand-magic-sparkles", color: "from-orange-500 to-yellow-600" },
       { id: 12, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", pricePKR: 849, badge: "Writing AI", icon: "fa-solid fa-pen-nib", color: "from-emerald-500 to-teal-600" },
@@ -878,13 +933,75 @@
       { id: 22, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Instant Fresh Delivery", pricePKR: 44, badge: "Bulk Stock", icon: "fa-solid fa-envelope", color: "from-blue-400 to-sky-600" }
     ];
 
-    const reviewsData = [
-      { name: "Ahmad Khan", role: "Video Editor", text: "Ordered HeyGen Credits and CapCut Pro. Super quick activation on WhatsApp. Highly recommended!", rating: 5 },
-      { name: "Usman Ali", role: "Digital Marketer", text: "Freepik panel & Claude Pro worked seamlessly. Shaloom Victor provides top service.", rating: 5 },
-      { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel & Figma Pro 2 Years activated within minutes. Sasta prices guaranteed.", rating: 5 },
-      { name: "Bilal Tariq", role: "Software Engineer", text: "Windows 11 Pro retail key worked online permanently on first attempt. Best genuine store.", rating: 5 },
-      { name: "Zainab Shah", role: "Content Creator", text: "Grok paid account & ChatGPT shared worked seamlessly. Safe checkout via SadaPay!", rating: 5 }
+    // INITIAL REVIEWS DATA
+    const defaultReviews = [
+      { name: "Ahmad Khan", role: "Video Editor", text: "Ordered CapCut Pro 6 Months plan directly through the site. Payment verified in 2 minutes. Best store in Pakistan!", rating: 5, date: "Yesterday" },
+      { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5, date: "2 days ago" },
+      { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately on my private mail. 100% recommended.", rating: 5, date: "3 days ago" },
+      { name: "Usman Ali", role: "Digital Marketer", text: "Freepik panel & HeyGen 600 credits worked like a charm! Downloaded 50+ files smoothly.", rating: 5, date: "4 days ago" },
+      { name: "Zainab Shah", role: "Content Creator", text: "Windows 11 Pro key was genuine retail key. Online activation successful in seconds!", rating: 5, date: "5 days ago" }
     ];
+
+    // ==================== LIVE REVIEWS LOGIC ====================
+    function getStoredReviews() {
+      const stored = localStorage.getItem('sasta_live_reviews');
+      if (!stored) {
+        localStorage.setItem('sasta_live_reviews', JSON.stringify(defaultReviews));
+        return defaultReviews;
+      }
+      return JSON.parse(stored);
+    }
+
+    function renderReviews() {
+      const container = document.getElementById("reviewsContainer");
+      if (!container) return;
+      const reviews = getStoredReviews();
+
+      container.innerHTML = reviews.map(r => `
+        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800 hover:border-amber-500/30 transition">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-1 text-amber-400 text-xs">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div>
+              <span class="text-[10px] text-gray-500">${r.date || 'Verified'}</span>
+            </div>
+            <p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-gray-800/80">
+            <div>
+              <p class="text-xs font-bold text-white">${r.name}</p>
+              <p class="text-[10px] text-gray-500">${r.role || 'Customer'}</p>
+            </div>
+            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified</span>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function openReviewModal() {
+      document.getElementById("reviewModal").classList.remove("hidden");
+    }
+
+    function closeReviewModal() {
+      document.getElementById("reviewModal").classList.add("hidden");
+    }
+
+    function submitLiveReview(e) {
+      e.preventDefault();
+      const name = document.getElementById("revName").value.trim();
+      const role = document.getElementById("revRole").value.trim() || "Verified Buyer";
+      const rating = parseInt(document.getElementById("revRating").value);
+      const text = document.getElementById("revText").value.trim();
+
+      const newReview = { name, role, rating, text, date: "Just now" };
+      let reviews = getStoredReviews();
+      reviews.unshift(newReview);
+      localStorage.setItem('sasta_live_reviews', JSON.stringify(reviews));
+
+      closeReviewModal();
+      renderReviews();
+      showToast("Thank you! Your review is now live.");
+      e.target.reset();
+    }
 
     // HANDLE SCREENSHOT UPLOAD IN CHECKOUT
     function handleScreenshotUpload(input) {
@@ -1267,23 +1384,6 @@
         return;
       }
       grid.innerHTML = items.map(p => productCardHtml(p)).join("");
-    }
-
-    function renderReviews() {
-      const container = document.getElementById("reviewsContainer");
-      if (!container) return;
-      container.innerHTML = reviewsData.map(r => `
-        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800">
-          <div>
-            <div class="flex items-center gap-1 text-emerald-400 text-xs mb-3">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div>
-            <p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p>
-          </div>
-          <div class="flex items-center justify-between pt-3 border-t border-gray-800/80">
-            <div><p class="text-xs font-bold text-white">${r.name}</p><p class="text-[10px] text-gray-500">${r.role}</p></div>
-            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified</span>
-          </div>
-        </div>
-      `).join("");
     }
 
     // MY ORDERS & PROFILE

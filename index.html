@@ -2,15 +2,15 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SastaStore | Luxury Digital Subscriptions & AI Storefront</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SastaStore | Premium Digital Subscriptions & Tools</title>
 
   <!-- SEO & OPENGRAPH META TAGS -->
-  <meta name="description" content="SastaStore - Pakistan's most trusted luxury digital subscription store. CapCut Pro, Canva Pro, HeyGen, ChatGPT Plus, Perplexity, Windows Keys & AI video tools at wholesale prices." />
-  <meta name="keywords" content="SastaStore, CapCut Pro, Canva Pro, HeyGen credits, ChatGPT Plus, Perplexity Pro, Lovable, Windows 11 key, digital subscriptions Pakistan" />
+  <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, Canva Pro, HeyGen, ChatGPT Plus, Perplexity, Lovable & Windows Keys at sasta rates." />
+  <meta name="keywords" content="SastaStore, CapCut Pro, Canva Pro, ChatGPT Plus, Perplexity Pro, Lovable, Windows 11 key, digital subscriptions Pakistan" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
-  <meta property="og:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts with guaranteed replacement warranty." />
+  <meta property="og:description" content="Instant delivery on premium software, AI video tools, Windows keys, and cloud accounts." />
   <meta property="og:image" content="banner1.jpg" />
   <meta property="og:url" content="https://sastastore.store" />
   <link rel="canonical" href="https://sastastore.store/" />
@@ -20,17 +20,17 @@
   <meta name="twitter:description" content="Instant delivery on premium software, AI tools, Windows keys, and streaming accounts." />
   <meta name="twitter:image" content="banner1.jpg" />
 
-  <!-- Favicon Logo -->
+  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <!-- Google Fonts: Inter & Outfit -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -43,20 +43,14 @@
             heading: ['Outfit', 'sans-serif'],
           },
           colors: {
-            obsidian: {
-              950: '#070B12',
-              900: '#0C121E',
-              850: '#101827',
-              800: '#162033',
-              700: '#21304A',
-            },
-            aurora: {
+            brand: {
               emerald: '#10B981',
-              emeraldHover: '#059669',
+              emeraldDark: '#059669',
               teal: '#14B8A6',
-              cyan: '#06B6D4',
-              violet: '#8B5CF6',
-              amber: '#F59E0B'
+              bgLight: '#F8FAFC',
+              cardBorder: '#E2E8F0',
+              textDark: '#0F172A',
+              textMuted: '#64748B'
             }
           }
         }
@@ -65,61 +59,42 @@
   </script>
 
   <style>
-    /* Sleek custom scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #070B12; }
-    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #10B981; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #080c14; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
 
-    /* Luxury Velvet Obsidian Backdrop with Aurora ambient lights */
     body {
-      background-color: #070B12;
+      background-color: #06090E;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.16) 0%, transparent 48%),
-        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.11) 0%, transparent 45%),
-        radial-gradient(circle at 50% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-        radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 10% 25%, rgba(14, 165, 233, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 90% 65%, rgba(168, 85, 247, 0.06) 0%, transparent 35%),
+        radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+      color: #F1F5F9;
     }
 
-    /* Crisp Ice Glass Card: Dual-Tone readability with frosted obsidian foundation */
-    .ice-card {
-      background: linear-gradient(135deg, rgba(22, 32, 51, 0.88) 0%, rgba(16, 24, 39, 0.95) 100%);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    .glass-box {
+      background: rgba(11, 18, 32, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .ice-card:hover {
+    .glass-box:hover {
       border-color: rgba(16, 185, 129, 0.45);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
     }
 
-    /* 3D Pop-up Carousel effect */
-    .banner-popup-card {
-      transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease;
-      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), 0 0 35px -10px rgba(16, 185, 129, 0.25);
-    }
-    .banner-popup-card:hover {
-      transform: scale(1.012) translateY(-3px);
-      box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.35), 0 0 45px -5px rgba(6, 182, 212, 0.25);
-    }
-
-    /* Carousel Slides without dots */
     .slide-item {
       display: none;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
     .slide-item.active {
       display: block;
-      opacity: 1;
     }
 
-    /* Shimmer button animation */
     .btn-shimmer {
       position: relative;
       overflow: hidden;
@@ -131,9 +106,9 @@
       left: -60%;
       width: 40%;
       height: 200%;
-      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       transform: rotate(30deg);
-      animation: shimmerPass 3.8s infinite;
+      animation: shimmerPass 3.5s infinite;
     }
     @keyframes shimmerPass {
       0% { left: -70%; }
@@ -143,248 +118,276 @@
   </style>
 </head>
 
-<body class="text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-black min-h-screen flex flex-col justify-between">
+<body class="antialiased selection:bg-brand-emerald selection:text-black min-h-screen flex flex-col justify-between">
 
-  <!-- TOP PROMO TICKER (Dual-Tone Emerald / Cyan) -->
-  <div class="bg-gradient-to-r from-emerald-900 via-obsidian-900 to-cyan-950 border-b border-emerald-500/25 text-emerald-300 py-2.5 px-4 text-xs font-semibold shadow-sm">
+  <!-- TOP PROMO TICKER -->
+  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1424] to-emerald-950 border-b border-emerald-500/20 py-2 px-4 text-xs font-semibold text-emerald-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2.5 flex-wrap">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-500 text-black uppercase tracking-wider shadow">⚡ FLASH DEAL</span>
-        <span class="text-slate-200">100% Guaranteed Subscriptions • Apply coupon <strong class="text-emerald-400 underline decoration-emerald-500">SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
+        <span>⚡ Multi-Item Basket Active • Combine tools & use <strong>SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
       </div>
-      <div class="hidden md:flex items-center gap-4 text-xs text-slate-300">
-        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 flex items-center gap-1.5 transition">
-          <i class="fa-brands fa-instagram text-pink-400"></i> Instagram
+      <div class="hidden md:flex items-center gap-4 text-gray-300">
+        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 text-xs flex items-center gap-1.5 transition">
+          <i class="fa-brands fa-instagram text-pink-500"></i> Instagram
         </a>
-        <span>•</span>
-        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-cyan-400 flex items-center gap-1.5 transition">
-          <i class="fa-brands fa-facebook text-cyan-400"></i> Facebook
+        <span>|</span>
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
+          <i class="fa-brands fa-facebook text-blue-500"></i> Facebook
         </a>
-        <span>•</span>
-        <button onclick="openAdminModal()" class="hover:text-white font-bold flex items-center gap-1 text-slate-400 hover:text-emerald-400 transition">
-          <i class="fa-solid fa-lock text-[10px]"></i> Admin Portal
+        <span>|</span>
+        <button onclick="openAdminModal()" class="text-xs bg-gray-900 border border-gray-700 hover:border-emerald-400 px-3 py-1 rounded-lg text-emerald-400 font-bold transition flex items-center gap-1.5">
+          <i class="fa-solid fa-lock"></i> Admin Portal
         </button>
       </div>
     </div>
   </div>
 
-  <!-- STICKY FROSTED DUAL-TONE HEADER -->
-  <header class="sticky top-0 z-40 bg-obsidian-950/85 backdrop-blur-2xl border-b border-slate-800 shadow-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-[#06090E]/95 backdrop-blur-2xl border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
       
-      <!-- LEFT: 3-LINES DRAWER + LOGO -->
-      <div class="flex items-center gap-3 flex-shrink-0">
-        <button onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-obsidian-850 hover:bg-obsidian-800 border border-slate-700/80 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0" title="Open Navigation Menu">
+      <!-- LEFT: 3-LINES BUTTON & BRAND -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <button onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0" title="Menu Navigation">
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
         </button>
 
-        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
-          <img src="logo.jpeg" alt="SastaStore Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl object-cover border border-emerald-500/40 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform flex-shrink-0" />
+        <a href="#" class="flex items-center gap-2 sm:gap-2.5 group">
+          <img src="logo.jpeg" alt="SastaStore Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl object-cover border border-emerald-500/30 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform flex-shrink-0" />
           <div>
-            <div class="font-heading font-black text-xl sm:text-2xl tracking-tight text-white flex items-center gap-0.5">
-              Sasta<span class="text-emerald-400">Store</span>
+            <div class="font-heading font-black text-xl sm:text-2xl tracking-tight text-white flex items-center gap-1">
+              Sasta<span class="text-brand-emerald">Store</span>
             </div>
-            <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-slate-400 hidden sm:block leading-none">— PREMIUM TOOLS • SASTA PRICES</span>
+            <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 hidden sm:block leading-none">— PREMIUM TOOLS • SASTA PRICES</span>
           </div>
         </a>
       </div>
 
-      <!-- DESKTOP NAVIGATION -->
-      <div class="hidden lg:flex items-center gap-6 text-xs sm:text-sm font-bold text-slate-300">
-        <a href="#top-products" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Sellers</a>
-        <a href="#products" class="hover:text-emerald-400 transition">All Products</a>
-        <a href="#custom-order" class="hover:text-cyan-400 transition">Custom Orders</a>
-        <a href="#reviews" class="hover:text-amber-400 transition flex items-center gap-1"><i class="fa-solid fa-star text-amber-400 text-xs"></i> Reviews</a>
-        <a href="#faq" class="hover:text-emerald-400 transition">FAQ</a>
-        <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty</button>
-        <button onclick="openMyOrdersModal()" class="hover:text-cyan-400 transition flex items-center gap-1"><i class="fa-solid fa-box text-cyan-400"></i> My Orders</button>
+      <!-- DESKTOP NAV -->
+      <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
+        <a href="#top-products" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-400"></i> Top Products</a>
+        <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
+        <a href="#custom-order" class="hover:text-cyan-400 transition-colors">Custom Order</a>
+        <a href="#reviews" class="hover:text-amber-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-star text-amber-400 text-xs"></i> Reviews</a>
+        <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
+        <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty</button>
+        <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> Track Order</button>
       </div>
 
-      <!-- RIGHT HEADER ACTIONS: BASKET ICON + WHATSAPP -->
-      <div class="flex items-center gap-2.5">
-        <!-- BASKET BUTTON: SYMBOL ONLY (NO TEXT) + LIVE BADGE -->
-        <button onclick="openCartModal()" class="relative w-11 h-11 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black flex items-center justify-center transition hover:scale-105 shadow-lg shadow-emerald-500/25 flex-shrink-0" title="Open Shopping Basket">
-          <i class="fa-solid fa-bag-shopping text-lg"></i>
-          <span id="cartCountBadge" class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-obsidian-950 text-emerald-400 font-black text-[10px] flex items-center justify-center border border-emerald-400 shadow">0</span>
+      <!-- HEADER ACTIONS: BASKET ICON + WHATSAPP -->
+      <div class="flex items-center gap-2">
+        <button onclick="openCartModal()" class="relative w-11 h-11 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center transition hover:scale-105 shadow-lg shadow-emerald-500/20 flex-shrink-0" title="Shopping Basket">
+          <i class="fa-solid fa-bag-shopping text-lg text-black"></i>
+          <span id="cartCountBadge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-black text-emerald-400 font-black text-[10px] flex items-center justify-center border border-emerald-400">0</span>
         </button>
 
-        <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-obsidian-850 hover:bg-obsidian-800 text-white border border-slate-700 font-heading font-black text-xs uppercase px-4 py-2.5 rounded-2xl transition hover:scale-105 shadow">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+        <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 bg-gray-900 border border-gray-800 hover:border-emerald-500/50 text-white font-heading font-black text-xs uppercase px-3.5 py-2.5 rounded-xl transition">
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> 
           <span>Support</span>
         </a>
       </div>
     </div>
   </header>
 
-  <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden transition-all">
-    <div class="w-80 max-w-[85vw] h-full bg-obsidian-900 border-r border-slate-800 p-6 flex flex-col justify-between shadow-2xl relative">
+  <!-- SLIDE-IN 3-LINES SIDEBAR DRAWER -->
+  <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-all">
+    <div class="w-80 max-w-[85vw] h-full bg-[#0b1220] border-r border-gray-800 p-6 flex flex-col justify-between shadow-2xl relative">
       <div>
-        <div class="flex items-center justify-between pb-5 border-b border-slate-800 mb-6">
+        <div class="flex items-center justify-between pb-5 border-b border-gray-800 mb-6">
           <div class="flex items-center gap-2.5">
             <img src="logo.jpeg" alt="SastaStore" class="w-9 h-9 rounded-xl object-cover border border-emerald-500/40" />
             <span class="font-heading font-black text-white text-lg">Sasta<span class="text-emerald-400">Store</span></span>
           </div>
-          <button onclick="toggleSidebar()" class="text-slate-400 hover:text-white text-xl p-1">
+          <button onclick="toggleSidebar()" class="text-gray-400 hover:text-white text-xl">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
-        <nav class="space-y-2 text-sm font-bold text-slate-300">
-          <button onclick="toggleSidebar(); openCartModal();" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-2xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition">
-            <span class="flex items-center gap-3"><i class="fa-solid fa-bag-shopping text-emerald-400 text-base"></i> View Shopping Basket</span>
-            <span id="drawerCartBadge" class="px-2.5 py-0.5 rounded-full bg-emerald-500 text-black text-xs font-black">0</span>
+        <nav class="space-y-2">
+          <button onclick="toggleSidebar(); openCartModal();" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-xl bg-emerald-500 text-black font-black text-sm transition shadow-lg shadow-emerald-500/20">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-bag-shopping text-base w-5"></i> View Basket</span>
+            <span id="drawerCartBadge" class="px-2.5 py-0.5 rounded-full bg-black text-emerald-400 text-xs font-black">0</span>
           </button>
-          <a href="#top-products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition hover:text-emerald-400">
-            <i class="fa-solid fa-fire text-amber-400 w-5"></i> Top Sellers
+          <a href="#top-products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-amber-400 font-bold text-sm transition">
+            <i class="fa-solid fa-fire text-base w-5"></i> Top Products
           </a>
-          <a href="#products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition hover:text-emerald-400">
-            <i class="fa-solid fa-boxes-stacked text-emerald-400 w-5"></i> All Products
+          <a href="#products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
+            <i class="fa-solid fa-boxes-stacked text-base w-5 text-emerald-400"></i> All Products
           </a>
-          <a href="#reviews" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition hover:text-emerald-400">
-            <i class="fa-solid fa-star text-amber-400 w-5"></i> Customer Reviews
+          <a href="#reviews" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-gray-200 hover:text-amber-400 font-bold text-sm transition">
+            <i class="fa-solid fa-star text-base w-5 text-amber-400"></i> Customer Reviews
           </a>
-          <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition hover:text-cyan-400">
-            <i class="fa-solid fa-cart-plus text-cyan-400 w-5"></i> Custom Orders
+          <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/10 text-gray-200 hover:text-cyan-400 font-bold text-sm transition">
+            <i class="fa-solid fa-cart-plus text-base w-5 text-cyan-400"></i> Custom Order Service
           </a>
-          <button onclick="toggleSidebar(); openWarrantyModal();" class="w-full text-left flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition hover:text-emerald-400">
-            <i class="fa-solid fa-shield-halved text-emerald-400 w-5"></i> Warranty Policy
+          <button onclick="toggleSidebar(); openWarrantyModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
+            <i class="fa-solid fa-shield-halved text-base w-5 text-emerald-400"></i> Warranty & Guarantee
           </button>
-          <button onclick="toggleSidebar(); openMyOrdersModal();" class="w-full text-left flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition hover:text-cyan-400">
-            <i class="fa-solid fa-receipt text-cyan-400 w-5"></i> Track My Orders
+          <a href="#faq" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-500/10 text-gray-200 hover:text-indigo-400 font-bold text-sm transition">
+            <i class="fa-solid fa-circle-question text-base w-5 text-indigo-400"></i> FAQ Guide
+          </a>
+          <button onclick="toggleSidebar(); openMyOrdersModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-teal-500/10 text-gray-200 hover:text-teal-400 font-bold text-sm transition">
+            <i class="fa-solid fa-receipt text-base w-5 text-teal-400"></i> Track Order Status
           </button>
-          <button onclick="toggleSidebar(); openAdminModal();" class="w-full text-left flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-obsidian-800 transition text-slate-400 hover:text-white">
-            <i class="fa-solid fa-lock text-slate-500 w-5"></i> Admin Dashboard
+          <button onclick="toggleSidebar(); openAdminModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-800 text-gray-400 hover:text-white font-bold text-sm transition">
+            <i class="fa-solid fa-lock text-base w-5 text-gray-400"></i> Admin Dashboard
           </button>
         </nav>
       </div>
 
-      <div class="pt-6 border-t border-slate-800 space-y-2.5">
-        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-pink-600 to-rose-600 text-white rounded-xl text-xs font-bold transition shadow-sm">
-          <i class="fa-brands fa-instagram text-sm"></i> Official Instagram
+      <div class="pt-6 border-t border-gray-800 space-y-3">
+        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-pink-600/15 text-pink-400 border border-pink-500/30 rounded-xl text-xs font-bold transition">
+          <i class="fa-brands fa-instagram"></i> Follow on Instagram
         </a>
-        <a href="https://wa.me/923136093501" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-500 text-black font-black rounded-xl text-xs uppercase tracking-wider transition shadow-sm">
-          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Support
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-blue-600/15 text-blue-400 border border-blue-500/30 rounded-xl text-xs font-bold transition">
+          <i class="fa-brands fa-facebook"></i> Facebook Page
+        </a>
+        <a href="https://wa.me/923136093501" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-500 text-black font-black rounded-xl text-xs uppercase tracking-wider transition">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Helpline
         </a>
       </div>
     </div>
   </div>
 
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
-    <div class="relative overflow-hidden rounded-3xl border border-slate-800 bg-obsidian-900 banner-popup-card cursor-pointer group">
+  <!-- 6 BANNERS CAROUSEL SLIDER (NO DOTS, ARROWS ONLY) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+    <div class="relative overflow-hidden rounded-3xl border border-gray-800 shadow-2xl group cursor-pointer bg-gray-950">
       
-      <!-- Slide Images Wrapper (Strictly No Dots) -->
       <div id="carouselContainer" class="relative w-full">
-        <!-- Banner 1: CapCut Pro Monthly (749/-) -->
-        <div class="slide-item active" onclick="openCheckoutModal(2)" title="Click to Order CapCut Pro Monthly (₨ 749/-)">
+        <div class="slide-item active" onclick="openCheckoutModal(2)" title="Order CapCut Pro Monthly (₨ 749/-)">
           <img src="banner1.jpg" alt="CapCut Pro Monthly 749" class="w-full h-auto object-cover rounded-3xl" />
         </div>
-        <!-- Banner 2: CapCut Pro 6 Months (3399/-) -->
-        <div class="slide-item" onclick="openCheckoutModal(3)" title="Click to Order CapCut Pro 6 Months (₨ 3,399/-)">
+        <div class="slide-item" onclick="openCheckoutModal(3)" title="Order CapCut Pro 6 Months (₨ 3,399/-)">
           <img src="banner2.jpg" alt="CapCut Pro 6 Months 3399" class="w-full h-auto object-cover rounded-3xl" />
         </div>
-        <!-- Banner 3: Canva Pro (249/-) -->
-        <div class="slide-item" onclick="openCheckoutModal(5)" title="Click to Order Canva Pro / Edu (₨ 249/-)">
+        <div class="slide-item" onclick="openCheckoutModal(5)" title="Order Canva Pro (₨ 249/-)">
           <img src="banner3.jpg" alt="Canva Pro 249" class="w-full h-auto object-cover rounded-3xl" />
         </div>
-        <!-- Banner 4: CapCut Pro Weekly (179/-) -->
-        <div class="slide-item" onclick="openCheckoutModal(4)" title="Click to Order CapCut Pro Weekly (₨ 179/-)">
+        <div class="slide-item" onclick="openCheckoutModal(4)" title="Order CapCut Pro Weekly (₨ 179/-)">
           <img src="banner4.jpg" alt="CapCut Pro Weekly 179" class="w-full h-auto object-cover rounded-3xl" />
         </div>
-        <!-- Banner 5: Canva Admin Panel (2499/-) -->
-        <div class="slide-item" onclick="openCheckoutModal(7)" title="Click to Order Canva Admin Panel (₨ 2,499/-)">
+        <div class="slide-item" onclick="openCheckoutModal(7)" title="Order Canva Admin Panel (₨ 2,499/-)">
           <img src="banner5.jpg" alt="Canva Admin Panel 2499" class="w-full h-auto object-cover rounded-3xl" />
         </div>
-        <!-- Banner 6: Gemini Pro 18 Months (649/-) -->
-        <div class="slide-item" onclick="openCheckoutModal(8)" title="Click to Order Gemini Pro 18 Months (₨ 649/-)">
+        <div class="slide-item" onclick="openCheckoutModal(8)" title="Order Gemini Pro 18 Months (₨ 649/-)">
           <img src="banner6.jpg" alt="Gemini Pro 18 Months 649" class="w-full h-auto object-cover rounded-3xl" />
         </div>
       </div>
 
-      <!-- Navigation Arrows -->
-      <button onclick="event.stopPropagation(); prevSlide();" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-2xl bg-obsidian-950/80 hover:bg-emerald-500 text-slate-200 hover:text-black border border-slate-700/80 shadow-md backdrop-blur-md flex items-center justify-center transition hover:scale-110 z-10" title="Previous Banner">
+      <!-- Controls -->
+      <button onclick="event.stopPropagation(); prevSlide();" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10">
         <i class="fa-solid fa-chevron-left text-sm"></i>
       </button>
-      <button onclick="event.stopPropagation(); nextSlide();" class="absolute right-3.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-2xl bg-obsidian-950/80 hover:bg-emerald-500 text-slate-200 hover:text-black border border-slate-700/80 shadow-md backdrop-blur-md flex items-center justify-center transition hover:scale-110 z-10" title="Next Banner">
+      <button onclick="event.stopPropagation(); nextSlide();" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10">
         <i class="fa-solid fa-chevron-right text-sm"></i>
       </button>
-
     </div>
   </section>
 
+  <!-- 4-PILLAR TRUST BAR -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5">
-      <div class="ice-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-base flex-shrink-0 border border-emerald-500/30">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="glass-box p-3 sm:p-3.5 rounded-2xl flex items-center gap-2.5 border border-emerald-500/20">
+        <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-sm flex-shrink-0">
           <i class="fa-solid fa-shield-halved"></i>
         </div>
         <div class="overflow-hidden">
-          <h4 class="text-xs font-black text-white uppercase tracking-tight">Full Warranty</h4>
-          <p class="text-[11px] text-slate-400 truncate">100% Guaranteed Replacements</p>
+          <h4 class="text-[11px] font-black text-white uppercase tracking-tight">Full Warranty</h4>
+          <p class="text-[10px] text-gray-400 truncate">100% Replacement Guarantee</p>
         </div>
       </div>
-      <div class="ice-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-base flex-shrink-0 border border-cyan-500/30">
+      <div class="glass-box p-3 sm:p-3.5 rounded-2xl flex items-center gap-2.5 border border-teal-500/20">
+        <div class="w-9 h-9 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center text-sm flex-shrink-0">
           <i class="fa-solid fa-bolt-lightning"></i>
         </div>
         <div class="overflow-hidden">
-          <h4 class="text-xs font-black text-white uppercase tracking-tight">5-15 Min Delivery</h4>
-          <p class="text-[11px] text-slate-400 truncate">Instant WhatsApp Dispatch</p>
+          <h4 class="text-[11px] font-black text-white uppercase tracking-tight">5-15 Min Delivery</h4>
+          <p class="text-[10px] text-gray-400 truncate">Fast Direct Activation</p>
         </div>
       </div>
-      <div class="ice-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center text-base flex-shrink-0 border border-teal-500/30">
-          <i class="fa-solid fa-qrcode"></i>
+      <div class="glass-box p-3 sm:p-3.5 rounded-2xl flex items-center gap-2.5 border border-cyan-500/20">
+        <div class="w-9 h-9 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-sm flex-shrink-0">
+          <i class="fa-solid fa-wallet"></i>
         </div>
         <div class="overflow-hidden">
-          <h4 class="text-xs font-black text-white uppercase tracking-tight">Verified QR Pay</h4>
-          <p class="text-[11px] text-slate-400 truncate">JazzCash, SadaPay & Binance</p>
+          <h4 class="text-[11px] font-black text-white uppercase tracking-tight">Verified Payments</h4>
+          <p class="text-[10px] text-gray-400 truncate">JazzCash, SadaPay & Binance</p>
         </div>
       </div>
-      <div class="ice-card p-3.5 sm:p-4 rounded-2xl flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-base flex-shrink-0 border border-amber-500/30">
+      <div class="glass-box p-3 sm:p-3.5 rounded-2xl flex items-center gap-2.5 border border-amber-500/20">
+        <div class="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-sm flex-shrink-0">
           <i class="fa-solid fa-headset"></i>
         </div>
         <div class="overflow-hidden">
-          <h4 class="text-xs font-black text-white uppercase tracking-tight">24/7 Human Help</h4>
-          <p class="text-[11px] text-slate-400 truncate">Direct WhatsApp Helpline</p>
+          <h4 class="text-[11px] font-black text-white uppercase tracking-tight">24/7 Human Help</h4>
+          <p class="text-[10px] text-gray-400 truncate">Direct WhatsApp Helpline</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="top-products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10">
+  <!-- TOP PRODUCTS SECTION -->
+  <section id="top-products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-14">
     <div class="flex items-center justify-between mb-6">
       <div>
-        <div class="inline-flex items-center gap-1.5 text-amber-400 text-xs font-black uppercase tracking-wider mb-1">
-          <i class="fa-solid fa-fire text-amber-400"></i> Best Sellers & Trending
+        <div class="inline-flex items-center gap-1.5 text-amber-400 text-xs font-extrabold uppercase tracking-wider mb-1">
+          <i class="fa-solid fa-fire"></i> Best Sellers & Trending
         </div>
-        <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Top Popular Tools</h2>
+        <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Top Products</h2>
       </div>
-      <a href="#products" class="text-xs text-emerald-400 hover:text-emerald-300 font-extrabold flex items-center gap-1">
-        <span>View Full Catalog</span> &rarr;
-      </a>
+      <a href="#products" class="text-xs text-emerald-400 hover:underline font-bold">View All &rarr;</a>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="topProductsGrid"></div>
   </section>
 
-  <section id="custom-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B1526] via-obsidian-900 to-[#141B30] border border-emerald-500/30 p-6 sm:p-10 shadow-2xl">
+  <!-- ALL PRODUCTS INVENTORY & SEARCH -->
+  <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+      <div>
+        <h2 class="font-heading text-3xl font-black text-white">All Digital Products & Subscriptions</h2>
+        <p class="text-xs text-gray-400">Click <strong>"Specs & Details"</strong> on any card for full format, replacement warranty, and activation terms.</p>
+      </div>
+
+      <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
+        <div class="relative w-full sm:w-72">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+          <input type="text" id="searchInput" placeholder="Search HeyGen, CapCut, Claude, Grok, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+        </div>
+
+        <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
+          <button onclick="filterCategory('all', this)" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500 text-black transition">All</button>
+          <button onclick="filterCategory('ai', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">AI & Video</button>
+          <button onclick="filterCategory('design', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Design & Dev</button>
+          <button onclick="filterCategory('accounts', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Accounts</button>
+          <button onclick="filterCategory('streaming', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Streaming</button>
+          <button onclick="filterCategory('keys', this)" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white transition">Windows Keys</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid"></div>
+  </section>
+
+  <!-- CUSTOM ORDER SECTION -->
+  <section id="custom-order" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c1f19] via-[#091426] to-[#0d1627] border border-emerald-500/40 p-6 sm:p-10 shadow-xl">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative z-10">
-        <div class="lg:col-span-2 space-y-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500 text-black">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-emerald-500 text-black">
             <i class="fa-solid fa-cart-plus"></i> Custom Order Service
           </div>
-          <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Need Any Other Tool? Just Send Link & Plan Screenshot!
+          <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white">
+            Need Any Other Tool? Just Send Link & Screenshot!
           </h2>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
-            Want to purchase any international subscription, website plan, course, or tool not listed on the store? 
-            <strong class="text-emerald-400">💳 Stripe and non-Stripe international payments fully supported!</strong> Send us the website link and plan screenshot, and we will fulfill it for you at wholesale rates.
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Want to purchase any international subscription, website plan, course, or tool not listed on the website? <br>
+            <strong class="text-emerald-400">💳 Need anything just send link of website and plan screenshot!</strong> Stripe & Non-Stripe orders are fully supported.
           </p>
-          <div class="flex flex-wrap items-center gap-3 pt-1 text-xs font-bold text-slate-300">
+          <div class="flex flex-wrap items-center gap-4 pt-1 text-xs font-bold text-gray-300">
             <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Stripe Cards Accepted</span>
             <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Screenshot & Link Orders</span>
             <span><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Fast 15-Min Delivery</span>
@@ -392,57 +395,28 @@
         </div>
 
         <div class="lg:text-right flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
-          <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan%20Screenshot:" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-heading font-black text-xs sm:text-sm px-7 py-3.5 rounded-2xl shadow-xl hover:scale-105 transition">
-            <i class="fa-brands fa-whatsapp text-xl"></i> Send Link on WhatsApp
+          <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan%20Screenshot:" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-sm px-7 py-3.5 rounded-2xl shadow-xl hover:scale-105 transition">
+            <i class="fa-brands fa-whatsapp text-2xl"></i> Send Link on WhatsApp
           </a>
-          <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/40 text-xs font-bold px-5 py-2.5 rounded-xl transition">
-            <i class="fa-brands fa-instagram text-sm"></i> Message on Instagram
+          <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/40 text-xs font-bold px-5 py-2.5 rounded-xl transition">
+            <i class="fa-brands fa-instagram text-base"></i> Message on Instagram
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-      <div>
-        <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">All Digital Products & Subscriptions</h2>
-        <p class="text-xs text-slate-400 mt-0.5">Click <strong>"Specs & Details"</strong> on any card for full delivery format, warranty terms, and device usage.</p>
-      </div>
-
-      <!-- Search Input -->
-      <div class="w-full md:w-auto relative sm:w-80">
-        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-        <input type="text" id="searchInput" placeholder="Search CapCut, Canva, HeyGen, Grok, Claude..." class="w-full bg-obsidian-900 border border-slate-700 rounded-2xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-400 shadow-sm focus:outline-none focus:border-emerald-500">
-      </div>
-    </div>
-
-    <!-- Category Filter Tabs -->
-    <div class="flex flex-wrap items-center gap-2 mb-8" id="filterTabs">
-      <button onclick="filterCategory('all', this)" class="filter-btn active px-4 py-2 rounded-2xl text-xs font-black bg-emerald-500 text-black shadow transition">All Tools</button>
-      <button onclick="filterCategory('ai', this)" class="filter-btn px-4 py-2 rounded-2xl text-xs font-bold bg-obsidian-850 text-slate-300 hover:text-white border border-slate-700 transition">AI & Video Generation</button>
-      <button onclick="filterCategory('design', this)" class="filter-btn px-4 py-2 rounded-2xl text-xs font-bold bg-obsidian-850 text-slate-300 hover:text-white border border-slate-700 transition">Design & Creative Suites</button>
-      <button onclick="filterCategory('streaming', this)" class="filter-btn px-4 py-2 rounded-2xl text-xs font-bold bg-obsidian-850 text-slate-300 hover:text-white border border-slate-700 transition">Streaming & Entertainment</button>
-      <button onclick="filterCategory('accounts', this)" class="filter-btn px-4 py-2 rounded-2xl text-xs font-bold bg-obsidian-850 text-slate-300 hover:text-white border border-slate-700 transition">Accounts & VPNs</button>
-      <button onclick="filterCategory('keys', this)" class="filter-btn px-4 py-2 rounded-2xl text-xs font-bold bg-obsidian-850 text-slate-300 hover:text-white border border-slate-700 transition">Windows Retail Keys</button>
-    </div>
-
-    <!-- Product Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid"></div>
-  </section>
-
-  <section id="reviews" class="bg-obsidian-900/90 border-t border-b border-slate-800 py-16 px-4 sm:px-6 lg:px-8 shadow-inner">
+  <!-- LIVE CUSTOMER REVIEWS & FEEDBACK -->
+  <section id="reviews" class="bg-[#09111e]/90 border-t border-b border-gray-800 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
         <div>
-          <span class="text-amber-400 text-xs font-black uppercase tracking-widest block mb-1">
-            <i class="fa-solid fa-star text-amber-400 mr-1"></i> 100% Verified Customer Stories
-          </span>
-          <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Customer Reviews (4.9 / 5.0)</h2>
-          <p class="text-slate-400 text-xs sm:text-sm mt-1">Over <strong>1,400+ digital subscriptions</strong> safely delivered across Pakistan and overseas.</p>
+          <span class="text-amber-400 text-xs font-black uppercase tracking-widest block mb-2"><i class="fa-solid fa-star text-amber-400 mr-1"></i> 100% Genuine Feedback</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Customer Reviews (4.9 / 5.0)</h2>
+          <p class="text-gray-400 text-xs sm:text-sm mt-1">Over <strong>1,400+ digital subscriptions</strong> safely delivered across Pakistan and overseas.</p>
         </div>
 
-        <button onclick="openReviewModal()" class="btn-shimmer flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-heading font-black text-xs uppercase px-5 py-3 rounded-2xl transition shadow-lg hover:scale-105">
+        <button onclick="openReviewModal()" class="btn-shimmer flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-500/20 hover:scale-105">
           <i class="fa-solid fa-pen-nib text-sm"></i> Write a Review
         </button>
       </div>
@@ -451,86 +425,84 @@
     </div>
   </section>
 
-  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <!-- FAQ ACCORDION SECTION -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center mb-10">
-      <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-1">Got Questions?</span>
-      <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">Frequently Asked Questions</h2>
-      <p class="text-xs text-slate-400 mt-1">Everything you need to know about delivery, replacement warranties, and payment.</p>
+      <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
+      <h2 class="font-heading text-3xl font-black text-white">Frequently Asked Questions</h2>
+      <p class="text-xs text-gray-400 mt-1">Everything you need to know about delivery, warranty, and payment.</p>
     </div>
 
     <div class="space-y-3">
-      <!-- FAQ 1 -->
-      <div class="ice-card rounded-2xl overflow-hidden transition">
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
         <button onclick="toggleFaq(1)" class="w-full p-4 text-left flex items-center justify-between gap-4">
           <span class="text-sm font-bold text-white flex items-center gap-2.5">
             <i class="fa-solid fa-clock text-emerald-400"></i> How long does delivery take after ordering?
           </span>
-          <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300" id="faqIcon-1"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-1"></i>
         </button>
-        <div id="faqAnswer-1" class="hidden px-4 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
-          Most orders are activated within <strong>5 to 15 minutes</strong>! As soon as you place your order and send the payment screenshot on WhatsApp, our team dispatches your login credentials or activation invite immediately.
+        <div id="faqAnswer-1" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          Orders are typically verified and activated within <strong>5 to 15 minutes</strong>! As soon as you place your order, our automated system registers it into the Admin Queue for priority activation.
         </div>
       </div>
 
-      <!-- FAQ 2 -->
-      <div class="ice-card rounded-2xl overflow-hidden transition">
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
         <button onclick="toggleFaq(2)" class="w-full p-4 text-left flex items-center justify-between gap-4">
           <span class="text-sm font-bold text-white flex items-center gap-2.5">
-            <i class="fa-solid fa-shield-heart text-cyan-400"></i> How does the Replacement Warranty work?
+            <i class="fa-solid fa-shield-heart text-blue-400"></i> How does the Replacement Warranty work?
           </span>
-          <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300" id="faqIcon-2"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-2"></i>
         </button>
-        <div id="faqAnswer-2" class="hidden px-4 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
-          All our subscriptions come with full replacement warranties as specified on each card. If you experience any access issue or log-out during the warranty period, message us on WhatsApp with your Order ID for a fast replacement.
+        <div id="faqAnswer-2" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          All our subscriptions come with guaranteed replacement warranties as specified on each card. If you ever experience an access issue, reach out with your Tracking ID for immediate replacement.
         </div>
       </div>
 
-      <!-- FAQ 3 -->
-      <div class="ice-card rounded-2xl overflow-hidden transition">
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden transition">
         <button onclick="toggleFaq(3)" class="w-full p-4 text-left flex items-center justify-between gap-4">
           <span class="text-sm font-bold text-white flex items-center gap-2.5">
-            <i class="fa-solid fa-basket-shopping text-emerald-400"></i> How do I combine items in the Basket to get 10% OFF?
+            <i class="fa-solid fa-basket-shopping text-emerald-400"></i> How do I combine items to get 10% OFF?
           </span>
-          <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300" id="faqIcon-3"></i>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
         </button>
-        <div id="faqAnswer-3" class="hidden px-4 pb-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
-          Click <strong>"+ Basket"</strong> on any tools you need. When your subtotal reaches <strong>₨ 3,000/-</strong> or more, apply coupon code <strong>SASTA10</strong> in your cart to enjoy an instant flat 10% discount on the entire order!
+        <div id="faqAnswer-3" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          Click <strong>"+ Basket"</strong> on any items you want. When your total cart value reaches <strong>₨ 3,000/-</strong> or more, apply coupon <strong>SASTA10</strong> in your cart to enjoy a flat 10% discount on the entire order!
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-obsidian-950 border-t border-slate-800 pt-16 pb-12 px-4 sm:px-6 lg:px-8 text-xs text-slate-400 shadow-2xl">
+  <!-- CLEAN MULTI-COLUMN FOOTER -->
+  <footer class="bg-[#070B12] border-t border-gray-800/90 pt-16 pb-12 px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
     <div class="max-w-7xl mx-auto">
       
-      <!-- Top Grid: Brand Bio + Multi Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
         
         <!-- Brand Info -->
         <div class="md:col-span-2 space-y-4">
           <div class="flex items-center gap-2.5">
-            <img src="logo.jpeg" alt="SastaStore" class="w-10 h-10 rounded-2xl object-cover border border-emerald-500/40 shadow" />
+            <img src="logo.jpeg" alt="SastaStore" class="w-10 h-10 rounded-2xl object-cover border border-emerald-500/40" />
             <div>
               <span class="font-heading font-black text-xl text-white tracking-tight">Sasta<span class="text-emerald-400">Store</span></span>
-              <span class="text-[9px] uppercase tracking-widest text-slate-500 block font-extrabold">PAKISTAN</span>
+              <span class="text-[9px] uppercase tracking-widest text-gray-500 block">PAKISTAN</span>
             </div>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-            Your trusted partner for all AI tools, software subscriptions, Windows keys, and digital services in Pakistan. Fast activation, 100% replacement warranty, and 24/7 human helpline.
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Your trusted partner for all AI tools, software subscriptions, Windows keys, and digital services in Pakistan. Instant online order tracking and verified support.
           </p>
 
-          <!-- Social Media Icons -->
-          <div class="flex items-center gap-2.5 pt-2">
-            <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="w-9 h-9 rounded-xl bg-obsidian-850 hover:bg-pink-600/20 text-slate-400 hover:text-pink-400 border border-slate-700 flex items-center justify-center transition" title="Follow us on Instagram">
-              <i class="fa-brands fa-instagram text-sm"></i>
-            </a>
-            <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="w-9 h-9 rounded-xl bg-obsidian-850 hover:bg-cyan-600/20 text-slate-400 hover:text-cyan-400 border border-slate-700 flex items-center justify-center transition" title="Facebook Page">
+          <!-- Social Icons -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-blue-600/20 text-gray-400 hover:text-blue-400 border border-gray-800 flex items-center justify-center transition" title="Facebook Page">
               <i class="fa-brands fa-facebook text-sm"></i>
             </a>
-            <a href="https://wa.me/923136093501" target="_blank" class="w-9 h-9 rounded-xl bg-obsidian-850 hover:bg-emerald-600/20 text-slate-400 hover:text-emerald-400 border border-slate-700 flex items-center justify-center transition" title="WhatsApp Helpline">
+            <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-pink-600/20 text-gray-400 hover:text-pink-400 border border-gray-800 flex items-center justify-center transition" title="Instagram Official">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://wa.me/923136093501" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-emerald-600/20 text-gray-400 hover:text-emerald-400 border border-gray-800 flex items-center justify-center transition" title="WhatsApp Support">
               <i class="fa-brands fa-whatsapp text-sm"></i>
             </a>
-            <button onclick="openAdminModal()" class="w-9 h-9 rounded-xl bg-obsidian-850 hover:bg-slate-700 text-slate-400 hover:text-white border border-slate-700 flex items-center justify-center transition" title="Admin Portal">
+            <button onclick="openAdminModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white border border-gray-800 flex items-center justify-center transition" title="Admin Portal">
               <i class="fa-solid fa-lock text-xs"></i>
             </button>
           </div>
@@ -539,36 +511,36 @@
         <!-- Products Column -->
         <div class="space-y-3">
           <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Products</h4>
-          <ul class="space-y-2 text-xs font-semibold">
+          <ul class="space-y-2 text-xs">
             <li><a href="#products" onclick="filterCategory('ai', document.querySelectorAll('#filterTabs button')[1])" class="hover:text-emerald-400 transition">AI Video & Chat Tools</a></li>
             <li><a href="#products" onclick="filterCategory('design', document.querySelectorAll('#filterTabs button')[2])" class="hover:text-emerald-400 transition">Design & Dev Suites</a></li>
-            <li><a href="#products" onclick="filterCategory('streaming', document.querySelectorAll('#filterTabs button')[3])" class="hover:text-emerald-400 transition">Streaming & Entertainment</a></li>
-            <li><a href="#products" onclick="filterCategory('accounts', document.querySelectorAll('#filterTabs button')[4])" class="hover:text-emerald-400 transition">VPNs & Accounts</a></li>
+            <li><a href="#products" onclick="filterCategory('streaming', document.querySelectorAll('#filterTabs button')[4])" class="hover:text-emerald-400 transition">Streaming & Music</a></li>
             <li><a href="#products" onclick="filterCategory('keys', document.querySelectorAll('#filterTabs button')[5])" class="hover:text-emerald-400 transition">Windows Retail Keys</a></li>
+            <li><a href="#custom-order" class="hover:text-emerald-400 transition">Custom Orders</a></li>
           </ul>
         </div>
 
-        <!-- Company & Support Column -->
+        <!-- Support Column -->
         <div class="space-y-3">
-          <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Company</h4>
-          <ul class="space-y-2 text-xs font-semibold">
-            <li><a href="#custom-order" class="hover:text-emerald-400 transition">Custom Order Service</a></li>
+          <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Support</h4>
+          <ul class="space-y-2 text-xs">
             <li><a href="#reviews" class="hover:text-emerald-400 transition">Customer Reviews</a></li>
-            <li><a href="#faq" class="hover:text-emerald-400 transition">FAQs & Help</a></li>
+            <li><a href="#faq" class="hover:text-emerald-400 transition">FAQs Guide</a></li>
             <li><button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition text-left">Warranty Policy</button></li>
-            <li><button onclick="openMyOrdersModal()" class="hover:text-emerald-400 transition text-left">Track My Orders</button></li>
+            <li><button onclick="openMyOrdersModal()" class="hover:text-emerald-400 transition text-left">Track Order</button></li>
+            <li><a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition">WhatsApp Support</a></li>
           </ul>
         </div>
 
       </div>
 
       <!-- Bottom Copyright & Links -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px] text-slate-500">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[11px] text-gray-500">
         <p>Copyright © 2026 SastaStore Pakistan. All rights reserved.</p>
-        <div class="flex items-center gap-3 text-xs font-semibold">
-          <button onclick="openWarrantyModal()" class="hover:text-slate-300 transition">Terms & Warranty</button>
+        <div class="flex items-center gap-4 text-xs">
+          <button onclick="openWarrantyModal()" class="hover:text-gray-300 transition">Terms & Warranty</button>
           <span>•</span>
-          <a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition">24/7 WhatsApp</a>
+          <a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition">24/7 Helpline</a>
           <span>•</span>
           <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 transition">@sastastore_0</a>
         </div>
@@ -577,28 +549,28 @@
     </div>
   </footer>
 
-  <!-- FLOATING CORNER WHATSAPP BUTTON WITH BUBBLE -->
+  <!-- FLOATING CORNER BUTTONS -->
   <div class="fixed bottom-6 right-6 z-40 flex items-end gap-3">
-    <div id="waBubble" class="hidden sm:flex items-center gap-2 bg-obsidian-900 border border-emerald-500/40 text-slate-200 text-xs py-2.5 px-4 rounded-2xl shadow-2xl backdrop-blur-md max-w-xs transition">
+    <div id="waBubble" class="hidden sm:flex items-center gap-2 bg-[#0c1424] border border-emerald-500/40 text-gray-200 text-xs py-2.5 px-4 rounded-2xl shadow-2xl backdrop-blur-md max-w-xs transition">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <p>👋 Need quick help or custom plan? <strong class="text-emerald-400 cursor-pointer" onclick="window.open('https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20need%20help', '_blank')">Chat on WhatsApp</strong></p>
-      <button onclick="document.getElementById('waBubble').remove()" class="text-slate-500 hover:text-white text-xs ml-1"><i class="fa-solid fa-xmark"></i></button>
+      <p>👋 Need quick help? <strong class="text-emerald-400 cursor-pointer" onclick="window.open('https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20need%20help', '_blank')">Chat on WhatsApp</strong></p>
+      <button onclick="document.getElementById('waBubble').remove()" class="text-gray-500 hover:text-white text-xs ml-1"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
-    <a href="https://wa.me/923136093501?text=Hello%20SastaStore%20Support,%20I%20have%20a%20question" target="_blank" class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition flex-shrink-0" title="WhatsApp Support">
+    <a href="https://wa.me/923136093501?text=Hello%20SastaStore%20Support,%20I%20have%20a%20question" target="_blank" class="bg-gradient-to-tr from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition flex-shrink-0" title="WhatsApp Support">
       <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
   </div>
 
   <!-- FLOATING BOTTOM-LEFT BASKET SHORTCUT -->
-  <button onclick="openCartModal()" class="fixed bottom-6 left-6 z-40 bg-obsidian-900 hover:bg-obsidian-850 text-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl border border-slate-700 hover:scale-110 transition relative" title="Open Basket">
-    <i class="fa-solid fa-bag-shopping text-2xl text-emerald-400"></i>
-    <span id="floatingCartBadge" class="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 text-black font-black text-xs flex items-center justify-center border-2 border-obsidian-900 shadow">0</span>
+  <button onclick="openCartModal()" class="fixed bottom-6 left-6 z-40 bg-gradient-to-tr from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-black w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:scale-110 transition relative" title="Open Basket">
+    <i class="fa-solid fa-bag-shopping text-2xl text-black"></i>
+    <span id="floatingCartBadge" class="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-black text-emerald-400 font-black text-xs flex items-center justify-center border-2 border-emerald-400">0</span>
   </button>
 
-  <!-- LIVE SALES POPUP NOTIFICATION -->
-  <div id="liveSalePopup" class="fixed bottom-24 left-6 z-40 bg-obsidian-900 border border-emerald-500/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-md flex items-center gap-3 max-w-xs transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
-    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-black flex-shrink-0 border border-emerald-500/30">
+  <!-- LIVE SALES POPUP -->
+  <div id="liveSalePopup" class="fixed bottom-24 left-6 z-40 bg-[#0c1424]/95 border border-emerald-500/40 rounded-2xl p-3.5 shadow-2xl backdrop-blur-md flex items-center gap-3 max-w-xs transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none">
+    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-black flex items-center justify-center text-sm font-black flex-shrink-0 shadow-md">
       <i class="fa-solid fa-bag-shopping" id="liveSaleIcon"></i>
     </div>
     <div class="flex-1 overflow-hidden pr-2">
@@ -606,93 +578,114 @@
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
         <span>Recent Order</span>
       </div>
-      <p class="text-xs font-bold text-white truncate" id="liveSaleUser">Hamza from Lahore</p>
-      <p class="text-[11px] text-slate-400 truncate" id="liveSaleItem">Purchased CapCut Pro</p>
-      <span class="text-[9px] text-slate-500" id="liveSaleTime">2 mins ago</span>
+      <p class="text-xs font-bold text-white truncate" id="liveSaleUser">Ali from Lahore</p>
+      <p class="text-[11px] text-gray-300 truncate" id="liveSaleItem">Purchased CapCut Pro</p>
+      <span class="text-[9px] text-gray-500" id="liveSaleTime">2 mins ago</span>
     </div>
-    <button onclick="hideLiveSalePopup()" class="text-slate-500 hover:text-slate-300 text-xs p-1">
+    <button onclick="hideLiveSalePopup()" class="text-gray-500 hover:text-gray-300 text-xs p-1">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
 
-  <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-8">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+  <!-- SHOPPING CART / BASKET MODAL -->
+  <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-5 sm:p-6 relative shadow-2xl my-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-10">
         <div class="flex items-center gap-2.5">
-          <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base border border-emerald-500/30"><i class="fa-solid fa-bag-shopping"></i></div>
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bag-shopping"></i></div>
           <h3 class="font-heading text-lg font-black text-white">Your Shopping Basket</h3>
         </div>
-        <button onclick="closeCartModal()" class="text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="closeCartModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-base"></i>
+        </button>
       </div>
 
-      <div id="cartItemsList" class="space-y-2.5 max-h-60 overflow-y-auto pr-1 mb-4"></div>
+      <div id="cartItemsList" class="space-y-3 max-h-60 overflow-y-auto pr-1 mb-4"></div>
 
       <div id="cartEmptyState" class="hidden text-center py-8">
-        <i class="fa-solid fa-bag-shopping text-4xl text-slate-600 mb-2"></i>
-        <p class="text-xs text-slate-300 font-bold">Your basket is currently empty.</p>
-        <p class="text-[11px] text-slate-500 mt-1">Click "+ Basket" on any product to bundle items.</p>
+        <i class="fa-solid fa-bag-shopping text-4xl text-gray-600 mb-2"></i>
+        <p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p>
+        <p class="text-[11px] text-gray-500 mt-1">Click "+ Basket" on any product to add items.</p>
       </div>
 
-      <div id="cartSummaryBox" class="border-t border-slate-800 pt-3 space-y-2 text-xs">
-        <div class="flex justify-between text-slate-400 font-semibold">
+      <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
+        <div class="flex justify-between text-gray-400">
           <span>Subtotal:</span>
           <span class="font-bold text-white" id="cartSubtotalText">₨ 0</span>
         </div>
-        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 font-bold hidden">
+        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 hidden">
           <span>Coupon Discount (10% OFF):</span>
-          <span id="cartDiscountText">- ₨ 0</span>
+          <span class="font-bold" id="cartDiscountText">- ₨ 0</span>
         </div>
-        <div class="flex justify-between text-sm font-black text-white border-t border-slate-800 pt-2">
+        <div class="flex justify-between text-sm font-black text-white border-t border-gray-800/80 pt-2">
           <span>Total Payable:</span>
           <span class="text-emerald-400 text-base" id="cartFinalTotalText">₨ 0</span>
         </div>
 
         <div class="pt-2">
-          <div class="p-2 rounded-2xl bg-obsidian-950 border border-slate-800 flex items-center gap-2">
-            <input type="text" id="cartCouponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-obsidian-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-mono">
-            <button type="button" onclick="applyCartCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3.5 py-1.5 rounded-xl transition">Apply</button>
+          <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
+            <input type="text" id="cartCouponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
+            <button type="button" onclick="applyCartCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3.5 py-1.5 rounded-lg transition">Apply</button>
           </div>
           <p id="cartCouponMsg" class="text-[11px] font-bold mt-1.5 hidden"></p>
         </div>
 
-        <button onclick="proceedToCheckout()" class="btn-shimmer w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-2xl transition shadow-lg shadow-emerald-500/20">
+        <button onclick="proceedToCheckout()" class="btn-shimmer w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
           Proceed to Complete Checkout ⚡
         </button>
       </div>
     </div>
   </div>
 
-  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-8">
-      <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg p-1">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="mb-3">
-        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/15 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30">Final Order Step</span>
-        <h3 class="font-heading text-xl font-black text-white mt-1.5" id="modalProductTitle">Checkout</h3>
-        <p class="text-xs text-slate-400 font-bold" id="modalProductPrice">Payable Amount: ₨ 0</p>
+  <!-- CHECKOUT MODAL (SAFE CLOSE BUTTON ON ALL SCREENS) -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-5 sm:p-7 relative shadow-2xl my-auto">
+      
+      <!-- STICKY TOP MODAL HEADER WITH HIGH-CONTRAST CANCEL BUTTON -->
+      <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-20">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">Official Checkout</span>
+          <h3 class="font-heading text-lg font-black text-white mt-1" id="modalProductTitle">Place Your Order</h3>
+        </div>
+        <button onclick="closeCheckoutModal()" class="w-10 h-10 rounded-2xl bg-gray-900 hover:bg-red-500/20 text-gray-300 hover:text-red-400 border border-gray-700 flex items-center justify-center transition shadow-lg flex-shrink-0" title="Close Modal">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
       </div>
 
-      <!-- DYNAMIC QR CODE DISPLAY -->
-      <div class="mb-3.5 p-3.5 bg-obsidian-950 rounded-2xl border border-slate-800 flex items-center gap-4">
-        <div class="w-20 h-20 bg-white p-1 rounded-xl flex items-center justify-center flex-shrink-0 shadow border border-slate-200">
-          <img id="qrCodeImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461" alt="Payment QR" class="w-full h-full object-contain rounded" />
+      <p class="text-xs text-emerald-400 font-bold mb-3" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
+
+      <!-- VERIFIED TEXT PAYMENT ACCOUNTS BOX (NO FAKE QR) -->
+      <div class="mb-4 p-3.5 bg-gray-900/90 rounded-2xl border border-gray-800 space-y-2">
+        <div class="flex items-center justify-between text-xs pb-2 border-b border-gray-800">
+          <span class="text-gray-400 font-bold uppercase text-[10px]">Payment Account Details</span>
+          <span class="text-emerald-400 text-[10px] font-bold">Transfer & Save Trx ID</span>
         </div>
-        <div class="flex-1 text-xs space-y-0.5">
-          <div class="text-[10px] uppercase font-bold text-slate-400" id="qrChannelBadge">JazzCash / SadaPay</div>
-          <div class="font-bold text-white text-sm" id="qrAccountTitle">Shaloom Victor</div>
-          <div class="font-mono text-emerald-400 font-black text-sm" id="qrAccountNumber">03462195461</div>
-          <button type="button" onclick="copyCurrentQrDetails()" class="inline-flex items-center gap-1 text-[10px] font-bold text-cyan-400 hover:text-cyan-300 underline pt-0.5">
-            <i class="fa-regular fa-copy"></i> Copy Account Number
-          </button>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-[#080d16] border border-gray-800/80">
+            <div class="flex justify-between items-center text-[10px] text-gray-400 mb-1">
+              <span>JazzCash / SadaPay</span>
+              <button type="button" onclick="copyText('03462195461', 'JazzCash/SadaPay')" class="text-emerald-400 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
+            </div>
+            <p class="font-bold text-white text-xs">Shaloom Victor</p>
+            <p class="font-mono text-emerald-400 font-black text-sm">03462195461</p>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-[#080d16] border border-gray-800/80">
+            <div class="flex justify-between items-center text-[10px] text-gray-400 mb-1">
+              <span>Binance Pay (USDT)</span>
+              <button type="button" onclick="copyText('1083609522', 'Binance UID')" class="text-yellow-400 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
+            </div>
+            <p class="font-bold text-white text-xs">Scott burchill</p>
+            <p class="font-mono text-yellow-400 font-black text-sm">UID: 1083609522</p>
+          </div>
         </div>
       </div>
 
       <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Select Payment Channel *</label>
-          <select id="custPaymentMethod" onchange="updateQrDisplay(this.value)" required class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Method Used *</label>
+          <select id="custPaymentMethod" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400">
             <option value="JazzCash">JazzCash (03462195461 - Shaloom Victor)</option>
             <option value="SadaPay">SadaPay (03462195461 - Shaloom Victor)</option>
             <option value="Binance">Binance Pay USDT (UID: 1083609522 - Scott burchill)</option>
@@ -700,136 +693,217 @@
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Your Full Name *</label>
-          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
+          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           <div>
-            <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">WhatsApp Number *</label>
-            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label>
+            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
           </div>
           <div>
-            <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Delivery Email *</label>
-            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label>
+            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
           </div>
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Transaction ID / Sender Name *</label>
-          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Name *</label>
+          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1 flex items-center justify-between">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1 flex items-center justify-between">
             <span>Upload Payment Screenshot (Optional)</span>
-            <span class="text-[10px] text-emerald-400 lowercase font-semibold">saved to admin portal</span>
+            <span class="text-[10px] text-emerald-400 lowercase font-normal">saved to admin portal</span>
           </label>
-          <div class="relative bg-obsidian-950 border border-dashed border-slate-700 hover:border-emerald-500 rounded-2xl p-3 text-center transition">
+          <div class="relative bg-gray-900 border border-dashed border-gray-700 hover:border-emerald-400 rounded-xl p-2.5 text-center transition">
             <input type="file" id="custScreenshotInput" accept="image/*" onchange="handleScreenshotUpload(this)" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-            <div class="flex items-center justify-center gap-2 text-xs text-slate-400">
+            <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
               <i class="fa-solid fa-cloud-arrow-up text-emerald-400 text-sm"></i>
               <span id="screenshotFileName">Choose receipt image or screenshot</span>
             </div>
           </div>
         </div>
 
-        <div class="p-2.5 rounded-xl bg-obsidian-950 border border-slate-800 text-[10px] text-slate-400">
-          <i class="fa-solid fa-circle-info text-emerald-400 mr-1"></i> Submitting opens WhatsApp with your pre-filled receipt. You can also directly send the screenshot in the WhatsApp chat for instant dispatch!
+        <div class="p-2.5 rounded-xl bg-gray-900 border border-gray-800 text-[10px] text-gray-400">
+          <i class="fa-solid fa-circle-info text-emerald-400 mr-1"></i> Order submit karne par aapko foran <strong>Tracking ID</strong> mil jayegi. Aapko WhatsApp par redirect nahi kiya jayega jab tak aap khud na chahein!
         </div>
 
-        <button type="submit" id="submitBtn" class="btn-shimmer w-full bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-heading font-black text-xs uppercase py-3.5 rounded-2xl transition shadow-lg shadow-emerald-500/20">
-          Complete & Place Order ⚡
+        <button type="submit" id="submitBtn" class="btn-shimmer w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+          Submit Order & Get Tracking ID ⚡
+        </button>
+
+        <button type="button" onclick="closeCheckoutModal()" class="w-full text-center text-xs text-gray-400 hover:text-white py-1">
+          Cancel and return to store
         </button>
       </form>
     </div>
   </div>
 
-  <div id="detailsModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
-      <button onclick="closeDetailsModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
+  <!-- NATIVE SASTASTORE LIVE ORDER TRACKING & SUCCESS MODAL -->
+  <div id="trackingScreenModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-emerald-500/40 w-full max-w-md rounded-3xl p-6 sm:p-7 relative shadow-2xl my-auto">
       
-      <div class="flex items-center gap-3 pb-4 border-b border-slate-800 mb-4">
-        <div id="detailIconBox" class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl flex-shrink-0 border border-emerald-500/30">
-          <i id="detailIcon" class="fa-solid fa-circle-info"></i>
+      <!-- Top Bar with Close -->
+      <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
+        <div class="flex items-center gap-2">
+          <img src="logo.jpeg" alt="SastaStore" class="w-7 h-7 rounded-lg object-cover border border-emerald-500/40" />
+          <span class="font-heading font-black text-sm text-white">Sasta<span class="text-emerald-400">Store</span> Order Status</span>
         </div>
+        <button onclick="closeTrackingScreen()" class="w-8 h-8 rounded-xl bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-white border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Tracking ID Banner with 1-Click Copy -->
+      <div class="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 mb-4 flex items-center justify-between">
         <div>
-          <h3 id="detailTitle" class="font-heading font-black text-base text-white">Product Title</h3>
-          <span id="detailTag" class="text-xs text-emerald-400 font-bold">Plan Duration</span>
+          <span class="text-[10px] text-gray-400 uppercase font-bold tracking-wider block">Your Tracking ID:</span>
+          <span class="font-mono text-base font-black text-emerald-400" id="displayTrackingId">SS-8Y49-TKD5</span>
+        </div>
+        <button onclick="copyGeneratedTrackingId()" class="p-2 rounded-xl bg-gray-900 hover:bg-gray-800 text-emerald-400 text-xs border border-gray-700 transition" title="Copy Tracking ID">
+          <i class="fa-regular fa-copy text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Order Receipt Details -->
+      <div class="bg-gray-900/90 rounded-2xl p-4 border border-gray-800 space-y-2 text-xs mb-4">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+          <span class="text-gray-400">Customer:</span>
+          <span class="font-bold text-white" id="trackCustomerName">Muhammad Ali</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+          <span class="text-gray-400">Service / Tool:</span>
+          <span class="font-bold text-emerald-400 text-right truncate max-w-[200px]" id="trackServiceTitle">CapCut Pro</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+          <span class="text-gray-400">Amount Paid:</span>
+          <span class="font-bold text-white" id="trackAmount">₨ 749/-</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+          <span class="text-gray-400">Payment Channel:</span>
+          <span class="font-bold text-gray-200" id="trackPaymentMethod">JazzCash</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+          <span class="text-gray-400">Transaction ID:</span>
+          <span class="font-mono font-bold text-gray-300" id="trackTrx">246523422846</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-400">Ordered On:</span>
+          <span class="font-bold text-gray-300" id="trackDate">Just Now</span>
         </div>
       </div>
 
-      <div class="space-y-2.5 text-xs text-slate-300 leading-relaxed mb-5">
-        <div class="p-3 bg-obsidian-950 rounded-2xl border border-slate-800">
-          <span class="text-slate-400 text-[10px] uppercase font-bold block mb-0.5">Account Delivery Format</span>
+      <!-- Live Status Description Box -->
+      <div class="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs mb-4 flex items-start gap-2.5">
+        <i class="fa-solid fa-clock text-amber-400 mt-0.5 text-sm"></i>
+        <div>
+          <strong class="block text-white" id="trackStatusTitle">Pending — Waiting for admin verification</strong>
+          <span class="text-[11px] text-gray-300">Your order has been registered into our queue. Admin will verify your payment and activate your credentials shortly.</span>
+        </div>
+      </div>
+
+      <!-- Status Progress Dots -->
+      <div class="space-y-3 pl-2 border-l-2 border-gray-800 mb-6 text-xs text-gray-400">
+        <div class="flex items-center gap-2 text-amber-400 font-bold">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse -ml-[11px]"></span>
+          <span>Pending — Reviewing your payment</span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-500">
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-700 -ml-[11px]"></span>
+          <span>Approved — Credentials being prepared</span>
+        </div>
+        <div class="flex items-center gap-2 text-gray-500">
+          <span class="w-2.5 h-2.5 rounded-full bg-gray-700 -ml-[11px]"></span>
+          <span>Completed — Subscription active & delivered</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2">
+        <a id="trackOptionalWaBtn" href="#" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase rounded-xl transition shadow-lg shadow-emerald-500/20">
+          <i class="fa-brands fa-whatsapp text-base"></i> Optional: Confirm on WhatsApp
+        </a>
+        <button onclick="closeTrackingScreen()" class="w-full py-2.5 bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-800 font-bold text-xs rounded-xl transition">
+          Back to Store
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAILS & SPECS MODAL -->
+  <div id="detailsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl my-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
+        <div class="flex items-center gap-3">
+          <div id="detailIconBox" class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+            <i id="detailIcon" class="fa-solid fa-circle-info"></i>
+          </div>
+          <div>
+            <h3 id="detailTitle" class="font-heading font-black text-base text-white">Product Title</h3>
+            <span id="detailTag" class="text-xs text-emerald-400 font-bold">Plan Duration</span>
+          </div>
+        </div>
+        <button onclick="closeDetailsModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs text-gray-300 leading-relaxed mb-5">
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Account Format</span>
           <p id="detailFormat" class="font-semibold text-white">Private Credentials / Email Invite</p>
         </div>
 
-        <div class="p-3 bg-obsidian-950 rounded-2xl border border-slate-800">
-          <span class="text-slate-400 text-[10px] uppercase font-bold block mb-0.5">Guaranteed Replacement Warranty</span>
-          <p id="detailWarranty" class="font-bold text-emerald-400">Full Replacement Guarantee</p>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Replacement Warranty</span>
+          <p id="detailWarranty" class="font-semibold text-emerald-400">Full Replacement Guarantee</p>
         </div>
 
-        <div class="p-3 bg-obsidian-950 rounded-2xl border border-slate-800">
-          <span class="text-slate-400 text-[10px] uppercase font-bold block mb-0.5">Full Features & Specifications</span>
-          <p id="detailSpecs" class="font-semibold text-slate-300 whitespace-pre-line">100% Genuine, Ad-free, High-speed server access.</p>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Specifications & Features</span>
+          <p id="detailSpecs" class="font-semibold text-gray-300 whitespace-pre-line">100% Genuine, fast activation with direct WhatsApp support.</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-2.5">
-        <button id="detailBasketBtn" class="flex items-center justify-center gap-1.5 py-2.5 bg-obsidian-850 hover:bg-obsidian-800 border border-slate-700 text-slate-200 font-black text-xs rounded-xl transition">
+      <div class="grid grid-cols-2 gap-2">
+        <button id="detailBasketBtn" class="flex items-center justify-center gap-1.5 py-2.5 bg-gray-900 hover:bg-gray-800 border border-emerald-500/40 text-emerald-400 font-black text-xs rounded-xl transition">
           <i class="fa-solid fa-plus text-xs"></i> Add to Basket
         </button>
-        <button id="detailOrderBtn" class="btn-shimmer flex items-center justify-center gap-1.5 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-400 text-black font-black text-xs rounded-xl transition shadow-md">
+        <button id="detailOrderBtn" class="btn-shimmer flex items-center justify-center gap-1.5 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-black text-xs rounded-xl transition shadow-lg shadow-emerald-500/20">
           Order Now
         </button>
       </div>
     </div>
   </div>
 
-  <div id="successModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-obsidian-900 border border-emerald-500/40 w-full max-w-sm rounded-3xl p-6 sm:p-7 relative shadow-2xl text-center">
-      <div class="w-16 h-16 rounded-3xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-3 border border-emerald-500/40 animate-bounce">
-        <i class="fa-solid fa-circle-check"></i>
-      </div>
-      <h3 class="font-heading text-xl font-black text-white mb-1">Order Prepared!</h3>
-      <p class="text-xs text-slate-400 mb-4">Your official order receipt slip has been generated.</p>
-      <div class="p-3 bg-emerald-500/15 rounded-2xl border border-emerald-500/30 text-xs text-emerald-300 font-mono font-bold mb-4 animate-pulse">
-        Opening WhatsApp for instant dispatch...
-      </div>
-      <p class="text-[11px] text-slate-500">If WhatsApp doesn't open automatically, click below:</p>
-      <a id="manualWaBtn" href="#" target="_blank" class="mt-2 inline-flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs rounded-xl transition shadow">
-        <i class="fa-brands fa-whatsapp text-sm"></i> Continue to WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <div id="reviewModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-md rounded-3xl p-6 sm:p-7 relative shadow-2xl">
-      <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
-      
-      <div class="text-center pb-4 border-b border-slate-800 mb-4">
-        <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mx-auto mb-2 border border-amber-500/30">
-          <i class="fa-solid fa-star"></i>
-        </div>
+  <!-- WRITE A REVIEW MODAL -->
+  <div id="reviewModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl my-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
         <h3 class="font-heading text-lg font-black text-white">Share Your Feedback</h3>
-        <p class="text-xs text-slate-400">Your review will be posted live directly on the store!</p>
+        <button onclick="closeReviewModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
       </div>
 
       <form onsubmit="submitLiveReview(event)" class="space-y-3">
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Your Full Name *</label>
-          <input type="text" id="revName" required placeholder="e.g. Daniyal Sheikh" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
+          <input type="text" id="revName" required placeholder="e.g. Daniyal Sheikh" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Profession / Role</label>
-          <input type="text" id="revRole" placeholder="e.g. Video Editor / Digital Marketer" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-500">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Profession / Role</label>
+          <input type="text" id="revRole" placeholder="e.g. Video Editor / Digital Marketer" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Your Rating *</label>
-          <select id="revRating" required class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2 text-xs text-amber-400 font-bold focus:outline-none focus:border-emerald-500">
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Rating *</label>
+          <select id="revRating" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2 text-xs text-amber-400 font-bold focus:outline-none focus:border-emerald-400">
             <option value="5">★★★★★ (5 Stars - Excellent)</option>
             <option value="4">★★★★☆ (4 Stars - Good)</option>
             <option value="3">★★★☆☆ (3 Stars - Average)</option>
@@ -837,11 +911,11 @@
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-300 uppercase mb-1">Your Experience / Review *</label>
-          <textarea id="revText" required rows="3" placeholder="Tell us about the tool delivery speed and customer service..." class="w-full bg-obsidian-950 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Experience / Review *</label>
+          <textarea id="revText" required rows="3" placeholder="Tell us about the tool delivery and customer service..." class="w-full bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-400"></textarea>
         </div>
 
-        <button type="submit" class="btn-shimmer w-full bg-amber-500 hover:bg-amber-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition shadow">
+        <button type="submit" class="btn-shimmer w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition shadow-lg shadow-amber-500/20">
           Post Review Live 🚀
         </button>
       </form>
@@ -849,121 +923,130 @@
   </div>
 
   <!-- WARRANTY MODAL -->
-  <div id="warrantyModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl">
-      <button onclick="closeWarrantyModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
-      <div class="text-center pb-4 border-b border-slate-800 mb-5">
-        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-2 border border-emerald-500/30">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <h3 class="font-heading text-xl font-black text-white">Replacement & Warranty Policy</h3>
-        <p class="text-xs text-emerald-400 font-bold">100% Guaranteed Official Service</p>
+  <div id="warrantyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
+        <h3 class="font-heading text-lg font-black text-white">Replacement & Warranty Policy</h3>
+        <button onclick="closeWarrantyModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
       </div>
-      <div class="space-y-3.5 text-xs text-slate-300 leading-relaxed">
-        <div class="p-3.5 bg-obsidian-950 rounded-2xl border border-slate-800">
-          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> 1. Fast 15-Minute Replacement</h4>
-          <p class="text-slate-400">If any subscription logs out or experiences issues during its active plan period, message our WhatsApp helpline with your Order ID for a replacement within 15 minutes.</p>
+
+      <div class="space-y-3 text-xs text-gray-300 leading-relaxed mb-4">
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-bolt text-yellow-400"></i> 1. Fast 15-Minute Replacement</h4>
+          <p class="text-gray-400">If any subscription logs out or experiences issues during its active plan period, message our WhatsApp helpline with your Tracking ID for an immediate replacement.</p>
         </div>
-        <div class="p-3.5 bg-obsidian-950 rounded-2xl border border-slate-800">
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
           <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-400"></i> 2. Private & Genuine Credentials</h4>
-          <p class="text-slate-400">All Windows licenses, Notion, Canva, and invite links are directly bound to your official credentials. No illegal crack software or sudden terminations.</p>
+          <p class="text-gray-400">All Windows licenses, Notion, Canva, and invite links are directly bound to your official credentials. No illegal crack software or sudden terminations.</p>
         </div>
-        <div class="p-3.5 bg-obsidian-950 rounded-2xl border border-slate-800">
-          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-rotate-left text-cyan-400"></i> 3. 100% Refund If Not Activated</h4>
-          <p class="text-slate-400">In the rare event we are unable to fulfill an order due to API limits or region restrictions, 100% of your payment is refunded immediately to your JazzCash or SadaPay.</p>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-1.5"><i class="fa-solid fa-rotate-left text-blue-400"></i> 3. 100% Refund If Not Activated</h4>
+          <p class="text-gray-400">In the rare event we are unable to fulfill an order due to API limits or region restrictions, 100% of your payment is refunded immediately to your JazzCash or SadaPay.</p>
         </div>
       </div>
-      <button onclick="closeWarrantyModal()" class="mt-6 w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-3 rounded-2xl transition shadow">
+      <button onclick="closeWarrantyModal()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-3 rounded-xl transition">
         I Understand & Accept
       </button>
     </div>
   </div>
 
-  <!-- MY ORDERS TRACKING MODAL -->
-  <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl">
-      <button onclick="closeMyOrdersModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
-      <div class="mb-4">
-        <span class="text-[10px] font-extrabold uppercase tracking-widest bg-cyan-500/15 text-cyan-400 px-2.5 py-1 rounded-full border border-cyan-500/30">Customer Portal</span>
-        <h3 class="font-heading text-xl font-black text-white mt-2">Track My Orders</h3>
-        <p class="text-xs text-slate-400">Enter the WhatsApp number used during checkout:</p>
+  <!-- TRACK MY ORDERS SEARCH MODAL -->
+  <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Customer Portal</span>
+          <h3 class="font-heading text-lg font-black text-white mt-1">Track Order Status</h3>
+        </div>
+        <button onclick="closeMyOrdersModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
       </div>
+
+      <p class="text-xs text-gray-400 mb-3">Enter your WhatsApp number or Tracking ID below:</p>
       <div class="flex gap-2 mb-4">
-        <input type="tel" id="trackPhoneInput" placeholder="e.g. 03462195461" class="flex-1 bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-500">
-        <button onclick="searchMyOrders()" class="bg-cyan-500 hover:bg-cyan-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition">Find</button>
+        <input type="text" id="trackSearchInput" placeholder="e.g. 03234320196 or SS-8Y49-TKD5" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-400">
+        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition">Find</button>
       </div>
       <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1">
-        <p class="text-xs text-slate-500 text-center py-4">Enter your number above to view order history.</p>
+        <p class="text-xs text-gray-500 text-center py-4">Enter your number or Tracking ID above to view status.</p>
       </div>
     </div>
   </div>
 
-  <!-- ADMIN DASHBOARD MODAL -->
-  <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-obsidian-900 border border-slate-700 w-full max-w-5xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+  <!-- ADMIN MODAL (WITH 1-CLICK FIXED PAKISTANI WHATSAPP DISPATCH) -->
+  <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-5 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col my-auto">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-10">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm"><i class="fa-solid fa-gauge"></i></div>
           <div>
             <h3 class="font-heading text-lg font-black text-white">SastaStore Order Dashboard</h3>
-            <p class="text-[11px] text-slate-400">Shopify-style live order & receipt management</p>
+            <p class="text-[11px] text-gray-400">Live order management & 1-Click WhatsApp customer contact</p>
           </div>
         </div>
-        <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="closeAdminModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
       </div>
+
       <div id="adminAuthScreen" class="py-12 text-center max-w-sm mx-auto w-full">
         <i class="fa-solid fa-lock text-3xl text-emerald-400 mb-3"></i>
         <h4 class="font-heading text-base font-bold text-white mb-1">Enter Admin Password</h4>
-        <p class="text-xs text-slate-400 mb-4">Access restricted to store administrator</p>
+        <p class="text-xs text-gray-400 mb-4">Access restricted to store administrator</p>
         <form onsubmit="verifyAdminPass(event)" class="space-y-3">
-          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-obsidian-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 text-center focus:outline-none focus:border-emerald-500">
+          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 text-center focus:outline-none focus:border-emerald-400">
           <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">Unlock Dashboard</button>
         </form>
       </div>
+
       <div id="adminOrdersPanel" class="hidden flex-1 overflow-hidden flex flex-col">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <span class="text-xs font-bold text-slate-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
+          <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
           <div class="flex items-center gap-2">
-            <button onclick="exportOrdersCSV()" class="bg-obsidian-850 hover:bg-obsidian-800 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
-            <button onclick="clearAllOrders()" class="bg-red-500/15 hover:bg-red-500/25 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-xl text-xs font-bold transition">Clear All</button>
+            <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
+            <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
           </div>
         </div>
-        <div class="overflow-x-auto overflow-y-auto flex-1 border border-slate-800 rounded-2xl">
-          <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-obsidian-950 text-slate-400 text-[10px] uppercase font-bold sticky top-0 border-b border-slate-800">
+
+        <div class="overflow-x-auto overflow-y-auto flex-1 border border-gray-800 rounded-2xl">
+          <table class="w-full text-left text-xs text-gray-300">
+            <thead class="bg-gray-900/90 text-gray-400 text-[10px] uppercase font-bold sticky top-0 border-b border-gray-800">
               <tr>
-                <th class="p-3">Date</th>
+                <th class="p-3">Tracking ID / Date</th>
                 <th class="p-3">Customer</th>
                 <th class="p-3">Phone / Email</th>
                 <th class="p-3">Product(s)</th>
                 <th class="p-3">Payment / Trx</th>
                 <th class="p-3">Screenshot</th>
                 <th class="p-3">Status</th>
-                <th class="p-3 text-right">Action</th>
+                <th class="p-3 text-right">Dispatch / Action</th>
               </tr>
             </thead>
-            <tbody id="ordersTableBody" class="divide-y divide-slate-800"></tbody>
+            <tbody id="ordersTableBody" class="divide-y divide-gray-800"></tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SCREENSHOT PREVIEW POPUP -->
-  <div id="screenshotPreviewModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4">
-    <div class="relative max-w-lg w-full bg-obsidian-900 p-4 rounded-3xl border border-slate-700 text-center shadow-2xl">
-      <button onclick="closeScreenshotPreview()" class="absolute top-3 right-3 text-slate-400 hover:text-white text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
-      <h4 class="text-xs font-bold text-white mb-3">Customer Payment Receipt</h4>
-      <img id="previewModalImg" src="" alt="Payment Receipt" class="w-full h-auto max-h-[70vh] object-contain rounded-2xl border border-slate-800 mx-auto" />
+  <!-- SCREENSHOT PREVIEW POPUP (ADMIN) -->
+  <div id="screenshotPreviewModal" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="relative max-w-lg w-full bg-[#0b1220] p-4 rounded-2xl border border-gray-800 text-center my-auto">
+      <button onclick="closeScreenshotPreview()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
+      <h4 class="text-xs font-bold text-white mb-3">Customer Payment Screenshot</h4>
+      <img id="previewModalImg" src="" alt="Payment Receipt" class="w-full h-auto max-h-[70vh] object-contain rounded-xl border border-gray-800 mx-auto" />
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION -->
-  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-obsidian-850 text-white border border-emerald-500 font-extrabold px-5 py-2.5 rounded-2xl text-xs shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2">
-    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-500 text-black font-extrabold px-5 py-2.5 rounded-xl text-xs shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
     <span id="toastMsg">Notification message</span>
   </div>
 
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
@@ -973,7 +1056,24 @@
     let appliedDiscountPercent = 0;
     let uploadedScreenshotBase64 = "";
 
-    // 6 BANNERS AUTO-SLIDER LOGIC (WITHOUT ANY DOTS)
+    // ==================== CRITICAL: PAKISTANI PHONE NORMALIZER ====================
+    // Fixes the "Invite to WhatsApp" bug by ensuring 03234320196 -> 923234320196
+    function formatPakistaniWhatsApp(phone) {
+      if (!phone) return "";
+      let clean = phone.replace(/[^0-9]/g, ''); // Remove +, spaces, dashes
+      if (clean.startsWith('03')) {
+        return '92' + clean.substring(1); // 0323... -> 92323...
+      } else if (clean.startsWith('3') && clean.length === 10) {
+        return '92' + clean; // 323... -> 92323...
+      } else if (clean.startsWith('0092')) {
+        return clean.substring(2);
+      } else if (clean.startsWith('92')) {
+        return clean;
+      }
+      return clean;
+    }
+
+    // CAROUSEL SLIDER (6 BANNERS)
     let currentSlide = 0;
     const slides = document.querySelectorAll(".slide-item");
     let slideInterval = null;
@@ -992,16 +1092,15 @@
     function prevSlide() { showSlide(currentSlide - 1); resetSlideTimer(); }
 
     function startSlideTimer() {
-      slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 4000);
+      slideInterval = setInterval(() => { showSlide(currentSlide + 1); }, 3800);
     }
     function resetSlideTimer() {
       clearInterval(slideInterval);
       startSlideTimer();
     }
 
-    // COMPLETE PRODUCT CATALOG (FORMAT + WARRANTY + CUT PRICES)
+    // ALL PRODUCTS (ACCORDING TO EXACT PROMPT INSTRUCTIONS)
     const products = [
-      // Top Best Sellers
       { 
         id: 2, 
         title: "CapCut Pro (Monthly)", 
@@ -1014,7 +1113,7 @@
         pricePKR: 749, 
         badge: "Hot Seller", 
         icon: "fa-solid fa-scissors", 
-        color: "from-blue-500 to-cyan-500", 
+        color: "from-blue-500 to-cyan-600", 
         isTop: true, 
         urgency: "Hurry! Only 5 Left" 
       },
@@ -1030,7 +1129,7 @@
         pricePKR: 249, 
         badge: "Popular", 
         icon: "fa-solid fa-palette", 
-        color: "from-cyan-500 to-blue-600", 
+        color: "from-cyan-500 to-blue-500", 
         isTop: true 
       },
       { 
@@ -1045,7 +1144,7 @@
         pricePKR: 2499, 
         badge: "Reseller Kit", 
         icon: "fa-solid fa-user-shield", 
-        color: "from-purple-600 to-indigo-600", 
+        color: "from-purple-600 to-indigo-700", 
         isTop: true, 
         urgency: "Only 2 Panels Left" 
       },
@@ -1061,7 +1160,7 @@
         pricePKR: 349, 
         badge: "Ad-Free", 
         icon: "fa-brands fa-youtube", 
-        color: "from-red-500 to-rose-600", 
+        color: "from-red-500 to-red-700", 
         isTop: true 
       },
       { 
@@ -1076,7 +1175,7 @@
         pricePKR: 899, 
         badge: "Value Plan", 
         icon: "fa-brands fa-youtube", 
-        color: "from-red-600 to-pink-600", 
+        color: "from-red-600 to-rose-700", 
         isTop: true 
       },
       { 
@@ -1091,11 +1190,9 @@
         pricePKR: 649, 
         badge: "Top AI", 
         icon: "fa-solid fa-brain", 
-        color: "from-teal-500 to-emerald-600", 
+        color: "from-teal-400 to-emerald-600", 
         isTop: true 
       },
-
-      // Newly Added Products & AI Powerhouses
       { 
         id: 134, 
         title: "ChatGPT Plus Monthly (Private)", 
@@ -1164,9 +1261,8 @@
         origPricePKR: 6499, 
         pricePKR: 5299, 
         badge: "Top AI", 
-        icon: "fa-solid fa-wand-magic-sparkles", 
-        color: "from-amber-500 to-orange-600", 
-        isTop: true 
+        icon: "fa-solid fa-sparkles", 
+        color: "from-amber-600 to-orange-700" 
       },
       { 
         id: 135, 
@@ -1238,8 +1334,6 @@
         icon: "fa-solid fa-headphones", 
         color: "from-indigo-600 to-blue-700" 
       },
-
-      // CapCut & Design Catalog
       { 
         id: 3, 
         title: "CapCut Pro (6 Months)", 
@@ -1436,8 +1530,6 @@
         icon: "fa-solid fa-file-lines", 
         color: "from-orange-500 to-red-500" 
       },
-
-      // Streaming & Entertainment
       { 
         id: 16, 
         title: "Netflix Single Screen (Monthly)", 
@@ -1494,8 +1586,6 @@
         icon: "fa-brands fa-amazon", 
         color: "from-amber-600 to-orange-700" 
       },
-
-      // VPNs & Accounts
       { 
         id: 20, 
         title: "NordVPN (3 Months)", 
@@ -1580,8 +1670,6 @@
         icon: "fa-solid fa-envelope", 
         color: "from-blue-400 to-sky-600" 
       },
-
-      // Windows License Keys
       { 
         id: 119, 
         title: "Windows 10 Pro Retail Key", 
@@ -1610,8 +1698,6 @@
         icon: "fa-brands fa-windows", 
         color: "from-blue-600 to-indigo-700" 
       },
-
-      // API Orders Test
       { 
         id: 142, 
         title: "API Orders Test", 
@@ -1636,6 +1722,7 @@
       { name: "Zainab Shah", role: "Content Creator", text: "ChatGPT Plus private account is 100% genuine with Sora & GPT-4o. Safe checkout via SadaPay!", rating: 5, date: "5 days ago" }
     ];
 
+    // DETAILS MODAL LOGIC
     function openDetailsModal(id) {
       const prod = products.find(p => p.id === id);
       if (!prod) return;
@@ -1663,6 +1750,7 @@
       document.getElementById("detailsModal").classList.add("hidden");
     }
 
+    // LIVE REVIEWS LOGIC
     function getStoredReviews() {
       const stored = localStorage.getItem('sasta_live_reviews');
       if (!stored) {
@@ -1678,20 +1766,20 @@
       const reviews = getStoredReviews();
 
       container.innerHTML = reviews.map(r => `
-        <div class="ice-card p-5 rounded-2xl flex flex-col justify-between">
+        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800 hover:border-amber-500/30 transition">
           <div>
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-1 text-amber-400 text-xs">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div>
-              <span class="text-[10px] text-slate-500 font-semibold">${r.date || 'Verified'}</span>
+              <span class="text-[10px] text-gray-500">${r.date || 'Verified'}</span>
             </div>
-            <p class="text-slate-300 text-xs leading-relaxed mb-4">"${r.text}"</p>
+            <p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p>
           </div>
-          <div class="flex items-center justify-between pt-3 border-t border-slate-800">
+          <div class="flex items-center justify-between pt-3 border-t border-gray-800/80">
             <div>
               <p class="text-xs font-bold text-white">${r.name}</p>
-              <p class="text-[10px] text-slate-500 font-medium">${r.role || 'Customer'}</p>
+              <p class="text-[10px] text-gray-500">${r.role || 'Customer'}</p>
             </div>
-            <span class="text-[10px] bg-emerald-500/15 text-emerald-400 font-bold px-2 py-0.5 rounded-full flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified</span>
+            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified</span>
           </div>
         </div>
       `).join("");
@@ -1718,14 +1806,15 @@
       e.target.reset();
     }
 
-    // 1-Click WhatsApp Quick Order
+    // 1-CLICK WHATSAPP QUICK BUY
     function quickWhatsAppOrder(id) {
       const prod = products.find(p => p.id === id);
       if (!prod) return;
-      const text = `Hi SastaStore Support, I want to instantly order:\n*Product:* ${prod.title} (${prod.tag})\n*Price:* ₨ ${prod.pricePKR}/-\n\nPlease share payment account details for fast 15-minute dispatch.`;
+      const text = `Hi SastaStore Support, I want to instantly order:\n*Product:* ${prod.title} (${prod.tag})\n*Price:* ₨ ${prod.pricePKR}/-\n\nPlease share payment details for instant delivery.`;
       window.open(`https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank');
     }
 
+    // SCREENSHOT UPLOAD
     function handleScreenshotUpload(input) {
       if (input.files && input.files[0]) {
         const file = input.files[0];
@@ -1739,6 +1828,7 @@
       }
     }
 
+    // MULTI-ITEM CART LOGIC
     function addToCart(id) {
       const prod = products.find(p => p.id === id);
       if (!prod) return;
@@ -1789,14 +1879,14 @@
       summaryBox.classList.remove("hidden");
 
       list.innerHTML = cart.map((item, idx) => `
-        <div class="p-3 bg-obsidian-950 rounded-2xl border border-slate-800 flex items-center justify-between gap-3 text-xs">
+        <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
           <div class="flex items-center gap-2.5 flex-1 truncate">
-            <div class="w-8 h-8 rounded-xl bg-obsidian-900 border border-slate-700 text-emerald-400 flex items-center justify-center flex-shrink-0">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
               <i class="${item.icon}"></i>
             </div>
             <div class="truncate">
               <div class="font-bold text-white truncate">${item.title}</div>
-              <div class="text-[10px] text-slate-400">${item.tag}</div>
+              <div class="text-[10px] text-gray-500">${item.tag}</div>
             </div>
           </div>
           <div class="flex items-center gap-3">
@@ -1826,7 +1916,8 @@
       }
 
       const finalTotal = subtotal - discountAmount;
-      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/-`;
+      const usdAlt = (finalTotal / USD_RATE).toFixed(2);
+      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/- ($${usdAlt} USD)`;
     }
 
     function applyCartCoupon() {
@@ -1837,7 +1928,7 @@
       if (code === "SASTA10") {
         if (subtotal < 3000) {
           appliedDiscountPercent = 0;
-          msg.textContent = "⚠️ SASTA10 requires a minimum cart subtotal of ₨ 3,000/-.";
+          msg.textContent = "⚠️ SASTA10 requires a minimum cart total of ₨ 3,000/-.";
           msg.className = "text-[11px] font-bold text-amber-400 block";
           updateCartTotalsDisplay();
           return;
@@ -1866,15 +1957,15 @@
       const subtotal = calculateCartSubtotal();
       let discountAmount = appliedDiscountPercent > 0 ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
       const finalTotal = subtotal - discountAmount;
+      const usdAlt = (finalTotal / USD_RATE).toFixed(2);
 
       const itemsSummary = cart.map(c => c.title).join(" + ");
       document.getElementById("modalProductTitle").textContent = `${cart.length} Item(s): ${itemsSummary}`;
       document.getElementById("modalProductPrice").innerHTML = `
-        Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${finalTotal}/-</span>
-        ${discountAmount > 0 ? `<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold ml-1 border border-emerald-500/30">10% OFF Applied</span>` : ''}
+        Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${finalTotal}/- ($${usdAlt} USD)</span>
+        ${discountAmount > 0 ? `<span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-bold ml-1">10% OFF Applied</span>` : ''}
       `;
 
-      updateQrDisplay(document.getElementById("custPaymentMethod").value);
       document.getElementById("checkoutModal").classList.remove("hidden");
     }
 
@@ -1893,29 +1984,42 @@
       uploadedScreenshotBase64 = "";
     }
 
+    // ==================== ORDER SUBMISSION (DOES NOT FORCE WHATSAPP) ====================
     function submitOrder(e) {
       e.preventDefault();
       const name = document.getElementById("custName").value.trim();
-      const phone = document.getElementById("custPhone").value.trim();
+      const rawPhone = document.getElementById("custPhone").value.trim();
       const email = document.getElementById("custEmail").value.trim();
       const method = document.getElementById("custPaymentMethod").value;
       const trx = document.getElementById("custTrx").value.trim();
 
+      // Normalize phone for clean database storage & error-free WhatsApp
+      const normalizedPhone = formatPakistaniWhatsApp(rawPhone);
+
       const subtotal = calculateCartSubtotal();
       let discountAmount = appliedDiscountPercent > 0 ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
       const finalTotal = subtotal - discountAmount;
-      const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
-      const orderDate = new Date().toLocaleString();
+      const usdPrice = (finalTotal / USD_RATE).toFixed(2);
+      
+      // Native SastaStore Tracking ID Format: SS-8Y49-TKD5
+      const randomPart1 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const randomPart2 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const trackingId = `SS-${randomPart1}-${randomPart2}`;
+      const orderDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
       const itemsListText = cart.map((c, i) => `${i+1}. ${c.title} (${c.tag}) - ₨ ${c.pricePKR}/-`).join("\n");
+      const primaryProductTitle = cart.map(c => c.title).join(", ");
 
       const newOrder = { 
-        id: orderId, 
+        id: trackingId, 
         date: orderDate, 
-        product: cart.map(c => c.title).join(", "), 
-        price: `₨ ${finalTotal}/-${discountAmount > 0 ? ' [10% OFF]' : ''}`, 
+        product: primaryProductTitle, 
+        itemsText: itemsListText,
+        price: `₨ ${finalTotal}/- ($${usdPrice})`, 
+        amountNumber: finalTotal,
         name, 
-        phone, 
+        phone: normalizedPhone, 
+        rawPhone: rawPhone,
         email, 
         method, 
         trx, 
@@ -1926,59 +2030,60 @@
       let orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
       orders.unshift(newOrder);
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
-      localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone }));
+      localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone: rawPhone }));
 
-      const waReceipt = `*NEW ORDER - SASTASTORE*\nOrder ID: ${orderId}\n\n*Ordered Items (${cart.length}):*\n${itemsListText}\n\n*Total Payable:* ₨ ${finalTotal}/-${discountAmount > 0 ? ' [Coupon SASTA10 Applied - 10% OFF]' : ''}\n\n*Customer Details:*\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nPayment Channel: ${method}\nTrx ID / Account: ${trx}\n\n📸 *(Attaching payment receipt/screenshot in this chat below)*`;
-      const waLink = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waReceipt)}`;
+      // Structured Professional SastaStore WhatsApp Confirmation Invoice (Optional for customer)
+      const waCustomerSlip = `*ORDER VERIFICATION INVOICE - SASTASTORE*\n` +
+        `----------------------------------------\n` +
+        `*Tracking ID:* ${trackingId}\n` +
+        `*Customer:* ${name}\n` +
+        `*Email:* ${email}\n` +
+        `*Contact:* ${rawPhone}\n\n` +
+        `*Items Ordered:*\n${itemsListText}\n\n` +
+        `*Total Amount:* ₨ ${finalTotal}/- ($${usdPrice})\n` +
+        `*Payment Channel:* ${method}\n` +
+        `*Transaction ID / Sender:* ${trx}\n` +
+        `----------------------------------------\n` +
+        `📸 *(Payment screenshot attached below in this chat)*\n\n` +
+        `Hello Admin, I have submitted my order on sastastore.store. Please verify my payment and activate the package. Thank you!`;
 
-      // Confetti Animation
+      const customerWaUrl = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(waCustomerSlip)}`;
+
+      // Update Native Live Tracking Screen
+      document.getElementById("displayTrackingId").textContent = trackingId;
+      document.getElementById("trackCustomerName").textContent = name;
+      document.getElementById("trackServiceTitle").textContent = primaryProductTitle;
+      document.getElementById("trackAmount").textContent = `₨ ${finalTotal}/-`;
+      document.getElementById("trackPaymentMethod").textContent = method;
+      document.getElementById("trackTrx").textContent = trx;
+      document.getElementById("trackDate").textContent = orderDate;
+      document.getElementById("trackOptionalWaBtn").href = customerWaUrl;
+
+      // Confetti effect
       if (typeof confetti === 'function') {
-        confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
+        confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
       }
 
       closeCheckoutModal();
-      document.getElementById("manualWaBtn").href = waLink;
-      document.getElementById("successModal").classList.remove("hidden");
-
       cart = [];
       updateCartUi();
       appliedDiscountPercent = 0;
 
-      setTimeout(() => {
-        window.open(waLink, '_blank');
-      }, 1100);
+      // Open Native Tracking Screen immediately
+      document.getElementById("trackingScreenModal").classList.remove("hidden");
     }
 
-    function updateQrDisplay(method) {
-      const qrImg = document.getElementById("qrCodeImg");
-      const badge = document.getElementById("qrChannelBadge");
-      const title = document.getElementById("qrAccountTitle");
-      const num = document.getElementById("qrAccountNumber");
-
-      if (method.includes("JazzCash")) {
-        badge.textContent = "JazzCash Local Transfer";
-        title.textContent = "Shaloom Victor";
-        num.textContent = "03462195461";
-        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461";
-      } else if (method.includes("SadaPay")) {
-        badge.textContent = "SadaPay Zero-Fee Transfer";
-        title.textContent = "Shaloom Victor";
-        num.textContent = "03462195461";
-        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=03462195461";
-      } else {
-        badge.textContent = "Binance Pay USDT (Global)";
-        title.textContent = "Scott burchill";
-        num.textContent = "UID: 1083609522";
-        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=1083609522";
-      }
+    function closeTrackingScreen() {
+      document.getElementById("trackingScreenModal").classList.add("hidden");
     }
 
-    function copyCurrentQrDetails() {
-      const num = document.getElementById("qrAccountNumber").textContent.replace("UID: ", "").trim();
-      navigator.clipboard.writeText(num);
-      showToast(`${num} copied to clipboard!`);
+    function copyGeneratedTrackingId() {
+      const id = document.getElementById("displayTrackingId").textContent.trim();
+      navigator.clipboard.writeText(id);
+      showToast(`Tracking ID ${id} copied!`);
     }
 
+    // FAQ TOGGLE
     function toggleFaq(id) {
       const ans = document.getElementById(`faqAnswer-${id}`);
       const icon = document.getElementById(`faqIcon-${id}`);
@@ -1996,15 +2101,16 @@
     function openWarrantyModal() { document.getElementById("warrantyModal").classList.remove("hidden"); }
     function closeWarrantyModal() { document.getElementById("warrantyModal").classList.add("hidden"); }
 
+    // LIVE SALES ROTATOR
     const liveSalesData = [
       { user: "Hamza from Lahore", item: "CapCut Pro (Monthly)", icon: "fa-solid fa-scissors", time: "2 mins ago" },
       { user: "Zeeshan from Karachi", item: "HeyGen 600 Credits", icon: "fa-solid fa-video", time: "Just now" },
       { user: "Fatima from Islamabad", item: "Canva Pro", icon: "fa-solid fa-palette", time: "5 mins ago" },
-      { user: "Waqar from Rawalpindi", item: "Claude Pro", icon: "fa-solid fa-wand-magic-sparkles", time: "8 mins ago" },
-      { user: "Danish from Faisalabad", item: "Perplexity Enterprise Pro", icon: "fa-solid fa-magnifying-glass-chart", time: "1 min ago" },
+      { user: "Waqar from Rawalpindi", item: "Claude Pro", icon: "fa-solid fa-sparkles", time: "8 mins ago" },
+      { user: "Danish from Faisalabad", item: "Perplexity Pro", icon: "fa-solid fa-magnifying-glass-chart", time: "1 min ago" },
       { user: "Bilal from Multan", item: "ChatGPT Plus Private", icon: "fa-solid fa-robot", time: "4 mins ago" },
       { user: "Usman from Peshawar", item: "Canva Admin Panel", icon: "fa-solid fa-user-shield", time: "6 mins ago" },
-      { user: "Saad from Gujranwala", item: "Lovable Lite 12M", icon: "fa-solid fa-code", time: "3 mins ago" },
+      { user: "Saad from Gujranwala", item: "Lovable Lite", icon: "fa-solid fa-code", time: "3 mins ago" },
       { user: "Zain from Sialkot", item: "Grok Paid Account", icon: "fa-solid fa-microchip", time: "Just now" }
     ];
 
@@ -2053,54 +2159,59 @@
       topGrid.innerHTML = topItems.map(p => productCardHtml(p)).join("");
     }
 
+    // PRODUCT CARD HTML (CLEAN OBSIDIAN DUAL-TONE)
     function productCardHtml(p) {
+      const usdPrice = (p.pricePKR / USD_RATE).toFixed(2);
       const cutPrice = p.origPricePKR || Math.round(p.pricePKR * 1.35);
       const discountPct = Math.round(((cutPrice - p.pricePKR) / cutPrice) * 100);
 
       return `
-        <div class="ice-card rounded-3xl p-5 flex flex-col justify-between transition-all duration-300 relative group">
+        <div class="glass-box rounded-2xl p-5 flex flex-col justify-between group relative">
           <div>
             <div class="flex items-start justify-between gap-3 mb-3">
-              <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-md group-hover:scale-110 transition-transform">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-sm group-hover:scale-105 transition-transform">
                 <i class="${p.icon}"></i>
               </div>
               <div class="flex flex-col items-end">
                 <div class="flex items-center gap-1.5">
-                  <span class="text-[9px] font-black uppercase tracking-wider bg-red-500/20 text-red-400 px-1.5 py-0.5 rounded-full border border-red-500/30">-${discountPct}%</span>
-                  <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/15 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-500/30">${p.badge}</span>
+                  <span class="text-[9px] font-black uppercase tracking-wider bg-red-500/20 text-red-400 px-1.5 py-0.5 rounded border border-red-500/30">-${discountPct}%</span>
+                  <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.badge}</span>
                 </div>
-                <span class="text-[11px] font-semibold text-slate-400 mt-1">${p.tag}</span>
+                <span class="text-[11px] font-semibold text-gray-400 mt-1">${p.tag}</span>
               </div>
             </div>
 
             ${p.urgency ? `
-              <div class="mb-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-500/15 border border-red-500/30 text-[10px] font-black text-red-400">
+              <div class="mb-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/30 text-[10px] font-black text-amber-400 animate-pulse">
                 <i class="fa-solid fa-fire text-amber-400"></i> ${p.urgency}
               </div>
             ` : ''}
 
-            <h3 class="font-heading text-base font-black text-white group-hover:text-emerald-400 transition mb-1 leading-snug">${p.title}</h3>
-            <p class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-2 font-medium"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
+            <h3 class="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition mb-1">${p.title}</h3>
+            <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-2"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
             
-            <button onclick="openDetailsModal(${p.id})" class="text-[11px] text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1 mb-4 hover:underline">
-              <i class="fa-solid fa-circle-info"></i> Specs & Full Details
+            <button onclick="openDetailsModal(${p.id})" class="text-[11px] text-emerald-400 hover:text-white font-bold flex items-center gap-1 mb-4 hover:underline">
+              <i class="fa-solid fa-circle-info"></i> Specs & Details
             </button>
           </div>
 
-          <div class="pt-3 border-t border-slate-800 space-y-2">
-            <div class="flex items-baseline gap-2">
-              <span class="text-xs text-slate-500 line-through font-semibold">₨ ${cutPrice}/-</span>
-              <span class="text-lg font-black text-white font-heading tracking-tight">₨ ${p.pricePKR}/-</span>
+          <div class="pt-3 border-t border-gray-800 space-y-2">
+            <div class="flex items-baseline justify-between gap-1">
+              <div class="flex items-baseline gap-2">
+                <span class="text-xs text-gray-500 line-through font-semibold">₨ ${cutPrice}/-</span>
+                <span class="text-lg font-black text-emerald-400 font-heading tracking-tight">₨ ${p.pricePKR}/-</span>
+              </div>
+              <span class="text-[11px] font-bold text-gray-400">($${usdPrice})</span>
             </div>
 
             <div class="grid grid-cols-6 gap-1.5">
-              <button onclick="addToCart(${p.id})" class="col-span-2 flex items-center justify-center gap-1 bg-obsidian-850 hover:bg-obsidian-800 text-slate-200 border border-slate-700 font-heading font-black text-[11px] py-2 rounded-xl transition" title="Add to Basket">
-                <i class="fa-solid fa-plus text-[10px] text-emerald-400"></i> Basket
+              <button onclick="addToCart(${p.id})" class="col-span-2 flex items-center justify-center gap-1 bg-gray-900 hover:bg-gray-800 text-emerald-400 border border-emerald-500/40 font-heading font-black text-[11px] py-2 rounded-xl transition" title="Add to Basket">
+                <i class="fa-solid fa-plus text-[10px]"></i> Basket
               </button>
-              <button onclick="openCheckoutModal(${p.id})" class="col-span-3 btn-shimmer flex items-center justify-center gap-1 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-heading font-black text-[11px] py-2 rounded-xl transition shadow" title="Order Now">
+              <button onclick="openCheckoutModal(${p.id})" class="col-span-3 btn-shimmer flex items-center justify-center gap-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-[11px] py-2 rounded-xl transition shadow" title="Order Now">
                 Order
               </button>
-              <button onclick="quickWhatsAppOrder(${p.id})" class="col-span-1 flex items-center justify-center bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 rounded-xl transition" title="1-Click WhatsApp Direct Buy">
+              <button onclick="quickWhatsAppOrder(${p.id})" class="col-span-1 flex items-center justify-center bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-xl transition" title="1-Click WhatsApp Quick Buy">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
               </button>
             </div>
@@ -2113,40 +2224,18 @@
       const grid = document.getElementById("productsGrid");
       if (!grid) return;
       if (items.length === 0) {
-        grid.innerHTML = `<div class="col-span-full text-center py-16 ice-card rounded-3xl"><i class="fa-solid fa-box-open text-4xl text-slate-600 mb-3"></i><p class="text-slate-400 font-bold">No product found matching your search.</p></div>`;
+        grid.innerHTML = `<div class="col-span-full text-center py-16"><i class="fa-solid fa-box-open text-4xl text-gray-600 mb-3"></i><p class="text-gray-400 font-semibold">No tool found matching your search.</p></div>`;
         return;
       }
       grid.innerHTML = items.map(p => productCardHtml(p)).join("");
     }
 
-    function filterCategory(cat, btn) {
-      currentCategory = cat;
-      document.querySelectorAll(".filter-btn").forEach(el => { 
-        el.classList.remove("active", "bg-emerald-500", "text-black"); 
-        el.classList.add("bg-obsidian-850", "text-slate-300", "border", "border-slate-700"); 
-      });
-      if (btn) { 
-        btn.classList.add("active", "bg-emerald-500", "text-black"); 
-        btn.classList.remove("bg-obsidian-850", "text-slate-300", "border", "border-slate-700"); 
-      }
-      filterAndSearch();
-    }
-
-    function filterAndSearch() {
-      const q = document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
-      let filtered = products;
-      if (currentCategory !== 'all') filtered = filtered.filter(p => p.category === currentCategory);
-      if (q) filtered = filtered.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q) || p.warranty.toLowerCase().includes(q) || (p.specs && p.specs.toLowerCase().includes(q)));
-      renderProducts(filtered);
-    }
-
-    document.getElementById("searchInput")?.addEventListener("input", filterAndSearch);
-
+    // SEARCH MY ORDERS
     function openMyOrdersModal() {
       document.getElementById("myOrdersModal").classList.remove("hidden");
       const user = JSON.parse(localStorage.getItem('sasta_user') || '{}');
       if (user.phone) {
-        document.getElementById("trackPhoneInput").value = user.phone;
+        document.getElementById("trackSearchInput").value = user.phone;
         searchMyOrders();
       }
     }
@@ -2154,34 +2243,42 @@
     function closeMyOrdersModal() { document.getElementById("myOrdersModal").classList.add("hidden"); }
 
     function searchMyOrders() {
-      const qPhone = document.getElementById("trackPhoneInput").value.replace(/[^0-9]/g, '');
+      const query = document.getElementById("trackSearchInput").value.trim().toUpperCase();
+      const cleanPhone = query.replace(/[^0-9]/g, '');
       const resultsDiv = document.getElementById("myOrdersResults");
       const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
 
-      if (!qPhone) {
-        resultsDiv.innerHTML = `<p class="text-xs text-red-400 text-center py-3 font-bold">Please enter a valid phone number.</p>`;
+      if (!query) {
+        resultsDiv.innerHTML = `<p class="text-xs text-red-400 text-center py-3">Please enter a valid phone number or Tracking ID.</p>`;
         return;
       }
 
-      const matched = orders.filter(o => o.phone.replace(/[^0-9]/g, '').includes(qPhone));
+      const matched = orders.filter(o => {
+        const idMatch = o.id && o.id.toUpperCase().includes(query);
+        const phoneMatch = cleanPhone && o.phone && o.phone.includes(cleanPhone);
+        return idMatch || phoneMatch;
+      });
 
       if (matched.length === 0) {
-        resultsDiv.innerHTML = `<p class="text-xs text-slate-500 text-center py-3">No orders found for this number.</p>`;
+        resultsDiv.innerHTML = `<p class="text-xs text-gray-400 text-center py-3">No orders found for this query.</p>`;
         return;
       }
 
       resultsDiv.innerHTML = matched.map(o => `
-        <div class="p-3 rounded-2xl bg-obsidian-950 border border-slate-800 flex items-center justify-between text-xs">
+        <div class="p-3.5 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-between text-xs">
           <div>
-            <div class="font-bold text-white">${o.product}</div>
-            <div class="text-[10px] text-slate-500">${o.id} • ${o.date}</div>
-            <div class="text-[11px] text-emerald-400 font-black">${o.price}</div>
+            <div class="font-bold text-white text-sm">${o.product}</div>
+            <div class="text-[11px] text-emerald-400 font-mono font-bold mt-0.5">ID: ${o.id}</div>
+            <div class="text-[10px] text-gray-500">${o.date} • ${o.price}</div>
           </div>
-          <span class="text-[10px] px-2.5 py-1 rounded-full font-bold ${o.status === 'Completed' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}">${o.status}</span>
+          <div class="text-right">
+            <span class="text-[10px] px-2.5 py-1 rounded-full font-bold ${o.status === 'Completed' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40' : o.status === 'Approved' ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/40' : 'bg-amber-500/20 text-amber-400 border border-amber-500/40'}">${o.status}</span>
+          </div>
         </div>
       `).join("");
     }
 
+    // ADMIN DASHBOARD
     function openAdminModal() { document.getElementById("adminModal").classList.remove("hidden"); }
     function closeAdminModal() { document.getElementById("adminModal").classList.add("hidden"); }
 
@@ -2203,37 +2300,87 @@
       if (!tbody) return;
 
       if (orders.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" class="p-6 text-center text-slate-500">No orders placed yet.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" class="p-6 text-center text-gray-500">No orders placed yet.</td></tr>`;
         return;
       }
 
       tbody.innerHTML = orders.map((o, idx) => `
-        <tr class="hover:bg-obsidian-950">
-          <td class="p-3 text-[10px] text-slate-500 whitespace-nowrap">${o.date}</td>
+        <tr class="hover:bg-gray-900/50">
+          <td class="p-3 whitespace-nowrap">
+            <div class="font-mono text-emerald-400 font-bold text-xs">${o.id}</div>
+            <div class="text-[10px] text-gray-500">${o.date}</div>
+          </td>
           <td class="p-3 font-bold text-white">${o.name}</td>
-          <td class="p-3"><div class="text-emerald-400 font-mono">${o.phone}</div><div class="text-[10px] text-slate-500">${o.email}</div></td>
-          <td class="p-3 font-semibold text-slate-200"><div>${o.product}</div><div class="text-[10px] text-cyan-400 font-bold">${o.price}</div></td>
-          <td class="p-3"><div class="text-[10px] text-slate-500">${o.method}</div><div class="font-mono text-xs text-emerald-400 font-bold">${o.trx}</div></td>
           <td class="p-3">
-            ${o.screenshot ? `
-              <button onclick="viewScreenshot('${o.id}')" class="px-2 py-1 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-lg text-[10px] font-bold hover:bg-emerald-500 hover:text-black transition">
-                <i class="fa-solid fa-image mr-1"></i> View Receipt
-              </button>
-            ` : `<span class="text-slate-500 text-[10px]">No image</span>`}
+            <div class="text-emerald-400 font-mono font-bold">${o.phone}</div>
+            <div class="text-[10px] text-gray-400">${o.email}</div>
+          </td>
+          <td class="p-3 font-semibold text-gray-200">
+            <div class="truncate max-w-[180px]">${o.product}</div>
+            <div class="text-[10px] text-teal-400 font-bold">${o.price}</div>
           </td>
           <td class="p-3">
-            <select onchange="updateOrderStatus(${idx}, this.value)" class="bg-obsidian-950 border border-slate-700 text-xs rounded-lg px-2 py-1 ${o.status === 'Completed' ? 'text-emerald-400' : 'text-amber-400'} font-bold">
+            <div class="text-[10px] text-gray-400">${o.method}</div>
+            <div class="font-mono text-xs text-emerald-300 font-bold">${o.trx}</div>
+          </td>
+          <td class="p-3">
+            ${o.screenshot ? `
+              <button onclick="viewScreenshot('${o.id}')" class="px-2 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-lg text-[10px] font-bold hover:bg-emerald-500 hover:text-black transition">
+                <i class="fa-solid fa-image mr-1"></i> Receipt
+              </button>
+            ` : `<span class="text-gray-500 text-[10px]">No image</span>`}
+          </td>
+          <td class="p-3">
+            <select onchange="updateOrderStatus(${idx}, this.value)" class="bg-gray-900 border border-gray-700 text-xs rounded px-2 py-1 ${o.status === 'Completed' ? 'text-emerald-400' : o.status === 'Approved' ? 'text-cyan-400' : 'text-amber-400'} font-bold">
               <option value="Pending" ${o.status === 'Pending' ? 'selected' : ''}>Pending</option>
+              <option value="Approved" ${o.status === 'Approved' ? 'selected' : ''}>Approved</option>
               <option value="Completed" ${o.status === 'Completed' ? 'selected' : ''}>Completed</option>
               <option value="Cancelled" ${o.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
             </select>
           </td>
-          <td class="p-3 text-right">
-            <a href="https://wa.me/${o.phone.replace(/[^0-9]/g, '')}?text=Hi%20${encodeURIComponent(o.name)},%20regarding%20your%20order%20for%20${encodeURIComponent(o.product)}:" target="_blank" class="text-emerald-400 hover:text-emerald-300 mr-2" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></a>
-            <button onclick="deleteOrder(${idx})" class="text-red-400 hover:text-red-300" title="Delete"><i class="fa-solid fa-trash text-xs"></i></button>
+          <td class="p-3 text-right whitespace-nowrap">
+            <!-- 1-CLICK ADMIN WHATSAPP DISPATCH BUTTON WITH NORMALIZED PAKISTANI NUMBER -->
+            <button onclick="adminContactCustomer(${idx})" class="px-2.5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-lg text-xs transition inline-flex items-center gap-1.5 mr-2" title="Contact / Dispatch Credentials on WhatsApp">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+            </button>
+            <button onclick="deleteOrder(${idx})" class="text-red-400 hover:text-red-300 p-1" title="Delete"><i class="fa-solid fa-trash text-xs"></i></button>
           </td>
         </tr>
       `).join("");
+    }
+
+    // ==================== ADMIN 1-CLICK WHATSAPP DISPATCH HANDLER ====================
+    function adminContactCustomer(idx) {
+      const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
+      const o = orders[idx];
+      if (!o) return;
+
+      // Ensure clean 92... format (resolves "Invite to WhatsApp")
+      const formattedPhone = formatPakistaniWhatsApp(o.phone);
+      if (!formattedPhone || formattedPhone.length < 10) {
+        alert("Invalid customer phone number format.");
+        return;
+      }
+
+      // Professional Structured Dispatch Slip from SastaStore
+      const dispatchMessage = `*OFFICIAL ORDER DISPATCH - SASTASTORE*\n` +
+        `----------------------------------------\n` +
+        `Hello ${o.name},\n` +
+        `Thank you for ordering with SastaStore Pakistan!\n\n` +
+        `*Order Details:*\n` +
+        `• *Tracking ID:* ${o.id}\n` +
+        `• *Service:* ${o.product}\n` +
+        `• *Total Price:* ${o.price}\n` +
+        `• *Order Status:* ${o.status}\n\n` +
+        `*Your Login / Activation Details:*\n` +
+        `[Insert Account Email / Pass / Invite Link Here]\n\n` +
+        `*Replacement Warranty:* Full warranty active as per plan specs.\n` +
+        `If you face any logout issues, share your Tracking ID (${o.id}) here for an instant replacement.\n` +
+        `----------------------------------------\n` +
+        `Need help? Just reply to this chat. Enjoy your tool! ✨`;
+
+      const waUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(dispatchMessage)}`;
+      window.open(waUrl, '_blank');
     }
 
     function viewScreenshot(orderId) {
@@ -2252,7 +2399,7 @@
       orders[idx].status = newStatus;
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
       loadAdminOrders();
-      showToast("Order status updated!");
+      showToast(`Order status updated to ${newStatus}!`);
     }
 
     function deleteOrder(idx) {
@@ -2274,13 +2421,42 @@
     function exportOrdersCSV() {
       const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
       if (orders.length === 0) { alert("No orders to export!"); return; }
-      let csv = "Order ID,Date,Name,Phone,Email,Product,Price,Payment Method,Trx ID,Status\n";
+      let csv = "Tracking ID,Date,Name,Phone,Email,Product,Price,Payment Method,Trx ID,Status\n";
       orders.forEach(o => { csv += `"${o.id}","${o.date}","${o.name}","${o.phone}","${o.email}","${o.product}","${o.price}","${o.method}","${o.trx}","${o.status}"\n`; });
       const blob = new Blob([csv], { type: 'text/csv' });
       const a = document.createElement('a');
       a.setAttribute('href', window.URL.createObjectURL(blob));
       a.setAttribute('download', `SastaStore_Orders_${Date.now()}.csv`);
       a.click();
+    }
+
+    // SEARCH & FILTERS
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll(".filter-btn").forEach(el => { 
+        el.classList.remove("active", "bg-emerald-500", "text-black"); 
+        el.classList.add("text-gray-400"); 
+      });
+      if (btn) { 
+        btn.classList.add("active", "bg-emerald-500", "text-black"); 
+        btn.classList.remove("text-gray-400"); 
+      }
+      filterAndSearch();
+    }
+
+    function filterAndSearch() {
+      const q = document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
+      let filtered = products;
+      if (currentCategory !== 'all') filtered = filtered.filter(p => p.category === currentCategory);
+      if (q) filtered = filtered.filter(p => p.title.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q) || p.warranty.toLowerCase().includes(q) || (p.specs && p.specs.toLowerCase().includes(q)));
+      renderProducts(filtered);
+    }
+
+    document.getElementById("searchInput")?.addEventListener("input", filterAndSearch);
+
+    function copyText(text, label) {
+      navigator.clipboard.writeText(text);
+      showToast(`${label} copied to clipboard!`);
     }
 
     function showToast(msg) {

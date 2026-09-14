@@ -143,9 +143,9 @@
   <header class="sticky top-0 z-40 bg-[#06090E]/95 backdrop-blur-2xl border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
       
-      <!-- BRAND LOGO -->
+      <!-- BRAND & MOBILE HAMBURGER BUTTON -->
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-        <button onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0" title="Menu Navigation">
+        <button type="button" onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0 cursor-pointer" title="Menu Navigation">
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
@@ -187,8 +187,8 @@
     </div>
   </header>
 
-  <!-- SLIDE-IN SIDEBAR DRAWER -->
-  <div id="sideDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden transition-all">
+  <!-- BULLETPROOF SLIDE-IN SIDEBAR DRAWER -->
+  <div id="sideDrawer" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm transition-all">
     <div class="w-80 max-w-[85vw] h-full bg-[#0b1220] border-r border-gray-800 p-6 flex flex-col justify-between shadow-2xl relative">
       <div>
         <div class="flex items-center justify-between pb-5 border-b border-gray-800 mb-6">
@@ -196,7 +196,7 @@
             <img src="logo.jpeg" alt="SastaStore" class="w-9 h-9 rounded-xl object-cover border border-emerald-500/40" />
             <span class="font-heading font-black text-white text-lg">Sasta<span class="text-emerald-400">Store</span></span>
           </div>
-          <button onclick="toggleSidebar()" class="text-gray-400 hover:text-white text-xl">
+          <button type="button" onclick="toggleSidebar()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-800 flex items-center justify-center text-lg">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
@@ -715,7 +715,7 @@
     </div>
   </div>
 
-  <!-- ORDER SUCCESS SCREEN (100% PURE WHITE THEME) -->
+  <!-- ORDER SUCCESS SCREEN (PURE WHITE THEME) -->
   <div id="trackingScreenModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-white text-gray-900 border border-gray-200 w-full max-w-md rounded-3xl p-6 sm:p-7 relative shadow-2xl my-auto">
       
@@ -781,7 +781,7 @@
         </div>
       </div>
 
-      <!-- 3-Step Clean Vertical Status Dots -->
+      <!-- 3-Step Status Dots -->
       <div class="space-y-3 pl-3 border-l-2 border-gray-200 mb-6 text-xs">
         <div class="flex items-center gap-2.5 text-amber-700 font-bold">
           <span class="w-3 h-3 rounded-full bg-amber-500 border-2 border-white shadow -ml-[19px]"></span>
@@ -928,12 +928,12 @@
     </div>
   </div>
 
-  <!-- TRACK MY ORDERS SEARCH MODAL -->
+  <!-- TRACK MY ORDERS SEARCH MODAL (STRICTLY TRACKING ID SEARCH ONLY) -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
         <div>
-          <span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Customer Portal</span>
+          <span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Live Order Tracking</span>
           <h3 class="font-heading text-lg font-black text-white mt-1">Track Order Status</h3>
         </div>
         <button onclick="closeMyOrdersModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition flex-shrink-0">
@@ -941,18 +941,18 @@
         </button>
       </div>
 
-      <p class="text-xs text-gray-400 mb-3">Enter your WhatsApp number or Tracking ID below:</p>
+      <p class="text-xs text-gray-400 mb-3">Enter your exact <strong>Tracking ID</strong> (e.g. SS-928415):</p>
       <div class="flex gap-2 mb-4">
-        <input type="text" id="trackSearchInput" placeholder="e.g. 03234320196 or SS-928415" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-400">
-        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-4 py-2.5 rounded-xl transition">Find</button>
+        <input type="text" id="trackSearchInput" placeholder="Enter Tracking ID (e.g. SS-928415)" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white uppercase font-mono focus:outline-none focus:border-teal-400">
+        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-5 py-2.5 rounded-xl transition">Track</button>
       </div>
       <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1">
-        <p class="text-xs text-gray-500 text-center py-4">Enter your number or Tracking ID above to view status.</p>
+        <p class="text-xs text-gray-500 text-center py-4">Enter your official Tracking ID above to check order progress.</p>
       </div>
     </div>
   </div>
 
-  <!-- ADMIN MODAL -->
+  <!-- ADMIN MODAL (WITH DIRECT BOT ALERT TEST BUTTON) -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-5 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col my-auto">
       
@@ -961,7 +961,7 @@
           <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm"><i class="fa-solid fa-gauge"></i></div>
           <div>
             <h3 class="font-heading text-lg font-black text-white">SastaStore Order Dashboard</h3>
-            <p class="text-[11px] text-gray-400">Live order management & 1-Click WhatsApp customer contact</p>
+            <p class="text-[11px] text-gray-400">Live order management & WhatsApp customer dispatch</p>
           </div>
         </div>
         <button onclick="closeAdminModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition flex-shrink-0">
@@ -983,6 +983,10 @@
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
           <div class="flex items-center gap-2">
+            <!-- BOT TEST BUTTON -->
+            <button onclick="testBotNotification()" class="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+              <i class="fa-brands fa-telegram"></i> Test Telegram Alert
+            </button>
             <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
             <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
           </div>
@@ -1027,7 +1031,7 @@
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
 
-    // EXACT INTEGRATION: Your Bot Token and Chat ID
+    // OFFICIAL VERIFIED TELEGRAM CREDENTIALS
     const TELEGRAM_BOT_TOKEN = "8669884412:AAHieNo3tchk942ZTfU1oxbJ2-ROBeUycHQ"; 
     const TELEGRAM_CHAT_ID = "8161204113";
 
@@ -1036,7 +1040,18 @@
     let appliedDiscountPercent = 0;
     let uploadedScreenshotBase64 = "";
 
-    // PAKISTANI PHONE NORMALIZER (Fixes Invite to WhatsApp bug)
+    // 1. BULLETPROOF SIDEBAR MENU TOGGLE
+    function toggleSidebar() {
+      const drawer = document.getElementById("sideDrawer");
+      if (!drawer) return;
+      if (drawer.style.display === "none" || drawer.style.display === "") {
+        drawer.style.display = "flex";
+      } else {
+        drawer.style.display = "none";
+      }
+    }
+
+    // 2. PAKISTANI PHONE NUMBER NORMALIZER
     function formatPakistaniWhatsApp(phone) {
       if (!phone) return "";
       let clean = phone.replace(/[^0-9]/g, '');
@@ -1050,6 +1065,46 @@
         return clean;
       }
       return clean;
+    }
+
+    // 3. BULLETPROOF BACKGROUND TELEGRAM ALERT (NO CORS/PARSER BLOCKING)
+    function sendSystemAdminAlert(orderDetails) {
+      if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
+      
+      const cleanMsg = `🚨 NEW ORDER RECEIVED - SASTASTORE\n\n` +
+        `🆔 Tracking ID: ${orderDetails.id}\n` +
+        `👤 Customer: ${orderDetails.name}\n` +
+        `📞 WhatsApp: ${orderDetails.rawPhone || orderDetails.phone}\n` +
+        `✉️ Email: ${orderDetails.email}\n` +
+        `📦 Product: ${orderDetails.product}\n` +
+        `💰 Price: ${orderDetails.price}\n` +
+        `💳 Channel: ${orderDetails.method}\n` +
+        `🧾 Trx ID / Sender: ${orderDetails.trx}\n` +
+        `📅 Date: ${orderDetails.date}\n\n` +
+        `Open Admin Portal on sastastore.store to dispatch credentials.`;
+      
+      const apiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(cleanMsg)}`;
+
+      // Method 1: Fetch
+      fetch(apiUrl, { mode: 'no-cors' }).catch(() => {});
+      
+      // Method 2: Fallback Image Ping (guarantees execution even if fetch is restricted by browser shield)
+      const ping = new Image();
+      ping.src = apiUrl + "&t=" + new Date().getTime();
+    }
+
+    // TEST TELEGRAM NOTIFICATION BUTTON FOR ADMIN
+    function testBotNotification() {
+      const testMsg = `🔔 TEST ALERT - SASTASTORE BOT WORKING\nTime: ${new Date().toLocaleTimeString()}\nBot connection is 100% active!`;
+      const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(testMsg)}`;
+      
+      fetch(url, { mode: 'no-cors' }).then(() => {
+        showToast("Test alert triggered! Check your Telegram.");
+      }).catch(() => {
+        const ping = new Image();
+        ping.src = url;
+        showToast("Test ping sent! Check your Telegram.");
+      });
     }
 
     // CAROUSEL SLIDER (6 BANNERS)
@@ -1078,9 +1133,8 @@
       startSlideTimer();
     }
 
-    // ==================== RESTORED COMPLETE MASTER CATALOG (ALL PRODUCTS) ====================
+    // COMPLETE PRODUCT CATALOG
     const products = [
-      // 1. ElevenLabs Plans
       { 
         id: 143, 
         title: "ElevenLabs (100k Credits)", 
@@ -1109,8 +1163,6 @@
         icon: "fa-solid fa-microphone-lines", 
         color: "from-violet-600 to-purple-800"
       },
-
-      // 2. CapCut Pro Full Range
       { 
         id: 2, 
         title: "CapCut Pro (Monthly)", 
@@ -1168,8 +1220,6 @@
         icon: "fa-solid fa-users-gear", 
         color: "from-blue-600 to-teal-600" 
       },
-
-      // 3. Canva Suite
       { 
         id: 5, 
         title: "Canva Pro", 
@@ -1212,8 +1262,6 @@
         icon: "fa-solid fa-user-shield", 
         color: "from-purple-600 to-indigo-700" 
       },
-
-      // 4. AI Video & Reasoning Tools
       { 
         id: 130, 
         title: "HeyGen 600 Credits", 
@@ -1410,8 +1458,6 @@
         icon: "fa-solid fa-wand-magic-sparkles", 
         color: "from-amber-600 to-orange-700" 
       },
-
-      // 5. Productivity, Coding & Design
       { 
         id: 138, 
         title: "Lovable Lite (12 Months)", 
@@ -1608,8 +1654,6 @@
         icon: "fa-solid fa-file-lines", 
         color: "from-orange-500 to-red-500" 
       },
-
-      // 6. Streaming & Entertainment
       { 
         id: 19, 
         title: "YouTube Premium (1 Month)", 
@@ -1722,8 +1766,6 @@
         icon: "fa-solid fa-headphones", 
         color: "from-indigo-600 to-blue-700" 
       },
-
-      // 7. VPNs & Accounts
       { 
         id: 20, 
         title: "NordVPN (3 Months)", 
@@ -1822,8 +1864,6 @@
         icon: "fa-solid fa-envelope", 
         color: "from-blue-400 to-sky-600" 
       },
-
-      // 8. Windows Licenses
       { 
         id: 119, 
         title: "Windows 10 Pro Retail Key", 
@@ -1852,8 +1892,6 @@
         icon: "fa-brands fa-windows", 
         color: "from-blue-600 to-indigo-700" 
       },
-
-      // 9. API Test
       { 
         id: 142, 
         title: "API Orders Test", 
@@ -2140,27 +2178,7 @@
       uploadedScreenshotBase64 = "";
     }
 
-    // ==================== BACKGROUND ADMIN TELEGRAM DISPATCHER ====================
-    function sendSystemAdminAlert(orderDetails) {
-      if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
-      
-      const msg = `🚨 *NEW ORDER RECEIVED - SASTASTORE*\n\n` +
-        `🆔 *Tracking ID:* \`${orderDetails.id}\`\n` +
-        `👤 *Customer:* ${orderDetails.name}\n` +
-        `📞 *WhatsApp:* ${orderDetails.rawPhone || orderDetails.phone}\n` +
-        `✉️ *Email:* ${orderDetails.email}\n` +
-        `📦 *Product:* ${orderDetails.product}\n` +
-        `💰 *Price:* ${orderDetails.price}\n` +
-        `💳 *Channel:* ${orderDetails.method}\n` +
-        `🧾 *Trx ID / Sender:* \`${orderDetails.trx}\`\n` +
-        `📅 *Date:* ${orderDetails.date}\n\n` +
-        `Open Admin Portal on website to review and dispatch credentials.`;
-      
-      const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(msg)}&parse_mode=Markdown`;
-      fetch(url).catch(err => console.log("Telegram alert error:", err));
-    }
-
-    // ==================== ORDER SUBMISSION (CLEAN SINGLE ID, NO FORCED WA) ====================
+    // ORDER SUBMISSION (CLEAN TRACKING ID & SYSTEM TELEGRAM ALERT)
     function submitOrder(e) {
       e.preventDefault();
       const name = document.getElementById("custName").value.trim();
@@ -2205,7 +2223,7 @@
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
       localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone: rawPhone }));
 
-      // Send silent system admin notification
+      // Send Instant Telegram Alert
       sendSystemAdminAlert(newOrder);
 
       const waCustomerSlip = `*ORDER VERIFICATION INVOICE - SASTASTORE*\n` +
@@ -2257,37 +2275,30 @@
       showToast(`Tracking ID ${id} copied!`);
     }
 
-    // SEARCH MY ORDERS
+    // STRICTLY SEARCH ORDERS BY TRACKING ID ONLY
     function openMyOrdersModal() {
       document.getElementById("myOrdersModal").classList.remove("hidden");
-      const user = JSON.parse(localStorage.getItem('sasta_user') || '{}');
-      if (user.phone) {
-        document.getElementById("trackSearchInput").value = user.phone;
-        searchMyOrders();
-      }
     }
 
-    function closeMyOrdersModal() { document.getElementById("myOrdersModal").classList.add("hidden"); }
+    function closeMyOrdersModal() { 
+      document.getElementById("myOrdersModal").classList.add("hidden"); 
+    }
 
     function searchMyOrders() {
       const query = document.getElementById("trackSearchInput").value.trim().toUpperCase();
-      const cleanPhone = query.replace(/[^0-9]/g, '');
       const resultsDiv = document.getElementById("myOrdersResults");
       const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
 
       if (!query) {
-        resultsDiv.innerHTML = `<p class="text-xs text-red-400 text-center py-3">Please enter a valid phone number or Tracking ID.</p>`;
+        resultsDiv.innerHTML = `<p class="text-xs text-red-400 text-center py-3">Please enter your official Tracking ID (e.g. SS-928415).</p>`;
         return;
       }
 
-      const matched = orders.filter(o => {
-        const idMatch = o.id && o.id.toUpperCase().includes(query);
-        const phoneMatch = cleanPhone && o.phone && o.phone.includes(cleanPhone);
-        return idMatch || phoneMatch;
-      });
+      // Strict match on Tracking ID only
+      const matched = orders.filter(o => o.id && o.id.toUpperCase() === query);
 
       if (matched.length === 0) {
-        resultsDiv.innerHTML = `<p class="text-xs text-gray-400 text-center py-3">No orders found for this query.</p>`;
+        resultsDiv.innerHTML = `<p class="text-xs text-gray-400 text-center py-3">No active order found with Tracking ID: <span class="text-white font-mono font-bold">${query}</span>.<br>Please re-check your receipt.</p>`;
         return;
       }
 
@@ -2295,7 +2306,7 @@
         <div class="p-3.5 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-between text-xs">
           <div>
             <div class="font-bold text-white text-sm">${o.product}</div>
-            <div class="text-[11px] text-emerald-400 font-mono font-bold mt-0.5">ID: ${o.id}</div>
+            <div class="text-[11px] text-emerald-400 font-mono font-bold mt-0.5">Tracking ID: ${o.id}</div>
             <div class="text-[10px] text-gray-500">${o.date} • ${o.price}</div>
           </div>
           <div class="text-right">

@@ -928,7 +928,7 @@
     </div>
   </div>
 
-  <!-- TRACK MY ORDERS SEARCH MODAL (STRICTLY TRACKING ID SEARCH ONLY) -->
+  <!-- TRACK MY ORDERS SEARCH MODAL -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
@@ -952,7 +952,7 @@
     </div>
   </div>
 
-  <!-- ADMIN MODAL (WITH DIRECT BOT ALERT TEST BUTTON) -->
+  <!-- ADMIN MODAL -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-5 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col my-auto">
       
@@ -983,9 +983,8 @@
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
           <div class="flex items-center gap-2">
-            <!-- BOT TEST BUTTON -->
             <button onclick="testBotNotification()" class="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
-              <i class="fa-brands fa-telegram"></i> Test Telegram Alert
+              <i class="fa-solid fa-envelope"></i> Test Alert
             </button>
             <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
             <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
@@ -1031,7 +1030,10 @@
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
 
-    // OFFICIAL VERIFIED TELEGRAM CREDENTIALS
+    // 100% BULLETPROOF ENDPOINT (Formspree Endpoint from user)
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpkvnej"; 
+
+    // Backup Telegram credentials
     const TELEGRAM_BOT_TOKEN = "8669884412:AAHieNo3tchk942ZTfU1oxbJ2-ROBeUycHQ"; 
     const TELEGRAM_CHAT_ID = "8161204113";
 
@@ -1040,7 +1042,7 @@
     let appliedDiscountPercent = 0;
     let uploadedScreenshotBase64 = "";
 
-    // 1. BULLETPROOF SIDEBAR MENU TOGGLE
+    // BULLETPROOF SIDEBAR MENU TOGGLE
     function toggleSidebar() {
       const drawer = document.getElementById("sideDrawer");
       if (!drawer) return;
@@ -1051,7 +1053,7 @@
       }
     }
 
-    // 2. PAKISTANI PHONE NUMBER NORMALIZER
+    // PAKISTANI PHONE NUMBER NORMALIZER
     function formatPakistaniWhatsApp(phone) {
       if (!phone) return "";
       let clean = phone.replace(/[^0-9]/g, '');
@@ -1067,44 +1069,67 @@
       return clean;
     }
 
-    // 3. BULLETPROOF BACKGROUND TELEGRAM ALERT (NO CORS/PARSER BLOCKING)
+    // ==================== BULLETPROOF ORDER ALERT (FORMSPREE + TELEGRAM DUAL PUSH) ====================
     function sendSystemAdminAlert(orderDetails) {
-      if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
-      
-      const cleanMsg = `🚨 NEW ORDER RECEIVED - SASTASTORE\n\n` +
-        `🆔 Tracking ID: ${orderDetails.id}\n` +
-        `👤 Customer: ${orderDetails.name}\n` +
-        `📞 WhatsApp: ${orderDetails.rawPhone || orderDetails.phone}\n` +
-        `✉️ Email: ${orderDetails.email}\n` +
-        `📦 Product: ${orderDetails.product}\n` +
-        `💰 Price: ${orderDetails.price}\n` +
-        `💳 Channel: ${orderDetails.method}\n` +
-        `🧾 Trx ID / Sender: ${orderDetails.trx}\n` +
-        `📅 Date: ${orderDetails.date}\n\n` +
-        `Open Admin Portal on sastastore.store to dispatch credentials.`;
-      
-      const apiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(cleanMsg)}`;
+      // 1. Primary: Formspree Dispatch (Never blocked by local ISP/Jazz/PTCL)
+      if (FORMSPREE_ENDPOINT) {
+        fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            subject: `🚨 New SastaStore Order: ${orderDetails.product} (${orderDetails.id})`,
+            tracking_id: orderDetails.id,
+            customer_name: orderDetails.name,
+            phone_number: orderDetails.rawPhone || orderDetails.phone,
+            email_address: orderDetails.email,
+            product_ordered: orderDetails.product,
+            total_amount: orderDetails.price,
+            payment_gateway: orderDetails.method,
+            transaction_id: orderDetails.trx,
+            order_date: orderDetails.date
+          })
+        }).catch(err => console.log("Formspree ping:", err));
+      }
 
-      // Method 1: Fetch
-      fetch(apiUrl, { mode: 'no-cors' }).catch(() => {});
-      
-      // Method 2: Fallback Image Ping (guarantees execution even if fetch is restricted by browser shield)
-      const ping = new Image();
-      ping.src = apiUrl + "&t=" + new Date().getTime();
+      // 2. Secondary: Telegram Fallback Ping
+      if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
+        const cleanMsg = `🚨 NEW ORDER RECEIVED - SASTASTORE\n\n` +
+          `🆔 Tracking ID: ${orderDetails.id}\n` +
+          `👤 Customer: ${orderDetails.name}\n` +
+          `📞 WhatsApp: ${orderDetails.rawPhone || orderDetails.phone}\n` +
+          `✉️ Email: ${orderDetails.email}\n` +
+          `📦 Product: ${orderDetails.product}\n` +
+          `💰 Price: ${orderDetails.price}\n` +
+          `💳 Channel: ${orderDetails.method}\n` +
+          `🧾 Trx ID / Sender: ${orderDetails.trx}\n` +
+          `📅 Date: ${orderDetails.date}\n\n` +
+          `Open Admin Portal on sastastore.store to dispatch credentials.`;
+        
+        const apiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(cleanMsg)}`;
+        fetch(apiUrl, { mode: 'no-cors' }).catch(() => {});
+        const ping = new Image();
+        ping.src = apiUrl + "&t=" + new Date().getTime();
+      }
     }
 
-    // TEST TELEGRAM NOTIFICATION BUTTON FOR ADMIN
+    // TEST BOT / FORMSPREE NOTIFICATION BUTTON
     function testBotNotification() {
-      const testMsg = `🔔 TEST ALERT - SASTASTORE BOT WORKING\nTime: ${new Date().toLocaleTimeString()}\nBot connection is 100% active!`;
-      const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(testMsg)}`;
-      
-      fetch(url, { mode: 'no-cors' }).then(() => {
-        showToast("Test alert triggered! Check your Telegram.");
-      }).catch(() => {
-        const ping = new Image();
-        ping.src = url;
-        showToast("Test ping sent! Check your Telegram.");
+      sendSystemAdminAlert({
+        id: "SS-TEST01",
+        name: "Test Customer",
+        rawPhone: "03234320196",
+        phone: "923234320196",
+        email: "test@sastastore.store",
+        product: "CapCut Pro (Test)",
+        price: "₨ 749/-",
+        method: "JazzCash",
+        trx: "TEST-998877",
+        date: new Date().toLocaleDateString()
       });
+      showToast("Test alert dispatched to Formspree & Telegram!");
     }
 
     // CAROUSEL SLIDER (6 BANNERS)
@@ -2178,7 +2203,7 @@
       uploadedScreenshotBase64 = "";
     }
 
-    // ORDER SUBMISSION (CLEAN TRACKING ID & SYSTEM TELEGRAM ALERT)
+    // ORDER SUBMISSION (CLEAN TRACKING ID & AUTOMATED MULTI-PUSH ALERTS)
     function submitOrder(e) {
       e.preventDefault();
       const name = document.getElementById("custName").value.trim();
@@ -2194,7 +2219,6 @@
       const finalTotal = subtotal - discountAmount;
       const usdPrice = (finalTotal / USD_RATE).toFixed(2);
       
-      // Clean single tracking ID format (e.g. SS-928415)
       const trackingId = `SS-${Math.floor(100000 + Math.random() * 900000)}`;
       const orderDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
@@ -2223,7 +2247,7 @@
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
       localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone: rawPhone }));
 
-      // Send Instant Telegram Alert
+      // Send Instant Background Alert to Formspree and Telegram
       sendSystemAdminAlert(newOrder);
 
       const waCustomerSlip = `*ORDER VERIFICATION INVOICE - SASTASTORE*\n` +

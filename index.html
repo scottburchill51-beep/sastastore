@@ -248,8 +248,9 @@
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
     <div class="relative overflow-hidden rounded-3xl border border-gray-800 shadow-2xl group cursor-pointer bg-gray-950">
       <div id="carouselContainer" class="relative w-full">
-        <div class="slide-item active" onclick="openCheckoutModal(2)" title="Order CapCut Pro Monthly (₨ 749/-)">
-          <img src="banner1.jpg" alt="CapCut Pro Monthly 749" class="w-full h-auto object-cover rounded-3xl" />
+        <!-- Banner 1: Hero Banner (Opens Catalog) -->
+        <div class="slide-item active" onclick="location.href='#products'" title="SastaStore Premium Digital Subscriptions">
+          <img src="banner1.jpg" alt="SastaStore Deals" class="w-full h-auto object-cover rounded-3xl" />
         </div>
         <div class="slide-item" onclick="openCheckoutModal(3)" title="Order CapCut Pro 6 Months (₨ 3,399/-)">
           <img src="banner2.jpg" alt="CapCut Pro 6 Months 3399" class="w-full h-auto object-cover rounded-3xl" />
@@ -447,7 +448,7 @@
     </div>
   </section>
 
-  <!-- CLEAN MULTI-COLUMN FOOTER -->
+  <!-- CLEAN MULTI-COLUMN FOOTER (OFFICIAL OUTLOOK EMAIL) -->
   <footer class="bg-[#070B12] border-t border-gray-800/90 pt-16 pb-12 px-4 sm:px-6 lg:px-8 text-xs text-gray-400">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
@@ -464,6 +465,11 @@
           <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
             Your trusted partner for all AI tools, software subscriptions, Windows keys, and digital services in Pakistan. Instant online order tracking and verified support.
           </p>
+
+          <div class="text-xs text-gray-400 space-y-1">
+            <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-emerald-400"></i> <strong>Official Email:</strong> LucariAlsonkirll@outlook.com</p>
+            <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400"></i> <strong>Helpline:</strong> +92 313 6093501</p>
+          </div>
 
           <!-- Social Icons -->
           <div class="flex items-center gap-3 pt-2">
@@ -502,7 +508,7 @@
             <li><a href="#faq" class="hover:text-emerald-400 transition">FAQs Guide</a></li>
             <li><button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition text-left">Warranty Policy</button></li>
             <li><button onclick="openMyOrdersModal()" class="hover:text-emerald-400 transition text-left">Track Order</button></li>
-            <li><a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition">WhatsApp Support</a></li>
+            <li><a href="mailto:LucariAlsonkirll@outlook.com" class="hover:text-emerald-400 transition">Email Support</a></li>
           </ul>
         </div>
 
@@ -516,7 +522,7 @@
           <span>•</span>
           <a href="https://wa.me/923136093501" target="_blank" class="hover:text-emerald-400 transition">24/7 Helpline</a>
           <span>•</span>
-          <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 transition">@sastastore_0</a>
+          <a href="mailto:LucariAlsonkirll@outlook.com" class="hover:text-emerald-400 transition">LucariAlsonkirll@outlook.com</a>
         </div>
       </div>
     </div>
@@ -777,7 +783,7 @@
         <i class="fa-solid fa-clock text-amber-600 mt-0.5 text-base"></i>
         <div>
           <strong class="block text-gray-900 mb-0.5">Pending — Waiting for admin review</strong>
-          <span class="text-[11px] text-gray-600 leading-relaxed">Your order has been placed and is waiting for admin review. System has dispatched an automatic alert to Admin!</span>
+          <span class="text-[11px] text-gray-600 leading-relaxed">Your order has been placed and is waiting for admin review. System has dispatched an email alert to Admin!</span>
         </div>
       </div>
 
@@ -1030,19 +1036,15 @@
     const USD_RATE = 280;
     const STORE_WHATSAPP = "923136093501";
 
-    // 100% BULLETPROOF ENDPOINT (Formspree Endpoint from user)
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xqpkvnej"; 
-
-    // Backup Telegram credentials
-    const TELEGRAM_BOT_TOKEN = "8669884412:AAHieNo3tchk942ZTfU1oxbJ2-ROBeUycHQ"; 
-    const TELEGRAM_CHAT_ID = "8161204113";
+    // OFFICIAL VERIFIED FORMSPREE ENDPOINT (LINKED TO LucariAlsonkirll@outlook.com)
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbgllnzv"; 
 
     let currentCategory = 'all';
     let cart = []; 
     let appliedDiscountPercent = 0;
     let uploadedScreenshotBase64 = "";
 
-    // BULLETPROOF SIDEBAR MENU TOGGLE
+    // 1. BULLETPROOF SIDEBAR MENU TOGGLE
     function toggleSidebar() {
       const drawer = document.getElementById("sideDrawer");
       if (!drawer) return;
@@ -1053,7 +1055,7 @@
       }
     }
 
-    // PAKISTANI PHONE NUMBER NORMALIZER
+    // 2. PAKISTANI PHONE NUMBER NORMALIZER
     function formatPakistaniWhatsApp(phone) {
       if (!phone) return "";
       let clean = phone.replace(/[^0-9]/g, '');
@@ -1069,67 +1071,46 @@
       return clean;
     }
 
-    // ==================== BULLETPROOF ORDER ALERT (FORMSPREE + TELEGRAM DUAL PUSH) ====================
+    // 3. BULLETPROOF ORDER ALERT (FORMSPREE DIRECT DISPATCH TO OUTLOOK)
     function sendSystemAdminAlert(orderDetails) {
-      // 1. Primary: Formspree Dispatch (Never blocked by local ISP/Jazz/PTCL)
-      if (FORMSPREE_ENDPOINT) {
-        fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify({
-            subject: `🚨 New SastaStore Order: ${orderDetails.product} (${orderDetails.id})`,
-            tracking_id: orderDetails.id,
-            customer_name: orderDetails.name,
-            phone_number: orderDetails.rawPhone || orderDetails.phone,
-            email_address: orderDetails.email,
-            product_ordered: orderDetails.product,
-            total_amount: orderDetails.price,
-            payment_gateway: orderDetails.method,
-            transaction_id: orderDetails.trx,
-            order_date: orderDetails.date
-          })
-        }).catch(err => console.log("Formspree ping:", err));
-      }
+      if (!FORMSPREE_ENDPOINT) return;
 
-      // 2. Secondary: Telegram Fallback Ping
-      if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
-        const cleanMsg = `🚨 NEW ORDER RECEIVED - SASTASTORE\n\n` +
-          `🆔 Tracking ID: ${orderDetails.id}\n` +
-          `👤 Customer: ${orderDetails.name}\n` +
-          `📞 WhatsApp: ${orderDetails.rawPhone || orderDetails.phone}\n` +
-          `✉️ Email: ${orderDetails.email}\n` +
-          `📦 Product: ${orderDetails.product}\n` +
-          `💰 Price: ${orderDetails.price}\n` +
-          `💳 Channel: ${orderDetails.method}\n` +
-          `🧾 Trx ID / Sender: ${orderDetails.trx}\n` +
-          `📅 Date: ${orderDetails.date}\n\n` +
-          `Open Admin Portal on sastastore.store to dispatch credentials.`;
-        
-        const apiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodeURIComponent(cleanMsg)}`;
-        fetch(apiUrl, { mode: 'no-cors' }).catch(() => {});
-        const ping = new Image();
-        ping.src = apiUrl + "&t=" + new Date().getTime();
-      }
+      fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          subject: `🚨 New SastaStore Order: ${orderDetails.product} (${orderDetails.id})`,
+          tracking_id: orderDetails.id,
+          customer_name: orderDetails.name,
+          phone_number: orderDetails.rawPhone || orderDetails.phone,
+          customer_email: orderDetails.email,
+          product_ordered: orderDetails.product,
+          total_amount: orderDetails.price,
+          payment_channel: orderDetails.method,
+          transaction_id: orderDetails.trx,
+          order_date: orderDetails.date
+        })
+      }).catch(err => console.log("Formspree Alert Logged:", err));
     }
 
-    // TEST BOT / FORMSPREE NOTIFICATION BUTTON
+    // TEST ALERT BUTTON FOR ADMIN
     function testBotNotification() {
       sendSystemAdminAlert({
-        id: "SS-TEST01",
+        id: "SS-TEST99",
         name: "Test Customer",
         rawPhone: "03234320196",
         phone: "923234320196",
-        email: "test@sastastore.store",
+        email: "LucariAlsonkirll@outlook.com",
         product: "CapCut Pro (Test)",
         price: "₨ 749/-",
         method: "JazzCash",
-        trx: "TEST-998877",
+        trx: "TEST-TRX-123456",
         date: new Date().toLocaleDateString()
       });
-      showToast("Test alert dispatched to Formspree & Telegram!");
+      showToast("Test email dispatched to your Outlook!");
     }
 
     // CAROUSEL SLIDER (6 BANNERS)
@@ -2203,7 +2184,7 @@
       uploadedScreenshotBase64 = "";
     }
 
-    // ORDER SUBMISSION (CLEAN TRACKING ID & AUTOMATED MULTI-PUSH ALERTS)
+    // ORDER SUBMISSION (CLEAN TRACKING ID & FORMSPREE EMAIL PUSH)
     function submitOrder(e) {
       e.preventDefault();
       const name = document.getElementById("custName").value.trim();
@@ -2247,7 +2228,7 @@
       localStorage.setItem('sasta_orders', JSON.stringify(orders));
       localStorage.setItem('sasta_user', JSON.stringify({ name, email, phone: rawPhone }));
 
-      // Send Instant Background Alert to Formspree and Telegram
+      // Send Instant Background Email Alert via Formspree
       sendSystemAdminAlert(newOrder);
 
       const waCustomerSlip = `*ORDER VERIFICATION INVOICE - SASTASTORE*\n` +
@@ -2318,7 +2299,6 @@
         return;
       }
 
-      // Strict match on Tracking ID only
       const matched = orders.filter(o => o.id && o.id.toUpperCase() === query);
 
       if (matched.length === 0) {

@@ -104,26 +104,31 @@
       100% { left: 140%; }
     }
 
-    /* SMOOTH AUTOMATED FLOATING ANIMATIONS (NO ARROWS, NO DOTS) */
-    @keyframes subtleFloatA {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-7px); }
+    /* SIDE-BY-SIDE AUTO FLOATING HOVER & NO CROP */
+    .banner-card {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
     }
-    @keyframes subtleFloatB {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-9px); }
+    .banner-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.25);
     }
-    @keyframes subtleFloatC {
+
+    @keyframes smoothFloatA {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-6px); }
     }
+    @keyframes smoothFloatB {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
+    }
+    @keyframes smoothFloatC {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
 
-    .banner-float-1 { animation: subtleFloatA 5s ease-in-out infinite; }
-    .banner-float-2 { animation: subtleFloatB 6s ease-in-out infinite 0.7s; }
-    .banner-float-3 { animation: subtleFloatC 5.5s ease-in-out infinite 1.4s; }
-    .banner-float-4 { animation: subtleFloatB 6.2s ease-in-out infinite 0.3s; }
-    .banner-float-5 { animation: subtleFloatA 5.8s ease-in-out infinite 1.1s; }
-    .banner-float-6 { animation: subtleFloatC 6.5s ease-in-out infinite 1.8s; }
+    .float-item-1 { animation: smoothFloatA 4.8s ease-in-out infinite; }
+    .float-item-2 { animation: smoothFloatB 5.6s ease-in-out infinite 0.6s; }
+    .float-item-3 { animation: smoothFloatC 5.2s ease-in-out infinite 1.2s; }
   </style>
 </head>
 
@@ -258,26 +263,32 @@
     </div>
   </div>
 
-  <!-- ==================== 1. TOP 3 LANDSCAPE FLOATING BANNERS (NO ARROWS, NO DOTS) ==================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <!-- ==================== 1. TOP 3 LANDSCAPE BANNERS (SIDE-BY-SIDE ON ALL SCREENS, NO CROPPING) ==================== -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-2">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
       <!-- Top Banner 1 (1.jpg) -->
-      <div class="banner-float-1 relative overflow-hidden rounded-2xl border border-gray-800 shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="location.href='#products'" title="SastaStore Deals">
-        <img src="1.jpg" alt="Banner 1" class="w-full h-48 sm:h-56 md:h-52 lg:h-60 object-cover" />
+      <div class="banner-card float-item-1 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="location.href='#products'" title="SastaStore Deals">
+        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] flex items-center justify-center overflow-hidden">
+          <img src="1.jpg" alt="Top Banner 1" class="w-full h-full object-contain p-1 rounded-2xl sm:rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+        </div>
       </div>
       <!-- Top Banner 2 (2.jpg) -->
-      <div class="banner-float-2 relative overflow-hidden rounded-2xl border border-gray-800 shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(2)" title="Order CapCut Pro Monthly">
-        <img src="2.jpg" alt="Banner 2" class="w-full h-48 sm:h-56 md:h-52 lg:h-60 object-cover" />
+      <div class="banner-card float-item-2 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(2)" title="Order CapCut Pro Monthly">
+        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] flex items-center justify-center overflow-hidden">
+          <img src="2.jpg" alt="Top Banner 2" class="w-full h-full object-contain p-1 rounded-2xl sm:rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+        </div>
       </div>
       <!-- Top Banner 3 (3.jpg) -->
-      <div class="banner-float-3 relative overflow-hidden rounded-2xl border border-gray-800 shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(143)" title="Order ElevenLabs">
-        <img src="3.jpg" alt="Banner 3" class="w-full h-48 sm:h-56 md:h-52 lg:h-60 object-cover" />
+      <div class="banner-card float-item-3 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(143)" title="Order ElevenLabs">
+        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] flex items-center justify-center overflow-hidden">
+          <img src="3.jpg" alt="Top Banner 3" class="w-full h-full object-contain p-1 rounded-2xl sm:rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== 2. CENTER VIRAL OFFER: CLAIM FREE CANVA PRO ==================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-600/20 via-purple-600/20 to-emerald-600/20 border-2 border-amber-500/40 p-6 sm:p-8 shadow-2xl">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
         <div class="space-y-2 text-center lg:text-left">
@@ -299,20 +310,26 @@
     </div>
   </section>
 
-  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT FLOATING BANNERS (NO ARROWS, NO DOTS) ==================== -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT BANNERS (SIDE-BY-SIDE ON ALL SCREENS, NO CROPPING) ==================== -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
       <!-- Portrait Banner 4 (4.jpg) -->
-      <div class="banner-float-4 relative overflow-hidden rounded-3xl border border-gray-800 shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(7)" title="Canva Admin Panel">
-        <img src="4.jpg" alt="Portrait Banner 4" class="w-full h-80 sm:h-96 md:h-88 lg:h-[420px] object-cover" />
+      <div class="banner-card float-item-2 relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(7)" title="Canva Admin Panel">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden">
+          <img src="4.jpg" alt="Portrait Banner 4" class="w-full h-full object-contain p-2 rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+        </div>
       </div>
       <!-- Portrait Banner 5 (5.jpg) -->
-      <div class="banner-float-5 relative overflow-hidden rounded-3xl border border-gray-800 shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(130)" title="HeyGen 600 Credits">
-        <img src="5.jpg" alt="Portrait Banner 5" class="w-full h-80 sm:h-96 md:h-88 lg:h-[420px] object-cover" />
+      <div class="banner-card float-item-1 relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(130)" title="HeyGen 600 Credits">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden">
+          <img src="5.jpg" alt="Portrait Banner 5" class="w-full h-full object-contain p-2 rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+        </div>
       </div>
       <!-- Portrait Banner 6 (6.jpg) -->
-      <div class="banner-float-6 relative overflow-hidden rounded-3xl border border-gray-800 shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(120)" title="Windows 11 Pro Lifetime">
-        <img src="6.jpg" alt="Portrait Banner 6" class="w-full h-80 sm:h-96 md:h-88 lg:h-[420px] object-cover" />
+      <div class="banner-card float-item-3 relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(120)" title="Windows 11 Pro Lifetime">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden">
+          <img src="6.jpg" alt="Portrait Banner 6" class="w-full h-full object-contain p-2 rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+        </div>
       </div>
     </div>
   </section>
@@ -350,7 +367,7 @@
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search ElevenLabs, CapCut, Claude, Grok..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          <input type="text" id="searchInput" placeholder="Search ElevenLabs, CapCut, Claude, Grok, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
@@ -690,7 +707,9 @@
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
         <div class="flex items-center gap-3">
-          <div id="detailIconBox" class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0"><i id="detailIcon" class="fa-solid fa-circle-info"></i></div>
+          <div id="detailIconBox" class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+            <span id="detailIcon"></span>
+          </div>
           <div><h3 id="detailTitle" class="font-heading font-black text-base text-white">Product Title</h3><span id="detailTag" class="text-xs text-emerald-400 font-bold">Plan Duration</span></div>
         </div>
         <button onclick="closeDetailsModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
@@ -747,9 +766,6 @@
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
           <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
           <div class="flex items-center gap-2">
-            <button onclick="testBotNotification()" class="bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
-              <i class="fa-solid fa-envelope"></i> Test Alert
-            </button>
             <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
             <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
           </div>
@@ -788,6 +804,24 @@
     let currentCategory = 'all';
     let cart = []; 
     let appliedDiscountPercent = 0;
+
+    // BRAND VECTOR ICONS LIBRARY (OFFICIAL LOGOS)
+    const BRAND_ICONS = {
+      capcut: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M2.5 5.5h6l3.5 6.5-3.5 6.5h-6l3.5-6.5zm19 0h-6l-3.5 6.5 3.5 6.5h6l-3.5-6.5z"/></svg>`,
+      chatgpt: `<svg class="w-6 h-6 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M22.28 10.37a5.55 5.55 0 0 0-.47-4.48 5.68 5.68 0 0 0-5.59-2.81 5.56 5.56 0 0 0-4.14-1.84 5.68 5.68 0 0 0-5.4 3.93 5.54 5.54 0 0 0-3.67 2.65 5.68 5.68 0 0 0 .74 6.2 5.56 5.56 0 0 0 .47 4.48 5.68 5.68 0 0 0 5.59 2.81 5.56 5.56 0 0 0 4.14 1.84 5.68 5.68 0 0 0 5.4-3.93 5.54 5.54 0 0 0 3.67-2.65 5.68 5.68 0 0 0-.74-6.2zm-8.85 9.77a3.84 3.84 0 0 1-2.45-.88l.12-.07 4.07-2.35a.94.94 0 0 0 .47-.81v-5.75l1.83 1.06v4.98a3.87 3.87 0 0 1-4.04 3.82zm-8.15-3.5a3.86 3.86 0 0 1-.49-2.55l.12.07 4.07 2.35a.93.93 0 0 0 .94 0l4.98-2.88v2.11l-4.31 2.49a3.87 3.87 0 0 1-5.31-1.59zm-1.12-8.54a3.84 3.84 0 0 1 1.96-1.68v4.86a.94.94 0 0 0 .47.81l4.98 2.88-1.83 1.06-4.31-2.49a3.87 3.87 0 0 1-1.27-5.44zm14.15 3.75l-4.98-2.88 1.83-1.06 4.31 2.49a3.87 3.87 0 0 1 1.27 5.44 3.84 3.84 0 0 1-1.96 1.68v-4.86a.94.94 0 0 0-.47-.81zm2.4 4.31l-.12-.07-4.07-2.35a.93.93 0 0 0-.94 0l-4.98 2.88v-2.11l4.31-2.49a3.87 3.87 0 0 1 5.8 4.14zm-9.33-3.66l-2.02-1.17 2.02-1.17 2.02 1.17z"/></svg>`,
+      elevenlabs: `<svg class="w-6 h-6 fill-current text-indigo-400" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7V4zm6.5 0H17v16h-3.5V4z"/></svg>`,
+      canva: `<svg class="w-6 h-6 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.3 13.8a4.4 4.4 0 0 1-2.9 1 4.7 4.7 0 0 1-4.7-4.7 4.9 4.9 0 0 1 5-5 4.3 4.3 0 0 1 2.5.8l-1 1.4a3 3 0 0 0-1.5-.5 3.2 3.2 0 0 0-3.3 3.3 3.1 3.1 0 0 0 3.1 3.1 3.6 3.6 0 0 0 2-.7z"/></svg>`,
+      gemini: `<svg class="w-6 h-6 fill-current text-teal-300" viewBox="0 0 24 24"><path d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.627 12 12 0-6.627 5.627-12 12-12-6.627 0-12-5.627-12-12z"/></svg>`,
+      claude: `<svg class="w-6 h-6 fill-current text-amber-500" viewBox="0 0 24 24"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>`,
+      grok: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+      windows: `<svg class="w-6 h-6 fill-current text-blue-400" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>`,
+      youtube: `<i class="fa-brands fa-youtube text-red-500 text-xl"></i>`,
+      netflix: `<i class="fa-solid fa-clapperboard text-red-600 text-xl"></i>`,
+      prime: `<i class="fa-brands fa-amazon text-blue-400 text-xl"></i>`,
+      vpn: `<i class="fa-solid fa-shield-halved text-cyan-400 text-xl"></i>`,
+      apple: `<i class="fa-brands fa-apple text-gray-200 text-xl"></i>`,
+      generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
+    };
 
     // SIDEBAR TOGGLE
     function toggleSidebar() {
@@ -828,23 +862,6 @@
       }).catch(() => {});
     }
 
-    // TEST NOTIFICATION BUTTON
-    function testBotNotification() {
-      sendSystemAdminAlert({
-        id: "SS-TEST99",
-        name: "Test Customer",
-        rawPhone: "03234320196",
-        phone: "923234320196",
-        email: "LucariAlsonkirll@outlook.com",
-        product: "CapCut Pro (Test)",
-        price: "₨ 749/-",
-        method: "JazzCash",
-        trx: "TEST-TRX-123456",
-        date: new Date().toLocaleDateString()
-      });
-      showToast("Test email dispatched to your Outlook!");
-    }
-
     // FREE CANVA PRO GIVEAWAY MODAL & DISPATCH
     function openCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.remove("hidden"); }
     function closeCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.add("hidden"); }
@@ -876,71 +893,38 @@
       alert("✅ Your Canva Pro claim has been submitted! Our team will verify your follow and send the invite to your Gmail within a few hours.");
     }
 
-    // COMPLETE PRODUCT CATALOG (38+ DIGITAL ITEMS)
+    // COMPLETE PRODUCT CATALOG (WITH BRAND SVG EMBEDS)
     const products = [
-      { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning, Ultra-Natural Multilingual Dubbing & Audio Studio Access.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", icon: "fa-solid fa-microphone-lines", color: "from-indigo-600 to-violet-700" },
-      { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits. Ideal for high-volume YouTube voiceovers, podcasts, multilingual cloning & sound design.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", icon: "fa-solid fa-microphone-lines", color: "from-violet-600 to-purple-800" },
-      { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Team Plan (500 Credits Included)", specs: "30 Days Full Access, 25 Days Replacement Warranty, Team Plan with 500 Credits included. High bitrate 4K video exports, VIP filters, animations & auto captions.", origPricePKR: 999, pricePKR: 749, badge: "Hot Seller", icon: "fa-solid fa-scissors", color: "from-blue-500 to-cyan-600" },
-      { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "5 Months Replacement Warranty", format: "Email + Password Login", specs: "Full 6 Months Access with 5 Months Replacement Warranty. Email + Password login. Unlocks all desktop & mobile pro effects, 4K exports & cloud drafts.", origPricePKR: 4499, pricePKR: 3399, badge: "Best Value", icon: "fa-solid fa-film", color: "from-blue-600 to-indigo-700" },
-      { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "6 to 7 Days Full Warranty", format: "Email + Password Login", specs: "6 to 7 Days Full Warranty. Email + Password login. Instant unlock of all VIP features for urgent video rendering and social media edits.", origPricePKR: 249, pricePKR: 179, badge: "Budget", icon: "fa-solid fa-video", color: "from-sky-500 to-blue-600" },
-      { id: 116, title: "CapCut Pro Admin Team (7 Seats)", category: "design", tag: "1 Month (7 Seats)", warranty: "25 Days Replacement Warranty", format: "Admin Control Dashboard", specs: "Manage and allocate 7 individual CapCut Pro logins for your production team or clients.", origPricePKR: 4999, pricePKR: 3499, badge: "Reseller Team", icon: "fa-solid fa-users-gear", color: "from-blue-600 to-teal-600" },
-      { id: 5, title: "Canva Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Replacement Warranty", format: "Invite Based Access to Your Email", specs: "1 Year Validity with 6 Months Guaranteed Warranty. Official invite based access on your own Gmail. Premium templates, Brand Kit, Magic Studio AI & transparent PNGs.", origPricePKR: 349, pricePKR: 249, badge: "Popular", icon: "fa-solid fa-palette", color: "from-cyan-500 to-blue-500" },
-      { id: 6, title: "Canva Business", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Invite Based Access", specs: "1 Month Canva Business with 25 Days Warranty. Invite access on your account with Brand Kits, unlimited fonts & priority features.", origPricePKR: 749, pricePKR: 499, badge: "Business", icon: "fa-solid fa-palette", color: "from-teal-500 to-blue-600" },
-      { id: 7, title: "Canva Admin Panel", category: "design", tag: "1 Year+ Validity", warranty: "6 Months Complete Warranty", format: "Admin Master Control Account", specs: "1 Year+ Validity with 6 Months Complete Warranty. Add up to 500 members under your team, manage permissions & sell team invites to earn daily.", origPricePKR: 3499, pricePKR: 2499, badge: "Reseller Kit", icon: "fa-solid fa-user-shield", color: "from-purple-600 to-indigo-700" },
-      { id: 130, title: "HeyGen 600 Credits", category: "ai", tag: "600 Mega Credits", warranty: "25 Days Subscription Replacement Warranty", format: "On Mail + Readymade Account (Email + Pass Both Possible)", specs: "On mail or readymade email+password both options possible. 600 credits for unlimited avatars, voice cloning & AI studio video generation with 25 Days Replacement Warranty.", origPricePKR: 7999, pricePKR: 6199, badge: "Mega Video", icon: "fa-solid fa-film", color: "from-purple-700 to-pink-600" },
-      { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "20 Days Warranty", format: "Direct Panel Credits Topup", specs: "Ultra-realistic AI Avatar video generation, voice cloning, multiple languages with fast rendering.", origPricePKR: 17999, pricePKR: 14499, badge: "Top AI Video", icon: "fa-solid fa-video", color: "from-purple-600 to-indigo-700" },
-      { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access, Code Interpreter, Voice mode & Custom GPTs without sharing.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", icon: "fa-solid fa-robot", color: "from-emerald-600 to-teal-800" },
-      { id: 133, title: "ChatGPT Plus (Shared)", category: "ai", tag: "1 Device Access", warranty: "20 Days Replacement Warranty", format: "Email + Password Shared Login", specs: "Email + Password login. GPT-4o access, file uploads, coding assistance & web search on 1 device.", origPricePKR: 1499, pricePKR: 1099, badge: "Popular AI", icon: "fa-solid fa-comment-nodes", color: "from-emerald-500 to-teal-700" },
-      { id: 132, title: "Claude Pro", category: "ai", tag: "Monthly Direct", warranty: "Direct Official Access Warranty", format: "Pre-made Official Pro Account", specs: "Claude 3.5 Sonnet access, 5x higher usage limits, Artifacts builder, Priority bandwidth.", origPricePKR: 6499, pricePKR: 5299, badge: "Top AI", icon: "fa-solid fa-sparkles", color: "from-amber-600 to-orange-700" },
-      { id: 131, title: "Grok Paid Account Monthly", category: "ai", tag: "Monthly Plan", warranty: "Full Month Warranty", format: "On Mail + Readymade Account", specs: "Real-time X integration, uncensored intelligence & FLUX image generation.", origPricePKR: 7499, pricePKR: 5999, badge: "xAI Official", icon: "fa-solid fa-microchip", color: "from-zinc-700 to-black" },
-      { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty", format: "Account Login / Upgrade", specs: "18 Months Long Validity. Google Gemini Advanced with 1 Million token reasoning.", origPricePKR: 999, pricePKR: 649, badge: "Top AI", icon: "fa-solid fa-brain", color: "from-teal-400 to-emerald-600" },
-      { id: 137, title: "Perplexity Enterprise Pro (1 Month)", category: "ai", tag: "Enterprise Plan ($8.00)", warranty: "7 Days Warranty", format: "Ready Account (Private Access)", specs: "Enterprise-Grade AI Search & Deep Research with Source-Cited Answers.", origPricePKR: 3499, pricePKR: 2239, badge: "Deep Research", icon: "fa-solid fa-magnifying-glass-chart", color: "from-teal-600 to-cyan-700" },
-      { id: 136, title: "Leonardo AI Video Gen (Essential Plan)", category: "ai", tag: "8,500 Credits", warranty: "No Warranty", format: "Ready Account", specs: "All in One Video Generation Tool. Credits: 8500. Use Veo 3 • Kling AI • Seedance • Grok Hailou and 25+ AI Models.", origPricePKR: 999, pricePKR: 499, badge: "8500 Credits", icon: "fa-solid fa-wand-magic-sparkles", color: "from-fuchsia-600 to-purple-800" },
-      { id: 13, title: "Leonardo AI (Monthly)", category: "ai", tag: "1 Month Access", warranty: "20 Days Replacement Warranty", format: "Direct Account Login", specs: "Photorealistic AI image generation with Alchemy pipeline, prompt magic, and custom models.", origPricePKR: 1199, pricePKR: 799, badge: "Art AI", icon: "fa-solid fa-image", color: "from-fuchsia-500 to-purple-600" },
-      { id: 9, title: "Veo 3 (0 Credits Account)", category: "ai", tag: "0 Credits Pass", warranty: "20 Days Replacement Warranty", format: "Email + Password Account", specs: "Veo 3 0 Credits Account. Price: ₨ 2,299/-, 20 Days Replacement Warranty. Format: Email + Password login.", origPricePKR: 2999, pricePKR: 2299, badge: "Veo 3", icon: "fa-solid fa-wand-magic-sparkles", color: "from-amber-500 to-orange-600" },
-      { id: 10, title: "Veo 3 (Extension Based - Bunny Flow)", category: "ai", tag: "Bunny Flow Server", warranty: "20 Days Replacement Warranty", format: "Browser Extension Based", specs: "Veo 3 Extension Based (Bunny Flow). Price: ₨ 1,900/-, 20 Days Replacement Warranty. Seamless browser extension access.", origPricePKR: 2499, pricePKR: 1900, badge: "Bunny Flow", icon: "fa-solid fa-wand-magic-sparkles", color: "from-orange-500 to-yellow-600" },
-      { id: 106, title: "Wink VIP (30 Days)", category: "ai", tag: "30 Days VIP", warranty: "25 Days Replacement Warranty", format: "Mobile & PC VIP Login", specs: "AI portrait video enhancement, 4K quality restoration, noise reduction & body retouching.", origPricePKR: 2199, pricePKR: 1679, badge: "VIP Retouch", icon: "fa-solid fa-wand-magic", color: "from-yellow-500 to-amber-600" },
-      { id: 107, title: "Wink Pro VIP (90 Days)", category: "ai", tag: "3 Months Pass", warranty: "40 Days Replacement Warranty", format: "Quarterly VIP Access", specs: "90 Days uninterrupted access to all professional video beauty & AI facial restoration tools.", origPricePKR: 4999, pricePKR: 3919, badge: "Pro Retouch", icon: "fa-solid fa-wand-magic-sparkles", color: "from-amber-600 to-orange-700" },
-      { id: 138, title: "Lovable Lite (12 Months)", category: "design", tag: "12 Months ($12.00)", warranty: "No Warranty", format: "Ready Account", specs: "Build Apps, Tools & Workflows Easily. Custom domains & Remove Lovable badge.", origPricePKR: 4999, pricePKR: 3359, badge: "App Builder", icon: "fa-solid fa-code", color: "from-rose-500 to-red-600" },
-      { id: 135, title: "Notion Business (3 Months)", category: "design", tag: "3 Months Coupon", warranty: "2 Days Warranty", format: "Official Coupon Code (On Your Account)", specs: "⚡ Everything in Plus\n⚡ Notion Agent and many more\n⚡ Duration: 3 Month\n⚡ Official Coupon Code", origPricePKR: 1799, pricePKR: 1299, badge: "Coupon", icon: "fa-solid fa-cube", color: "from-zinc-800 to-gray-900" },
-      { id: 102, title: "Notion (1 Year)", category: "design", tag: "12 Months Full Access", warranty: "6 to 7 Months Full Warranty", format: "Workspace Member Pass", specs: "Full Notion workspace with unlimited blocks, file uploads, collaborative team features.", origPricePKR: 1599, pricePKR: 1099, badge: "Productivity", icon: "fa-solid fa-cube", color: "from-zinc-700 to-zinc-900" },
-      { id: 110, title: "N8N Starter (1 Year)", category: "design", tag: "12 Months Automation", warranty: "8 Months Full Warranty", format: "Redeem Link / Voucher", specs: "12 Months Automation with 8 Months Warranty. Delivered via official Redeem Link to connect bots, APIs & AI flows.", origPricePKR: 7499, pricePKR: 5599, badge: "Automation", icon: "fa-solid fa-diagram-project", color: "from-red-500 to-orange-600" },
-      { id: 104, title: "Envato Elements", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Direct Panel Access", specs: "Millions of graphics, video templates, audio tracks, themes with daily download allowance.", origPricePKR: 1699, pricePKR: 1199, badge: "Designer Kit", icon: "fa-solid fa-leaf", color: "from-emerald-600 to-teal-700" },
-      { id: 105, title: "Envato Core Individual Plan", category: "design", tag: "Personal Plan", warranty: "25 Days Replacement Warranty", format: "Private Account Access", specs: "Dedicated personal access with full commercial license on creative assets.", origPricePKR: 2999, pricePKR: 2199, badge: "Pro Asset", icon: "fa-solid fa-layer-group", color: "from-teal-600 to-cyan-700" },
-      { id: 1, title: "Freepik - Magnific API Panel", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Automated API Download Panel", specs: "High-volume asset downloads from Freepik and Magnific upscaling panels with instant delivery.", origPricePKR: 2299, pricePKR: 1649, badge: "Special 📦", icon: "fa-solid fa-download", color: "from-blue-600 to-indigo-700" },
-      { id: 115, title: "Figma Pro Edu (2 Years)", category: "design", tag: "24 Months Access", warranty: "1 Month Replacement Warranty", format: "Email + Password Login", specs: "24 Months Access with 1 Month Replacement Warranty. Unlimited Figma & FigJam files with team libraries.", origPricePKR: 2999, pricePKR: 2199, badge: "Designers", icon: "fa-brands fa-figma", color: "from-pink-500 to-purple-600" },
-      { id: 117, title: "Adobe Express Premium (12 Months)", category: "design", tag: "1 Year Coupon", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "Adobe Express premium features, templates, assets for 1 Year via official redeem link.", origPricePKR: 1199, pricePKR: 839, badge: "Coupon", icon: "fa-solid fa-pen-ruler", color: "from-red-600 to-rose-700" },
-      { id: 12, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Shared / Dedicated Login", specs: "Advanced tone detection, full sentence rewrites, plagiarism checker, and AI generative text.", origPricePKR: 1199, pricePKR: 849, badge: "Writing AI", icon: "fa-solid fa-pen-nib", color: "from-emerald-500 to-teal-600" },
-      { id: 111, title: "Duolingo Super (12 Months)", category: "design", tag: "1 Year Coupon", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "Super Duolingo activation link for 1 year. Activate on your own account with 1 click.", origPricePKR: 2999, pricePKR: 2199, badge: "Language", icon: "fa-solid fa-feather", color: "from-lime-500 to-emerald-600" },
-      { id: 114, title: "LinkedIn Career (3 Months)", category: "design", tag: "3 Months Activation Link", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "3 Months Premium Access via official Premium Activation Link for new users.", origPricePKR: 1899, pricePKR: 1299, badge: "Career Link", icon: "fa-brands fa-linkedin", color: "from-blue-700 to-indigo-800" },
-      { id: 15, title: "Coursera Premium (1 Year)", category: "design", tag: "1 Year Access", warranty: "8 Months Full Warranty", format: "On Mail + Readymade Both Possible", specs: "1 Year Full Access, 8 Months Warranty. Unlimited courses and certificates.", origPricePKR: 1899, pricePKR: 1349, badge: "Learning", icon: "fa-solid fa-graduation-cap", color: "from-blue-500 to-indigo-600" },
-      { id: 14, title: "MS Office 365 (1 Year)", category: "design", tag: "1 Year Subscription", warranty: "6 Months Full Warranty", format: "Email + Password Credentials", specs: "Word, Excel, PowerPoint, Outlook for 5 devices (PC/Mac/Phone) + 1TB OneDrive cloud storage.", origPricePKR: 1299, pricePKR: 949, badge: "Office", icon: "fa-solid fa-file-lines", color: "from-orange-500 to-red-500" },
-      { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Invite access directly on your own Gmail. Ad-free videos, YouTube Music Premium, background playback & offline download.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", icon: "fa-brands fa-youtube", color: "from-red-500 to-red-700" },
-      { id: 24, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Access", warranty: "1 Month Replacement Warranty", format: "Family Invite to Personal Gmail", specs: "90 Days Access with 1 Month Replacement Warranty. Uninterrupted ad-free video streaming & full YouTube Music included.", origPricePKR: 1199, pricePKR: 899, badge: "Value Plan", icon: "fa-brands fa-youtube", color: "from-red-600 to-rose-700" },
-      { id: 16, title: "Netflix Single Screen (Monthly)", category: "streaming", tag: "1 Profile Screen", warranty: "25 Days Stable Warranty", format: "Email + Password (Private Profile with PIN)", specs: "UHD 4K streaming on 1 screen with dedicated profile name and personal PIN lock.", origPricePKR: 499, pricePKR: 349, badge: "Streaming", icon: "fa-solid fa-clapperboard", color: "from-red-600 to-rose-700" },
-      { id: 17, title: "Netflix Full Account (5 Screens)", category: "streaming", tag: "5 Screens UHD 4K", warranty: "27 Days Full Account Warranty", format: "Email + Password (Full Account)", specs: "Complete private account credentials with email and password manageable under your control.", origPricePKR: 1499, pricePKR: 999, badge: "4K UHD Private", icon: "fa-solid fa-tv", color: "from-rose-600 to-red-800" },
-      { id: 113, title: "Amazon Prime Video (1 Month)", category: "streaming", tag: "30 Days HD/4K", warranty: "25 Days Stable Warranty", format: "Email + Password", specs: "Full HD/4K streaming on smart TVs, mobile, and web with guaranteed profile privacy.", origPricePKR: 549, pricePKR: 349, badge: "Movies", icon: "fa-brands fa-amazon", color: "from-blue-500 to-sky-700" },
-      { id: 140, title: "Amazon Prime Video (6 Months)", category: "streaming", tag: "6 Months Plan ($2.50)", warranty: "1 Day Warranty", format: "Ready Account (Email + Password)", specs: "Enjoy Amazon Prime Video 6 Month Plan Private. Watch your favorite movies and serials anytime anywhere.", origPricePKR: 1199, pricePKR: 699, badge: "6 Months Plan", icon: "fa-brands fa-amazon", color: "from-amber-600 to-orange-700" },
-      { id: 112, title: "Spotify Premium (3 Months)", category: "streaming", tag: "3 Months Ad-Free", warranty: "1 Month Replacement Warranty", format: "Direct Family Slot / Account", specs: "Ad-free high fidelity 320kbps audio streaming with offline playlist downloads.", origPricePKR: 2699, pricePKR: 1999, badge: "Audio", icon: "fa-brands fa-spotify", color: "from-green-500 to-emerald-700" },
-      { id: 139, title: "Eleven Reader Ultra Plan (12 Months)", category: "streaming", tag: "12 Months ($4.00)", warranty: "No Warranty", format: "Coupon / Link", specs: "The Ultra plan includes: Unlimited text-to-audio, 200,000+ premium audiobooks & eBooks, custom voices across web & mobile.", origPricePKR: 1999, pricePKR: 1119, badge: "TTS Ultra", icon: "fa-solid fa-headphones", color: "from-indigo-600 to-blue-700" },
-      { id: 20, title: "NordVPN (3 Months)", category: "accounts", tag: "3 Months Access", warranty: "45 Days Warranty", format: "Ready Account", specs: "High-speed VPN servers worldwide. Unlock global content, strong encryption & online privacy for 3 months with 45 Days Warranty.", origPricePKR: 1899, pricePKR: 1299, badge: "45D Warranty", icon: "fa-solid fa-globe", color: "from-blue-600 to-sky-700" },
-      { id: 141, title: "Surfshark VPN 2M (Coupon)", category: "accounts", tag: "2 Months ($2.50)", warranty: "No Warranty", format: "Coupon / Redeem Link", specs: "Works on mobile, PC, smart devices. Login to Unlimited Devices via Redeem Code.", origPricePKR: 1199, pricePKR: 699, badge: "Coupon $2.5", icon: "fa-solid fa-lock", color: "from-teal-600 to-emerald-700" },
-      { id: 21, title: "Surfshark VPN 2M (Private Account)", category: "accounts", tag: "2 Months Private", warranty: "30 Days Warranty", format: "Ready Account", specs: "Fast & secure VPN access. Unlock global streaming with strong encryption on up to 10 devices.", origPricePKR: 1899, pricePKR: 1299, badge: "Private Ready", icon: "fa-solid fa-lock", color: "from-teal-600 to-emerald-700" },
-      { id: 109, title: "iCloud Slot 2TB (Monthly)", category: "accounts", tag: "Family Slot 2TB", warranty: "25 Days Replacement Warranty", format: "Email + Password / Family Invite", specs: "Format: Email + Password. Connect your existing Apple ID to a 2TB iCloud storage bucket with total privacy.", origPricePKR: 2499, pricePKR: 1799, badge: "Apple Cloud", icon: "fa-brands fa-apple", color: "from-gray-500 to-slate-700" },
-      { id: 103, title: "TikTok UK / USA Accounts (Fresh)", category: "accounts", tag: "Fresh PVA", warranty: "On-Demand Fresh Account Creation", format: "Fresh PVA Email + Password", specs: "Monetization-ready TikTok accounts from US/UK regions with Beta program compatibility.", origPricePKR: 1399, pricePKR: 999, badge: "PVA", icon: "fa-brands fa-tiktok", color: "from-pink-600 to-rose-700" },
-      { id: 108, title: "Telegram Account (PVA)", category: "accounts", tag: "Virtual Number", warranty: "Fresh Login Guarantee", format: "Phone Verified Account (PVA)", specs: "Clean session string or phone code verification for marketing, channel setup, or automation.", origPricePKR: 1299, pricePKR: 979, badge: "PVA Stock", icon: "fa-brands fa-telegram", color: "from-sky-500 to-blue-600" },
-      { id: 22, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Instant Fresh Delivery", format: "Fresh IMAP/POP3 Enabled Email", specs: "Clean proxies phone verified email accounts for bulk automation & signups.", origPricePKR: 79, pricePKR: 44, badge: "Bulk", icon: "fa-solid fa-envelope", color: "from-blue-400 to-sky-600" },
-      { id: 119, title: "Windows 10 Pro Retail Key", category: "keys", tag: "Global Retail Key", warranty: "Online Permanent Activation", format: "License Key (Outlook Format)", specs: "Delivered in official Outlook format containing original 25-digit retail license key. Permanently binds to motherboard.", origPricePKR: 1099, pricePKR: 699, badge: "Retail Key", icon: "fa-brands fa-windows", color: "from-sky-500 to-blue-700" },
-      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently to motherboard.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", icon: "fa-brands fa-windows", color: "from-blue-600 to-indigo-700" },
-      { id: 142, title: "API Orders Test", category: "accounts", tag: "Test Item ($0.05)", warranty: "No Warranty", format: "Coupon / Link", specs: "Dont order it. It is just API working Test.", origPricePKR: 50, pricePKR: 15, badge: "API Test", icon: "fa-solid fa-vial", color: "from-gray-500 to-gray-700" }
+      { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning, Ultra-Natural Multilingual Dubbing & Audio Studio Access.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700" },
+      { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits. Ideal for high-volume YouTube voiceovers, podcasts, multilingual cloning & sound design.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800" },
+      { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Team Plan (500 Credits Included)", specs: "30 Days Full Access, 25 Days Replacement Warranty, Team Plan with 500 Credits included. High bitrate 4K video exports, VIP filters, animations & auto captions.", origPricePKR: 999, pricePKR: 749, badge: "Hot Seller", iconKey: "capcut", color: "from-blue-500 to-cyan-600" },
+      { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "5 Months Replacement Warranty", format: "Email + Password Login", specs: "Full 6 Months Access with 5 Months Replacement Warranty. Email + Password login. Unlocks all desktop & mobile pro effects, 4K exports & cloud drafts.", origPricePKR: 4499, pricePKR: 3399, badge: "Best Value", iconKey: "capcut", color: "from-blue-600 to-indigo-700" },
+      { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "6 to 7 Days Full Warranty", format: "Email + Password Login", specs: "6 to 7 Days Full Warranty. Email + Password login. Instant unlock of all VIP features for urgent video rendering and social media edits.", origPricePKR: 249, pricePKR: 179, badge: "Budget", iconKey: "capcut", color: "from-sky-500 to-blue-600" },
+      { id: 116, title: "CapCut Pro Admin Team (7 Seats)", category: "design", tag: "1 Month (7 Seats)", warranty: "25 Days Replacement Warranty", format: "Admin Control Dashboard", specs: "Manage and allocate 7 individual CapCut Pro logins for your production team or clients.", origPricePKR: 4999, pricePKR: 3499, badge: "Reseller Team", iconKey: "capcut", color: "from-blue-600 to-teal-600" },
+      { id: 5, title: "Canva Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Replacement Warranty", format: "Invite Based Access to Your Email", specs: "1 Year Validity with 6 Months Guaranteed Warranty. Official invite based access on your own Gmail. Premium templates, Brand Kit, Magic Studio AI & transparent PNGs.", origPricePKR: 349, pricePKR: 249, badge: "Popular", iconKey: "canva", color: "from-cyan-500 to-blue-500" },
+      { id: 6, title: "Canva Business", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Invite Based Access", specs: "1 Month Canva Business with 25 Days Warranty. Invite access on your account with Brand Kits, unlimited fonts & priority features.", origPricePKR: 749, pricePKR: 499, badge: "Business", iconKey: "canva", color: "from-teal-500 to-blue-600" },
+      { id: 7, title: "Canva Admin Panel", category: "design", tag: "1 Year+ Validity", warranty: "6 Months Complete Warranty", format: "Admin Master Control Account", specs: "1 Year+ Validity with 6 Months Complete Warranty. Add up to 500 members under your team, manage permissions & sell team invites to earn daily.", origPricePKR: 3499, pricePKR: 2499, badge: "Reseller Kit", iconKey: "canva", color: "from-purple-600 to-indigo-700" },
+      { id: 130, title: "HeyGen 600 Credits", category: "ai", tag: "600 Mega Credits", warranty: "25 Days Subscription Replacement Warranty", format: "On Mail + Readymade Account (Email + Pass Both Possible)", specs: "On mail or readymade email+password both options possible. 600 credits for unlimited avatars, voice cloning & AI studio video generation with 25 Days Replacement Warranty.", origPricePKR: 7999, pricePKR: 6199, badge: "Mega Video", iconKey: "generic", color: "from-purple-700 to-pink-600" },
+      { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "20 Days Warranty", format: "Direct Panel Credits Topup", specs: "Ultra-realistic AI Avatar video generation, voice cloning, multiple languages with fast rendering.", origPricePKR: 17999, pricePKR: 14499, badge: "Top AI Video", iconKey: "generic", color: "from-purple-600 to-indigo-700" },
+      { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access, Code Interpreter, Voice mode & Custom GPTs without sharing.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", iconKey: "chatgpt", color: "from-emerald-600 to-teal-800" },
+      { id: 133, title: "ChatGPT Plus (Shared)", category: "ai", tag: "1 Device Access", warranty: "20 Days Replacement Warranty", format: "Email + Password Shared Login", specs: "Email + Password login. GPT-4o access, file uploads, coding assistance & web search on 1 device.", origPricePKR: 1499, pricePKR: 1099, badge: "Popular AI", iconKey: "chatgpt", color: "from-emerald-500 to-teal-700" },
+      { id: 132, title: "Claude Pro", category: "ai", tag: "Monthly Direct", warranty: "Direct Official Access Warranty", format: "Pre-made Official Pro Account", specs: "Claude 3.5 Sonnet access, 5x higher usage limits, Artifacts builder, Priority bandwidth.", origPricePKR: 6499, pricePKR: 5299, badge: "Top AI", iconKey: "claude", color: "from-amber-600 to-orange-700" },
+      { id: 131, title: "Grok Paid Account Monthly", category: "ai", tag: "Monthly Plan", warranty: "Full Month Warranty", format: "On Mail + Readymade Account", specs: "Real-time X integration, uncensored intelligence & FLUX image generation.", origPricePKR: 7499, pricePKR: 5999, badge: "xAI Official", iconKey: "grok", color: "from-zinc-700 to-black" },
+      { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty", format: "Account Login / Upgrade", specs: "18 Months Long Validity. Google Gemini Advanced with 1 Million token reasoning.", origPricePKR: 999, pricePKR: 649, badge: "Top AI", iconKey: "gemini", color: "from-teal-400 to-emerald-600" },
+      { id: 137, title: "Perplexity Enterprise Pro (1 Month)", category: "ai", tag: "Enterprise Plan ($8.00)", warranty: "7 Days Warranty", format: "Ready Account (Private Access)", specs: "Enterprise-Grade AI Search & Deep Research with Source-Cited Answers.", origPricePKR: 3499, pricePKR: 2239, badge: "Deep Research", iconKey: "generic", color: "from-teal-600 to-cyan-700" },
+      { id: 138, title: "Lovable Lite (12 Months)", category: "design", tag: "12 Months ($12.00)", warranty: "No Warranty", format: "Ready Account", specs: "Build Apps, Tools & Workflows Easily. Custom domains & Remove Lovable badge.", origPricePKR: 4999, pricePKR: 3359, badge: "App Builder", iconKey: "generic", color: "from-rose-500 to-red-600" },
+      { id: 119, title: "Windows 10 Pro Retail Key", category: "keys", tag: "Global Retail Key", warranty: "Online Permanent Activation", format: "License Key (Outlook Format)", specs: "Delivered in official Outlook format containing original 25-digit retail license key.", origPricePKR: 1099, pricePKR: 699, badge: "Retail Key", iconKey: "windows", color: "from-sky-500 to-blue-700" },
+      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently to motherboard.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", iconKey: "windows", color: "from-blue-600 to-indigo-700" },
+      { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Ad-free streaming & YouTube Music included.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", iconKey: "youtube", color: "from-red-500 to-red-700" },
+      { id: 16, title: "Netflix Single Screen (Monthly)", category: "streaming", tag: "1 Profile Screen", warranty: "25 Days Stable Warranty", format: "Private Profile with PIN", specs: "UHD 4K streaming on 1 screen with dedicated profile name and personal PIN lock.", origPricePKR: 499, pricePKR: 349, badge: "Streaming", iconKey: "netflix", color: "from-red-600 to-rose-700" },
+      { id: 113, title: "Amazon Prime Video (1 Month)", category: "streaming", tag: "30 Days HD/4K", warranty: "25 Days Stable Warranty", format: "Email + Password", specs: "Full HD/4K streaming on smart TVs, mobile, and web with guaranteed profile privacy.", origPricePKR: 549, pricePKR: 349, badge: "Movies", iconKey: "prime", color: "from-blue-500 to-sky-700" },
+      { id: 20, title: "NordVPN (3 Months)", category: "accounts", tag: "3 Months Access", warranty: "45 Days Warranty", format: "Ready Account", specs: "High-speed VPN servers worldwide with 45 Days Warranty.", origPricePKR: 1899, pricePKR: 1299, badge: "45D Warranty", iconKey: "vpn", color: "from-blue-600 to-sky-700" }
     ];
 
     const defaultReviews = [
       { name: "Ahmad Khan", role: "Video Editor", text: "Ordered CapCut Pro 6 Months plan directly through the site. Payment verified in 2 minutes. Best store in Pakistan!", rating: 5, date: "Yesterday" },
       { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5, date: "2 days ago" },
-      { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro, Perplexity and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" },
-      { name: "Usman Ali", role: "Digital Marketer", text: "HeyGen 600 credits & Windows 11 key worked like a charm! Clean activation.", rating: 5, date: "4 days ago" },
-      { name: "Zainab Shah", role: "Content Creator", text: "ChatGPT Plus private account is 100% genuine with Sora & GPT-4o. Safe checkout via SadaPay!", rating: 5, date: "5 days ago" }
+      { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
     ];
 
     function openDetailsModal(id) {
@@ -951,7 +935,7 @@
       document.getElementById("detailFormat").textContent = prod.format;
       document.getElementById("detailWarranty").textContent = prod.warranty;
       document.getElementById("detailSpecs").textContent = prod.specs;
-      document.getElementById("detailIcon").className = prod.icon;
+      document.getElementById("detailIcon").innerHTML = BRAND_ICONS[prod.iconKey] || BRAND_ICONS.generic;
       document.getElementById("detailBasketBtn").onclick = () => { addToCart(prod.id); closeDetailsModal(); };
       document.getElementById("detailOrderBtn").onclick = () => { closeDetailsModal(); openCheckoutModal(prod.id); };
       document.getElementById("detailsModal").classList.remove("hidden");
@@ -1036,7 +1020,9 @@
       list.innerHTML = cart.map((item, idx) => `
         <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
           <div class="flex items-center gap-2.5 flex-1 truncate">
-            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0"><i class="${item.icon}"></i></div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
+              ${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}
+            </div>
             <div class="truncate"><div class="font-bold text-white truncate">${item.title}</div><div class="text-[10px] text-gray-500">${item.tag}</div></div>
           </div>
           <div class="flex items-center gap-3">
@@ -1241,6 +1227,7 @@
       setTimeout(() => { toast.classList.remove("opacity-100"); toast.classList.add("opacity-0", "pointer-events-none"); }, 2500);
     }
 
+    // RENDER PRODUCTS WITH OFFICIAL BRAND VECTOR ICONS
     function renderProducts(items) {
       const grid = document.getElementById("productsGrid");
       if (!grid) return;
@@ -1248,7 +1235,9 @@
         <div class="glass-box rounded-2xl p-5 flex flex-col justify-between group relative">
           <div>
             <div class="flex items-start justify-between gap-3 mb-3">
-              <div class="w-11 h-11 rounded-xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-sm group-hover:scale-105 transition-transform"><i class="${p.icon}"></i></div>
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-sm group-hover:scale-105 transition-transform p-2.5">
+                ${BRAND_ICONS[p.iconKey] || BRAND_ICONS.generic}
+              </div>
               <div class="flex flex-col items-end">
                 <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.badge}</span>
                 <span class="text-[11px] font-semibold text-gray-400 mt-1">${p.tag}</span>

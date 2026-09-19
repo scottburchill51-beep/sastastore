@@ -5,29 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SastaStore | Premium Digital Subscriptions & Tools</title>
 
-  <!-- SEO & OPENGRAPH META TAGS -->
-  <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, Canva Pro, ElevenLabs, HeyGen, ChatGPT Plus, Perplexity, Lovable & Windows Keys at sasta rates." />
-  <meta name="keywords" content="SastaStore, ElevenLabs, CapCut Pro, Canva Pro, ChatGPT Plus, Perplexity Pro, Lovable, Windows 11 key, digital subscriptions Pakistan" />
+  <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, Canva Pro, ElevenLabs, HeyGen, ChatGPT Plus, TikTok UK Live SIMs & Windows Keys." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
-  <meta property="og:description" content="Instant delivery on premium software, AI video & voice tools, Windows keys, and cloud accounts." />
   <meta property="og:image" content="1.jpg" />
-  <meta property="og:url" content="https://sastastore.store" />
-  <link rel="canonical" href="https://sastastore.store/" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS & Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
@@ -39,15 +28,7 @@
             heading: ['Outfit', 'sans-serif'],
           },
           colors: {
-            brand: {
-              emerald: '#10B981',
-              emeraldDark: '#059669',
-              teal: '#14B8A6',
-              bgLight: '#F8FAFC',
-              cardBorder: '#E2E8F0',
-              textDark: '#0F172A',
-              textMuted: '#64748B'
-            }
+            brand: { emerald: '#10B981', emeraldDark: '#059669', teal: '#14B8A6' }
           }
         }
       }
@@ -74,7 +55,6 @@
     .glass-box {
       background: rgba(11, 18, 32, 0.85);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -104,31 +84,21 @@
       100% { left: 140%; }
     }
 
-    /* SIDE-BY-SIDE AUTO FLOATING HOVER & NO CROP */
-    .banner-card {
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    /* AUTOMATED SLIDING TRACK CARDS */
+    .slide-track-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
     }
-    .banner-card:hover {
-      transform: translateY(-8px) scale(1.015);
-      box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.25);
+    .slide-item-box {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
     }
-
-    @keyframes smoothFloatA {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+    .slide-item-box.active {
+      display: block;
+      opacity: 1;
     }
-    @keyframes smoothFloatB {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-9px); }
-    }
-    @keyframes smoothFloatC {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-7px); }
-    }
-
-    .float-item-1 { animation: smoothFloatA 4.8s ease-in-out infinite; }
-    .float-item-2 { animation: smoothFloatB 5.6s ease-in-out infinite 0.6s; }
-    .float-item-3 { animation: smoothFloatC 5.2s ease-in-out infinite 1.2s; }
   </style>
 </head>
 
@@ -139,20 +109,14 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Multi-Item Basket Active • Combine tools & use <strong>SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
+        <span>⚡ Multi-Item Basket Active • Use <strong>SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
-        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 text-xs flex items-center gap-1.5 transition">
-          <i class="fa-brands fa-instagram text-pink-500"></i> Instagram
-        </a>
+        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 text-xs flex items-center gap-1.5 transition"><i class="fa-brands fa-instagram text-pink-500"></i> Instagram</a>
         <span>|</span>
-        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition">
-          <i class="fa-brands fa-facebook text-blue-500"></i> Facebook
-        </a>
+        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="hover:text-blue-400 text-xs flex items-center gap-1.5 transition"><i class="fa-brands fa-facebook text-blue-500"></i> Facebook</a>
         <span>|</span>
-        <button onclick="openAdminModal()" class="text-xs bg-gray-900 border border-gray-700 hover:border-emerald-400 px-3 py-1 rounded-lg text-emerald-400 font-bold transition flex items-center gap-1.5">
-          <i class="fa-solid fa-lock"></i> Admin Portal
-        </button>
+        <button onclick="openAdminModal()" class="text-xs bg-gray-900 border border-gray-700 hover:border-emerald-400 px-3 py-1 rounded-lg text-emerald-400 font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-lock"></i> Admin Portal</button>
       </div>
     </div>
   </div>
@@ -160,47 +124,36 @@
   <!-- STICKY HEADER -->
   <header class="sticky top-0 z-40 bg-[#06090E]/95 backdrop-blur-2xl border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
-      
-      <!-- BRAND & HAMBURGER BUTTON -->
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-        <button type="button" onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0 cursor-pointer" title="Menu Navigation">
+        <button type="button" onclick="toggleSidebar()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gray-900 border border-gray-800 hover:border-emerald-500/50 flex flex-col items-center justify-center gap-1.5 transition group flex-shrink-0 cursor-pointer" title="Menu">
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
           <span class="w-5 h-0.5 bg-emerald-400 group-hover:bg-white transition-colors"></span>
         </button>
-
         <a href="#" class="flex items-center gap-2 sm:gap-2.5 group">
           <img src="logo.jpeg" alt="SastaStore Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl object-cover border border-emerald-500/30 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform flex-shrink-0" />
           <div>
-            <div class="font-heading font-black text-xl sm:text-2xl tracking-tight text-white flex items-center gap-1">
-              Sasta<span class="text-brand-emerald">Store</span>
-            </div>
+            <div class="font-heading font-black text-xl sm:text-2xl tracking-tight text-white flex items-center gap-1">Sasta<span class="text-brand-emerald">Store</span></div>
             <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 hidden sm:block leading-none">— PREMIUM TOOLS • SASTA PRICES</span>
           </div>
         </a>
       </div>
 
-      <!-- DESKTOP NAV -->
       <div class="hidden lg:flex items-center gap-6 text-sm font-semibold text-gray-300">
         <a href="#products" class="hover:text-brand-emerald transition-colors">All Products</a>
         <button onclick="openCanvaPromoModal()" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-gift text-amber-400"></i> Free Canva Pro</button>
         <a href="#custom-order" class="hover:text-cyan-400 transition-colors">Custom Order</a>
         <a href="#reviews" class="hover:text-amber-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-star text-amber-400 text-xs"></i> Reviews</a>
-        <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
-        <button onclick="openWarrantyModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Warranty</button>
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> Track Order</button>
       </div>
 
-      <!-- HEADER ACTIONS -->
       <div class="flex items-center gap-2">
-        <button onclick="openCartModal()" class="relative w-11 h-11 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center transition hover:scale-105 shadow-lg shadow-emerald-500/20 flex-shrink-0" title="Shopping Basket">
+        <button onclick="openCartModal()" class="relative w-11 h-11 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-black flex items-center justify-center transition hover:scale-105 shadow-lg shadow-emerald-500/20 flex-shrink-0" title="Basket">
           <i class="fa-solid fa-bag-shopping text-lg text-black"></i>
           <span id="cartCountBadge" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-black text-emerald-400 font-black text-[10px] flex items-center justify-center border border-emerald-400">0</span>
         </button>
-
         <a href="https://wa.me/923136093501?text=Hi%20SastaStore%20Support,%20I%20need%20assistance" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 bg-gray-900 border border-gray-800 hover:border-emerald-500/50 text-white font-heading font-black text-xs uppercase px-3.5 py-2.5 rounded-xl transition">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> 
-          <span>Support</span>
+          <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> <span>Support</span>
         </a>
       </div>
     </div>
@@ -215,11 +168,8 @@
             <img src="logo.jpeg" alt="SastaStore" class="w-9 h-9 rounded-xl object-cover border border-emerald-500/40" />
             <span class="font-heading font-black text-white text-lg">Sasta<span class="text-emerald-400">Store</span></span>
           </div>
-          <button type="button" onclick="toggleSidebar()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-800 flex items-center justify-center text-lg">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+          <button type="button" onclick="toggleSidebar()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-800 flex items-center justify-center text-lg"><i class="fa-solid fa-xmark"></i></button>
         </div>
-
         <nav class="space-y-2">
           <button onclick="toggleSidebar(); openCartModal();" class="w-full text-left flex items-center justify-between px-4 py-3 rounded-xl bg-emerald-500 text-black font-black text-sm transition shadow-lg shadow-emerald-500/20">
             <span class="flex items-center gap-3"><i class="fa-solid fa-bag-shopping text-base w-5"></i> View Basket</span>
@@ -228,60 +178,36 @@
           <button onclick="toggleSidebar(); openCanvaPromoModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 font-bold text-sm transition">
             <i class="fa-solid fa-gift text-base w-5 text-amber-400"></i> Free Canva Pro Offer
           </button>
-          <a href="#products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
-            <i class="fa-solid fa-boxes-stacked text-base w-5 text-emerald-400"></i> All Products
-          </a>
-          <a href="#reviews" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-amber-500/10 text-gray-200 hover:text-amber-400 font-bold text-sm transition">
-            <i class="fa-solid fa-star text-base w-5 text-amber-400"></i> Customer Reviews
-          </a>
-          <a href="#custom-order" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-500/10 text-gray-200 hover:text-cyan-400 font-bold text-sm transition">
-            <i class="fa-solid fa-cart-plus text-base w-5 text-cyan-400"></i> Custom Order Service
-          </a>
-          <button onclick="toggleSidebar(); openWarrantyModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition">
-            <i class="fa-solid fa-shield-halved text-base w-5 text-emerald-400"></i> Warranty & Guarantee
-          </button>
-          <a href="#faq" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-indigo-500/10 text-gray-200 hover:text-indigo-400 font-bold text-sm transition">
-            <i class="fa-solid fa-circle-question text-base w-5 text-indigo-400"></i> FAQ Guide
-          </a>
-          <button onclick="toggleSidebar(); openMyOrdersModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-teal-500/10 text-gray-200 hover:text-teal-400 font-bold text-sm transition">
-            <i class="fa-solid fa-receipt text-base w-5 text-teal-400"></i> Track Order Status
-          </button>
-          <button onclick="toggleSidebar(); openAdminModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-800 text-gray-400 hover:text-white font-bold text-sm transition">
-            <i class="fa-solid fa-lock text-base w-5 text-gray-400"></i> Admin Dashboard
-          </button>
+          <a href="#products" onclick="toggleSidebar()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-500/10 text-gray-200 hover:text-emerald-400 font-bold text-sm transition"><i class="fa-solid fa-boxes-stacked text-base w-5 text-emerald-400"></i> All Products</a>
+          <button onclick="toggleSidebar(); openMyOrdersModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-teal-500/10 text-gray-200 hover:text-teal-400 font-bold text-sm transition"><i class="fa-solid fa-receipt text-base w-5 text-teal-400"></i> Track Order Status</button>
+          <button onclick="toggleSidebar(); openAdminModal();" class="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-800 text-gray-400 hover:text-white font-bold text-sm transition"><i class="fa-solid fa-lock text-base w-5 text-gray-400"></i> Admin Dashboard</button>
         </nav>
-      </div>
-
-      <div class="pt-6 border-t border-gray-800 space-y-3">
-        <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-pink-600/15 text-pink-400 border border-pink-500/30 rounded-xl text-xs font-bold transition">
-          <i class="fa-brands fa-instagram"></i> Follow on Instagram
-        </a>
-        <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 bg-blue-600/15 text-blue-400 border border-blue-500/30 rounded-xl text-xs font-bold transition">
-          <i class="fa-brands fa-facebook"></i> Facebook Page
-        </a>
       </div>
     </div>
   </div>
 
-  <!-- ==================== 1. TOP 3 LANDSCAPE BANNERS (SIDE-BY-SIDE ON ALL SCREENS, NO CROPPING) ==================== -->
+  <!-- ==================== 1. TOP 3 LANDSCAPE BANNERS (AUTO SIDE-BY-SIDE SLIDER / NO ARROWS / NO DOTS) ==================== -->
   <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-2">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
       <!-- Top Banner 1 (1.jpg) -->
-      <div class="banner-card float-item-1 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="location.href='#products'" title="SastaStore Deals">
-        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] flex items-center justify-center overflow-hidden">
-          <img src="1.jpg" alt="Top Banner 1" class="w-full h-full object-contain p-1 rounded-2xl sm:rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="location.href='#products'">
+        <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden slide-track-container">
+          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
         </div>
       </div>
       <!-- Top Banner 2 (2.jpg) -->
-      <div class="banner-card float-item-2 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(2)" title="Order CapCut Pro Monthly">
-        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] flex items-center justify-center overflow-hidden">
-          <img src="2.jpg" alt="Top Banner 2" class="w-full h-full object-contain p-1 rounded-2xl sm:rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(2)">
+        <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden slide-track-container">
+          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
         </div>
       </div>
       <!-- Top Banner 3 (3.jpg) -->
-      <div class="banner-card float-item-3 relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(143)" title="Order ElevenLabs">
-        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] flex items-center justify-center overflow-hidden">
-          <img src="3.jpg" alt="Top Banner 3" class="w-full h-full object-contain p-1 rounded-2xl sm:rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(143)">
+        <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden slide-track-container">
+          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
         </div>
       </div>
     </div>
@@ -302,7 +228,6 @@
             Follow our official <strong>Instagram</strong> & <strong>Facebook</strong> page, submit verification proof, and receive your 1-Year Canva Pro Invite directly on your Gmail!
           </p>
         </div>
-
         <button onclick="openCanvaPromoModal()" class="btn-shimmer flex-shrink-0 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black font-heading font-black text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-105 flex items-center gap-2.5">
           <i class="fa-solid fa-bolt-lightning text-base"></i> Claim Free Canva Pro 🚀
         </button>
@@ -310,25 +235,28 @@
     </div>
   </section>
 
-  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT BANNERS (SIDE-BY-SIDE ON ALL SCREENS, NO CROPPING) ==================== -->
+  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT BANNERS (AUTO SIDE-BY-SIDE SLIDER / NO ARROWS / NO DOTS) ==================== -->
   <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pb-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
       <!-- Portrait Banner 4 (4.jpg) -->
-      <div class="banner-card float-item-2 relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(7)" title="Canva Admin Panel">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden">
-          <img src="4.jpg" alt="Portrait Banner 4" class="w-full h-full object-contain p-2 rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+      <div class="relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(7)">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden slide-track-container">
+          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
         </div>
       </div>
       <!-- Portrait Banner 5 (5.jpg) -->
-      <div class="banner-card float-item-1 relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(130)" title="HeyGen 600 Credits">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden">
-          <img src="5.jpg" alt="Portrait Banner 5" class="w-full h-full object-contain p-2 rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+      <div class="relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(130)">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden slide-track-container">
+          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
         </div>
       </div>
       <!-- Portrait Banner 6 (6.jpg) -->
-      <div class="banner-card float-item-3 relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer" onclick="openCheckoutModal(120)" title="Windows 11 Pro Lifetime">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden">
-          <img src="6.jpg" alt="Portrait Banner 6" class="w-full h-full object-contain p-2 rounded-3xl transition-transform duration-500 group-hover:scale-105" />
+      <div class="relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(120)">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden slide-track-container">
+          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
         </div>
       </div>
     </div>
@@ -356,7 +284,7 @@
     </div>
   </section>
 
-  <!-- ALL PRODUCTS INVENTORY -->
+  <!-- ALL PRODUCTS INVENTORY (WITH LIVE STOCK BADGES) -->
   <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
       <div>
@@ -367,7 +295,7 @@
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search ElevenLabs, CapCut, Claude, Grok, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          <input type="text" id="searchInput" placeholder="Search TikTok SIM, ElevenLabs, CapCut..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
@@ -398,7 +326,6 @@
             <strong class="text-emerald-400">💳 Need anything just send link of website and plan screenshot!</strong> Stripe & Non-Stripe orders are fully supported.
           </p>
         </div>
-
         <div class="lg:text-right flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
           <a href="https://wa.me/923136093501?text=Hi%20SastaStore,%20I%20want%20to%20place%20a%20Custom%20Order.%20Website%20link%20and%20Plan%20Screenshot:" target="_blank" class="btn-shimmer inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-sm px-7 py-3.5 rounded-2xl shadow-xl hover:scale-105 transition">
             <i class="fa-brands fa-whatsapp text-2xl"></i> Send Link on WhatsApp
@@ -431,7 +358,6 @@
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
       <h2 class="font-heading text-3xl font-black text-white">Frequently Asked Questions</h2>
     </div>
-
     <div class="space-y-3">
       <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
         <button onclick="toggleFaq(1)" class="w-full p-4 text-left flex items-center justify-between gap-4">
@@ -439,16 +365,7 @@
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-1"></i>
         </button>
         <div id="faqAnswer-1" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
-          Orders are typically verified and activated within <strong>5 to 15 minutes</strong>! As soon as you place your order, our automated system registers it into the Admin Queue for priority activation.
-        </div>
-      </div>
-      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
-        <button onclick="toggleFaq(2)" class="w-full p-4 text-left flex items-center justify-between gap-4">
-          <span class="text-sm font-bold text-white flex items-center gap-2.5"><i class="fa-solid fa-shield-heart text-blue-400"></i> How does the Replacement Warranty work?</span>
-          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-2"></i>
-        </button>
-        <div id="faqAnswer-2" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
-          All our subscriptions come with guaranteed replacement warranties as specified on each card. If you ever experience an access issue, reach out with your Tracking ID for immediate replacement.
+          Orders are typically verified and activated within <strong>5 to 15 minutes</strong> (except physical SIMs which take 3-4 days)!
         </div>
       </div>
     </div>
@@ -461,20 +378,14 @@
         <div class="md:col-span-2 space-y-4">
           <div class="flex items-center gap-2.5">
             <img src="logo.jpeg" alt="SastaStore" class="w-10 h-10 rounded-2xl object-cover border border-emerald-500/40" />
-            <div>
-              <span class="font-heading font-black text-xl text-white tracking-tight">Sasta<span class="text-emerald-400">Store</span></span>
-              <span class="text-[9px] uppercase tracking-widest text-gray-500 block">PAKISTAN</span>
-            </div>
+            <div><span class="font-heading font-black text-xl text-white tracking-tight">Sasta<span class="text-emerald-400">Store</span></span><span class="text-[9px] uppercase tracking-widest text-gray-500 block">PAKISTAN</span></div>
           </div>
-          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
-            Pakistan's trusted digital subscription & software store. Fast 15-minute dispatch with guaranteed replacement warranty.
-          </p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">Pakistan's trusted digital subscription & software store.</p>
           <div class="text-xs text-gray-400 space-y-1">
             <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-emerald-400"></i> <strong>Official Email:</strong> LucariAlsonkirll@outlook.com</p>
             <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400"></i> <strong>Helpline:</strong> +92 313 6093501</p>
           </div>
         </div>
-
         <div class="space-y-3">
           <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Quick Links</h4>
           <ul class="space-y-2 text-xs">
@@ -483,74 +394,27 @@
             <li><button onclick="openMyOrdersModal()" class="hover:text-emerald-400 transition text-left">Track Order Status</button></li>
           </ul>
         </div>
-
-        <div class="space-y-3">
-          <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Social Channels</h4>
-          <div class="flex items-center gap-3 pt-1">
-            <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-blue-600/20 text-gray-400 hover:text-blue-400 border border-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-facebook text-sm"></i></a>
-            <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-pink-600/20 text-gray-400 hover:text-pink-400 border border-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-sm"></i></a>
-            <a href="https://wa.me/923136093501" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-emerald-600/20 text-gray-400 hover:text-emerald-400 border border-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp text-sm"></i></a>
-          </div>
-        </div>
       </div>
-
-      <div class="pt-8 text-center sm:text-left text-[11px] text-gray-500">
-        Copyright © 2026 SastaStore Pakistan. All rights reserved.
-      </div>
+      <div class="pt-8 text-center sm:text-left text-[11px] text-gray-500">Copyright © 2026 SastaStore Pakistan. All rights reserved.</div>
     </div>
   </footer>
 
-  <!-- ==================== CLAIM FREE CANVA PRO MODAL ==================== -->
+  <!-- CANVA GIVEAWAY MODAL -->
   <div id="canvaPromoModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-amber-500/40 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-20">
-        <div>
-          <span class="text-[10px] font-black uppercase tracking-widest bg-amber-500/15 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30">Official Giveaway</span>
-          <h3 class="font-heading text-lg font-black text-white mt-1">Claim Your Free Canva Pro</h3>
-        </div>
-        <button onclick="closeCanvaPromoModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
+        <div><span class="text-[10px] font-black uppercase tracking-widest bg-amber-500/15 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30">Official Giveaway</span><h3 class="font-heading text-lg font-black text-white mt-1">Claim Your Free Canva Pro</h3></div>
+        <button onclick="closeCanvaPromoModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
-
-      <div class="space-y-4 mb-5 text-xs">
-        <div class="p-3.5 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-2">
-          <h4 class="font-bold text-white uppercase text-[10px] tracking-wider text-amber-400">Follow 2 Simple Steps:</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-            <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/40 font-bold transition">
-              <i class="fa-brands fa-instagram text-base"></i> 1. Follow Instagram
-            </a>
-            <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/40 font-bold transition">
-              <i class="fa-brands fa-facebook text-base"></i> 2. Follow Facebook
-            </a>
-          </div>
+      <form id="canvaClaimForm" onsubmit="submitCanvaClaim(event)" class="space-y-3">
+        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label><input type="text" id="promoName" required placeholder="e.g. Ali Raza" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label><input type="tel" id="promoPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
+          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Gmail (for Invite) *</label><input type="email" id="promoEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
         </div>
-
-        <form id="canvaClaimForm" onsubmit="submitCanvaClaim(event)" class="space-y-3">
-          <div>
-            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
-            <input type="text" id="promoName" required placeholder="e.g. Ali Raza" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <div>
-              <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your WhatsApp Number *</label>
-              <input type="tel" id="promoPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-            </div>
-            <div>
-              <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Gmail (for Canva Invite) *</label>
-              <input type="email" id="promoEmail" required placeholder="yourname@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-            </div>
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Social Profile Name / Handle *</label>
-            <input type="text" id="promoHandle" required placeholder="e.g. @aliraza_edits" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-          </div>
-
-          <button type="submit" class="btn-shimmer w-full mt-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-xl">
-            Submit Claim & Get Verified ⚡
-          </button>
-        </form>
-      </div>
+        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Social Handle *</label><input type="text" id="promoHandle" required placeholder="@aliraza_edits" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
+        <button type="submit" class="btn-shimmer w-full mt-2 bg-gradient-to-r from-amber-400 to-amber-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-xl">Submit Claim & Get Verified ⚡</button>
+      </form>
     </div>
   </div>
 
@@ -558,33 +422,15 @@
   <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-5 sm:p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-10">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bag-shopping"></i></div>
-          <h3 class="font-heading text-lg font-black text-white">Your Shopping Basket</h3>
-        </div>
-        <button onclick="closeCartModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition flex-shrink-0">
-          <i class="fa-solid fa-xmark text-base"></i>
-        </button>
+        <div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bag-shopping"></i></div><h3 class="font-heading text-lg font-black text-white">Your Shopping Basket</h3></div>
+        <button onclick="closeCartModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-base"></i></button>
       </div>
       <div id="cartItemsList" class="space-y-3 max-h-60 overflow-y-auto pr-1 mb-4"></div>
-      <div id="cartEmptyState" class="hidden text-center py-8">
-        <i class="fa-solid fa-bag-shopping text-4xl text-gray-600 mb-2"></i>
-        <p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p>
-      </div>
+      <div id="cartEmptyState" class="hidden text-center py-8"><i class="fa-solid fa-bag-shopping text-4xl text-gray-600 mb-2"></i><p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p></div>
       <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
         <div class="flex justify-between text-gray-400"><span>Subtotal:</span><span class="font-bold text-white" id="cartSubtotalText">₨ 0</span></div>
-        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 hidden"><span>Coupon Discount (10% OFF):</span><span class="font-bold" id="cartDiscountText">- ₨ 0</span></div>
         <div class="flex justify-between text-sm font-black text-white border-t border-gray-800/80 pt-2"><span>Total Payable:</span><span class="text-emerald-400 text-base" id="cartFinalTotalText">₨ 0</span></div>
-        <div class="pt-2">
-          <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
-            <input type="text" id="cartCouponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
-            <button type="button" onclick="applyCartCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3.5 py-1.5 rounded-lg transition">Apply</button>
-          </div>
-          <p id="cartCouponMsg" class="text-[11px] font-bold mt-1.5 hidden"></p>
-        </div>
-        <button onclick="proceedToCheckout()" class="btn-shimmer w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
-          Proceed to Complete Checkout ⚡
-        </button>
+        <button onclick="proceedToCheckout()" class="btn-shimmer w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg">Proceed to Checkout ⚡</button>
       </div>
     </div>
   </div>
@@ -593,112 +439,40 @@
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-5 sm:p-7 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-20">
-        <div class="pr-2">
-          <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">Official Checkout</span>
-          <h3 class="font-heading text-base sm:text-lg font-black text-white mt-1 truncate max-w-[260px] sm:max-w-xs" id="modalProductTitle">Place Your Order</h3>
-        </div>
-        <button onclick="closeCheckoutModal()" class="w-10 h-10 rounded-2xl bg-gray-900 hover:bg-red-500/20 text-gray-300 hover:text-red-400 border border-gray-700 flex items-center justify-center transition shadow-lg flex-shrink-0">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
+        <div><span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">Official Checkout</span><h3 class="font-heading text-lg font-black text-white mt-1" id="modalProductTitle">Place Your Order</h3></div>
+        <button onclick="closeCheckoutModal()" class="w-10 h-10 rounded-2xl bg-gray-900 hover:bg-red-500/20 text-gray-300 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
       </div>
-
-      <p class="text-xs text-emerald-400 font-bold mb-3" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
-
-      <div class="mb-4 p-3.5 bg-gray-900/90 rounded-2xl border border-gray-800 space-y-2">
-        <div class="flex items-center justify-between text-xs pb-2 border-b border-gray-800">
-          <span class="text-gray-400 font-bold uppercase text-[10px]">Payment Account Details</span>
-          <span class="text-emerald-400 text-[10px] font-bold">Transfer & Save Trx ID</span>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-          <div class="p-2.5 rounded-xl bg-[#080d16] border border-gray-800/80">
-            <div class="flex justify-between items-center text-[10px] text-gray-400 mb-1">
-              <span>JazzCash / SadaPay</span>
-              <button type="button" onclick="copyText('03462195461', 'JazzCash/SadaPay')" class="text-emerald-400 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
-            </div>
-            <p class="font-bold text-white text-xs">Shaloom Victor</p>
-            <p class="font-mono text-emerald-400 font-black text-sm">03462195461</p>
-          </div>
-          <div class="p-2.5 rounded-xl bg-[#080d16] border border-gray-800/80">
-            <div class="flex justify-between items-center text-[10px] text-gray-400 mb-1">
-              <span>Binance Pay (USDT)</span>
-              <button type="button" onclick="copyText('1083609522', 'Binance UID')" class="text-yellow-400 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
-            </div>
-            <p class="font-bold text-white text-xs">Scott burchill</p>
-            <p class="font-mono text-yellow-400 font-black text-sm">UID: 1083609522</p>
-          </div>
-        </div>
-      </div>
-
+      <p class="text-xs text-emerald-400 font-bold mb-3" id="modalProductPrice">Payable Amount: ₨ 0</p>
       <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
-        <div>
-          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Method Used *</label>
-          <select id="custPaymentMethod" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400">
-            <option value="JazzCash">JazzCash (03462195461 - Shaloom Victor)</option>
-            <option value="SadaPay">SadaPay (03462195461 - Shaloom Victor)</option>
-            <option value="Binance">Binance Pay USDT (UID: 1083609522 - Scott burchill)</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
-          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-        </div>
+        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Method *</label><select id="custPaymentMethod" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"><option value="JazzCash">JazzCash (03462195461)</option><option value="SadaPay">SadaPay (03462195461)</option><option value="Binance">Binance USDT (UID: 1083609522)</option></select></div>
+        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label><input type="text" id="custName" required placeholder="Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          <div>
-            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label>
-            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label>
-            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-          </div>
+          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label><input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
+          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label><input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
         </div>
-        <div>
-          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Name *</label>
-          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
-        </div>
-        <button type="submit" class="btn-shimmer w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg">
-          Submit Order & Get Tracking ID ⚡
-        </button>
+        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Name *</label><input type="text" id="custTrx" required placeholder="Trx ID 98234" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
+        <button type="submit" class="btn-shimmer w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg">Submit Order ⚡</button>
       </form>
     </div>
   </div>
 
-  <!-- ORDER SUCCESS SCREEN (PURE WHITE) -->
+  <!-- ORDER SUCCESS RECEIPT -->
   <div id="trackingScreenModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-white text-gray-900 border border-gray-200 w-full max-w-md rounded-3xl p-6 sm:p-7 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-200 mb-4">
-        <div class="flex items-center gap-2.5">
-          <img src="logo.jpeg" alt="SastaStore" class="w-8 h-8 rounded-xl object-cover border border-emerald-500/40" />
-          <div><span class="font-heading font-black text-base text-gray-900 leading-none block">Sasta<span class="text-emerald-600">Store</span></span><span class="text-[9px] uppercase tracking-wider text-gray-400 font-bold">Official Receipt</span></div>
-        </div>
-        <button onclick="closeTrackingScreen()" class="w-9 h-9 rounded-xl bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-500 border border-gray-200 flex items-center justify-center transition flex-shrink-0"><i class="fa-solid fa-xmark text-sm"></i></button>
+        <div><span class="font-heading font-black text-base text-gray-900 leading-none block">Sasta<span class="text-emerald-600">Store</span></span><span class="text-[9px] uppercase tracking-wider text-gray-400 font-bold">Official Receipt</span></div>
+        <button onclick="closeTrackingScreen()" class="w-9 h-9 rounded-xl bg-gray-100 text-gray-500 border border-gray-200 flex items-center justify-center"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
-
       <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 mb-4 flex items-center justify-between">
         <div><span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider block">Tracking ID</span><span class="font-mono text-base font-black text-emerald-700" id="displayTrackingId">SS-928415</span></div>
-        <button onclick="copyGeneratedTrackingId()" class="p-2 px-3 rounded-xl bg-white hover:bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 transition flex items-center gap-1 shadow-sm"><i class="fa-regular fa-copy"></i> Copy</button>
+        <button onclick="copyGeneratedTrackingId()" class="p-2 px-3 rounded-xl bg-white text-emerald-700 text-xs font-bold border border-emerald-200 shadow-sm"><i class="fa-regular fa-copy"></i> Copy</button>
       </div>
-
       <div class="bg-gray-50 rounded-2xl p-4 border border-gray-200 space-y-2 text-xs mb-4 text-gray-700">
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Customer:</span><span class="font-bold text-gray-900" id="trackCustomerName">Muhammad Ali</span></div>
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Service:</span><span class="font-bold text-emerald-700 text-right truncate max-w-[200px]" id="trackServiceTitle">CapCut Pro</span></div>
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Amount Paid:</span><span class="font-bold text-gray-900" id="trackAmount">₨ 749/-</span></div>
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Payment Method:</span><span class="font-bold text-gray-800" id="trackPaymentMethod">JazzCash</span></div>
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Transaction ID:</span><span class="font-mono font-bold text-gray-900" id="trackTrx">246523422846</span></div>
-        <div class="flex justify-between items-center"><span class="text-gray-500">Ordered On:</span><span class="font-bold text-gray-700" id="trackDate">Today</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Customer:</span><span class="font-bold text-gray-900" id="trackCustomerName">Ali</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Service:</span><span class="font-bold text-emerald-700" id="trackServiceTitle">Tool</span></div>
+        <div class="flex justify-between items-center"><span class="text-gray-500">Amount:</span><span class="font-bold text-gray-900" id="trackAmount">₨ 0</span></div>
       </div>
-
-      <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs mb-4 flex items-start gap-2.5">
-        <i class="fa-solid fa-clock text-amber-600 mt-0.5 text-base"></i>
-        <div><strong class="block text-gray-900 mb-0.5">Pending — Waiting for admin review</strong><span class="text-[11px] text-gray-600 leading-relaxed">Your order has been placed and is waiting for review. System has dispatched an email alert to Admin!</span></div>
-      </div>
-
-      <div class="space-y-2">
-        <a id="trackOptionalWaBtn" href="#" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-black text-xs uppercase rounded-xl transition shadow-md">
-          <i class="fa-brands fa-whatsapp text-base"></i> Optional: Confirm on WhatsApp
-        </a>
-        <button onclick="closeTrackingScreen()" class="w-full py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 font-bold text-xs rounded-xl transition">Back to Home</button>
-      </div>
+      <button onclick="closeTrackingScreen()" class="w-full py-2.5 bg-gray-100 text-gray-700 border border-gray-200 font-bold text-xs rounded-xl transition">Back to Home</button>
     </div>
   </div>
 
@@ -706,83 +480,51 @@
   <div id="detailsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
-        <div class="flex items-center gap-3">
-          <div id="detailIconBox" class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
-            <span id="detailIcon"></span>
-          </div>
-          <div><h3 id="detailTitle" class="font-heading font-black text-base text-white">Product Title</h3><span id="detailTag" class="text-xs text-emerald-400 font-bold">Plan Duration</span></div>
-        </div>
-        <button onclick="closeDetailsModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center"><span id="detailIcon"></span></div><div><h3 id="detailTitle" class="font-heading font-black text-base text-white">Title</h3><span id="detailTag" class="text-xs text-emerald-400 font-bold">Duration</span></div></div>
+        <button onclick="closeDetailsModal()" class="w-9 h-9 rounded-xl bg-gray-900 text-gray-400 border border-gray-700 flex items-center justify-center"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
       <div class="space-y-3 text-xs text-gray-300 leading-relaxed mb-5">
-        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Account Format</span><p id="detailFormat" class="font-semibold text-white">Private Credentials</p></div>
-        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Replacement Warranty</span><p id="detailWarranty" class="font-semibold text-emerald-400">Full Warranty</p></div>
-        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Specifications</span><p id="detailSpecs" class="font-semibold text-gray-300 whitespace-pre-line"></p></div>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Format</span><p id="detailFormat" class="font-semibold text-white"></p></div>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Warranty</span><p id="detailWarranty" class="font-semibold text-emerald-400"></p></div>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Specs</span><p id="detailSpecs" class="font-semibold text-gray-300 whitespace-pre-line"></p></div>
       </div>
       <div class="grid grid-cols-2 gap-2">
-        <button id="detailBasketBtn" class="flex items-center justify-center gap-1.5 py-2.5 bg-gray-900 hover:bg-gray-800 border border-emerald-500/40 text-emerald-400 font-black text-xs rounded-xl transition"><i class="fa-solid fa-plus text-xs"></i> Basket</button>
-        <button id="detailOrderBtn" class="btn-shimmer flex items-center justify-center gap-1.5 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-black text-xs rounded-xl transition shadow-lg">Order Now</button>
+        <button id="detailBasketBtn" class="py-2.5 bg-gray-900 border border-emerald-500/40 text-emerald-400 font-black text-xs rounded-xl">Basket</button>
+        <button id="detailOrderBtn" class="btn-shimmer py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-black text-xs rounded-xl shadow-lg">Order Now</button>
       </div>
     </div>
   </div>
 
-  <!-- TRACK MY ORDERS SEARCH MODAL -->
+  <!-- TRACK ORDER SEARCH MODAL -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
         <div><span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Live Order Tracking</span><h3 class="font-heading text-lg font-black text-white mt-1">Track Order Status</h3></div>
-        <button onclick="closeMyOrdersModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
+        <button onclick="closeMyOrdersModal()" class="w-9 h-9 rounded-xl bg-gray-900 text-gray-400 border border-gray-700 flex items-center justify-center"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
-      <p class="text-xs text-gray-400 mb-3">Enter your exact <strong>Tracking ID</strong> (e.g. SS-928415):</p>
       <div class="flex gap-2 mb-4">
-        <input type="text" id="trackSearchInput" placeholder="Enter Tracking ID (e.g. SS-928415)" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white uppercase font-mono focus:outline-none focus:border-teal-400">
-        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-5 py-2.5 rounded-xl transition">Track</button>
+        <input type="text" id="trackSearchInput" placeholder="Enter Tracking ID (e.g. SS-928415)" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white uppercase font-mono">
+        <button onclick="searchMyOrders()" class="bg-teal-500 text-black font-heading font-black text-xs px-5 py-2.5 rounded-xl">Track</button>
       </div>
-      <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1"><p class="text-xs text-gray-500 text-center py-4">Enter your official Tracking ID above.</p></div>
+      <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1"></div>
     </div>
   </div>
 
   <!-- ADMIN DASHBOARD -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-5 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col my-auto">
-      <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-10">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm"><i class="fa-solid fa-gauge"></i></div>
-          <div><h3 class="font-heading text-lg font-black text-white">SastaStore Order Dashboard</h3><p class="text-[11px] text-gray-400">Live order management & WhatsApp customer dispatch</p></div>
-        </div>
-        <button onclick="closeAdminModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
-      </div>
-
       <div id="adminAuthScreen" class="py-12 text-center max-w-sm mx-auto w-full">
-        <i class="fa-solid fa-lock text-3xl text-emerald-400 mb-3"></i>
         <h4 class="font-heading text-base font-bold text-white mb-1">Enter Admin Password</h4>
         <form onsubmit="verifyAdminPass(event)" class="space-y-3 mt-4">
-          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 text-center focus:outline-none focus:border-emerald-400">
-          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">Unlock Dashboard</button>
+          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white text-center">
+          <button type="submit" class="w-full bg-emerald-500 text-black font-bold uppercase py-2.5 rounded-xl">Unlock</button>
         </form>
       </div>
-
       <div id="adminOrdersPanel" class="hidden flex-1 overflow-hidden flex flex-col">
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
-          <div class="flex items-center gap-2">
-            <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
-            <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
-          </div>
-        </div>
+        <div class="flex justify-between mb-4"><span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span><button onclick="clearAllOrders()" class="bg-red-500/10 text-red-400 px-3 py-1.5 rounded-lg text-xs font-bold">Clear All</button></div>
         <div class="overflow-x-auto overflow-y-auto flex-1 border border-gray-800 rounded-2xl">
           <table class="w-full text-left text-xs text-gray-300">
-            <thead class="bg-gray-900/90 text-gray-400 text-[10px] uppercase font-bold sticky top-0 border-b border-gray-800">
-              <tr>
-                <th class="p-3">Tracking ID / Date</th>
-                <th class="p-3">Customer</th>
-                <th class="p-3">Phone / Email</th>
-                <th class="p-3">Product(s)</th>
-                <th class="p-3">Payment / Trx</th>
-                <th class="p-3">Status</th>
-                <th class="p-3 text-right">Dispatch / Action</th>
-              </tr>
-            </thead>
+            <thead class="bg-gray-900/90 text-[10px] uppercase font-bold sticky top-0"><tr><th class="p-3">ID / Date</th><th class="p-3">Customer</th><th class="p-3">Phone</th><th class="p-3">Product</th><th class="p-3">Trx</th><th class="p-3 text-right">Action</th></tr></thead>
             <tbody id="ordersTableBody" class="divide-y divide-gray-800"></tbody>
           </table>
         </div>
@@ -790,7 +532,6 @@
     </div>
   </div>
 
-  <!-- TOAST -->
   <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-500 text-black font-extrabold px-5 py-2.5 rounded-xl text-xs shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
     <span id="toastMsg">Notification message</span>
   </div>
@@ -801,47 +542,69 @@
     const STORE_WHATSAPP = "923136093501";
     const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbgllnzv";
 
-    let currentCategory = 'all';
     let cart = []; 
     let appliedDiscountPercent = 0;
 
-    // BRAND VECTOR ICONS LIBRARY (OFFICIAL LOGOS)
-    const BRAND_ICONS = {
-      capcut: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M2.5 5.5h6l3.5 6.5-3.5 6.5h-6l3.5-6.5zm19 0h-6l-3.5 6.5 3.5 6.5h6l-3.5-6.5z"/></svg>`,
-      chatgpt: `<svg class="w-6 h-6 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M22.28 10.37a5.55 5.55 0 0 0-.47-4.48 5.68 5.68 0 0 0-5.59-2.81 5.56 5.56 0 0 0-4.14-1.84 5.68 5.68 0 0 0-5.4 3.93 5.54 5.54 0 0 0-3.67 2.65 5.68 5.68 0 0 0 .74 6.2 5.56 5.56 0 0 0 .47 4.48 5.68 5.68 0 0 0 5.59 2.81 5.56 5.56 0 0 0 4.14 1.84 5.68 5.68 0 0 0 5.4-3.93 5.54 5.54 0 0 0 3.67-2.65 5.68 5.68 0 0 0-.74-6.2zm-8.85 9.77a3.84 3.84 0 0 1-2.45-.88l.12-.07 4.07-2.35a.94.94 0 0 0 .47-.81v-5.75l1.83 1.06v4.98a3.87 3.87 0 0 1-4.04 3.82zm-8.15-3.5a3.86 3.86 0 0 1-.49-2.55l.12.07 4.07 2.35a.93.93 0 0 0 .94 0l4.98-2.88v2.11l-4.31 2.49a3.87 3.87 0 0 1-5.31-1.59zm-1.12-8.54a3.84 3.84 0 0 1 1.96-1.68v4.86a.94.94 0 0 0 .47.81l4.98 2.88-1.83 1.06-4.31-2.49a3.87 3.87 0 0 1-1.27-5.44zm14.15 3.75l-4.98-2.88 1.83-1.06 4.31 2.49a3.87 3.87 0 0 1 1.27 5.44 3.84 3.84 0 0 1-1.96 1.68v-4.86a.94.94 0 0 0-.47-.81zm2.4 4.31l-.12-.07-4.07-2.35a.93.93 0 0 0-.94 0l-4.98 2.88v-2.11l4.31-2.49a3.87 3.87 0 0 1 5.8 4.14zm-9.33-3.66l-2.02-1.17 2.02-1.17 2.02 1.17z"/></svg>`,
-      elevenlabs: `<svg class="w-6 h-6 fill-current text-indigo-400" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7V4zm6.5 0H17v16h-3.5V4z"/></svg>`,
-      canva: `<svg class="w-6 h-6 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.3 13.8a4.4 4.4 0 0 1-2.9 1 4.7 4.7 0 0 1-4.7-4.7 4.9 4.9 0 0 1 5-5 4.3 4.3 0 0 1 2.5.8l-1 1.4a3 3 0 0 0-1.5-.5 3.2 3.2 0 0 0-3.3 3.3 3.1 3.1 0 0 0 3.1 3.1 3.6 3.6 0 0 0 2-.7z"/></svg>`,
-      gemini: `<svg class="w-6 h-6 fill-current text-teal-300" viewBox="0 0 24 24"><path d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.627 12 12 0-6.627 5.627-12 12-12-6.627 0-12-5.627-12-12z"/></svg>`,
-      claude: `<svg class="w-6 h-6 fill-current text-amber-500" viewBox="0 0 24 24"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>`,
-      grok: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
-      windows: `<svg class="w-6 h-6 fill-current text-blue-400" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>`,
-      youtube: `<i class="fa-brands fa-youtube text-red-500 text-xl"></i>`,
-      netflix: `<i class="fa-solid fa-clapperboard text-red-600 text-xl"></i>`,
-      prime: `<i class="fa-brands fa-amazon text-blue-400 text-xl"></i>`,
-      vpn: `<i class="fa-solid fa-shield-halved text-cyan-400 text-xl"></i>`,
-      apple: `<i class="fa-brands fa-apple text-gray-200 text-xl"></i>`,
-      generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
-    };
-
-    // SIDEBAR TOGGLE
     function toggleSidebar() {
       const drawer = document.getElementById("sideDrawer");
       if (!drawer) return;
       drawer.style.display = (drawer.style.display === "none" || drawer.style.display === "") ? "flex" : "none";
     }
 
-    // PAKISTANI PHONE NORMALIZER
     function formatPakistaniWhatsApp(phone) {
       if (!phone) return "";
       let clean = phone.replace(/[^0-9]/g, '');
       if (clean.startsWith('03')) return '92' + clean.substring(1);
       if (clean.startsWith('3') && clean.length === 10) return '92' + clean;
-      if (clean.startsWith('0092')) return clean.substring(2);
       if (clean.startsWith('92')) return clean;
       return clean;
     }
 
-    // FORMSPREE DISPATCH (SENT DIRECTLY TO LucariAlsonkirll@outlook.com)
+    const BRAND_ICONS = {
+      capcut: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M2.5 5.5h6l3.5 6.5-3.5 6.5h-6l3.5-6.5zm19 0h-6l-3.5 6.5 3.5 6.5h6l-3.5-6.5z"/></svg>`,
+      chatgpt: `<svg class="w-6 h-6 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M22.28 10.37a5.55 5.55 0 0 0-.47-4.48 5.68 5.68 0 0 0-5.59-2.81 5.56 5.56 0 0 0-4.14-1.84 5.68 5.68 0 0 0-5.4 3.93 5.54 5.54 0 0 0-3.67 2.65 5.68 5.68 0 0 0 .74 6.2 5.56 5.56 0 0 0 .47 4.48 5.68 5.68 0 0 0 5.59 2.81 5.56 5.56 0 0 0 4.14 1.84 5.68 5.68 0 0 0 5.4-3.93 5.54 5.54 0 0 0 3.67-2.65 5.68 5.68 0 0 0-.74-6.2z"/></svg>`,
+      elevenlabs: `<svg class="w-6 h-6 fill-current text-indigo-400" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7V4zm6.5 0H17v16h-3.5V4z"/></svg>`,
+      canva: `<svg class="w-6 h-6 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.3 13.8a4.4 4.4 0 0 1-2.9 1 4.7 4.7 0 0 1-4.7-4.7 4.9 4.9 0 0 1 5-5 4.3 4.3 0 0 1 2.5.8l-1 1.4a3 3 0 0 0-1.5-.5 3.2 3.2 0 0 0-3.3 3.3 3.1 3.1 0 0 0 3.1 3.1 3.6 3.6 0 0 0 2-.7z"/></svg>`,
+      gemini: `<svg class="w-6 h-6 fill-current text-teal-300" viewBox="0 0 24 24"><path d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.627 12 12 0-6.627 5.627-12 12-12-6.627 0-12-5.627-12-12z"/></svg>`,
+      claude: `<svg class="w-6 h-6 fill-current text-amber-500" viewBox="0 0 24 24"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>`,
+      grok: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/></svg>`,
+      windows: `<svg class="w-6 h-6 fill-current text-blue-400" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>`,
+      youtube: `<i class="fa-brands fa-youtube text-red-500 text-xl"></i>`,
+      netflix: `<i class="fa-solid fa-clapperboard text-red-600 text-xl"></i>`,
+      prime: `<i class="fa-brands fa-amazon text-blue-400 text-xl"></i>`,
+      vpn: `<i class="fa-solid fa-shield-halved text-cyan-400 text-xl"></i>`,
+      tiktok: `<i class="fa-brands fa-tiktok text-pink-400 text-xl"></i>`,
+      generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
+    };
+
+    // COMPLETE PRODUCT CATALOG (INCLUDING TIKTOK UK SIM)
+    const products = [
+      { id: 145, title: "TikTok UK SIM (Live Streaming Only)", category: "accounts", tag: "Physical SIM Card", warranty: "No Warranty (Non-Active)", format: "Delivered via Courier", specs: "TikTok UK SIM card strictly for Live Streaming only. Non-active cellular service, no OTP receiving. Delivery Time: 3 to 4 Days.", origPricePKR: 3500, pricePKR: 3000, badge: "Live SIM", iconKey: "tiktok", color: "from-pink-600 to-rose-700", urgency: "Delivery: 3-4 Days" },
+      { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning & Dubbing.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700", urgency: "⚡ 3 Left Today" },
+      { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits for YouTube voiceovers & podcasts.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800", urgency: "⚡ Instant Delivery" },
+      { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Team Plan (500 Credits Included)", specs: "30 Days Full Access, 25 Days Replacement Warranty, Team Plan with 500 Credits included.", origPricePKR: 999, pricePKR: 749, badge: "Hot Seller", iconKey: "capcut", color: "from-blue-500 to-cyan-600", urgency: "⚡ 5 Left Today" },
+      { id: 5, title: "Canva Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Replacement Warranty", format: "Invite Based Access to Your Email", specs: "1 Year Validity with 6 Months Guaranteed Warranty. Official invite based access.", origPricePKR: 349, pricePKR: 249, badge: "Popular", iconKey: "canva", color: "from-cyan-500 to-blue-500", urgency: "⚡ Best Seller" },
+      { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", iconKey: "chatgpt", color: "from-emerald-600 to-teal-800", urgency: "⚡ Stock Available" },
+      { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty", format: "Account Login / Upgrade", specs: "18 Months Long Validity. Google Gemini Advanced with 1 Million token reasoning.", origPricePKR: 999, pricePKR: 649, badge: "Top AI", iconKey: "gemini", color: "from-teal-400 to-emerald-600", urgency: "⚡ 4 Accounts Left" },
+      { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Ad-free videos & YouTube Music.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", iconKey: "youtube", color: "from-red-500 to-red-700", urgency: "⚡ Instant" },
+      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", iconKey: "windows", color: "from-blue-600 to-indigo-700", urgency: "⚡ 10 Keys Left" }
+    ];
+
+    // AUTOMATED SIDE-BY-SIDE BANNERS SLIDER ENGINE (EVERY 4 SECONDS)
+    function initBannerSliders() {
+      const containers = document.querySelectorAll('.slide-track-container');
+      containers.forEach(container => {
+        const slides = container.querySelectorAll('.slide-item-box');
+        if (slides.length < 2) return;
+        let activeIdx = 0;
+        setInterval(() => {
+          slides[activeIdx].classList.remove('active');
+          activeIdx = (activeIdx + 1) % slides.length;
+          slides[activeIdx].classList.add('active');
+        }, 4000);
+      });
+    }
+
     function sendSystemAdminAlert(orderDetails) {
       if (!FORMSPREE_ENDPOINT) return;
       fetch(FORMSPREE_ENDPOINT, {
@@ -862,7 +625,6 @@
       }).catch(() => {});
     }
 
-    // FREE CANVA PRO GIVEAWAY MODAL & DISPATCH
     function openCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.remove("hidden"); }
     function closeCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.add("hidden"); }
 
@@ -878,7 +640,6 @@
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
           subject: `🎁 FREE CANVA PRO CLAIM: ${name} (${handle})`,
-          campaign: "Free Canva Pro Social Giveaway",
           customer_name: name,
           whatsapp_phone: phone,
           delivery_gmail: email,
@@ -890,42 +651,8 @@
       if (typeof confetti === 'function') confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
       closeCanvaPromoModal();
       document.getElementById("canvaClaimForm").reset();
-      alert("✅ Your Canva Pro claim has been submitted! Our team will verify your follow and send the invite to your Gmail within a few hours.");
+      alert("✅ Your Canva Pro claim has been submitted successfully!");
     }
-
-    // COMPLETE PRODUCT CATALOG (WITH BRAND SVG EMBEDS)
-    const products = [
-      { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning, Ultra-Natural Multilingual Dubbing & Audio Studio Access.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700" },
-      { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits. Ideal for high-volume YouTube voiceovers, podcasts, multilingual cloning & sound design.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800" },
-      { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Team Plan (500 Credits Included)", specs: "30 Days Full Access, 25 Days Replacement Warranty, Team Plan with 500 Credits included. High bitrate 4K video exports, VIP filters, animations & auto captions.", origPricePKR: 999, pricePKR: 749, badge: "Hot Seller", iconKey: "capcut", color: "from-blue-500 to-cyan-600" },
-      { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "5 Months Replacement Warranty", format: "Email + Password Login", specs: "Full 6 Months Access with 5 Months Replacement Warranty. Email + Password login. Unlocks all desktop & mobile pro effects, 4K exports & cloud drafts.", origPricePKR: 4499, pricePKR: 3399, badge: "Best Value", iconKey: "capcut", color: "from-blue-600 to-indigo-700" },
-      { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "6 to 7 Days Full Warranty", format: "Email + Password Login", specs: "6 to 7 Days Full Warranty. Email + Password login. Instant unlock of all VIP features for urgent video rendering and social media edits.", origPricePKR: 249, pricePKR: 179, badge: "Budget", iconKey: "capcut", color: "from-sky-500 to-blue-600" },
-      { id: 116, title: "CapCut Pro Admin Team (7 Seats)", category: "design", tag: "1 Month (7 Seats)", warranty: "25 Days Replacement Warranty", format: "Admin Control Dashboard", specs: "Manage and allocate 7 individual CapCut Pro logins for your production team or clients.", origPricePKR: 4999, pricePKR: 3499, badge: "Reseller Team", iconKey: "capcut", color: "from-blue-600 to-teal-600" },
-      { id: 5, title: "Canva Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Replacement Warranty", format: "Invite Based Access to Your Email", specs: "1 Year Validity with 6 Months Guaranteed Warranty. Official invite based access on your own Gmail. Premium templates, Brand Kit, Magic Studio AI & transparent PNGs.", origPricePKR: 349, pricePKR: 249, badge: "Popular", iconKey: "canva", color: "from-cyan-500 to-blue-500" },
-      { id: 6, title: "Canva Business", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Invite Based Access", specs: "1 Month Canva Business with 25 Days Warranty. Invite access on your account with Brand Kits, unlimited fonts & priority features.", origPricePKR: 749, pricePKR: 499, badge: "Business", iconKey: "canva", color: "from-teal-500 to-blue-600" },
-      { id: 7, title: "Canva Admin Panel", category: "design", tag: "1 Year+ Validity", warranty: "6 Months Complete Warranty", format: "Admin Master Control Account", specs: "1 Year+ Validity with 6 Months Complete Warranty. Add up to 500 members under your team, manage permissions & sell team invites to earn daily.", origPricePKR: 3499, pricePKR: 2499, badge: "Reseller Kit", iconKey: "canva", color: "from-purple-600 to-indigo-700" },
-      { id: 130, title: "HeyGen 600 Credits", category: "ai", tag: "600 Mega Credits", warranty: "25 Days Subscription Replacement Warranty", format: "On Mail + Readymade Account (Email + Pass Both Possible)", specs: "On mail or readymade email+password both options possible. 600 credits for unlimited avatars, voice cloning & AI studio video generation with 25 Days Replacement Warranty.", origPricePKR: 7999, pricePKR: 6199, badge: "Mega Video", iconKey: "generic", color: "from-purple-700 to-pink-600" },
-      { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "20 Days Warranty", format: "Direct Panel Credits Topup", specs: "Ultra-realistic AI Avatar video generation, voice cloning, multiple languages with fast rendering.", origPricePKR: 17999, pricePKR: 14499, badge: "Top AI Video", iconKey: "generic", color: "from-purple-600 to-indigo-700" },
-      { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access, Code Interpreter, Voice mode & Custom GPTs without sharing.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", iconKey: "chatgpt", color: "from-emerald-600 to-teal-800" },
-      { id: 133, title: "ChatGPT Plus (Shared)", category: "ai", tag: "1 Device Access", warranty: "20 Days Replacement Warranty", format: "Email + Password Shared Login", specs: "Email + Password login. GPT-4o access, file uploads, coding assistance & web search on 1 device.", origPricePKR: 1499, pricePKR: 1099, badge: "Popular AI", iconKey: "chatgpt", color: "from-emerald-500 to-teal-700" },
-      { id: 132, title: "Claude Pro", category: "ai", tag: "Monthly Direct", warranty: "Direct Official Access Warranty", format: "Pre-made Official Pro Account", specs: "Claude 3.5 Sonnet access, 5x higher usage limits, Artifacts builder, Priority bandwidth.", origPricePKR: 6499, pricePKR: 5299, badge: "Top AI", iconKey: "claude", color: "from-amber-600 to-orange-700" },
-      { id: 131, title: "Grok Paid Account Monthly", category: "ai", tag: "Monthly Plan", warranty: "Full Month Warranty", format: "On Mail + Readymade Account", specs: "Real-time X integration, uncensored intelligence & FLUX image generation.", origPricePKR: 7499, pricePKR: 5999, badge: "xAI Official", iconKey: "grok", color: "from-zinc-700 to-black" },
-      { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty", format: "Account Login / Upgrade", specs: "18 Months Long Validity. Google Gemini Advanced with 1 Million token reasoning.", origPricePKR: 999, pricePKR: 649, badge: "Top AI", iconKey: "gemini", color: "from-teal-400 to-emerald-600" },
-      { id: 137, title: "Perplexity Enterprise Pro (1 Month)", category: "ai", tag: "Enterprise Plan ($8.00)", warranty: "7 Days Warranty", format: "Ready Account (Private Access)", specs: "Enterprise-Grade AI Search & Deep Research with Source-Cited Answers.", origPricePKR: 3499, pricePKR: 2239, badge: "Deep Research", iconKey: "generic", color: "from-teal-600 to-cyan-700" },
-      { id: 138, title: "Lovable Lite (12 Months)", category: "design", tag: "12 Months ($12.00)", warranty: "No Warranty", format: "Ready Account", specs: "Build Apps, Tools & Workflows Easily. Custom domains & Remove Lovable badge.", origPricePKR: 4999, pricePKR: 3359, badge: "App Builder", iconKey: "generic", color: "from-rose-500 to-red-600" },
-      { id: 119, title: "Windows 10 Pro Retail Key", category: "keys", tag: "Global Retail Key", warranty: "Online Permanent Activation", format: "License Key (Outlook Format)", specs: "Delivered in official Outlook format containing original 25-digit retail license key.", origPricePKR: 1099, pricePKR: 699, badge: "Retail Key", iconKey: "windows", color: "from-sky-500 to-blue-700" },
-      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently to motherboard.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", iconKey: "windows", color: "from-blue-600 to-indigo-700" },
-      { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Ad-free streaming & YouTube Music included.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", iconKey: "youtube", color: "from-red-500 to-red-700" },
-      { id: 16, title: "Netflix Single Screen (Monthly)", category: "streaming", tag: "1 Profile Screen", warranty: "25 Days Stable Warranty", format: "Private Profile with PIN", specs: "UHD 4K streaming on 1 screen with dedicated profile name and personal PIN lock.", origPricePKR: 499, pricePKR: 349, badge: "Streaming", iconKey: "netflix", color: "from-red-600 to-rose-700" },
-      { id: 113, title: "Amazon Prime Video (1 Month)", category: "streaming", tag: "30 Days HD/4K", warranty: "25 Days Stable Warranty", format: "Email + Password", specs: "Full HD/4K streaming on smart TVs, mobile, and web with guaranteed profile privacy.", origPricePKR: 549, pricePKR: 349, badge: "Movies", iconKey: "prime", color: "from-blue-500 to-sky-700" },
-      { id: 20, title: "NordVPN (3 Months)", category: "accounts", tag: "3 Months Access", warranty: "45 Days Warranty", format: "Ready Account", specs: "High-speed VPN servers worldwide with 45 Days Warranty.", origPricePKR: 1899, pricePKR: 1299, badge: "45D Warranty", iconKey: "vpn", color: "from-blue-600 to-sky-700" }
-    ];
-
-    const defaultReviews = [
-      { name: "Ahmad Khan", role: "Video Editor", text: "Ordered CapCut Pro 6 Months plan directly through the site. Payment verified in 2 minutes. Best store in Pakistan!", rating: 5, date: "Yesterday" },
-      { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5, date: "2 days ago" },
-      { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
-    ];
 
     function openDetailsModal(id) {
       const prod = products.find(p => p.id === id);
@@ -949,36 +676,15 @@
       const container = document.getElementById("reviewsContainer");
       if (!container) return;
       container.innerHTML = defaultReviews.map(r => `
-        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800 hover:border-amber-500/30 transition">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-1 text-amber-400 text-xs">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div>
-              <span class="text-[10px] text-gray-500">${r.date}</span>
-            </div>
-            <p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p>
-          </div>
-          <div class="flex items-center justify-between pt-3 border-t border-gray-800/80">
-            <div><p class="text-xs font-bold text-white">${r.name}</p><p class="text-[10px] text-gray-500">${r.role}</p></div>
-            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Verified</span>
-          </div>
+        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800">
+          <div><div class="flex items-center gap-1 text-amber-400 text-xs mb-3">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div><p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p></div>
+          <div class="flex items-center justify-between pt-3 border-t border-gray-800"><div><p class="text-xs font-bold text-white">${r.name}</p><p class="text-[10px] text-gray-500">${r.role}</p></div><span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded">Verified</span></div>
         </div>
       `).join("");
     }
 
     function openReviewModal() { document.getElementById("reviewModal").classList.remove("hidden"); }
     function closeReviewModal() { document.getElementById("reviewModal").classList.add("hidden"); }
-
-    function submitLiveReview(e) {
-      e.preventDefault();
-      const name = document.getElementById("revName").value.trim();
-      const role = document.getElementById("revRole").value.trim() || "Verified Buyer";
-      const rating = parseInt(document.getElementById("revRating").value);
-      const text = document.getElementById("revText").value.trim();
-      defaultReviews.unshift({ name, role, rating, text, date: "Just now" });
-      closeReviewModal();
-      renderReviews();
-      showToast("Thank you! Review posted.");
-    }
 
     function addToCart(id) {
       const prod = products.find(p => p.id === id);
@@ -988,89 +694,33 @@
       showToast(`Added ${prod.title} to Basket!`);
     }
 
-    function removeFromCart(idx) {
-      cart.splice(idx, 1);
-      updateCartUi();
-      renderCartItems();
-    }
-
-    function updateCartUi() {
-      const count = cart.length;
-      document.getElementById("cartCountBadge").textContent = count;
-      document.getElementById("drawerCartBadge").textContent = count;
-    }
+    function removeFromCart(idx) { cart.splice(idx, 1); updateCartUi(); renderCartItems(); }
+    function updateCartUi() { document.getElementById("cartCountBadge").textContent = cart.length; document.getElementById("drawerCartBadge").textContent = cart.length; }
 
     function openCartModal() { renderCartItems(); document.getElementById("cartModal").classList.remove("hidden"); }
     function closeCartModal() { document.getElementById("cartModal").classList.add("hidden"); }
-
-    function calculateCartSubtotal() { return cart.reduce((acc, item) => acc + item.pricePKR, 0); }
 
     function renderCartItems() {
       const list = document.getElementById("cartItemsList");
       const emptyState = document.getElementById("cartEmptyState");
       const summaryBox = document.getElementById("cartSummaryBox");
-      if (cart.length === 0) {
-        list.innerHTML = "";
-        emptyState.classList.remove("hidden");
-        summaryBox.classList.add("hidden");
-        return;
-      }
-      emptyState.classList.add("hidden");
-      summaryBox.classList.remove("hidden");
+      if (cart.length === 0) { list.innerHTML = ""; emptyState.classList.remove("hidden"); summaryBox.classList.add("hidden"); return; }
+      emptyState.classList.add("hidden"); summaryBox.classList.remove("hidden");
       list.innerHTML = cart.map((item, idx) => `
         <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
-          <div class="flex items-center gap-2.5 flex-1 truncate">
-            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
-              ${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}
-            </div>
-            <div class="truncate"><div class="font-bold text-white truncate">${item.title}</div><div class="text-[10px] text-gray-500">${item.tag}</div></div>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="font-black text-emerald-400">₨ ${item.pricePKR}/-</span>
-            <button onclick="removeFromCart(${idx})" class="text-red-400 hover:text-red-300 text-sm p-1"><i class="fa-solid fa-trash-can"></i></button>
-          </div>
+          <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
+          <div class="flex items-center gap-3"><span class="font-black text-emerald-400">₨ ${item.pricePKR}/-</span><button onclick="removeFromCart(${idx})" class="text-red-400"><i class="fa-solid fa-trash-can"></i></button></div>
         </div>
       `).join("");
-      updateCartTotalsDisplay();
-    }
-
-    function updateCartTotalsDisplay() {
-      const subtotal = calculateCartSubtotal();
-      document.getElementById("cartSubtotalText").textContent = `₨ ${subtotal}/-`;
-      let discountAmount = (appliedDiscountPercent > 0 && subtotal >= 3000) ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
-      const finalTotal = subtotal - discountAmount;
-      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/- ($${(finalTotal / USD_RATE).toFixed(2)} USD)`;
-    }
-
-    function applyCartCoupon() {
-      const code = document.getElementById("cartCouponInput").value.trim().toUpperCase();
-      const msg = document.getElementById("cartCouponMsg");
-      const subtotal = calculateCartSubtotal();
-      if (code === "SASTA10") {
-        if (subtotal < 3000) {
-          msg.textContent = "⚠️ SASTA10 requires minimum cart of ₨ 3,000/-.";
-          msg.className = "text-[11px] font-bold text-amber-400 block";
-          return;
-        }
-        appliedDiscountPercent = 10;
-        msg.textContent = "✅ Coupon SASTA10 applied! 10% OFF.";
-        msg.className = "text-[11px] font-bold text-emerald-400 block";
-        updateCartTotalsDisplay();
-        showToast("10% Discount Applied!");
-      } else {
-        msg.textContent = "❌ Invalid coupon code.";
-        msg.className = "text-[11px] font-bold text-red-400 block";
-      }
+      document.getElementById("cartFinalTotalText").textContent = `₨ ${cart.reduce((a,b)=>a+b.pricePKR,0)}/-`;
     }
 
     function proceedToCheckout() {
       if (cart.length === 0) return;
       closeCartModal();
-      const subtotal = calculateCartSubtotal();
-      let discount = appliedDiscountPercent > 0 ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
-      const finalTotal = subtotal - discount;
+      const total = cart.reduce((a,b)=>a+b.pricePKR,0);
       document.getElementById("modalProductTitle").textContent = `${cart.length} Item(s): ${cart.map(c => c.title).join(" + ")}`;
-      document.getElementById("modalProductPrice").innerHTML = `Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${finalTotal}/- ($${(finalTotal / USD_RATE).toFixed(2)} USD)</span>`;
+      document.getElementById("modalProductPrice").innerHTML = `Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${total}/-</span>`;
       document.getElementById("checkoutModal").classList.remove("hidden");
     }
 
@@ -1092,15 +742,12 @@
       const trx = document.getElementById("custTrx").value.trim();
       const phone = formatPakistaniWhatsApp(rawPhone);
 
-      const subtotal = calculateCartSubtotal();
-      let discount = appliedDiscountPercent > 0 ? Math.round(subtotal * (appliedDiscountPercent / 100)) : 0;
-      const finalTotal = subtotal - discount;
+      const total = cart.reduce((a,b)=>a+b.pricePKR,0);
       const trackingId = `SS-${Math.floor(100000 + Math.random() * 900000)}`;
       const orderDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-      const itemsListText = cart.map((c, i) => `${i+1}. ${c.title} - ₨ ${c.pricePKR}/-`).join("\n");
       const primaryTitle = cart.map(c => c.title).join(", ");
 
-      const orderData = { id: trackingId, date: orderDate, product: primaryTitle, price: `₨ ${finalTotal}/-`, name, phone, rawPhone, email, method, trx, status: 'Pending' };
+      const orderData = { id: trackingId, date: orderDate, product: primaryTitle, price: `₨ ${total}/-`, name, phone, rawPhone, email, method, trx, status: 'Pending' };
 
       let orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
       orders.unshift(orderData);
@@ -1108,15 +755,10 @@
 
       sendSystemAdminAlert(orderData);
 
-      const customerSlip = `*ORDER VERIFICATION INVOICE - SASTASTORE*\nTracking ID: ${trackingId}\nCustomer: ${name}\nTotal: ₨ ${finalTotal}/-\nTrx ID: ${trx}`;
       document.getElementById("displayTrackingId").textContent = trackingId;
       document.getElementById("trackCustomerName").textContent = name;
       document.getElementById("trackServiceTitle").textContent = primaryTitle;
-      document.getElementById("trackAmount").textContent = `₨ ${finalTotal}/-`;
-      document.getElementById("trackPaymentMethod").textContent = method;
-      document.getElementById("trackTrx").textContent = trx;
-      document.getElementById("trackDate").textContent = orderDate;
-      document.getElementById("trackOptionalWaBtn").href = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(customerSlip)}`;
+      document.getElementById("trackAmount").textContent = `₨ ${total}/-`;
 
       if (typeof confetti === 'function') confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
       closeCheckoutModal();
@@ -1126,10 +768,7 @@
     }
 
     function closeTrackingScreen() { document.getElementById("trackingScreenModal").classList.add("hidden"); }
-    function copyGeneratedTrackingId() {
-      navigator.clipboard.writeText(document.getElementById("displayTrackingId").textContent.trim());
-      showToast("Tracking ID copied!");
-    }
+    function copyGeneratedTrackingId() { navigator.clipboard.writeText(document.getElementById("displayTrackingId").textContent.trim()); showToast("Tracking ID copied!"); }
 
     function openMyOrdersModal() { document.getElementById("myOrdersModal").classList.remove("hidden"); }
     function closeMyOrdersModal() { document.getElementById("myOrdersModal").classList.add("hidden"); }
@@ -1138,15 +777,10 @@
       const q = document.getElementById("trackSearchInput").value.trim().toUpperCase();
       const res = document.getElementById("myOrdersResults");
       const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
-      if (!q) { res.innerHTML = `<p class="text-xs text-red-400 text-center py-3">Please enter your Tracking ID.</p>`; return; }
+      if (!q) { res.innerHTML = `<p class="text-xs text-red-400 text-center py-3">Enter Tracking ID.</p>`; return; }
       const matched = orders.filter(o => o.id && o.id.toUpperCase() === q);
-      if (matched.length === 0) { res.innerHTML = `<p class="text-xs text-gray-400 text-center py-3">No order found with Tracking ID: ${q}</p>`; return; }
-      res.innerHTML = matched.map(o => `
-        <div class="p-3.5 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-between text-xs">
-          <div><div class="font-bold text-white text-sm">${o.product}</div><div class="text-[11px] text-emerald-400 font-mono font-bold mt-0.5">ID: ${o.id}</div><div class="text-[10px] text-gray-500">${o.date} • ${o.price}</div></div>
-          <span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">${o.status}</span>
-        </div>
-      `).join("");
+      if (matched.length === 0) { res.innerHTML = `<p class="text-xs text-gray-400 text-center py-3">No order found with ID: ${q}</p>`; return; }
+      res.innerHTML = matched.map(o => `<div class="p-3.5 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-between text-xs"><div><div class="font-bold text-white">${o.product}</div><div class="text-[11px] text-emerald-400 font-mono">ID: ${o.id}</div></div><span class="text-[10px] px-2.5 py-1 rounded-full font-bold bg-amber-500/20 text-amber-400">${o.status}</span></div>`).join("");
     }
 
     function openAdminModal() { document.getElementById("adminModal").classList.remove("hidden"); }
@@ -1166,39 +800,20 @@
       document.getElementById("ordersCountBadge").textContent = orders.length;
       const tbody = document.getElementById("ordersTableBody");
       if (!tbody) return;
-      if (orders.length === 0) { tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-gray-500">No orders yet.</td></tr>`; return; }
+      if (orders.length === 0) { tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-gray-500">No orders yet.</td></tr>`; return; }
       tbody.innerHTML = orders.map((o, idx) => `
         <tr class="hover:bg-gray-900/50">
-          <td class="p-3 whitespace-nowrap"><div class="font-mono text-emerald-400 font-bold">${o.id}</div><div class="text-[10px] text-gray-500">${o.date}</div></td>
+          <td class="p-3"><div class="font-mono text-emerald-400 font-bold">${o.id}</div><div class="text-[10px] text-gray-500">${o.date}</div></td>
           <td class="p-3 font-bold text-white">${o.name}</td>
-          <td class="p-3"><div class="text-emerald-400 font-mono font-bold">${o.phone}</div><div class="text-[10px] text-gray-400">${o.email}</div></td>
+          <td class="p-3 text-emerald-400 font-mono">${o.phone}</td>
           <td class="p-3 font-semibold text-gray-200">${o.product}</td>
-          <td class="p-3"><div class="text-[10px] text-gray-400">${o.method}</div><div class="font-mono text-xs text-emerald-300 font-bold">${o.trx}</div></td>
-          <td class="p-3"><span class="text-[10px] px-2 py-0.5 rounded font-bold ${o.status === 'Completed' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}">${o.status}</span></td>
-          <td class="p-3 text-right whitespace-nowrap">
-            <a href="https://wa.me/${o.phone}?text=Hello%20${encodeURIComponent(o.name)},%20your%20SastaStore%20order%20(${o.id})%20is%20ready!" target="_blank" class="px-2.5 py-1.5 bg-emerald-500 text-black font-bold rounded-lg text-xs inline-flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp</a>
-          </td>
+          <td class="p-3 font-mono text-xs text-emerald-300">${o.trx}</td>
+          <td class="p-3 text-right"><a href="https://wa.me/${o.phone}?text=Hello%20${encodeURIComponent(o.name)},%20your%20order%20(${o.id})%20is%20ready!" target="_blank" class="px-2.5 py-1.5 bg-emerald-500 text-black font-bold rounded-lg text-xs"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></td>
         </tr>
       `).join("");
     }
 
-    function clearAllOrders() {
-      if (confirm("Clear all orders?")) {
-        localStorage.removeItem('sasta_orders');
-        loadAdminOrders();
-      }
-    }
-
-    function exportOrdersCSV() {
-      const orders = JSON.parse(localStorage.getItem('sasta_orders') || '[]');
-      if (orders.length === 0) return alert("No orders!");
-      let csv = "Tracking ID,Date,Name,Phone,Email,Product,Price,Method,Trx,Status\n";
-      orders.forEach(o => { csv += `"${o.id}","${o.date}","${o.name}","${o.phone}","${o.email}","${o.product}","${o.price}","${o.method}","${o.trx}","${o.status}"\n`; });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
-      a.download = `SastaStore_Orders_${Date.now()}.csv`;
-      a.click();
-    }
+    function clearAllOrders() { if (confirm("Clear all?")) { localStorage.removeItem('sasta_orders'); loadAdminOrders(); } }
 
     function filterCategory(cat, btn) {
       currentCategory = cat;
@@ -1216,8 +831,6 @@
     }
     document.getElementById("searchInput")?.addEventListener("input", filterAndSearch);
 
-    function copyText(t, label) { navigator.clipboard.writeText(t); showToast(`${label} copied!`); }
-
     function showToast(msg) {
       const toast = document.getElementById("toast");
       if (!toast) return;
@@ -1227,7 +840,7 @@
       setTimeout(() => { toast.classList.remove("opacity-100"); toast.classList.add("opacity-0", "pointer-events-none"); }, 2500);
     }
 
-    // RENDER PRODUCTS WITH OFFICIAL BRAND VECTOR ICONS
+    // RENDER PRODUCTS WITH LIVE STOCK BADGES & OFFICIAL ICONS
     function renderProducts(items) {
       const grid = document.getElementById("productsGrid");
       if (!grid) return;
@@ -1243,6 +856,13 @@
                 <span class="text-[11px] font-semibold text-gray-400 mt-1">${p.tag}</span>
               </div>
             </div>
+
+            ${p.urgency ? `
+              <div class="mb-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/30 text-[10px] font-black text-amber-400 animate-pulse">
+                <i class="fa-solid fa-fire text-amber-400"></i> ${p.urgency}
+              </div>
+            ` : ''}
+
             <h3 class="font-heading text-base font-bold text-white group-hover:text-emerald-400 transition mb-1">${p.title}</h3>
             <p class="text-[11px] text-gray-400 flex items-center gap-1.5 mb-2"><i class="fa-solid fa-shield-check text-emerald-400"></i> ${p.warranty}</p>
             <button onclick="openDetailsModal(${p.id})" class="text-[11px] text-emerald-400 hover:text-white font-bold flex items-center gap-1 mb-4 hover:underline"><i class="fa-solid fa-circle-info"></i> Specs & Details</button>
@@ -1266,6 +886,7 @@
       renderProducts(products);
       renderReviews();
       updateCartUi();
+      initBannerSliders();
     });
   </script>
 </body>

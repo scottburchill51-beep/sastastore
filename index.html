@@ -84,20 +84,27 @@
       100% { left: 140%; }
     }
 
-    /* AUTOMATED SLIDING TRACK CARDS */
-    .slide-track-container {
-      overflow: hidden;
-      width: 100%;
+    /* AUTO SLIDING CAROUSEL BOXES (NO ARROWS, NO DOTS) */
+    .banner-slot {
       position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: #0a101d;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
     }
-    .slide-item-box {
-      display: none;
+    .banner-slide {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
       opacity: 0;
-      transition: opacity 0.6s ease-in-out;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .slide-item-box.active {
-      display: block;
+    .banner-slide.active {
       opacity: 1;
+      position: relative;
     }
   </style>
 </head>
@@ -144,6 +151,7 @@
         <button onclick="openCanvaPromoModal()" class="hover:text-amber-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-gift text-amber-400"></i> Free Canva Pro</button>
         <a href="#custom-order" class="hover:text-cyan-400 transition-colors">Custom Order</a>
         <a href="#reviews" class="hover:text-amber-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-star text-amber-400 text-xs"></i> Reviews</a>
+        <a href="#faq" class="hover:text-brand-emerald transition-colors">FAQ</a>
         <button onclick="openMyOrdersModal()" class="hover:text-teal-400 transition-colors flex items-center gap-1"><i class="fa-solid fa-box text-teal-400"></i> Track Order</button>
       </div>
 
@@ -186,28 +194,31 @@
     </div>
   </div>
 
-  <!-- ==================== 1. TOP 3 LANDSCAPE BANNERS (AUTO SIDE-BY-SIDE SLIDER / NO ARROWS / NO DOTS) ==================== -->
+  <!-- ==================== 1. TOP 3 LANDSCAPE BANNERS (SIDE-BY-SIDE AUTO-SLIDING / NO ARROWS, NO DOTS) ==================== -->
   <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-2">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-      <!-- Top Banner 1 (1.jpg) -->
-      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="location.href='#products'">
-        <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden slide-track-container">
-          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+      <!-- Banner Slot 1 -->
+      <div class="banner-slot cursor-pointer" onclick="location.href='#products'">
+        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] relative carousel-group" data-interval="3000">
+          <div class="banner-slide active"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
         </div>
       </div>
-      <!-- Top Banner 2 (2.jpg) -->
-      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(2)">
-        <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden slide-track-container">
-          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+      <!-- Banner Slot 2 -->
+      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(2)">
+        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] relative carousel-group" data-interval="3500">
+          <div class="banner-slide active"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
         </div>
       </div>
-      <!-- Top Banner 3 (3.jpg) -->
-      <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(143)">
-        <div class="w-full aspect-[16/9] flex items-center justify-center overflow-hidden slide-track-container">
-          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+      <!-- Banner Slot 3 -->
+      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(143)">
+        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] relative carousel-group" data-interval="4000">
+          <div class="banner-slide active"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
         </div>
       </div>
     </div>
@@ -235,28 +246,31 @@
     </div>
   </section>
 
-  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT BANNERS (AUTO SIDE-BY-SIDE SLIDER / NO ARROWS / NO DOTS) ==================== -->
+  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT BANNERS (SIDE-BY-SIDE AUTO-SLIDING / NO ARROWS, NO DOTS) ==================== -->
   <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pb-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-      <!-- Portrait Banner 4 (4.jpg) -->
-      <div class="relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(7)">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden slide-track-container">
-          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+      <!-- Portrait Slot 4 -->
+      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(7)">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] relative carousel-group" data-interval="3200">
+          <div class="banner-slide active"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
         </div>
       </div>
-      <!-- Portrait Banner 5 (5.jpg) -->
-      <div class="relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(130)">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden slide-track-container">
-          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+      <!-- Portrait Slot 5 -->
+      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(130)">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] relative carousel-group" data-interval="3700">
+          <div class="banner-slide active"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
         </div>
       </div>
-      <!-- Portrait Banner 6 (6.jpg) -->
-      <div class="relative overflow-hidden rounded-3xl border border-gray-800/90 bg-[#0a101d] shadow-xl group cursor-pointer hover:border-emerald-500/50 transition-all duration-300" onclick="openCheckoutModal(120)">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] flex items-center justify-center overflow-hidden slide-track-container">
-          <div class="slide-item-box active w-full h-full flex items-center justify-center"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="slide-item-box w-full h-full flex items-center justify-center"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+      <!-- Portrait Slot 6 -->
+      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(120)">
+        <div class="w-full aspect-[3/4] sm:aspect-[4/5] relative carousel-group" data-interval="4200">
+          <div class="banner-slide active"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
+          <div class="banner-slide"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
         </div>
       </div>
     </div>
@@ -284,7 +298,7 @@
     </div>
   </section>
 
-  <!-- ALL PRODUCTS INVENTORY (WITH LIVE STOCK BADGES) -->
+  <!-- ALL PRODUCTS INVENTORY -->
   <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
       <div>
@@ -295,7 +309,7 @@
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search TikTok SIM, ElevenLabs, CapCut..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          <input type="text" id="searchInput" placeholder="Search TikTok UK SIM, ElevenLabs, CapCut..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
@@ -352,12 +366,13 @@
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
+  <!-- FAQ SECTION (FULLY WORKING) -->
   <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center mb-10">
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
       <h2 class="font-heading text-3xl font-black text-white">Frequently Asked Questions</h2>
     </div>
+
     <div class="space-y-3">
       <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
         <button onclick="toggleFaq(1)" class="w-full p-4 text-left flex items-center justify-between gap-4">
@@ -365,7 +380,25 @@
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-1"></i>
         </button>
         <div id="faqAnswer-1" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
-          Orders are typically verified and activated within <strong>5 to 15 minutes</strong> (except physical SIMs which take 3-4 days)!
+          Orders are typically verified and activated within <strong>5 to 15 minutes</strong>! Physical items like TikTok UK SIM cards take <strong>3 to 4 days</strong> for courier delivery.
+        </div>
+      </div>
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
+        <button onclick="toggleFaq(2)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+          <span class="text-sm font-bold text-white flex items-center gap-2.5"><i class="fa-solid fa-shield-heart text-blue-400"></i> How does the Replacement Warranty work?</span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-2"></i>
+        </button>
+        <div id="faqAnswer-2" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          All our subscriptions come with guaranteed replacement warranties as specified on each card. If you ever experience an access issue, reach out with your Tracking ID for immediate replacement.
+        </div>
+      </div>
+      <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
+        <button onclick="toggleFaq(3)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+          <span class="text-sm font-bold text-white flex items-center gap-2.5"><i class="fa-solid fa-basket-shopping text-emerald-400"></i> How do I get 10% OFF?</span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
+        </button>
+        <div id="faqAnswer-3" class="hidden px-4 pb-4 text-xs text-gray-300 leading-relaxed border-t border-gray-800/60 pt-3">
+          Add items worth ₨ 3,000/- or more to your basket and apply coupon code <strong>SASTA10</strong> for a flat 10% discount!
         </div>
       </div>
     </div>
@@ -378,14 +411,20 @@
         <div class="md:col-span-2 space-y-4">
           <div class="flex items-center gap-2.5">
             <img src="logo.jpeg" alt="SastaStore" class="w-10 h-10 rounded-2xl object-cover border border-emerald-500/40" />
-            <div><span class="font-heading font-black text-xl text-white tracking-tight">Sasta<span class="text-emerald-400">Store</span></span><span class="text-[9px] uppercase tracking-widest text-gray-500 block">PAKISTAN</span></div>
+            <div>
+              <span class="font-heading font-black text-xl text-white tracking-tight">Sasta<span class="text-emerald-400">Store</span></span>
+              <span class="text-[9px] uppercase tracking-widest text-gray-500 block">PAKISTAN</span>
+            </div>
           </div>
-          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">Pakistan's trusted digital subscription & software store.</p>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Pakistan's trusted digital subscription & software store. Fast 15-minute dispatch with guaranteed replacement warranty.
+          </p>
           <div class="text-xs text-gray-400 space-y-1">
             <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-emerald-400"></i> <strong>Official Email:</strong> LucariAlsonkirll@outlook.com</p>
             <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400"></i> <strong>Helpline:</strong> +92 313 6093501</p>
           </div>
         </div>
+
         <div class="space-y-3">
           <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Quick Links</h4>
           <ul class="space-y-2 text-xs">
@@ -394,8 +433,20 @@
             <li><button onclick="openMyOrdersModal()" class="hover:text-emerald-400 transition text-left">Track Order Status</button></li>
           </ul>
         </div>
+
+        <div class="space-y-3">
+          <h4 class="font-heading font-black text-sm text-white uppercase tracking-wider">Social Channels</h4>
+          <div class="flex items-center gap-3 pt-1">
+            <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-blue-600/20 text-gray-400 hover:text-blue-400 border border-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-facebook text-sm"></i></a>
+            <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-pink-600/20 text-gray-400 hover:text-pink-400 border border-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+            <a href="https://wa.me/923136093501" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-emerald-600/20 text-gray-400 hover:text-emerald-400 border border-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="pt-8 text-center sm:text-left text-[11px] text-gray-500">Copyright © 2026 SastaStore Pakistan. All rights reserved.</div>
+
+      <div class="pt-8 text-center sm:text-left text-[11px] text-gray-500">
+        Copyright © 2026 SastaStore Pakistan. All rights reserved.
+      </div>
     </div>
   </footer>
 
@@ -403,18 +454,53 @@
   <div id="canvaPromoModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-amber-500/40 w-full max-w-lg rounded-3xl p-6 sm:p-7 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-20">
-        <div><span class="text-[10px] font-black uppercase tracking-widest bg-amber-500/15 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30">Official Giveaway</span><h3 class="font-heading text-lg font-black text-white mt-1">Claim Your Free Canva Pro</h3></div>
-        <button onclick="closeCanvaPromoModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
-      </div>
-      <form id="canvaClaimForm" onsubmit="submitCanvaClaim(event)" class="space-y-3">
-        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label><input type="text" id="promoName" required placeholder="e.g. Ali Raza" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label><input type="tel" id="promoPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
-          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Gmail (for Invite) *</label><input type="email" id="promoEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
+        <div>
+          <span class="text-[10px] font-black uppercase tracking-widest bg-amber-500/15 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30">Official Giveaway</span>
+          <h3 class="font-heading text-lg font-black text-white mt-1">Claim Your Free Canva Pro</h3>
         </div>
-        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Social Handle *</label><input type="text" id="promoHandle" required placeholder="@aliraza_edits" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"></div>
-        <button type="submit" class="btn-shimmer w-full mt-2 bg-gradient-to-r from-amber-400 to-amber-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-xl">Submit Claim & Get Verified ⚡</button>
-      </form>
+        <button onclick="closeCanvaPromoModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 mb-5 text-xs">
+        <div class="p-3.5 rounded-2xl bg-gray-900/90 border border-gray-800 space-y-2">
+          <h4 class="font-bold text-white uppercase text-[10px] tracking-wider text-amber-400">Follow 2 Simple Steps:</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+            <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/40 font-bold transition">
+              <i class="fa-brands fa-instagram text-base"></i> 1. Follow Instagram
+            </a>
+            <a href="https://www.facebook.com/share/19EWmQLy2m/" target="_blank" class="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/40 font-bold transition">
+              <i class="fa-brands fa-facebook text-base"></i> 2. Follow Facebook
+            </a>
+          </div>
+        </div>
+
+        <form id="canvaClaimForm" onsubmit="submitCanvaClaim(event)" class="space-y-3">
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
+            <input type="text" id="promoName" required placeholder="e.g. Ali Raza" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your WhatsApp Number *</label>
+              <input type="tel" id="promoPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Gmail (for Canva Invite) *</label>
+              <input type="email" id="promoEmail" required placeholder="yourname@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Social Profile Name / Handle *</label>
+            <input type="text" id="promoHandle" required placeholder="e.g. @aliraza_edits" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+          </div>
+
+          <button type="submit" class="btn-shimmer w-full mt-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-xl">
+            Submit Claim & Get Verified ⚡
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -422,15 +508,33 @@
   <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-5 sm:p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-10">
-        <div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bag-shopping"></i></div><h3 class="font-heading text-lg font-black text-white">Your Shopping Basket</h3></div>
-        <button onclick="closeCartModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-base"></i></button>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bag-shopping"></i></div>
+          <h3 class="font-heading text-lg font-black text-white">Your Shopping Basket</h3>
+        </div>
+        <button onclick="closeCartModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition flex-shrink-0">
+          <i class="fa-solid fa-xmark text-base"></i>
+        </button>
       </div>
       <div id="cartItemsList" class="space-y-3 max-h-60 overflow-y-auto pr-1 mb-4"></div>
-      <div id="cartEmptyState" class="hidden text-center py-8"><i class="fa-solid fa-bag-shopping text-4xl text-gray-600 mb-2"></i><p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p></div>
+      <div id="cartEmptyState" class="hidden text-center py-8">
+        <i class="fa-solid fa-bag-shopping text-4xl text-gray-600 mb-2"></i>
+        <p class="text-xs text-gray-400 font-bold">Your basket is currently empty.</p>
+      </div>
       <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
         <div class="flex justify-between text-gray-400"><span>Subtotal:</span><span class="font-bold text-white" id="cartSubtotalText">₨ 0</span></div>
+        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 hidden"><span>Coupon Discount (10% OFF):</span><span class="font-bold" id="cartDiscountText">- ₨ 0</span></div>
         <div class="flex justify-between text-sm font-black text-white border-t border-gray-800/80 pt-2"><span>Total Payable:</span><span class="text-emerald-400 text-base" id="cartFinalTotalText">₨ 0</span></div>
-        <button onclick="proceedToCheckout()" class="btn-shimmer w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg">Proceed to Checkout ⚡</button>
+        <div class="pt-2">
+          <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
+            <input type="text" id="cartCouponInput" placeholder="Coupon SASTA10 (Valid on ₨ 3,000+)" class="uppercase flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 font-mono">
+            <button type="button" onclick="applyCartCoupon()" class="bg-emerald-500 hover:bg-emerald-400 text-black font-black text-xs px-3.5 py-1.5 rounded-lg transition">Apply</button>
+          </div>
+          <p id="cartCouponMsg" class="text-[11px] font-bold mt-1.5 hidden"></p>
+        </div>
+        <button onclick="proceedToCheckout()" class="btn-shimmer w-full mt-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+          Proceed to Complete Checkout ⚡
+        </button>
       </div>
     </div>
   </div>
@@ -439,40 +543,112 @@
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-5 sm:p-7 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-20">
-        <div><span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">Official Checkout</span><h3 class="font-heading text-lg font-black text-white mt-1" id="modalProductTitle">Place Your Order</h3></div>
-        <button onclick="closeCheckoutModal()" class="w-10 h-10 rounded-2xl bg-gray-900 hover:bg-red-500/20 text-gray-300 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-      </div>
-      <p class="text-xs text-emerald-400 font-bold mb-3" id="modalProductPrice">Payable Amount: ₨ 0</p>
-      <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
-        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Method *</label><select id="custPaymentMethod" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"><option value="JazzCash">JazzCash (03462195461)</option><option value="SadaPay">SadaPay (03462195461)</option><option value="Binance">Binance USDT (UID: 1083609522)</option></select></div>
-        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label><input type="text" id="custName" required placeholder="Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label><input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
-          <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label><input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
+        <div class="pr-2">
+          <span class="text-[10px] font-extrabold uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">Official Checkout</span>
+          <h3 class="font-heading text-base sm:text-lg font-black text-white mt-1 truncate max-w-[260px] sm:max-w-xs" id="modalProductTitle">Place Your Order</h3>
         </div>
-        <div><label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Name *</label><input type="text" id="custTrx" required placeholder="Trx ID 98234" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white"></div>
-        <button type="submit" class="btn-shimmer w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg">Submit Order ⚡</button>
+        <button onclick="closeCheckoutModal()" class="w-10 h-10 rounded-2xl bg-gray-900 hover:bg-red-500/20 text-gray-300 hover:text-red-400 border border-gray-700 flex items-center justify-center transition shadow-lg flex-shrink-0">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-emerald-400 font-bold mb-3" id="modalProductPrice">Payable Amount: ₨ 0 ($0.00)</p>
+
+      <div class="mb-4 p-3.5 bg-gray-900/90 rounded-2xl border border-gray-800 space-y-2">
+        <div class="flex items-center justify-between text-xs pb-2 border-b border-gray-800">
+          <span class="text-gray-400 font-bold uppercase text-[10px]">Payment Account Details</span>
+          <span class="text-emerald-400 text-[10px] font-bold">Transfer & Save Trx ID</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-[#080d16] border border-gray-800/80">
+            <div class="flex justify-between items-center text-[10px] text-gray-400 mb-1">
+              <span>JazzCash / SadaPay</span>
+              <button type="button" onclick="copyText('03462195461', 'JazzCash/SadaPay')" class="text-emerald-400 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
+            </div>
+            <p class="font-bold text-white text-xs">Shaloom Victor</p>
+            <p class="font-mono text-emerald-400 font-black text-sm">03462195461</p>
+          </div>
+          <div class="p-2.5 rounded-xl bg-[#080d16] border border-gray-800/80">
+            <div class="flex justify-between items-center text-[10px] text-gray-400 mb-1">
+              <span>Binance Pay (USDT)</span>
+              <button type="button" onclick="copyText('1083609522', 'Binance UID')" class="text-yellow-400 hover:underline"><i class="fa-regular fa-copy"></i> Copy</button>
+            </div>
+            <p class="font-bold text-white text-xs">Scott burchill</p>
+            <p class="font-mono text-yellow-400 font-black text-sm">UID: 1083609522</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Payment Method Used *</label>
+          <select id="custPaymentMethod" required class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-emerald-400">
+            <option value="JazzCash">JazzCash (03462195461 - Shaloom Victor)</option>
+            <option value="SadaPay">SadaPay (03462195461 - Shaloom Victor)</option>
+            <option value="Binance">Binance Pay USDT (UID: 1083609522 - Scott burchill)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Your Full Name *</label>
+          <input type="text" id="custName" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">WhatsApp Number *</label>
+            <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Delivery Email *</label>
+            <input type="email" id="custEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          </div>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Transaction ID / Sender Name *</label>
+          <input type="text" id="custTrx" required placeholder="e.g. Trx ID 98234710 / Sender Name" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+        </div>
+        <button type="submit" class="btn-shimmer w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-heading font-black text-xs uppercase py-3.5 rounded-xl transition shadow-lg">
+          Submit Order & Get Tracking ID ⚡
+        </button>
       </form>
     </div>
   </div>
 
-  <!-- ORDER SUCCESS RECEIPT -->
+  <!-- ORDER SUCCESS SCREEN (PURE WHITE) -->
   <div id="trackingScreenModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-white text-gray-900 border border-gray-200 w-full max-w-md rounded-3xl p-6 sm:p-7 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-200 mb-4">
-        <div><span class="font-heading font-black text-base text-gray-900 leading-none block">Sasta<span class="text-emerald-600">Store</span></span><span class="text-[9px] uppercase tracking-wider text-gray-400 font-bold">Official Receipt</span></div>
-        <button onclick="closeTrackingScreen()" class="w-9 h-9 rounded-xl bg-gray-100 text-gray-500 border border-gray-200 flex items-center justify-center"><i class="fa-solid fa-xmark text-sm"></i></button>
+        <div class="flex items-center gap-2.5">
+          <img src="logo.jpeg" alt="SastaStore" class="w-8 h-8 rounded-xl object-cover border border-emerald-500/40" />
+          <div><span class="font-heading font-black text-base text-gray-900 leading-none block">Sasta<span class="text-emerald-600">Store</span></span><span class="text-[9px] uppercase tracking-wider text-gray-400 font-bold">Official Receipt</span></div>
+        </div>
+        <button onclick="closeTrackingScreen()" class="w-9 h-9 rounded-xl bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-500 border border-gray-200 flex items-center justify-center transition flex-shrink-0"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
+
       <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 mb-4 flex items-center justify-between">
         <div><span class="text-[10px] text-gray-500 uppercase font-bold tracking-wider block">Tracking ID</span><span class="font-mono text-base font-black text-emerald-700" id="displayTrackingId">SS-928415</span></div>
-        <button onclick="copyGeneratedTrackingId()" class="p-2 px-3 rounded-xl bg-white text-emerald-700 text-xs font-bold border border-emerald-200 shadow-sm"><i class="fa-regular fa-copy"></i> Copy</button>
+        <button onclick="copyGeneratedTrackingId()" class="p-2 px-3 rounded-xl bg-white hover:bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 transition flex items-center gap-1 shadow-sm"><i class="fa-regular fa-copy"></i> Copy</button>
       </div>
+
       <div class="bg-gray-50 rounded-2xl p-4 border border-gray-200 space-y-2 text-xs mb-4 text-gray-700">
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Customer:</span><span class="font-bold text-gray-900" id="trackCustomerName">Ali</span></div>
-        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Service:</span><span class="font-bold text-emerald-700" id="trackServiceTitle">Tool</span></div>
-        <div class="flex justify-between items-center"><span class="text-gray-500">Amount:</span><span class="font-bold text-gray-900" id="trackAmount">₨ 0</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Customer:</span><span class="font-bold text-gray-900" id="trackCustomerName">Muhammad Ali</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Service:</span><span class="font-bold text-emerald-700 text-right truncate max-w-[200px]" id="trackServiceTitle">CapCut Pro</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Amount Paid:</span><span class="font-bold text-gray-900" id="trackAmount">₨ 749/-</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Payment Method:</span><span class="font-bold text-gray-800" id="trackPaymentMethod">JazzCash</span></div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-200"><span class="text-gray-500">Transaction ID:</span><span class="font-mono font-bold text-gray-900" id="trackTrx">246523422846</span></div>
+        <div class="flex justify-between items-center"><span class="text-gray-500">Ordered On:</span><span class="font-bold text-gray-700" id="trackDate">Today</span></div>
       </div>
-      <button onclick="closeTrackingScreen()" class="w-full py-2.5 bg-gray-100 text-gray-700 border border-gray-200 font-bold text-xs rounded-xl transition">Back to Home</button>
+
+      <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs mb-4 flex items-start gap-2.5">
+        <i class="fa-solid fa-clock text-amber-600 mt-0.5 text-base"></i>
+        <div><strong class="block text-gray-900 mb-0.5">Pending — Waiting for admin review</strong><span class="text-[11px] text-gray-600 leading-relaxed">Your order has been placed and is waiting for review. System has dispatched an email alert to Admin!</span></div>
+      </div>
+
+      <div class="space-y-2">
+        <a id="trackOptionalWaBtn" href="#" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-black text-xs uppercase rounded-xl transition shadow-md">
+          <i class="fa-brands fa-whatsapp text-base"></i> Optional: Confirm on WhatsApp
+        </a>
+        <button onclick="closeTrackingScreen()" class="w-full py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200 font-bold text-xs rounded-xl transition">Back to Home</button>
+      </div>
     </div>
   </div>
 
@@ -480,13 +656,16 @@
   <div id="detailsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
-        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center"><span id="detailIcon"></span></div><div><h3 id="detailTitle" class="font-heading font-black text-base text-white">Title</h3><span id="detailTag" class="text-xs text-emerald-400 font-bold">Duration</span></div></div>
-        <button onclick="closeDetailsModal()" class="w-9 h-9 rounded-xl bg-gray-900 text-gray-400 border border-gray-700 flex items-center justify-center"><i class="fa-solid fa-xmark text-sm"></i></button>
+        <div class="flex items-center gap-3">
+          <div id="detailIconBox" class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0"><span id="detailIcon"></span></div>
+          <div><h3 id="detailTitle" class="font-heading font-black text-base text-white">Title</h3><span id="detailTag" class="text-xs text-emerald-400 font-bold">Duration</span></div>
+        </div>
+        <button onclick="closeDetailsModal()" class="w-9 h-9 rounded-xl bg-gray-900 text-gray-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
       <div class="space-y-3 text-xs text-gray-300 leading-relaxed mb-5">
         <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Format</span><p id="detailFormat" class="font-semibold text-white"></p></div>
         <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Warranty</span><p id="detailWarranty" class="font-semibold text-emerald-400"></p></div>
-        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Specs</span><p id="detailSpecs" class="font-semibold text-gray-300 whitespace-pre-line"></p></div>
+        <div class="p-3 bg-gray-900 rounded-xl border border-gray-800"><span class="text-gray-500 text-[10px] uppercase font-bold block mb-0.5">Specifications</span><p id="detailSpecs" class="font-semibold text-gray-300 whitespace-pre-line"></p></div>
       </div>
       <div class="grid grid-cols-2 gap-2">
         <button id="detailBasketBtn" class="py-2.5 bg-gray-900 border border-emerald-500/40 text-emerald-400 font-black text-xs rounded-xl">Basket</button>
@@ -495,36 +674,63 @@
     </div>
   </div>
 
-  <!-- TRACK ORDER SEARCH MODAL -->
+  <!-- TRACK MY ORDERS SEARCH MODAL -->
   <div id="myOrdersModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-lg rounded-3xl p-6 relative shadow-2xl my-auto">
       <div class="flex items-center justify-between pb-3 border-b border-gray-800 mb-4">
         <div><span class="text-[10px] font-extrabold uppercase tracking-widest bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded">Live Order Tracking</span><h3 class="font-heading text-lg font-black text-white mt-1">Track Order Status</h3></div>
-        <button onclick="closeMyOrdersModal()" class="w-9 h-9 rounded-xl bg-gray-900 text-gray-400 border border-gray-700 flex items-center justify-center"><i class="fa-solid fa-xmark text-sm"></i></button>
+        <button onclick="closeMyOrdersModal()" class="w-9 h-9 rounded-xl bg-gray-900 text-gray-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
       </div>
+      <p class="text-xs text-gray-400 mb-3">Enter your exact <strong>Tracking ID</strong> (e.g. SS-928415):</p>
       <div class="flex gap-2 mb-4">
-        <input type="text" id="trackSearchInput" placeholder="Enter Tracking ID (e.g. SS-928415)" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white uppercase font-mono">
-        <button onclick="searchMyOrders()" class="bg-teal-500 text-black font-heading font-black text-xs px-5 py-2.5 rounded-xl">Track</button>
+        <input type="text" id="trackSearchInput" placeholder="Enter Tracking ID (e.g. SS-928415)" class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white uppercase font-mono focus:outline-none focus:border-teal-400">
+        <button onclick="searchMyOrders()" class="bg-teal-500 hover:bg-teal-400 text-black font-heading font-black text-xs px-5 py-2.5 rounded-xl transition">Track</button>
       </div>
-      <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1"></div>
+      <div id="myOrdersResults" class="space-y-2 max-h-60 overflow-y-auto pr-1"><p class="text-xs text-gray-500 text-center py-4">Enter your official Tracking ID above.</p></div>
     </div>
   </div>
 
   <!-- ADMIN DASHBOARD -->
   <div id="adminModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
     <div class="bg-[#0b1220] border border-gray-800 w-full max-w-5xl rounded-3xl p-5 sm:p-8 relative shadow-2xl max-h-[90vh] flex flex-col my-auto">
+      <div class="flex items-center justify-between pb-4 border-b border-gray-800 mb-4 sticky top-0 bg-[#0b1220] z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-black font-black flex items-center justify-center text-sm"><i class="fa-solid fa-gauge"></i></div>
+          <div><h3 class="font-heading text-lg font-black text-white">SastaStore Order Dashboard</h3><p class="text-[11px] text-gray-400">Live order management & WhatsApp customer dispatch</p></div>
+        </div>
+        <button onclick="closeAdminModal()" class="w-9 h-9 rounded-xl bg-gray-900 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700 flex items-center justify-center transition"><i class="fa-solid fa-xmark text-sm"></i></button>
+      </div>
+
       <div id="adminAuthScreen" class="py-12 text-center max-w-sm mx-auto w-full">
+        <i class="fa-solid fa-lock text-3xl text-emerald-400 mb-3"></i>
         <h4 class="font-heading text-base font-bold text-white mb-1">Enter Admin Password</h4>
         <form onsubmit="verifyAdminPass(event)" class="space-y-3 mt-4">
-          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white text-center">
-          <button type="submit" class="w-full bg-emerald-500 text-black font-bold uppercase py-2.5 rounded-xl">Unlock</button>
+          <input type="password" id="adminPassInput" placeholder="Password" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 text-center focus:outline-none focus:border-emerald-400">
+          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-heading font-black text-xs uppercase py-2.5 rounded-xl transition">Unlock Dashboard</button>
         </form>
       </div>
+
       <div id="adminOrdersPanel" class="hidden flex-1 overflow-hidden flex flex-col">
-        <div class="flex justify-between mb-4"><span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span><button onclick="clearAllOrders()" class="bg-red-500/10 text-red-400 px-3 py-1.5 rounded-lg text-xs font-bold">Clear All</button></div>
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <span class="text-xs font-bold text-gray-300">Total Orders: <span id="ordersCountBadge" class="text-emerald-400 font-black">0</span></span>
+          <div class="flex items-center gap-2">
+            <button onclick="exportOrdersCSV()" class="bg-gray-900 hover:bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-file-csv text-emerald-400"></i> Export CSV</button>
+            <button onclick="clearAllOrders()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition">Clear All</button>
+          </div>
+        </div>
         <div class="overflow-x-auto overflow-y-auto flex-1 border border-gray-800 rounded-2xl">
           <table class="w-full text-left text-xs text-gray-300">
-            <thead class="bg-gray-900/90 text-[10px] uppercase font-bold sticky top-0"><tr><th class="p-3">ID / Date</th><th class="p-3">Customer</th><th class="p-3">Phone</th><th class="p-3">Product</th><th class="p-3">Trx</th><th class="p-3 text-right">Action</th></tr></thead>
+            <thead class="bg-gray-900/90 text-gray-400 text-[10px] uppercase font-bold sticky top-0 border-b border-gray-800">
+              <tr>
+                <th class="p-3">Tracking ID / Date</th>
+                <th class="p-3">Customer</th>
+                <th class="p-3">Phone / Email</th>
+                <th class="p-3">Product(s)</th>
+                <th class="p-3">Payment / Trx</th>
+                <th class="p-3">Status</th>
+                <th class="p-3 text-right">Dispatch / Action</th>
+              </tr>
+            </thead>
             <tbody id="ordersTableBody" class="divide-y divide-gray-800"></tbody>
           </table>
         </div>
@@ -542,6 +748,7 @@
     const STORE_WHATSAPP = "923136093501";
     const FORMSPREE_ENDPOINT = "https://formspree.io/f/mbgllnzv";
 
+    let currentCategory = 'all';
     let cart = []; 
     let appliedDiscountPercent = 0;
 
@@ -560,6 +767,21 @@
       return clean;
     }
 
+    // FAQ TOGGLE (FULLY WORKING ACCORDION)
+    function toggleFaq(id) {
+      const ans = document.getElementById(`faqAnswer-${id}`);
+      const icon = document.getElementById(`faqIcon-${id}`);
+      if (!ans) return;
+      const isHidden = ans.classList.contains("hidden");
+      document.querySelectorAll("[id^='faqAnswer-']").forEach(el => el.classList.add("hidden"));
+      document.querySelectorAll("[id^='faqIcon-']").forEach(el => el.classList.remove("rotate-180"));
+      if (isHidden) {
+        ans.classList.remove("hidden");
+        if (icon) icon.classList.add("rotate-180");
+      }
+    }
+
+    // OFFICIAL BRAND VECTOR ICONS LIBRARY
     const BRAND_ICONS = {
       capcut: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M2.5 5.5h6l3.5 6.5-3.5 6.5h-6l3.5-6.5zm19 0h-6l-3.5 6.5 3.5 6.5h6l-3.5-6.5z"/></svg>`,
       chatgpt: `<svg class="w-6 h-6 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M22.28 10.37a5.55 5.55 0 0 0-.47-4.48 5.68 5.68 0 0 0-5.59-2.81 5.56 5.56 0 0 0-4.14-1.84 5.68 5.68 0 0 0-5.4 3.93 5.54 5.54 0 0 0-3.67 2.65 5.68 5.68 0 0 0 .74 6.2 5.56 5.56 0 0 0 .47 4.48 5.68 5.68 0 0 0 5.59 2.81 5.56 5.56 0 0 0 4.14 1.84 5.68 5.68 0 0 0 5.4-3.93 5.54 5.54 0 0 0 3.67-2.65 5.68 5.68 0 0 0-.74-6.2z"/></svg>`,
@@ -577,9 +799,8 @@
       generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
     };
 
-    // COMPLETE PRODUCT CATALOG (INCLUDING TIKTOK UK SIM)
+    // COMPLETE PRODUCT CATALOG (TIKTOK UK SIM AT THE END)
     const products = [
-      { id: 145, title: "TikTok UK SIM (Live Streaming Only)", category: "accounts", tag: "Physical SIM Card", warranty: "No Warranty (Non-Active)", format: "Delivered via Courier", specs: "TikTok UK SIM card strictly for Live Streaming only. Non-active cellular service, no OTP receiving. Delivery Time: 3 to 4 Days.", origPricePKR: 3500, pricePKR: 3000, badge: "Live SIM", iconKey: "tiktok", color: "from-pink-600 to-rose-700", urgency: "Delivery: 3-4 Days" },
       { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning & Dubbing.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700", urgency: "⚡ 3 Left Today" },
       { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits for YouTube voiceovers & podcasts.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800", urgency: "⚡ Instant Delivery" },
       { id: 2, title: "CapCut Pro (Monthly)", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Team Plan (500 Credits Included)", specs: "30 Days Full Access, 25 Days Replacement Warranty, Team Plan with 500 Credits included.", origPricePKR: 999, pricePKR: 749, badge: "Hot Seller", iconKey: "capcut", color: "from-blue-500 to-cyan-600", urgency: "⚡ 5 Left Today" },
@@ -587,21 +808,30 @@
       { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", iconKey: "chatgpt", color: "from-emerald-600 to-teal-800", urgency: "⚡ Stock Available" },
       { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty", format: "Account Login / Upgrade", specs: "18 Months Long Validity. Google Gemini Advanced with 1 Million token reasoning.", origPricePKR: 999, pricePKR: 649, badge: "Top AI", iconKey: "gemini", color: "from-teal-400 to-emerald-600", urgency: "⚡ 4 Accounts Left" },
       { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Ad-free videos & YouTube Music.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", iconKey: "youtube", color: "from-red-500 to-red-700", urgency: "⚡ Instant" },
-      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", iconKey: "windows", color: "from-blue-600 to-indigo-700", urgency: "⚡ 10 Keys Left" }
+      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently to motherboard.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", iconKey: "windows", color: "from-blue-600 to-indigo-700", urgency: "⚡ 10 Keys Left" },
+      // TIKTOK UK SIM PLACED AT THE VERY END WITH EXACT REOUIRED DETAILS
+      { id: 145, title: "TikTok UK SIM (Live Streaming Only)", category: "accounts", tag: "Physical SIM Card", warranty: "No Warranty (Non-Active)", format: "Delivered via Courier", specs: "TikTok UK SIM card strictly for Live Streaming only. Non-active cellular service, no OTP receiving.\n📦 Delivery Time: 3 to 4 Days.", origPricePKR: 3500, pricePKR: 3000, badge: "Live SIM", iconKey: "tiktok", color: "from-pink-600 to-rose-700", urgency: "Delivery: 3-4 Days" }
     ];
 
-    // AUTOMATED SIDE-BY-SIDE BANNERS SLIDER ENGINE (EVERY 4 SECONDS)
+    const defaultReviews = [
+      { name: "Ahmad Khan", role: "Video Editor", text: "Ordered CapCut Pro 6 Months plan directly through the site. Payment verified in 2 minutes. Best store in Pakistan!", rating: 5, date: "Yesterday" },
+      { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5, date: "2 days ago" },
+      { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
+    ];
+
+    // AUTOMATED BANNERS SLIDER ENGINE (EVERY 3 SECONDS SIDE-BY-SIDE)
     function initBannerSliders() {
-      const containers = document.querySelectorAll('.slide-track-container');
-      containers.forEach(container => {
-        const slides = container.querySelectorAll('.slide-item-box');
+      const groups = document.querySelectorAll('.carousel-group');
+      groups.forEach(group => {
+        const slides = group.querySelectorAll('.banner-slide');
         if (slides.length < 2) return;
         let activeIdx = 0;
+        const intervalTime = parseInt(group.getAttribute('data-interval')) || 3000;
         setInterval(() => {
           slides[activeIdx].classList.remove('active');
           activeIdx = (activeIdx + 1) % slides.length;
           slides[activeIdx].classList.add('active');
-        }, 4000);
+        }, intervalTime);
       });
     }
 
@@ -676,7 +906,7 @@
       const container = document.getElementById("reviewsContainer");
       if (!container) return;
       container.innerHTML = defaultReviews.map(r => `
-        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800">
+        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800 hover:border-amber-500/30 transition">
           <div><div class="flex items-center gap-1 text-amber-400 text-xs mb-3">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div><p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p></div>
           <div class="flex items-center justify-between pt-3 border-t border-gray-800"><div><p class="text-xs font-bold text-white">${r.name}</p><p class="text-[10px] text-gray-500">${r.role}</p></div><span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded">Verified</span></div>
         </div>
@@ -700,12 +930,14 @@
     function openCartModal() { renderCartItems(); document.getElementById("cartModal").classList.remove("hidden"); }
     function closeCartModal() { document.getElementById("cartModal").classList.add("hidden"); }
 
+    function calculateCartSubtotal() { return cart.reduce((acc, item) => acc + item.pricePKR, 0); }
+
     function renderCartItems() {
       const list = document.getElementById("cartItemsList");
       const emptyState = document.getElementById("cartEmptyState");
       const summaryBox = document.getElementById("cartSummaryBox");
       if (cart.length === 0) { list.innerHTML = ""; emptyState.classList.remove("hidden"); summaryBox.classList.add("hidden"); return; }
-      emptyState.classList.add("hidden"); summaryBox.classList.remove("hidden");
+      emptyState.classList.add("hidden"); summaryBox.classList.add("hidden"); summaryBox.classList.remove("hidden");
       list.innerHTML = cart.map((item, idx) => `
         <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
           <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
@@ -759,6 +991,7 @@
       document.getElementById("trackCustomerName").textContent = name;
       document.getElementById("trackServiceTitle").textContent = primaryTitle;
       document.getElementById("trackAmount").textContent = `₨ ${total}/-`;
+      document.getElementById("trackOptionalWaBtn").href = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent("*ORDER VERIFICATION INVOICE - SASTASTORE*\nTracking ID: " + trackingId + "\nCustomer: " + name)}`;
 
       if (typeof confetti === 'function') confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
       closeCheckoutModal();

@@ -8,7 +8,7 @@
   <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, Canva Pro, ElevenLabs, HeyGen, ChatGPT Plus, TikTok UK Live SIMs & Windows Keys." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
-  <meta property="og:image" content="banner1.jpg" />
+  <meta property="og:image" content="assets/banners/banner01.jpg" />
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
   <!-- Tailwind CSS & Icons -->
@@ -87,11 +87,12 @@
     /* TRUE HORIZONTAL HERO CAROUSEL */
     .carousel-track {
       display: flex;
-      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
       will-change: transform;
     }
     .carousel-slide {
       min-width: 100%;
+      flex-shrink: 0;
       box-sizing: border-box;
     }
   </style>
@@ -182,37 +183,38 @@
     </div>
   </div>
 
-  <!-- ==================== TRUE HORIZONTAL HERO CAROUSEL (1 TRACK FOR 3 BANNERS) ==================== -->
+  <!-- ==================== TRUE HORIZONTAL HERO CAROUSEL (6 BANNERS) ==================== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
     <div class="relative overflow-hidden rounded-3xl border border-gray-800 shadow-2xl bg-gray-950 group" id="heroCarousel" onmouseenter="pauseHeroCarousel()" onmouseleave="resumeHeroCarousel()">
       <div class="carousel-track" id="carouselTrack">
-        <!-- Banner 1 -->
         <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
-          <img src="banner1.jpg" alt="SastaStore Banner 1" class="w-full h-auto max-h-[420px] object-contain mx-auto" />
+          <img src="assets/banners/banner01.jpg" alt="SastaStore Banner 1" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="eager" />
         </div>
-        <!-- Banner 2 -->
-        <div class="carousel-slide cursor-pointer" onclick="openCheckoutModal(2)">
-          <img src="banner2.jpg" alt="SastaStore Banner 2" class="w-full h-auto max-h-[420px] object-contain mx-auto" />
+        <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
+          <img src="assets/banners/banner02.jpg" alt="SastaStore Banner 2" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
         </div>
-        <!-- Banner 3 -->
-        <div class="carousel-slide cursor-pointer" onclick="openCheckoutModal(143)">
-          <img src="banner3.jpg" alt="SastaStore Banner 3" class="w-full h-auto max-h-[420px] object-contain mx-auto" />
+        <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
+          <img src="assets/banners/banner03.jpg" alt="SastaStore Banner 3" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+        </div>
+        <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
+          <img src="assets/banners/banner04.jpg" alt="SastaStore Banner 4" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+        </div>
+        <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
+          <img src="assets/banners/banner05.jpg" alt="SastaStore Banner 5" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
+        </div>
+        <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
+          <img src="assets/banners/banner06.jpg" alt="SastaStore Banner 6" class="w-full h-auto max-h-[420px] object-contain mx-auto" loading="lazy" />
         </div>
       </div>
-
-      <!-- Controls -->
-      <button onclick="prevHeroSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10 cursor-pointer">
-        <i class="fa-solid fa-chevron-left text-sm"></i>
-      </button>
-      <button onclick="nextHeroSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10 cursor-pointer">
-        <i class="fa-solid fa-chevron-right text-sm"></i>
-      </button>
-
-      <!-- Dots -->
+      <button aria-label="Previous banner" onclick="prevHeroSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10 cursor-pointer"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+      <button aria-label="Next banner" onclick="nextHeroSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10 cursor-pointer"><i class="fa-solid fa-chevron-right text-sm"></i></button>
       <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10" id="carouselDots">
-        <button onclick="goToHeroSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
-        <button onclick="goToHeroSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
-        <button onclick="goToHeroSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button aria-label="Go to banner 1" onclick="goToHeroSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button aria-label="Go to banner 2" onclick="goToHeroSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button aria-label="Go to banner 3" onclick="goToHeroSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button aria-label="Go to banner 4" onclick="goToHeroSlide(3)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button aria-label="Go to banner 5" onclick="goToHeroSlide(4)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button aria-label="Go to banner 6" onclick="goToHeroSlide(5)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
       </div>
     </div>
   </section>
@@ -762,6 +764,10 @@
       generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
     };
 
+    // Real product logo assets. Upload matching SVG/PNG files to /assets/icons/.
+    const REAL_ICON_FILES={capcut:'capcut.svg',canva:'canva.svg',elevenlabs:'elevenlabs.svg',heygen:'heygen.svg',chatgpt:'chatgpt.svg',claude:'claude.svg',grok:'grok.svg',gemini:'gemini.svg',perplexity:'perplexity.svg',leonardo:'leonardo.svg',veo3:'veo3.svg',wink:'wink.svg',lovable:'lovable.svg',notion:'notion.svg',n8n:'n8n.svg',envato:'envato.svg',freepik:'freepik.svg',figma:'figma.svg','adobe-express':'adobe-express.svg',grammarly:'grammarly.svg',duolingo:'duolingo.svg',linkedin:'linkedin.svg',coursera:'coursera.svg',microsoft:'microsoft.svg',youtube:'youtube.svg',netflix:'netflix.svg','prime-video':'prime-video.svg',spotify:'spotify.svg',nordvpn:'nordvpn.svg',surfshark:'surfshark.svg',icloud:'icloud.svg',tiktok:'tiktok.svg',telegram:'telegram.svg',outlook:'outlook.svg',windows:'windows.svg'};
+    function getBrandIcon(key){const file=REAL_ICON_FILES[key];return file?`<img src="assets/icons/${file}" alt="" class="w-7 h-7 object-contain" loading="lazy">`:(BRAND_ICONS[key]||BRAND_ICONS.generic);}
+
     // COMPLETE PRODUCT CATALOG (RESTORED ALL 38+ TOOLS WITH TIKTOK UK SIM AT THE END)
     const products = [
       { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning & Dubbing.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700", urgency: "⚡ 3 Left Today" },
@@ -828,21 +834,21 @@
       { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
     ];
 
-    // AUTOMATED BANNERS SLIDER ENGINE (EVERY 3 SECONDS SIDE-BY-SIDE)
-    function initBannerSliders() {
-      const groups = document.querySelectorAll('.carousel-group');
-      groups.forEach(group => {
-        const slides = group.querySelectorAll('.banner-slide');
-        if (slides.length < 2) return;
-        let activeIdx = 0;
-        const intervalTime = parseInt(group.getAttribute('data-interval')) || 3000;
-        setInterval(() => {
-          slides[activeIdx].classList.remove('active');
-          activeIdx = (activeIdx + 1) % slides.length;
-          slides[activeIdx].classList.add('active');
-        }, intervalTime);
-      });
+    // SINGLE HERO CAROUSEL ENGINE — 6 BANNERS, 4 SECOND AUTOPLAY
+    let heroIndex = 0; let heroTimer = null; const HERO_TOTAL = 6;
+    function updateHeroCarousel() {
+      const track=document.getElementById('carouselTrack'), dots=document.querySelectorAll('#carouselDots button'); if(!track) return;
+      heroIndex=(heroIndex+HERO_TOTAL)%HERO_TOTAL; track.style.transform=`translateX(-${heroIndex*100}%)`;
+      dots.forEach((dot,i)=>{dot.classList.toggle('bg-white',i===heroIndex);dot.classList.toggle('bg-white/50',i!==heroIndex);dot.classList.toggle('scale-125',i===heroIndex);});
     }
+    function goToHeroSlide(i){heroIndex=i;updateHeroCarousel();restartHeroTimer();}
+    function nextHeroSlide(){heroIndex=(heroIndex+1)%HERO_TOTAL;updateHeroCarousel();}
+    function prevHeroSlide(){heroIndex=(heroIndex-1+HERO_TOTAL)%HERO_TOTAL;updateHeroCarousel();restartHeroTimer();}
+    function startHeroTimer(){if(!heroTimer)heroTimer=setInterval(nextHeroSlide,4000);}
+    function stopHeroTimer(){if(heroTimer){clearInterval(heroTimer);heroTimer=null;}}
+    function restartHeroTimer(){stopHeroTimer();startHeroTimer();}
+    function pauseHeroCarousel(){stopHeroTimer();} function resumeHeroCarousel(){startHeroTimer();}
+    document.addEventListener('DOMContentLoaded',()=>{updateHeroCarousel();startHeroTimer();});
 
     function sendSystemAdminAlert(orderDetails) {
       if (!FORMSPREE_ENDPOINT) return;
@@ -901,7 +907,7 @@
       document.getElementById("detailFormat").textContent = prod.format;
       document.getElementById("detailWarranty").textContent = prod.warranty;
       document.getElementById("detailSpecs").textContent = prod.specs;
-      document.getElementById("detailIcon").innerHTML = BRAND_ICONS[prod.iconKey] || BRAND_ICONS.generic;
+      document.getElementById("detailIcon").innerHTML = getBrandIcon(prod.iconKey);
       document.getElementById("detailBasketBtn").onclick = () => { addToCart(prod.id); closeDetailsModal(); };
       document.getElementById("detailOrderBtn").onclick = () => { closeDetailsModal(); openCheckoutModal(prod.id); };
       document.getElementById("detailsModal").classList.remove("hidden");
@@ -949,7 +955,7 @@
       emptyState.classList.add("hidden"); summaryBox.classList.remove("hidden");
       list.innerHTML = cart.map((item, idx) => `
         <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
-          <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
+          <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${getBrandIcon(item.iconKey)}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
           <div class="flex items-center gap-3"><span class="font-black text-emerald-400">₨ ${item.pricePKR}/-</span><button onclick="removeFromCart(${idx})" class="text-red-400"><i class="fa-solid fa-trash-can"></i></button></div>
         </div>
       `).join("");
@@ -1128,7 +1134,6 @@
       renderProducts(products);
       renderReviews();
       updateCartUi();
-      initBannerSliders();
     });
   </script>
 </body>

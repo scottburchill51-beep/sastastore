@@ -8,7 +8,7 @@
   <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, Canva Pro, ElevenLabs, HeyGen, ChatGPT Plus, TikTok UK Live SIMs & Windows Keys." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
-  <meta property="og:image" content="1.jpg" />
+  <meta property="og:image" content="banner1.jpg" />
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
   <!-- Tailwind CSS & Icons -->
@@ -84,27 +84,15 @@
       100% { left: 140%; }
     }
 
-    /* AUTO SLIDING CAROUSEL BOXES (NO ARROWS, NO DOTS) */
-    .banner-slot {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.5rem;
-      background: #0a101d;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-    }
-    .banner-slide {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
+    /* TRUE HORIZONTAL HERO CAROUSEL */
+    .carousel-track {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
     }
-    .banner-slide.active {
-      opacity: 1;
-      position: relative;
+    .carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -194,34 +182,42 @@
     </div>
   </div>
 
-  <!-- ==================== 1. TOP 3 LANDSCAPE BANNERS (SIDE-BY-SIDE AUTO-SLIDING) ==================== -->
-  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-2">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-      <div class="banner-slot cursor-pointer" onclick="location.href='#products'">
-        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] relative carousel-group" data-interval="3000">
-          <div class="banner-slide active"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
+  <!-- ==================== TRUE HORIZONTAL HERO CAROUSEL (1 TRACK FOR 3 BANNERS) ==================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+    <div class="relative overflow-hidden rounded-3xl border border-gray-800 shadow-2xl bg-gray-950 group" id="heroCarousel" onmouseenter="pauseHeroCarousel()" onmouseleave="resumeHeroCarousel()">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Banner 1 -->
+        <div class="carousel-slide cursor-pointer" onclick="location.href='#products'">
+          <img src="banner1.jpg" alt="SastaStore Banner 1" class="w-full h-auto max-h-[420px] object-contain mx-auto" />
+        </div>
+        <!-- Banner 2 -->
+        <div class="carousel-slide cursor-pointer" onclick="openCheckoutModal(2)">
+          <img src="banner2.jpg" alt="SastaStore Banner 2" class="w-full h-auto max-h-[420px] object-contain mx-auto" />
+        </div>
+        <!-- Banner 3 -->
+        <div class="carousel-slide cursor-pointer" onclick="openCheckoutModal(143)">
+          <img src="banner3.jpg" alt="SastaStore Banner 3" class="w-full h-auto max-h-[420px] object-contain mx-auto" />
         </div>
       </div>
-      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(2)">
-        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] relative carousel-group" data-interval="3500">
-          <div class="banner-slide active"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-        </div>
-      </div>
-      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(143)">
-        <div class="w-full aspect-[16/9] sm:aspect-[16/8.5] relative carousel-group" data-interval="4000">
-          <div class="banner-slide active"><img src="3.jpg" alt="Banner 3" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="1.jpg" alt="Banner 1" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="2.jpg" alt="Banner 2" class="w-full h-full object-contain p-1 rounded-3xl" /></div>
-        </div>
+
+      <!-- Controls -->
+      <button onclick="prevHeroSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10 cursor-pointer">
+        <i class="fa-solid fa-chevron-left text-sm"></i>
+      </button>
+      <button onclick="nextHeroSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg opacity-80 hover:opacity-100 z-10 cursor-pointer">
+        <i class="fa-solid fa-chevron-right text-sm"></i>
+      </button>
+
+      <!-- Dots -->
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10" id="carouselDots">
+        <button onclick="goToHeroSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button onclick="goToHeroSlide(1)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
+        <button onclick="goToHeroSlide(2)" class="w-2.5 h-2.5 rounded-full bg-white/50 transition-all duration-300"></button>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 2. CENTER VIRAL OFFER: CLAIM FREE CANVA PRO ==================== -->
+  <!-- ==================== CENTER VIRAL OFFER: CLAIM FREE CANVA PRO ==================== -->
   <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5">
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-600/20 via-purple-600/20 to-emerald-600/20 border-2 border-amber-500/40 p-6 sm:p-8 shadow-2xl">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
@@ -236,36 +232,9 @@
             Follow our official <strong>Instagram</strong> & <strong>Facebook</strong> page, submit verification proof, and receive your 1-Year Canva Pro Invite directly on your Gmail!
           </p>
         </div>
-        <button onclick="openCanvaPromoModal()" class="btn-shimmer flex-shrink-0 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black font-heading font-black text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-105 flex items-center gap-2.5">
+        <button onclick="openCanvaPromoModal()" class="btn-shimmer flex-shrink-0 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black font-heading font-black text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-105 flex items-center gap-2.5 cursor-pointer">
           <i class="fa-solid fa-bolt-lightning text-base"></i> Claim Free Canva Pro 🚀
         </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 3. MIDDLE / BOTTOM 3 PORTRAIT BANNERS (SIDE-BY-SIDE AUTO-SLIDING) ==================== -->
-  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pb-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(7)">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] relative carousel-group" data-interval="3200">
-          <div class="banner-slide active"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-        </div>
-      </div>
-      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(130)">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] relative carousel-group" data-interval="3700">
-          <div class="banner-slide active"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-        </div>
-      </div>
-      <div class="banner-slot cursor-pointer" onclick="openCheckoutModal(120)">
-        <div class="w-full aspect-[3/4] sm:aspect-[4/5] relative carousel-group" data-interval="4200">
-          <div class="banner-slide active"><img src="6.jpg" alt="Banner 6" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="4.jpg" alt="Banner 4" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-          <div class="banner-slide"><img src="5.jpg" alt="Banner 5" class="w-full h-full object-contain p-2 rounded-3xl" /></div>
-        </div>
       </div>
     </div>
   </section>
@@ -303,7 +272,7 @@
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search TikTok SIM, ElevenLabs, CapCut..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          <input type="text" id="searchInput" placeholder="Search TikTok UK SIM, ElevenLabs, CapCut..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
@@ -360,7 +329,7 @@
     </div>
   </section>
 
-  <!-- FAQ SECTION (FULLY WORKING) -->
+  <!-- FAQ SECTION (FULLY WORKING ACCORDION) -->
   <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center mb-10">
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
@@ -369,7 +338,7 @@
 
     <div class="space-y-3">
       <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
-        <button onclick="toggleFaq(1)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+        <button onclick="toggleFaq(1)" class="w-full p-4 text-left flex items-center justify-between gap-4 cursor-pointer">
           <span class="text-sm font-bold text-white flex items-center gap-2.5"><i class="fa-solid fa-clock text-emerald-400"></i> How long does delivery take after ordering?</span>
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-1"></i>
         </button>
@@ -378,7 +347,7 @@
         </div>
       </div>
       <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
-        <button onclick="toggleFaq(2)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+        <button onclick="toggleFaq(2)" class="w-full p-4 text-left flex items-center justify-between gap-4 cursor-pointer">
           <span class="text-sm font-bold text-white flex items-center gap-2.5"><i class="fa-solid fa-shield-heart text-blue-400"></i> How does the Replacement Warranty work?</span>
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-2"></i>
         </button>
@@ -387,7 +356,7 @@
         </div>
       </div>
       <div class="glass-box rounded-2xl border border-gray-800 overflow-hidden">
-        <button onclick="toggleFaq(3)" class="w-full p-4 text-left flex items-center justify-between gap-4">
+        <button onclick="toggleFaq(3)" class="w-full p-4 text-left flex items-center justify-between gap-4 cursor-pointer">
           <span class="text-sm font-bold text-white flex items-center gap-2.5"><i class="fa-solid fa-basket-shopping text-emerald-400"></i> How do I get 10% OFF?</span>
           <i class="fa-solid fa-chevron-down text-xs text-gray-400 transition-transform duration-300" id="faqIcon-3"></i>
         </button>
@@ -793,7 +762,7 @@
       generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
     };
 
-    // COMPLETE PRODUCTS LIST (INCLUDING ALL 38+ TOOLS AND TIKTOK UK SIM AT THE VERY END)
+    // COMPLETE PRODUCT CATALOG (RESTORED ALL 38+ TOOLS WITH TIKTOK UK SIM AT THE END)
     const products = [
       { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning & Dubbing.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700", urgency: "⚡ 3 Left Today" },
       { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits for YouTube voiceovers & podcasts.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800", urgency: "⚡ Instant Delivery" },
@@ -806,7 +775,7 @@
       { id: 7, title: "Canva Admin Panel", category: "design", tag: "1 Year+ Validity", warranty: "6 Months Complete Warranty", format: "Admin Master Control Account", specs: "1 Year+ Validity with 6 Months Complete Warranty. Add up to 500 members under your team.", origPricePKR: 3499, pricePKR: 2499, badge: "Reseller Kit", iconKey: "canva", color: "from-purple-600 to-indigo-700", urgency: "⚡ Master Panel" },
       { id: 130, title: "HeyGen 600 Credits", category: "ai", tag: "600 Mega Credits", warranty: "25 Days Subscription Replacement Warranty", format: "On Mail + Readymade Account", specs: "600 credits for unlimited avatars, voice cloning & AI studio video generation.", origPricePKR: 7999, pricePKR: 6199, badge: "Mega Video", iconKey: "generic", color: "from-purple-700 to-pink-600", urgency: "⚡ Studio Pro" },
       { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "20 Days Warranty", format: "Direct Panel Credits Topup", specs: "Ultra-realistic AI Avatar video generation, voice cloning, multiple languages.", origPricePKR: 17999, pricePKR: 14499, badge: "Top AI Video", iconKey: "generic", color: "from-purple-600 to-indigo-700", urgency: "⚡ Fast Render" },
-      { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access, Code Interpreter.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", iconKey: "chatgpt", color: "from-emerald-600 to-teal-800", urgency: "⚡ Stock Available" },
+      { id: 134, title: "ChatGPT Plus Monthly (Private)", category: "ai", tag: "Monthly Private", warranty: "30 Days Guaranteed Access", format: "100% Private Ready Account", specs: "Private ChatGPT Plus account. Full GPT-4o, DALL-E 3, Sora video access.", origPricePKR: 4999, pricePKR: 3999, badge: "Private VIP", iconKey: "chatgpt", color: "from-emerald-600 to-teal-800", urgency: "⚡ Stock Available" },
       { id: 133, title: "ChatGPT Plus (Shared)", category: "ai", tag: "1 Device Access", warranty: "20 Days Replacement Warranty", format: "Email + Password Shared Login", specs: "Email + Password login. GPT-4o access, file uploads, coding assistance & web search on 1 device.", origPricePKR: 1499, pricePKR: 1099, badge: "Popular AI", iconKey: "chatgpt", color: "from-emerald-500 to-teal-700", urgency: "⚡ Budget AI" },
       { id: 132, title: "Claude Pro", category: "ai", tag: "Monthly Direct", warranty: "Direct Official Access Warranty", format: "Pre-made Official Pro Account", specs: "Claude 3.5 Sonnet access, 5x higher usage limits, Artifacts builder, Priority bandwidth.", origPricePKR: 6499, pricePKR: 5299, badge: "Top AI", iconKey: "claude", color: "from-amber-600 to-orange-700", urgency: "⚡ Coder's Choice" },
       { id: 131, title: "Grok Paid Account Monthly", category: "ai", tag: "Monthly Plan", warranty: "Full Month Warranty", format: "On Mail + Readymade Account", specs: "Real-time X integration, uncensored intelligence & FLUX image generation.", origPricePKR: 7499, pricePKR: 5999, badge: "xAI Official", iconKey: "grok", color: "from-zinc-700 to-black", urgency: "⚡ Uncensored" },
@@ -832,6 +801,7 @@
       { id: 114, title: "LinkedIn Career (3 Months)", category: "design", tag: "3 Months Activation Link", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "3 Months Premium Access via official Premium Activation Link for new users.", origPricePKR: 1899, pricePKR: 1299, badge: "Career Link", iconKey: "generic", color: "from-blue-700 to-indigo-800", urgency: "⚡ Job Seeker" },
       { id: 15, title: "Coursera Premium (1 Year)", category: "design", tag: "1 Year Access", warranty: "8 Months Full Warranty", format: "On Mail + Readymade Both Possible", specs: "1 Year Full Access, 8 Months Warranty. Unlimited courses and certificates.", origPricePKR: 1899, pricePKR: 1349, badge: "Learning", iconKey: "generic", color: "from-blue-500 to-indigo-600", urgency: "⚡ Certifications" },
       { id: 14, title: "MS Office 365 (1 Year)", category: "design", tag: "1 Year Subscription", warranty: "6 Months Full Warranty", format: "Email + Password Credentials", specs: "Word, Excel, PowerPoint, Outlook for 5 devices (PC/Mac/Phone) + 1TB OneDrive cloud storage.", origPricePKR: 1299, pricePKR: 949, badge: "Office", iconKey: "windows", color: "from-orange-500 to-red-500", urgency: "⚡ 1TB Cloud" },
+      { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Ad-free videos & YouTube Music.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", iconKey: "youtube", color: "from-red-500 to-red-700", urgency: "⚡ Instant" },
       { id: 24, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Access", warranty: "1 Month Replacement Warranty", format: "Family Invite to Personal Gmail", specs: "90 Days Access with 1 Month Replacement Warranty. Uninterrupted ad-free video streaming & full YouTube Music included.", origPricePKR: 1199, pricePKR: 899, badge: "Value Plan", iconKey: "youtube", color: "from-red-600 to-rose-700", urgency: "⚡ 3 Months Ad-Free" },
       { id: 16, title: "Netflix Single Screen (Monthly)", category: "streaming", tag: "1 Profile Screen", warranty: "25 Days Stable Warranty", format: "Private Profile with PIN", specs: "UHD 4K streaming on 1 screen with dedicated profile name and personal PIN lock.", origPricePKR: 499, pricePKR: 349, badge: "Streaming", iconKey: "netflix", color: "from-red-600 to-rose-700", urgency: "⚡ UHD 4K Screen" },
       { id: 17, title: "Netflix Full Account (5 Screens)", category: "streaming", tag: "5 Screens UHD 4K", warranty: "27 Days Full Account Warranty", format: "Email + Password (Full Account)", specs: "Complete private account credentials with email and password manageable under your control.", origPricePKR: 1499, pricePKR: 999, badge: "4K UHD Private", iconKey: "netflix", color: "from-rose-600 to-red-800", urgency: "⚡ Full Account" },
@@ -848,7 +818,7 @@
       { id: 22, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Instant Fresh Delivery", format: "Fresh IMAP/POP3 Enabled Email", specs: "Clean proxies phone verified email accounts for bulk automation & signups.", origPricePKR: 79, pricePKR: 44, badge: "Bulk", iconKey: "generic", color: "from-blue-400 to-sky-600", urgency: "⚡ Bulk Stock" },
       { id: 119, title: "Windows 10 Pro Retail Key", category: "keys", tag: "Global Retail Key", warranty: "Online Permanent Activation", format: "License Key (Outlook Format)", specs: "Delivered in official Outlook format containing original 25-digit retail license key.", origPricePKR: 1099, pricePKR: 699, badge: "Retail Key", iconKey: "windows", color: "from-sky-500 to-blue-700", urgency: "⚡ Win 10 Pro" },
       { id: 142, title: "API Orders Test", category: "accounts", tag: "Test Item ($0.05)", warranty: "No Warranty", format: "Coupon / Link", specs: "Dont order it. It is just API working Test.", origPricePKR: 50, pricePKR: 15, badge: "API Test", iconKey: "generic", color: "from-gray-500 to-gray-700", urgency: "⚡ Test Item" },
-      // TIKTOK UK SIM AT THE VERY END WITH EXACT REOUIRED SPECS
+      // TIKTOK UK SIM AT THE VERY END WITH EXACT REQUIRED SPECS
       { id: 145, title: "TikTok UK SIM (Live Streaming Only)", category: "accounts", tag: "Physical SIM Card", warranty: "No Warranty (Non-Active)", format: "Delivered via Courier", specs: "TikTok UK SIM card strictly for Live Streaming only. Non-active cellular service, no OTP receiving.\n📦 Delivery Time: 3 to 4 Days.", origPricePKR: 3500, pricePKR: 3000, badge: "Live SIM", iconKey: "tiktok", color: "from-pink-600 to-rose-700", urgency: "Delivery: 3-4 Days" }
     ];
 
@@ -857,6 +827,71 @@
       { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5, date: "2 days ago" },
       { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
     ];
+
+    // AUTOMATED BANNERS SLIDER ENGINE (EVERY 3 SECONDS SIDE-BY-SIDE)
+    function initBannerSliders() {
+      const groups = document.querySelectorAll('.carousel-group');
+      groups.forEach(group => {
+        const slides = group.querySelectorAll('.banner-slide');
+        if (slides.length < 2) return;
+        let activeIdx = 0;
+        const intervalTime = parseInt(group.getAttribute('data-interval')) || 3000;
+        setInterval(() => {
+          slides[activeIdx].classList.remove('active');
+          activeIdx = (activeIdx + 1) % slides.length;
+          slides[activeIdx].classList.add('active');
+        }, intervalTime);
+      });
+    }
+
+    function sendSystemAdminAlert(orderDetails) {
+      if (!FORMSPREE_ENDPOINT) return;
+      fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          subject: `🚨 New SastaStore Order: ${orderDetails.product} (${orderDetails.id})`,
+          tracking_id: orderDetails.id,
+          customer_name: orderDetails.name,
+          phone_number: orderDetails.rawPhone || orderDetails.phone,
+          customer_email: orderDetails.email,
+          product_ordered: orderDetails.product,
+          total_amount: orderDetails.price,
+          payment_channel: orderDetails.method,
+          transaction_id: orderDetails.trx,
+          order_date: orderDetails.date
+        })
+      }).catch(() => {});
+    }
+
+    function openCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.remove("hidden"); }
+    function closeCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.add("hidden"); }
+
+    function submitCanvaClaim(e) {
+      e.preventDefault();
+      const name = document.getElementById("promoName").value.trim();
+      const phone = document.getElementById("promoPhone").value.trim();
+      const email = document.getElementById("promoEmail").value.trim();
+      const handle = document.getElementById("promoHandle").value.trim();
+
+      fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          subject: `🎁 FREE CANVA PRO CLAIM: ${name} (${handle})`,
+          customer_name: name,
+          whatsapp_phone: phone,
+          delivery_gmail: email,
+          social_handle: handle,
+          date: new Date().toLocaleDateString()
+        })
+      }).catch(() => {});
+
+      if (typeof confetti === 'function') confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
+      closeCanvaPromoModal();
+      document.getElementById("canvaClaimForm").reset();
+      alert("✅ Your Canva Pro claim has been submitted successfully!");
+    }
 
     function openDetailsModal(id) {
       const prod = products.find(p => p.id === id);

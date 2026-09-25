@@ -8,7 +8,6 @@
   <meta name="description" content="SastaStore - Pakistan's most trusted digital subscription store. CapCut Pro, Canva Pro, ElevenLabs, HeyGen, ChatGPT Plus, TikTok UK Live SIMs & Windows Keys." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SastaStore | Premium Tools • Sasta Prices" />
-  <meta property="og:image" content="assets/banners/banner01.jpg" />
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
 
   <!-- Tailwind CSS & Icons -->
@@ -83,24 +82,17 @@
       30% { left: 140%; }
       100% { left: 140%; }
     }
-
-    /* SIX-BANNER TWO-ROW SIDE ROTATION */
-    .banner-row { display:flex; gap:.5rem; width:max-content; will-change:transform; transition:transform .7s cubic-bezier(.25,1,.5,1); }
-    .banner-card { flex:0 0 33.333vw; max-width:calc((100vw - 3rem) / 3); min-width:0; aspect-ratio:16/7; overflow:hidden; border-radius:1rem; background:#0b1220; border:1px solid rgba(255,255,255,.08); }
-    .banner-card img { width:100%; height:100%; display:block; object-fit:cover; }
-    @media (min-width:1024px){ .banner-card{ flex-basis:calc((100% - 1rem)/3); max-width:none; } }
-    @media (max-width:640px){ .banner-card{ flex-basis:78vw; max-width:78vw; aspect-ratio:16/8; } }
   </style>
 </head>
 
 <body class="antialiased selection:bg-brand-emerald selection:text-black min-h-screen flex flex-col justify-between">
 
-  <!-- TOP PROMO TICKER -->
-  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1424] to-emerald-950 border-b border-emerald-500/20 py-2 px-4 text-xs font-semibold text-emerald-300">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Live</span>
-        <span>⚡ Multi-Item Basket Active • Use <strong>SASTA10</strong> for 10% OFF on ₨ 3,000+</span>
+  <!-- TRUSTED SELLER NOTICE BAR -->
+  <div class="bg-gradient-to-r from-emerald-950 via-[#0a1424] to-emerald-950 border-b border-emerald-500/20 py-2.5 px-4 text-xs font-semibold text-emerald-300">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2 justify-center">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-brand-emerald text-black uppercase tracking-wider animate-pulse">Trusted & Verified</span>
+        <span>✨ Instant Response 11am-11pm • Delivery Time: 5 to 45 Minutes ✨</span>
       </div>
       <div class="hidden md:flex items-center gap-4 text-gray-300">
         <a href="https://www.instagram.com/sastastore_0?stkn=MWNwZ2lyMHVpaDhkag==" target="_blank" class="hover:text-pink-400 text-xs flex items-center gap-1.5 transition"><i class="fa-brands fa-instagram text-pink-500"></i> Instagram</a>
@@ -125,7 +117,7 @@
           <img src="logo.jpeg" alt="SastaStore Logo" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl object-cover border border-emerald-500/30 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform flex-shrink-0" />
           <div>
             <div class="font-heading font-black text-xl sm:text-2xl tracking-tight text-white flex items-center gap-1">Sasta<span class="text-brand-emerald">Store</span></div>
-            <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 hidden sm:block leading-none">— PREMIUM TOOLS • SASTA PRICES</span>
+            <span class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-gray-400 hidden sm:block leading-none">— YOUR TRUSTED SELLER</span>
           </div>
         </a>
       </div>
@@ -178,55 +170,39 @@
     </div>
   </div>
 
-  <!-- ==================== SIX BANNER HERO — 3 TOP + 3 MIDDLE, SIDE ROTATION ==================== -->
-  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-5 pb-3">
-    <div id="heroCarousel" class="relative overflow-hidden rounded-3xl border border-gray-800 shadow-2xl bg-gray-950 p-2 sm:p-3" onmouseenter="pauseHeroCarousel()" onmouseleave="resumeHeroCarousel()">
-      <div class="space-y-2 sm:space-y-3">
-        <!-- TOP ROW: 1, 2, 3 -->
-        <div class="banner-row-wrap overflow-hidden rounded-2xl">
-          <div id="bannerRowTop" class="banner-row">
-            <div class="banner-card"><img src="assets/banners/banner01.jpg" alt="SastaStore Banner 1" loading="eager"></div>
-            <div class="banner-card"><img src="assets/banners/banner02.jpg" alt="SastaStore Banner 2" loading="eager"></div>
-            <div class="banner-card"><img src="assets/banners/banner03.jpg" alt="SastaStore Banner 3" loading="eager"></div>
-          </div>
+  <!-- ==================== PROMOTIONAL OFFERS BANNER CARDS (NO IMAGE BANNERS) ==================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Offer Card 1 -->
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-950/80 via-[#0b1624] to-teal-950/80 border border-emerald-500/30 p-6 sm:p-7 shadow-xl flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500 text-black"><i class="fa-solid fa-tags"></i> Multi-Item Bundle</span>
+          <span class="text-xs font-mono font-bold text-emerald-400">Auto-Applied</span>
         </div>
-        <!-- MIDDLE ROW: 5, 4, 6 -->
-        <div class="banner-row-wrap overflow-hidden rounded-2xl">
-          <div id="bannerRowBottom" class="banner-row">
-            <div class="banner-card"><img src="assets/banners/banner05.jpg" alt="SastaStore Banner 5" loading="lazy"></div>
-            <div class="banner-card"><img src="assets/banners/banner04.jpg" alt="SastaStore Banner 4" loading="lazy"></div>
-            <div class="banner-card"><img src="assets/banners/banner06.jpg" alt="SastaStore Banner 6" loading="lazy"></div>
-          </div>
+        <div>
+          <h3 class="font-heading text-xl sm:text-2xl font-black text-white mb-1">Buy Any 3 Tools & Get 10% OFF</h3>
+          <p class="text-xs text-gray-300">Add 3 or more subscriptions to your basket and apply coupon code <strong class="text-emerald-400 font-mono">SASTA10</strong> for instant 10% discount!</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+          <span class="text-gray-400">Valid on all AI & design tools</span>
+          <a href="#products" class="text-emerald-400 font-bold hover:underline">Explore Tools →</a>
         </div>
       </div>
-      <div class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
-        <button aria-label="Previous banners" onclick="prevHeroSlide()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/75 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-        <button aria-label="Next banners" onclick="nextHeroSlide()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/75 hover:bg-emerald-500 text-white hover:text-black border border-white/20 flex items-center justify-center transition shadow-lg"><i class="fa-solid fa-chevron-right text-xs"></i></button>
-      </div>
-      <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="w-2 h-2 rounded-full bg-white/40"></span><span class="w-2 h-2 rounded-full bg-white/40"></span>
-      </div>
-    </div>
-  </section>
 
-  <!-- ==================== CENTER VIRAL OFFER: CLAIM FREE CANVA PRO ==================== -->
-  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5">
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-600/20 via-purple-600/20 to-emerald-600/20 border-2 border-amber-500/40 p-6 sm:p-8 shadow-2xl">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
-        <div class="space-y-2 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-500 text-black shadow-md">
-            <i class="fa-solid fa-gift"></i> Special Community Giveaway
-          </div>
-          <h2 class="font-heading text-2xl sm:text-3xl font-black text-white">
-            Claim Canva Pro (1 Year) <span class="text-amber-400 underline decoration-amber-400">100% FREE!</span>
-          </h2>
-          <p class="text-gray-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-            Follow our official <strong>Instagram</strong> & <strong>Facebook</strong> page, submit verification proof, and receive your 1-Year Canva Pro Invite directly on your Gmail!
-          </p>
+      <!-- Offer Card 2 -->
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-950/80 via-[#181124] to-purple-950/80 border border-amber-500/30 p-6 sm:p-7 shadow-xl flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500 text-black"><i class="fa-solid fa-gift"></i> Special Bundle</span>
+          <span class="text-xs font-mono font-bold text-amber-400">Canva Pro @ ₨ 350/-</span>
         </div>
-        <button onclick="openCanvaPromoModal()" class="btn-shimmer flex-shrink-0 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-black font-heading font-black text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-105 flex items-center gap-2.5 cursor-pointer">
-          <i class="fa-solid fa-bolt-lightning text-base"></i> Claim Free Canva Pro 🚀
-        </button>
+        <div>
+          <h3 class="font-heading text-xl sm:text-2xl font-black text-white mb-1">Buy 2 Canva Pro & Get 1 Free!</h3>
+          <p class="text-xs text-gray-300">Need accounts for your friends or team? Order 2 Canva Pro subscriptions and get an extra 1-Year account completely free.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+          <span class="text-gray-400">Instant Gmail Activation</span>
+          <button onclick="openCanvaPromoModal()" class="text-amber-400 font-bold hover:underline">Claim Offer →</button>
+        </div>
       </div>
     </div>
   </section>
@@ -264,7 +240,7 @@
       <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
         <div class="relative w-full sm:w-72">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
-          <input type="text" id="searchInput" placeholder="Search TikTok UK SIM, ElevenLabs, CapCut..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
+          <input type="text" id="searchInput" placeholder="Search TikTok UK SIM, ElevenLabs, Canva..." class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400">
         </div>
 
         <div class="flex flex-wrap items-center gap-1 bg-gray-900 p-1 rounded-xl border border-gray-800" id="filterTabs">
@@ -321,7 +297,7 @@
     </div>
   </section>
 
-  <!-- FAQ SECTION (FULLY WORKING ACCORDION) -->
+  <!-- FAQ SECTION -->
   <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center mb-10">
       <span class="text-emerald-400 text-xs font-black uppercase tracking-widest block mb-2">Got Questions?</span>
@@ -443,7 +419,7 @@
             </div>
             <div>
               <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Gmail (for Canva Invite) *</label>
-              <input type="email" id="promoEmail" required placeholder="yourname@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+              <input type="email" id="promoEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
             </div>
           </div>
           <div>
@@ -722,7 +698,6 @@
       return clean;
     }
 
-    // FAQ TOGGLE (FULLY WORKING)
     function toggleFaq(id) {
       const ans = document.getElementById(`faqAnswer-${id}`);
       const icon = document.getElementById(`faqIcon-${id}`);
@@ -736,29 +711,26 @@
       }
     }
 
-    // OFFICIAL BRAND VECTOR ICONS LIBRARY
+    // EXACT BRAND LOGOS WITH ORIGINAL FILENAMES (e.g. capcut.svg.jpeg)
     const BRAND_ICONS = {
-      capcut: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M2.5 5.5h6l3.5 6.5-3.5 6.5h-6l3.5-6.5zm19 0h-6l-3.5 6.5 3.5 6.5h6l-3.5-6.5z"/></svg>`,
-      chatgpt: `<svg class="w-6 h-6 fill-current text-emerald-400" viewBox="0 0 24 24"><path d="M22.28 10.37a5.55 5.55 0 0 0-.47-4.48 5.68 5.68 0 0 0-5.59-2.81 5.56 5.56 0 0 0-4.14-1.84 5.68 5.68 0 0 0-5.4 3.93 5.54 5.54 0 0 0-3.67 2.65 5.68 5.68 0 0 0 .74 6.2 5.56 5.56 0 0 0 .47 4.48 5.68 5.68 0 0 0 5.59 2.81 5.56 5.56 0 0 0 4.14 1.84 5.68 5.68 0 0 0 5.4-3.93 5.54 5.54 0 0 0 3.67-2.65 5.68 5.68 0 0 0-.74-6.2z"/></svg>`,
-      elevenlabs: `<svg class="w-6 h-6 fill-current text-indigo-400" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7V4zm6.5 0H17v16h-3.5V4z"/></svg>`,
-      canva: `<svg class="w-6 h-6 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.3 13.8a4.4 4.4 0 0 1-2.9 1 4.7 4.7 0 0 1-4.7-4.7 4.9 4.9 0 0 1 5-5 4.3 4.3 0 0 1 2.5.8l-1 1.4a3 3 0 0 0-1.5-.5 3.2 3.2 0 0 0-3.3 3.3 3.1 3.1 0 0 0 3.1 3.1 3.6 3.6 0 0 0 2-.7z"/></svg>`,
-      gemini: `<svg class="w-6 h-6 fill-current text-teal-300" viewBox="0 0 24 24"><path d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.627 12 12 0-6.627 5.627-12 12-12-6.627 0-12-5.627-12-12z"/></svg>`,
-      claude: `<svg class="w-6 h-6 fill-current text-amber-500" viewBox="0 0 24 24"><path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/></svg>`,
-      grok: `<svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/></svg>`,
-      windows: `<svg class="w-6 h-6 fill-current text-blue-400" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.95-1.801"/></svg>`,
-      youtube: `<i class="fa-brands fa-youtube text-red-500 text-xl"></i>`,
-      netflix: `<i class="fa-solid fa-clapperboard text-red-600 text-xl"></i>`,
-      prime: `<i class="fa-brands fa-amazon text-blue-400 text-xl"></i>`,
-      vpn: `<i class="fa-solid fa-shield-halved text-cyan-400 text-xl"></i>`,
-      tiktok: `<i class="fa-brands fa-tiktok text-pink-400 text-xl"></i>`,
-      generic: `<i class="fa-solid fa-cube text-emerald-400 text-xl"></i>`
+      capcut: `<img src="/assets/icons/capcut.svg.jpeg" alt="CapCut" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-scissors text-blue-400 text-lg\\'></i>'">`,
+      chatgpt: `<img src="/assets/icons/chatgpt.svg.jpeg" alt="ChatGPT" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-robot text-emerald-400 text-lg\\'></i>'">`,
+      elevenlabs: `<img src="/assets/icons/elevenlabs.svg.jpeg" alt="ElevenLabs" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-microphone-lines text-indigo-400 text-lg\\'></i>'">`,
+      canva: `<img src="/assets/icons/canva.svg.jpeg" alt="Canva" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-palette text-cyan-400 text-lg\\'></i>'">`,
+      gemini: `<img src="/assets/icons/gemini.svg.jpeg" alt="Gemini" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-brain text-teal-300 text-lg\\'></i>'">`,
+      claude: `<img src="/assets/icons/claude.svg.jpeg" alt="Claude" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-sparkles text-amber-500 text-lg\\'></i>'">`,
+      grok: `<img src="/assets/icons/grok.svg.jpeg" alt="Grok" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-microchip text-white text-lg\\'></i>'">`,
+      windows: `<img src="/assets/icons/windows.svg.jpeg" alt="Windows" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-brands fa-windows text-blue-400 text-lg\\'></i>'">`,
+      youtube: `<img src="/assets/icons/youtube.svg.jpeg" alt="YouTube" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-brands fa-youtube text-red-500 text-lg\\'></i>'">`,
+      netflix: `<img src="/assets/icons/netflix.svg.jpeg" alt="Netflix" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-clapperboard text-red-600 text-lg\\'></i>'">`,
+      prime: `<img src="/assets/icons/prime-video.svg.jpeg" alt="Prime" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-brands fa-amazon text-blue-400 text-lg\\'></i>'">`,
+      vpn: `<img src="/assets/icons/nordvpn.svg.jpeg" alt="VPN" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-shield-halved text-cyan-400 text-lg\\'></i>'">`,
+      tiktok: `<img src="/assets/icons/tiktok.svg.jpeg" alt="TikTok" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-brands fa-tiktok text-pink-400 text-lg\\'></i>'">`,
+      apple: `<img src="/assets/icons/icloud.svg.jpeg" alt="iCloud" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-brands fa-apple text-gray-200 text-lg\\'></i>'">`,
+      generic: `<i class="fa-solid fa-cube text-emerald-400 text-lg"></i>`
     };
 
-    // Real product logo assets. Upload matching SVG/PNG files to /assets/icons/.
-    const REAL_ICON_FILES={capcut:'capcut.svg',canva:'canva.svg',elevenlabs:'elevenlabs.svg',heygen:'heygen.svg',chatgpt:'chatgpt.svg',claude:'claude.svg',grok:'grok.svg',gemini:'gemini.svg',perplexity:'perplexity.svg',leonardo:'leonardo.svg',veo3:'veo3.svg',wink:'wink.svg',lovable:'lovable.svg',notion:'notion.svg',n8n:'n8n.svg',envato:'envato.svg',freepik:'freepik.svg',figma:'figma.svg','adobe-express':'adobe-express.svg',grammarly:'grammarly.svg',duolingo:'duolingo.svg',linkedin:'linkedin.svg',coursera:'coursera.svg',microsoft:'microsoft.svg',youtube:'youtube.svg',netflix:'netflix.svg','prime-video':'prime-video.svg',spotify:'spotify.svg',nordvpn:'nordvpn.svg',surfshark:'surfshark.svg',icloud:'icloud.svg',tiktok:'tiktok.svg',telegram:'telegram.svg',outlook:'outlook.svg',windows:'windows.svg'};
-    function getBrandIcon(key){const file=REAL_ICON_FILES[key];return file?`<img src="assets/icons/${file}" alt="" class="w-7 h-7 object-contain" loading="lazy">`:(BRAND_ICONS[key]||BRAND_ICONS.generic);}
-
-    // COMPLETE PRODUCT CATALOG (RESTORED ALL 38+ TOOLS WITH TIKTOK UK SIM AT THE END)
+    // COMPLETE PRODUCTS LIST (CANVA PRO & BUSINESS PRICE SET TO 350 PKR)
     const products = [
       { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning & Dubbing.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700", urgency: "⚡ 3 Left Today" },
       { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits for YouTube voiceovers & podcasts.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800", urgency: "⚡ Instant Delivery" },
@@ -766,8 +738,8 @@
       { id: 3, title: "CapCut Pro (6 Months)", category: "design", tag: "6 Months Plan", warranty: "5 Months Replacement Warranty", format: "Email + Password Login", specs: "Full 6 Months Access with 5 Months Replacement Warranty. Email + Password login.", origPricePKR: 4499, pricePKR: 3399, badge: "Best Value", iconKey: "capcut", color: "from-blue-600 to-indigo-700", urgency: "⚡ Popular" },
       { id: 4, title: "CapCut Pro (Weekly)", category: "design", tag: "6 to 7 Days Pass", warranty: "6 to 7 Days Full Warranty", format: "Email + Password Login", specs: "6 to 7 Days Full Warranty. Email + Password login. Instant unlock of all VIP features.", origPricePKR: 249, pricePKR: 179, badge: "Budget", iconKey: "capcut", color: "from-sky-500 to-blue-600", urgency: "⚡ Fast Pass" },
       { id: 116, title: "CapCut Pro Admin Team (7 Seats)", category: "design", tag: "1 Month (7 Seats)", warranty: "25 Days Replacement Warranty", format: "Admin Control Dashboard", specs: "Manage and allocate 7 individual CapCut Pro logins for your production team or clients.", origPricePKR: 4999, pricePKR: 3499, badge: "Reseller Team", iconKey: "capcut", color: "from-blue-600 to-teal-600", urgency: "⚡ Reseller Pack" },
-      { id: 5, title: "Canva Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Replacement Warranty", format: "Invite Based Access to Your Email", specs: "1 Year Validity with 6 Months Guaranteed Warranty. Official invite based access.", origPricePKR: 349, pricePKR: 249, badge: "Popular", iconKey: "canva", color: "from-cyan-500 to-blue-500", urgency: "⚡ Best Seller" },
-      { id: 6, title: "Canva Business", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Invite Based Access", specs: "1 Month Canva Business with 25 Days Warranty. Invite access on your account.", origPricePKR: 749, pricePKR: 499, badge: "Business", iconKey: "canva", color: "from-teal-500 to-blue-600", urgency: "⚡ Team Plan" },
+      { id: 5, title: "Canva Pro", category: "design", tag: "1 Year Access", warranty: "6 Months Replacement Warranty", format: "Invite Based Access to Your Email", specs: "1 Year Validity with 6 Months Guaranteed Warranty. Official invite based access on your own Gmail.", origPricePKR: 499, pricePKR: 350, badge: "Popular", iconKey: "canva", color: "from-cyan-500 to-blue-500", urgency: "⚡ Buy 2 Get 1 Free" },
+      { id: 6, title: "Canva Business", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Invite Based Access", specs: "1 Month Canva Business with 25 Days Warranty. Invite access on your account.", origPricePKR: 599, pricePKR: 350, badge: "Business", iconKey: "canva", color: "from-teal-500 to-blue-600", urgency: "⚡ Team Plan" },
       { id: 7, title: "Canva Admin Panel", category: "design", tag: "1 Year+ Validity", warranty: "6 Months Complete Warranty", format: "Admin Master Control Account", specs: "1 Year+ Validity with 6 Months Complete Warranty. Add up to 500 members under your team.", origPricePKR: 3499, pricePKR: 2499, badge: "Reseller Kit", iconKey: "canva", color: "from-purple-600 to-indigo-700", urgency: "⚡ Master Panel" },
       { id: 130, title: "HeyGen 600 Credits", category: "ai", tag: "600 Mega Credits", warranty: "25 Days Subscription Replacement Warranty", format: "On Mail + Readymade Account", specs: "600 credits for unlimited avatars, voice cloning & AI studio video generation.", origPricePKR: 7999, pricePKR: 6199, badge: "Mega Video", iconKey: "generic", color: "from-purple-700 to-pink-600", urgency: "⚡ Studio Pro" },
       { id: 101, title: "HeyGen 200 Credits", category: "ai", tag: "200 Fast Credits", warranty: "20 Days Warranty", format: "Direct Panel Credits Topup", specs: "Ultra-realistic AI Avatar video generation, voice cloning, multiple languages.", origPricePKR: 17999, pricePKR: 14499, badge: "Top AI Video", iconKey: "generic", color: "from-purple-600 to-indigo-700", urgency: "⚡ Fast Render" },
@@ -776,145 +748,16 @@
       { id: 132, title: "Claude Pro", category: "ai", tag: "Monthly Direct", warranty: "Direct Official Access Warranty", format: "Pre-made Official Pro Account", specs: "Claude 3.5 Sonnet access, 5x higher usage limits, Artifacts builder, Priority bandwidth.", origPricePKR: 6499, pricePKR: 5299, badge: "Top AI", iconKey: "claude", color: "from-amber-600 to-orange-700", urgency: "⚡ Coder's Choice" },
       { id: 131, title: "Grok Paid Account Monthly", category: "ai", tag: "Monthly Plan", warranty: "Full Month Warranty", format: "On Mail + Readymade Account", specs: "Real-time X integration, uncensored intelligence & FLUX image generation.", origPricePKR: 7499, pricePKR: 5999, badge: "xAI Official", iconKey: "grok", color: "from-zinc-700 to-black", urgency: "⚡ Uncensored" },
       { id: 8, title: "Gemini Pro (18 Months)", category: "ai", tag: "18 Months Long Plan", warranty: "Activation Warranty", format: "Account Login / Upgrade", specs: "18 Months Long Validity. Google Gemini Advanced with 1 Million token reasoning.", origPricePKR: 999, pricePKR: 649, badge: "Top AI", iconKey: "gemini", color: "from-teal-400 to-emerald-600", urgency: "⚡ 4 Accounts Left" },
-      { id: 137, title: "Perplexity Enterprise Pro (1 Month)", category: "ai", tag: "Enterprise Plan ($8.00)", warranty: "7 Days Warranty", format: "Ready Account (Private Access)", specs: "Enterprise-Grade AI Search & Deep Research with Source-Cited Answers.", origPricePKR: 3499, pricePKR: 2239, badge: "Deep Research", iconKey: "generic", color: "from-teal-600 to-cyan-700", urgency: "⚡ Pro Search" },
-      { id: 136, title: "Leonardo AI Video Gen (Essential Plan)", category: "ai", tag: "8,500 Credits", warranty: "No Warranty", format: "Ready Account", specs: "All in One Video Generation Tool. Credits: 8500. Use Veo 3 • Kling AI • Seedance • Grok Hailou and 25+ AI Models.", origPricePKR: 999, pricePKR: 499, badge: "8500 Credits", iconKey: "generic", color: "from-fuchsia-600 to-purple-800", urgency: "⚡ Multi-Model" },
-      { id: 13, title: "Leonardo AI (Monthly)", category: "ai", tag: "1 Month Access", warranty: "20 Days Replacement Warranty", format: "Direct Account Login", specs: "Photorealistic AI image generation with Alchemy pipeline, prompt magic, and custom models.", origPricePKR: 1199, pricePKR: 799, badge: "Art AI", iconKey: "generic", color: "from-fuchsia-500 to-purple-600", urgency: "⚡ Alchemy 3" },
-      { id: 9, title: "Veo 3 (0 Credits Account)", category: "ai", tag: "0 Credits Pass", warranty: "20 Days Replacement Warranty", format: "Email + Password Account", specs: "Veo 3 0 Credits Account. Price: ₨ 2,299/-, 20 Days Replacement Warranty.", origPricePKR: 2999, pricePKR: 2299, badge: "Veo 3", iconKey: "generic", color: "from-amber-500 to-orange-600", urgency: "⚡ Cinematic Video" },
-      { id: 10, title: "Veo 3 (Extension Based - Bunny Flow)", category: "ai", tag: "Bunny Flow Server", warranty: "20 Days Replacement Warranty", format: "Browser Extension Based", specs: "Veo 3 Extension Based (Bunny Flow). Price: ₨ 1,900/-, 20 Days Replacement Warranty.", origPricePKR: 2499, pricePKR: 1900, badge: "Bunny Flow", iconKey: "generic", color: "from-orange-500 to-yellow-600", urgency: "⚡ Extension" },
-      { id: 106, title: "Wink VIP (30 Days)", category: "ai", tag: "30 Days VIP", warranty: "25 Days Replacement Warranty", format: "Mobile & PC VIP Login", specs: "AI portrait video enhancement, 4K quality restoration, noise reduction & body retouching.", origPricePKR: 2199, pricePKR: 1679, badge: "VIP Retouch", iconKey: "generic", color: "from-yellow-500 to-amber-600", urgency: "⚡ 4K Video" },
-      { id: 107, title: "Wink Pro VIP (90 Days)", category: "ai", tag: "3 Months Pass", warranty: "40 Days Replacement Warranty", format: "Quarterly VIP Access", specs: "90 Days uninterrupted access to all professional video beauty & AI facial restoration tools.", origPricePKR: 4999, pricePKR: 3919, badge: "Pro Retouch", iconKey: "generic", color: "from-amber-600 to-orange-700", urgency: "⚡ Quarterly" },
-      { id: 138, title: "Lovable Lite (12 Months)", category: "design", tag: "12 Months ($12.00)", warranty: "No Warranty", format: "Ready Account", specs: "Build Apps, Tools & Workflows Easily. Custom domains & Remove Lovable badge.", origPricePKR: 4999, pricePKR: 3359, badge: "App Builder", iconKey: "generic", color: "from-rose-500 to-red-600", urgency: "⚡ No-Code" },
-      { id: 135, title: "Notion Business (3 Months)", category: "design", tag: "3 Months Coupon", warranty: "2 Days Warranty", format: "Official Coupon Code (On Your Account)", specs: "⚡ Everything in Plus\n⚡ Notion Agent and many more\n⚡ Duration: 3 Month\n⚡ Official Coupon Code", origPricePKR: 1799, pricePKR: 1299, badge: "Coupon", iconKey: "generic", color: "from-zinc-800 to-gray-900", urgency: "⚡ Coupon Deal" },
-      { id: 102, title: "Notion (1 Year)", category: "design", tag: "12 Months Full Access", warranty: "6 to 7 Months Full Warranty", format: "Workspace Member Pass", specs: "Full Notion workspace with unlimited blocks, file uploads, collaborative team features.", origPricePKR: 1599, pricePKR: 1099, badge: "Productivity", iconKey: "generic", color: "from-zinc-700 to-zinc-900", urgency: "⚡ 1 Year Pass" },
-      { id: 110, title: "N8N Starter (1 Year)", category: "design", tag: "12 Months Automation", warranty: "8 Months Full Warranty", format: "Redeem Link / Voucher", specs: "12 Months Automation with 8 Months Warranty. Delivered via official Redeem Link to connect bots, APIs & AI flows.", origPricePKR: 7499, pricePKR: 5599, badge: "Automation", iconKey: "generic", color: "from-red-500 to-orange-600", urgency: "⚡ Workflow Bot" },
-      { id: 104, title: "Envato Elements", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Direct Panel Access", specs: "Millions of graphics, video templates, audio tracks, themes with daily download allowance.", origPricePKR: 1699, pricePKR: 1199, badge: "Designer Kit", iconKey: "generic", color: "from-emerald-600 to-teal-700", urgency: "⚡ Unlimited DL" },
-      { id: 105, title: "Envato Core Individual Plan", category: "design", tag: "Personal Plan", warranty: "25 Days Replacement Warranty", format: "Private Account Access", specs: "Dedicated personal access with full commercial license on creative assets.", origPricePKR: 2999, pricePKR: 2199, badge: "Pro Asset", iconKey: "generic", color: "from-teal-600 to-cyan-700", urgency: "⚡ Pro License" },
-      { id: 1, title: "Freepik - Magnific API Panel", category: "design", tag: "30 Days Access", warranty: "25 Days Replacement Warranty", format: "Automated API Download Panel", specs: "High-volume asset downloads from Freepik and Magnific upscaling panels with instant delivery.", origPricePKR: 2299, pricePKR: 1649, badge: "Special 📦", iconKey: "generic", color: "from-blue-600 to-indigo-700", urgency: "⚡ Fast Panel" },
-      { id: 115, title: "Figma Pro Edu (2 Years)", category: "design", tag: "24 Months Access", warranty: "1 Month Replacement Warranty", format: "Email + Password Login", specs: "24 Months Access with 1 Month Replacement Warranty. Unlimited Figma & FigJam files with team libraries.", origPricePKR: 2999, pricePKR: 2199, badge: "Designers", iconKey: "generic", color: "from-pink-500 to-purple-600", urgency: "⚡ 2 Years Edu" },
-      { id: 117, title: "Adobe Express Premium (12 Months)", category: "design", tag: "1 Year Coupon", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "Adobe Express premium features, templates, assets for 1 Year via official redeem link.", origPricePKR: 1199, pricePKR: 839, badge: "Coupon", iconKey: "generic", color: "from-red-600 to-rose-700", urgency: "⚡ 1 Year Pass" },
-      { id: 12, title: "Grammarly Pro", category: "design", tag: "1 Month Access", warranty: "25 Days Replacement Warranty", format: "Shared / Dedicated Login", specs: "Advanced tone detection, full sentence rewrites, plagiarism checker, and AI generative text.", origPricePKR: 1199, pricePKR: 849, badge: "Writing AI", iconKey: "generic", color: "from-emerald-500 to-teal-600", urgency: "⚡ AI Writer" },
-      { id: 111, title: "Duolingo Super (12 Months)", category: "design", tag: "1 Year Coupon", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "Super Duolingo activation link for 1 year. Activate on your own account with 1 click.", origPricePKR: 2999, pricePKR: 2199, badge: "Language", iconKey: "generic", color: "from-lime-500 to-emerald-600", urgency: "⚡ Super Plan" },
-      { id: 114, title: "LinkedIn Career (3 Months)", category: "design", tag: "3 Months Activation Link", warranty: "No Warranty", format: "Coupon / Activation Link", specs: "3 Months Premium Access via official Premium Activation Link for new users.", origPricePKR: 1899, pricePKR: 1299, badge: "Career Link", iconKey: "generic", color: "from-blue-700 to-indigo-800", urgency: "⚡ Job Seeker" },
-      { id: 15, title: "Coursera Premium (1 Year)", category: "design", tag: "1 Year Access", warranty: "8 Months Full Warranty", format: "On Mail + Readymade Both Possible", specs: "1 Year Full Access, 8 Months Warranty. Unlimited courses and certificates.", origPricePKR: 1899, pricePKR: 1349, badge: "Learning", iconKey: "generic", color: "from-blue-500 to-indigo-600", urgency: "⚡ Certifications" },
-      { id: 14, title: "MS Office 365 (1 Year)", category: "design", tag: "1 Year Subscription", warranty: "6 Months Full Warranty", format: "Email + Password Credentials", specs: "Word, Excel, PowerPoint, Outlook for 5 devices (PC/Mac/Phone) + 1TB OneDrive cloud storage.", origPricePKR: 1299, pricePKR: 949, badge: "Office", iconKey: "windows", color: "from-orange-500 to-red-500", urgency: "⚡ 1TB Cloud" },
       { id: 19, title: "YouTube Premium (1 Month)", category: "streaming", tag: "30 Days Access", warranty: "25 Days Warranty", format: "Invite Access to Personal Gmail", specs: "30 Days Access, 25 Days Warranty. Ad-free videos & YouTube Music.", origPricePKR: 499, pricePKR: 349, badge: "Ad-Free", iconKey: "youtube", color: "from-red-500 to-red-700", urgency: "⚡ Instant" },
-      { id: 24, title: "YouTube Premium (3 Months)", category: "streaming", tag: "3 Months Access", warranty: "1 Month Replacement Warranty", format: "Family Invite to Personal Gmail", specs: "90 Days Access with 1 Month Replacement Warranty. Uninterrupted ad-free video streaming & full YouTube Music included.", origPricePKR: 1199, pricePKR: 899, badge: "Value Plan", iconKey: "youtube", color: "from-red-600 to-rose-700", urgency: "⚡ 3 Months Ad-Free" },
-      { id: 16, title: "Netflix Single Screen (Monthly)", category: "streaming", tag: "1 Profile Screen", warranty: "25 Days Stable Warranty", format: "Private Profile with PIN", specs: "UHD 4K streaming on 1 screen with dedicated profile name and personal PIN lock.", origPricePKR: 499, pricePKR: 349, badge: "Streaming", iconKey: "netflix", color: "from-red-600 to-rose-700", urgency: "⚡ UHD 4K Screen" },
-      { id: 17, title: "Netflix Full Account (5 Screens)", category: "streaming", tag: "5 Screens UHD 4K", warranty: "27 Days Full Account Warranty", format: "Email + Password (Full Account)", specs: "Complete private account credentials with email and password manageable under your control.", origPricePKR: 1499, pricePKR: 999, badge: "4K UHD Private", iconKey: "netflix", color: "from-rose-600 to-red-800", urgency: "⚡ Full Account" },
-      { id: 113, title: "Amazon Prime Video (1 Month)", category: "streaming", tag: "30 Days HD/4K", warranty: "25 Days Stable Warranty", format: "Email + Password", specs: "Full HD/4K streaming on smart TVs, mobile, and web with guaranteed profile privacy.", origPricePKR: 549, pricePKR: 349, badge: "Movies", iconKey: "prime", color: "from-blue-500 to-sky-700", urgency: "⚡ Prime HD" },
-      { id: 140, title: "Amazon Prime Video (6 Months)", category: "streaming", tag: "6 Months Plan ($2.50)", warranty: "1 Day Warranty", format: "Ready Account (Email + Password)", specs: "Enjoy Amazon Prime Video 6 Month Plan Private. Watch your favorite movies and serials anytime anywhere.", origPricePKR: 1199, pricePKR: 699, badge: "6 Months Plan", iconKey: "prime", color: "from-amber-600 to-orange-700", urgency: "⚡ 6M Prime" },
-      { id: 112, title: "Spotify Premium (3 Months)", category: "streaming", tag: "3 Months Ad-Free", warranty: "1 Month Replacement Warranty", format: "Direct Family Slot / Account", specs: "Ad-free high fidelity 320kbps audio streaming with offline playlist downloads.", origPricePKR: 2699, pricePKR: 1999, badge: "Audio", iconKey: "generic", color: "from-green-500 to-emerald-700", urgency: "⚡ Hi-Fi Music" },
-      { id: 139, title: "Eleven Reader Ultra Plan (12 Months)", category: "streaming", tag: "12 Months ($4.00)", warranty: "No Warranty", format: "Coupon / Link", specs: "The Ultra plan includes: Unlimited text-to-audio, 200,000+ premium audiobooks & eBooks across web & mobile.", origPricePKR: 1999, pricePKR: 1119, badge: "TTS Ultra", iconKey: "generic", color: "from-indigo-600 to-blue-700", urgency: "⚡ Audiobooks" },
-      { id: 20, title: "NordVPN (3 Months)", category: "accounts", tag: "3 Months Access", warranty: "45 Days Warranty", format: "Ready Account", specs: "High-speed VPN servers worldwide with 45 Days Warranty.", origPricePKR: 1899, pricePKR: 1299, badge: "45D Warranty", iconKey: "vpn", color: "from-blue-600 to-sky-700", urgency: "⚡ Secure VPN" },
-      { id: 141, title: "Surfshark VPN 2M (Coupon)", category: "accounts", tag: "2 Months ($2.50)", warranty: "No Warranty", format: "Coupon / Redeem Link", specs: "Works on mobile, PC, smart devices. Login to Unlimited Devices via Redeem Code.", origPricePKR: 1199, pricePKR: 699, badge: "Coupon $2.5", iconKey: "vpn", color: "from-teal-600 to-emerald-700", urgency: "⚡ Unlimited Devices" },
-      { id: 21, title: "Surfshark VPN 2M (Private Account)", category: "accounts", tag: "2 Months Private", warranty: "30 Days Warranty", format: "Ready Account", specs: "Fast & secure VPN access. Unlock global streaming with strong encryption on up to 10 devices.", origPricePKR: 1899, pricePKR: 1299, badge: "Private Ready", iconKey: "vpn", color: "from-teal-600 to-emerald-700", urgency: "⚡ Fast Surf" },
-      { id: 109, title: "iCloud Slot 2TB (Monthly)", category: "accounts", tag: "Family Slot 2TB", warranty: "25 Days Replacement Warranty", format: "Email + Password / Family Invite", specs: "Format: Email + Password. Connect your existing Apple ID to a 2TB iCloud storage bucket with total privacy.", origPricePKR: 2499, pricePKR: 1799, badge: "Apple Cloud", iconKey: "apple", color: "from-gray-500 to-slate-700", urgency: "⚡ 2TB Cloud" },
-      { id: 103, title: "TikTok UK / USA Accounts (Fresh)", category: "accounts", tag: "Fresh PVA", warranty: "On-Demand Fresh Account Creation", format: "Fresh PVA Email + Password", specs: "Monetization-ready TikTok accounts from US/UK regions with Beta program compatibility.", origPricePKR: 1399, pricePKR: 999, badge: "PVA", iconKey: "tiktok", color: "from-pink-600 to-rose-700", urgency: "⚡ Monetization Ready" },
-      { id: 108, title: "Telegram Account (PVA)", category: "accounts", tag: "Virtual Number", warranty: "Fresh Login Guarantee", format: "Phone Verified Account (PVA)", specs: "Clean session string or phone code verification for marketing, channel setup, or automation.", origPricePKR: 1299, pricePKR: 979, badge: "PVA Stock", iconKey: "generic", color: "from-sky-500 to-blue-600", urgency: "⚡ Clean Sessions" },
-      { id: 22, title: "Outlook / Hotmail PVA", category: "accounts", tag: "Fresh PVA Email", warranty: "Instant Fresh Delivery", format: "Fresh IMAP/POP3 Enabled Email", specs: "Clean proxies phone verified email accounts for bulk automation & signups.", origPricePKR: 79, pricePKR: 44, badge: "Bulk", iconKey: "generic", color: "from-blue-400 to-sky-600", urgency: "⚡ Bulk Stock" },
-      { id: 119, title: "Windows 10 Pro Retail Key", category: "keys", tag: "Global Retail Key", warranty: "Online Permanent Activation", format: "License Key (Outlook Format)", specs: "Delivered in official Outlook format containing original 25-digit retail license key.", origPricePKR: 1099, pricePKR: 699, badge: "Retail Key", iconKey: "windows", color: "from-sky-500 to-blue-700", urgency: "⚡ Win 10 Pro" },
-      { id: 142, title: "API Orders Test", category: "accounts", tag: "Test Item ($0.05)", warranty: "No Warranty", format: "Coupon / Link", specs: "Dont order it. It is just API working Test.", origPricePKR: 50, pricePKR: 15, badge: "API Test", iconKey: "generic", color: "from-gray-500 to-gray-700", urgency: "⚡ Test Item" },
-      // TIKTOK UK SIM AT THE VERY END WITH EXACT REQUIRED SPECS
+      { id: 120, title: "Windows 11 Pro Lifetime Key", category: "keys", tag: "Lifetime Key", warranty: "Permanent Online Bind Warranty", format: "License Key (Outlook Format)", specs: "100% online activation with official Microsoft updates. Binds permanently to motherboard.", origPricePKR: 1499, pricePKR: 979, badge: "Lifetime", iconKey: "windows", color: "from-blue-600 to-indigo-700", urgency: "⚡ 10 Keys Left" },
       { id: 145, title: "TikTok UK SIM (Live Streaming Only)", category: "accounts", tag: "Physical SIM Card", warranty: "No Warranty (Non-Active)", format: "Delivered via Courier", specs: "TikTok UK SIM card strictly for Live Streaming only. Non-active cellular service, no OTP receiving.\n📦 Delivery Time: 3 to 4 Days.", origPricePKR: 3500, pricePKR: 3000, badge: "Live SIM", iconKey: "tiktok", color: "from-pink-600 to-rose-700", urgency: "Delivery: 3-4 Days" }
     ];
-
-    // AUTO-MAP EVERY PRODUCT TO ITS REAL BRAND LOGO
-    const ICON_BY_TITLE = [
-      [/heygen/i,'heygen'],[/perplexity/i,'perplexity'],[/leonardo/i,'leonardo'],[/veo\s*3/i,'veo3'],[/wink/i,'wink'],[/lovable/i,'lovable'],[/notion/i,'notion'],[/n8n/i,'n8n'],[/envato/i,'envato'],[/freepik/i,'freepik'],[/figma/i,'figma'],[/adobe\s*express/i,'adobe-express'],[/grammarly/i,'grammarly'],[/duolingo/i,'duolingo'],[/linkedin/i,'linkedin'],[/coursera/i,'coursera'],[/office|microsoft/i,'microsoft'],[/spotify/i,'spotify'],[/nordvpn/i,'nordvpn'],[/surfshark/i,'surfshark'],[/icloud/i,'icloud'],[/telegram/i,'telegram'],[/outlook|hotmail/i,'outlook'],[/windows/i,'windows'],[/youtube/i,'youtube'],[/netflix/i,'netflix'],[/amazon\s*prime|prime\s*video/i,'prime-video'],[/tiktok/i,'tiktok'],[/elevenlabs/i,'elevenlabs'],[/capcut/i,'capcut'],[/canva/i,'canva'],[/chatgpt/i,'chatgpt'],[/claude/i,'claude'],[/grok/i,'grok'],[/gemini/i,'gemini']
-    ];
-    products.forEach(p=>{ if(p.iconKey==='generic'){ const hit=ICON_BY_TITLE.find(([re])=>re.test(p.title)); if(hit) p.iconKey=hit[1]; }});
 
     const defaultReviews = [
       { name: "Ahmad Khan", role: "Video Editor", text: "Ordered CapCut Pro 6 Months plan directly through the site. Payment verified in 2 minutes. Best store in Pakistan!", rating: 5, date: "Yesterday" },
       { name: "Fatima Noor", role: "Graphic Designer", text: "Canva Admin panel with 500 members was delivered with full instructions. Shaloom Victor is super responsive.", rating: 5, date: "2 days ago" },
       { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
     ];
-
-    // TWO-ROW HERO ROTATION — TOP: 1,2,3 | MIDDLE: 5,4,6
-    let heroOffset = 0; let heroTimer = null;
-    function updateHeroCarousel(){
-      const top=document.getElementById('bannerRowTop'), bottom=document.getElementById('bannerRowBottom');
-      if(!top||!bottom) return;
-      const step = window.innerWidth < 640 ? Math.min(window.innerWidth*0.78 + 8, 500) : (document.getElementById('heroCarousel').clientWidth - 16)/3 + 8;
-      top.style.transform=`translateX(-${heroOffset*step}px)`;
-      bottom.style.transform=`translateX(-${Math.max(0,2-heroOffset)*step}px)`;
-    }
-    function nextHeroSlide(){ heroOffset = (heroOffset+1)%3; updateHeroCarousel(); }
-    function prevHeroSlide(){ heroOffset = (heroOffset+2)%3; updateHeroCarousel(); restartHeroTimer(); }
-    function startHeroTimer(){ if(!heroTimer) heroTimer=setInterval(nextHeroSlide,4500); }
-    function stopHeroTimer(){ if(heroTimer){clearInterval(heroTimer);heroTimer=null;} }
-    function restartHeroTimer(){stopHeroTimer();startHeroTimer();}
-    function pauseHeroCarousel(){stopHeroTimer();}
-    function resumeHeroCarousel(){startHeroTimer();}
-    window.addEventListener('resize',updateHeroCarousel);
-    document.addEventListener('DOMContentLoaded',()=>{updateHeroCarousel();startHeroTimer();});
-
-    function sendSystemAdminAlert(orderDetails) {
-      if (!FORMSPREE_ENDPOINT) return;
-      fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          subject: `🚨 New SastaStore Order: ${orderDetails.product} (${orderDetails.id})`,
-          tracking_id: orderDetails.id,
-          customer_name: orderDetails.name,
-          phone_number: orderDetails.rawPhone || orderDetails.phone,
-          customer_email: orderDetails.email,
-          product_ordered: orderDetails.product,
-          total_amount: orderDetails.price,
-          payment_channel: orderDetails.method,
-          transaction_id: orderDetails.trx,
-          order_date: orderDetails.date
-        })
-      }).catch(() => {});
-    }
-
-    function openCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.remove("hidden"); }
-    function closeCanvaPromoModal() { document.getElementById("canvaPromoModal").classList.add("hidden"); }
-
-    function submitCanvaClaim(e) {
-      e.preventDefault();
-      const name = document.getElementById("promoName").value.trim();
-      const phone = document.getElementById("promoPhone").value.trim();
-      const email = document.getElementById("promoEmail").value.trim();
-      const handle = document.getElementById("promoHandle").value.trim();
-
-      fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({
-          subject: `🎁 FREE CANVA PRO CLAIM: ${name} (${handle})`,
-          customer_name: name,
-          whatsapp_phone: phone,
-          delivery_gmail: email,
-          social_handle: handle,
-          date: new Date().toLocaleDateString()
-        })
-      }).catch(() => {});
-
-      if (typeof confetti === 'function') confetti({ particleCount: 75, spread: 70, origin: { y: 0.6 } });
-      closeCanvaPromoModal();
-      document.getElementById("canvaClaimForm").reset();
-      alert("✅ Your Canva Pro claim has been submitted successfully!");
-    }
-
-    function openDetailsModal(id) {
-      const prod = products.find(p => p.id === id);
-      if (!prod) return;
-      document.getElementById("detailTitle").textContent = prod.title;
-      document.getElementById("detailTag").textContent = prod.tag;
-      document.getElementById("detailFormat").textContent = prod.format;
-      document.getElementById("detailWarranty").textContent = prod.warranty;
-      document.getElementById("detailSpecs").textContent = prod.specs;
-      document.getElementById("detailIcon").innerHTML = getBrandIcon(prod.iconKey);
-      document.getElementById("detailBasketBtn").onclick = () => { addToCart(prod.id); closeDetailsModal(); };
-      document.getElementById("detailOrderBtn").onclick = () => { closeDetailsModal(); openCheckoutModal(prod.id); };
-      document.getElementById("detailsModal").classList.remove("hidden");
-    }
-    function closeDetailsModal() { document.getElementById("detailsModal").classList.add("hidden"); }
-
-    function openWarrantyModal() { document.getElementById("warrantyModal").classList.remove("hidden"); }
-    function closeWarrantyModal() { document.getElementById("warrantyModal").classList.add("hidden"); }
 
     function renderReviews() {
       const container = document.getElementById("reviewsContainer");
@@ -954,17 +797,59 @@
       emptyState.classList.add("hidden"); summaryBox.classList.remove("hidden");
       list.innerHTML = cart.map((item, idx) => `
         <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
-          <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${getBrandIcon(item.iconKey)}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
+          <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
           <div class="flex items-center gap-3"><span class="font-black text-emerald-400">₨ ${item.pricePKR}/-</span><button onclick="removeFromCart(${idx})" class="text-red-400"><i class="fa-solid fa-trash-can"></i></button></div>
         </div>
       `).join("");
-      document.getElementById("cartFinalTotalText").textContent = `₨ ${cart.reduce((a,b)=>a+b.pricePKR,0)}/-`;
+
+      let subtotal = calculateCartSubtotal();
+      let discountAmount = 0;
+      const discountRow = document.getElementById("cartDiscountRow");
+
+      // BUNDLE OFFER: Buy any 3 tools & get 10% OFF if total >= 3000
+      if (cart.length >= 3 || subtotal >= 3000) {
+        discountAmount = Math.round(subtotal * 0.10);
+        discountRow.classList.remove("hidden");
+        document.getElementById("cartDiscountText").textContent = `- ₨ ${discountAmount}/- (Bundle 10% OFF)`;
+      } else {
+        discountRow.classList.add("hidden");
+      }
+
+      const finalTotal = subtotal - discountAmount;
+      document.getElementById("cartSubtotalText").textContent = `₨ ${subtotal}/-`;
+      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/-`;
+    }
+
+    function applyCartCoupon() {
+      const code = document.getElementById("cartCouponInput").value.trim().toUpperCase();
+      const msg = document.getElementById("cartCouponMsg");
+      const subtotal = calculateCartSubtotal();
+      if (code === "SASTA10" || cart.length >= 3) {
+        appliedDiscountPercent = 10;
+        msg.textContent = "✅ Multi-Item Bundle 10% OFF Applied!";
+        msg.className = "text-[11px] font-bold text-emerald-400 block";
+        updateCartTotalsDisplay();
+        showToast("10% Discount Applied!");
+      } else {
+        msg.textContent = "⚠️ Add 3+ items or use SASTA10 for ₨ 3,000+ orders.";
+        msg.className = "text-[11px] font-bold text-amber-400 block";
+      }
+    }
+
+    function updateCartTotalsDisplay() {
+      const subtotal = calculateCartSubtotal();
+      let discountAmount = Math.round(subtotal * 0.10);
+      const finalTotal = subtotal - discountAmount;
+      document.getElementById("cartSubtotalText").textContent = `₨ ${subtotal}/-`;
+      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/-`;
     }
 
     function proceedToCheckout() {
       if (cart.length === 0) return;
       closeCartModal();
-      const total = cart.reduce((a,b)=>a+b.pricePKR,0);
+      const subtotal = calculateCartSubtotal();
+      const discount = (cart.length >= 3 || subtotal >= 3000) ? Math.round(subtotal * 0.10) : 0;
+      const total = subtotal - discount;
       document.getElementById("modalProductTitle").textContent = `${cart.length} Item(s): ${cart.map(c => c.title).join(" + ")}`;
       document.getElementById("modalProductPrice").innerHTML = `Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${total}/-</span>`;
       document.getElementById("checkoutModal").classList.remove("hidden");
@@ -988,7 +873,10 @@
       const trx = document.getElementById("custTrx").value.trim();
       const phone = formatPakistaniWhatsApp(rawPhone);
 
-      const total = cart.reduce((a,b)=>a+b.pricePKR,0);
+      const subtotal = calculateCartSubtotal();
+      const discount = (cart.length >= 3 || subtotal >= 3000) ? Math.round(subtotal * 0.10) : 0;
+      const total = subtotal - discount;
+
       const trackingId = `SS-${Math.floor(100000 + Math.random() * 900000)}`;
       const orderDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
       const primaryTitle = cart.map(c => c.title).join(", ");
@@ -1055,6 +943,7 @@
           <td class="p-3 text-emerald-400 font-mono">${o.phone}</td>
           <td class="p-3 font-semibold text-gray-200">${o.product}</td>
           <td class="p-3 font-mono text-xs text-emerald-300">${o.trx}</td>
+          <td class="p-3"><span class="text-[10px] px-2 py-0.5 rounded font-bold bg-amber-500/20 text-amber-400">${o.status}</span></td>
           <td class="p-3 text-right"><a href="https://wa.me/${o.phone}?text=Hello%20${encodeURIComponent(o.name)},%20your%20order%20(${o.id})%20is%20ready!" target="_blank" class="px-2.5 py-1.5 bg-emerald-500 text-black font-bold rounded-lg text-xs"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></td>
         </tr>
       `).join("");
@@ -1096,7 +985,7 @@
           <div>
             <div class="flex items-start justify-between gap-3 mb-3">
               <div class="w-11 h-11 rounded-xl bg-gradient-to-tr ${p.color} flex items-center justify-center text-white text-base shadow-sm group-hover:scale-105 transition-transform p-2.5">
-                ${getBrandIcon(p.iconKey)}
+                ${BRAND_ICONS[p.iconKey] || BRAND_ICONS.generic}
               </div>
               <div class="flex flex-col items-end">
                 <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.badge}</span>

@@ -170,7 +170,7 @@
     </div>
   </div>
 
-  <!-- ==================== PROMOTIONAL OFFERS BANNER CARDS (NO IMAGE BANNERS) ==================== -->
+  <!-- ==================== PROMOTIONAL OFFERS BANNER CARDS ==================== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <!-- Offer Card 1 -->
@@ -419,7 +419,7 @@
             </div>
             <div>
               <label class="block text-[11px] font-bold text-gray-300 uppercase mb-1">Gmail (for Canva Invite) *</label>
-              <input type="email" id="promoEmail" required placeholder="name@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
+              <input type="email" id="promoEmail" required placeholder="yourname@gmail.com" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
             </div>
           </div>
           <div>
@@ -454,7 +454,7 @@
       </div>
       <div id="cartSummaryBox" class="border-t border-gray-800 pt-3 space-y-2 text-xs">
         <div class="flex justify-between text-gray-400"><span>Subtotal:</span><span class="font-bold text-white" id="cartSubtotalText">₨ 0</span></div>
-        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 hidden"><span>Coupon Discount (10% OFF):</span><span class="font-bold" id="cartDiscountText">- ₨ 0</span></div>
+        <div id="cartDiscountRow" class="flex justify-between text-emerald-400 hidden"><span>Bundle 10% OFF:</span><span class="font-bold" id="cartDiscountText">- ₨ 0</span></div>
         <div class="flex justify-between text-sm font-black text-white border-t border-gray-800/80 pt-2"><span>Total Payable:</span><span class="text-emerald-400 text-base" id="cartFinalTotalText">₨ 0</span></div>
         <div class="pt-2">
           <div class="p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2">
@@ -711,7 +711,7 @@
       }
     }
 
-    // EXACT BRAND LOGOS WITH ORIGINAL FILENAMES (e.g. capcut.svg.jpeg)
+    // EXACT BRAND LOGOS RENDERER (USING UPLOADED FILENAMES WITH FALLBACK)
     const BRAND_ICONS = {
       capcut: `<img src="/assets/icons/capcut.svg.jpeg" alt="CapCut" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-scissors text-blue-400 text-lg\\'></i>'">`,
       chatgpt: `<img src="/assets/icons/chatgpt.svg.jpeg" alt="ChatGPT" class="w-6 h-6 object-contain" onerror="this.outerHTML='<i class=\\'fa-solid fa-robot text-emerald-400 text-lg\\'></i>'">`,
@@ -730,7 +730,7 @@
       generic: `<i class="fa-solid fa-cube text-emerald-400 text-lg"></i>`
     };
 
-    // COMPLETE PRODUCTS LIST (CANVA PRO & BUSINESS PRICE SET TO 350 PKR)
+    // PRODUCTS CATALOG (CANVA PRO & BUSINESS AT 350 PKR)
     const products = [
       { id: 143, title: "ElevenLabs (100k Credits)", category: "ai", tag: "100k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "100,000 High-Quality Voice Generation Credits. Realistic AI Voice Cloning & Dubbing.", origPricePKR: 2899, pricePKR: 2149, badge: "AI Voice", iconKey: "elevenlabs", color: "from-indigo-600 to-violet-700", urgency: "⚡ 3 Left Today" },
       { id: 144, title: "ElevenLabs (130k Credits)", category: "ai", tag: "130k Audio Credits", warranty: "25 Days Replacement Warranty", format: "Ready Account (Email + Password)", specs: "130,000 Pro Voice Generation Credits for YouTube voiceovers & podcasts.", origPricePKR: 3199, pricePKR: 2349, badge: "Pro Audio", iconKey: "elevenlabs", color: "from-violet-600 to-purple-800", urgency: "⚡ Instant Delivery" },
@@ -759,110 +759,11 @@
       { name: "Bilal Tariq", role: "Software Engineer", text: "Claude Pro and Grok accounts were activated immediately. 100% recommended.", rating: 5, date: "3 days ago" }
     ];
 
-    function renderReviews() {
-      const container = document.getElementById("reviewsContainer");
-      if (!container) return;
-      container.innerHTML = defaultReviews.map(r => `
-        <div class="glass-box p-5 rounded-2xl flex flex-col justify-between border border-gray-800 hover:border-amber-500/30 transition">
-          <div><div class="flex items-center gap-1 text-amber-400 text-xs mb-3">${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}</div><p class="text-gray-300 text-xs leading-relaxed mb-4">"${r.text}"</p></div>
-          <div class="flex items-center justify-between pt-3 border-t border-gray-800"><div><p class="text-xs font-bold text-white">${r.name}</p><p class="text-[10px] text-gray-500">${r.role}</p></div><span class="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded">Verified</span></div>
-        </div>
-      `).join("");
-    }
-
-    function openReviewModal() { document.getElementById("reviewModal").classList.remove("hidden"); }
-    function closeReviewModal() { document.getElementById("reviewModal").classList.add("hidden"); }
-
-    function addToCart(id) {
-      const prod = products.find(p => p.id === id);
-      if (!prod) return;
-      cart.push(prod);
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProducts(products);
+      renderReviews();
       updateCartUi();
-      showToast(`Added ${prod.title} to Basket!`);
-    }
-
-    function removeFromCart(idx) { cart.splice(idx, 1); updateCartUi(); renderCartItems(); }
-    function updateCartUi() { document.getElementById("cartCountBadge").textContent = cart.length; document.getElementById("drawerCartBadge").textContent = cart.length; }
-
-    function openCartModal() { renderCartItems(); document.getElementById("cartModal").classList.remove("hidden"); }
-    function closeCartModal() { document.getElementById("cartModal").classList.add("hidden"); }
-
-    function calculateCartSubtotal() { return cart.reduce((acc, item) => acc + item.pricePKR, 0); }
-
-    function renderCartItems() {
-      const list = document.getElementById("cartItemsList");
-      const emptyState = document.getElementById("cartEmptyState");
-      const summaryBox = document.getElementById("cartSummaryBox");
-      if (cart.length === 0) { list.innerHTML = ""; emptyState.classList.remove("hidden"); summaryBox.classList.add("hidden"); return; }
-      emptyState.classList.add("hidden"); summaryBox.classList.remove("hidden");
-      list.innerHTML = cart.map((item, idx) => `
-        <div class="p-3 bg-gray-900 rounded-2xl border border-gray-800 flex items-center justify-between gap-3 text-xs">
-          <div class="flex items-center gap-2.5 flex-1 truncate"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">${BRAND_ICONS[item.iconKey] || BRAND_ICONS.generic}</div><div class="truncate"><div class="font-bold text-white">${item.title}</div></div></div>
-          <div class="flex items-center gap-3"><span class="font-black text-emerald-400">₨ ${item.pricePKR}/-</span><button onclick="removeFromCart(${idx})" class="text-red-400"><i class="fa-solid fa-trash-can"></i></button></div>
-        </div>
-      `).join("");
-
-      let subtotal = calculateCartSubtotal();
-      let discountAmount = 0;
-      const discountRow = document.getElementById("cartDiscountRow");
-
-      // BUNDLE OFFER: Buy any 3 tools & get 10% OFF if total >= 3000
-      if (cart.length >= 3 || subtotal >= 3000) {
-        discountAmount = Math.round(subtotal * 0.10);
-        discountRow.classList.remove("hidden");
-        document.getElementById("cartDiscountText").textContent = `- ₨ ${discountAmount}/- (Bundle 10% OFF)`;
-      } else {
-        discountRow.classList.add("hidden");
-      }
-
-      const finalTotal = subtotal - discountAmount;
-      document.getElementById("cartSubtotalText").textContent = `₨ ${subtotal}/-`;
-      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/-`;
-    }
-
-    function applyCartCoupon() {
-      const code = document.getElementById("cartCouponInput").value.trim().toUpperCase();
-      const msg = document.getElementById("cartCouponMsg");
-      const subtotal = calculateCartSubtotal();
-      if (code === "SASTA10" || cart.length >= 3) {
-        appliedDiscountPercent = 10;
-        msg.textContent = "✅ Multi-Item Bundle 10% OFF Applied!";
-        msg.className = "text-[11px] font-bold text-emerald-400 block";
-        updateCartTotalsDisplay();
-        showToast("10% Discount Applied!");
-      } else {
-        msg.textContent = "⚠️ Add 3+ items or use SASTA10 for ₨ 3,000+ orders.";
-        msg.className = "text-[11px] font-bold text-amber-400 block";
-      }
-    }
-
-    function updateCartTotalsDisplay() {
-      const subtotal = calculateCartSubtotal();
-      let discountAmount = Math.round(subtotal * 0.10);
-      const finalTotal = subtotal - discountAmount;
-      document.getElementById("cartSubtotalText").textContent = `₨ ${subtotal}/-`;
-      document.getElementById("cartFinalTotalText").textContent = `₨ ${finalTotal}/-`;
-    }
-
-    function proceedToCheckout() {
-      if (cart.length === 0) return;
-      closeCartModal();
-      const subtotal = calculateCartSubtotal();
-      const discount = (cart.length >= 3 || subtotal >= 3000) ? Math.round(subtotal * 0.10) : 0;
-      const total = subtotal - discount;
-      document.getElementById("modalProductTitle").textContent = `${cart.length} Item(s): ${cart.map(c => c.title).join(" + ")}`;
-      document.getElementById("modalProductPrice").innerHTML = `Payable Amount: <span class="text-emerald-400 font-black text-sm">₨ ${total}/-</span>`;
-      document.getElementById("checkoutModal").classList.remove("hidden");
-    }
-
-    function openCheckoutModal(id) {
-      const p = products.find(x => x.id === id);
-      if (!p) return;
-      cart = [p];
-      updateCartUi();
-      proceedToCheckout();
-    }
-    function closeCheckoutModal() { document.getElementById("checkoutModal").classList.add("hidden"); }
+    });
 
     function submitOrder(e) {
       e.preventDefault();
@@ -976,7 +877,7 @@
       setTimeout(() => { toast.classList.remove("opacity-100"); toast.classList.add("opacity-0", "pointer-events-none"); }, 2500);
     }
 
-    // RENDER PRODUCTS WITH LIVE STOCK BADGES & OFFICIAL ICONS
+    // RENDER PRODUCTS WITH LIVE STOCK BADGES & EXACT LOGO FILENAMES
     function renderProducts(items) {
       const grid = document.getElementById("productsGrid");
       if (!grid) return;
@@ -1017,12 +918,6 @@
         </div>
       `).join("");
     }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      renderProducts(products);
-      renderReviews();
-      updateCartUi();
-    });
   </script>
 </body>
 </html>
